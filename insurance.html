@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!--
+  HORIZON GENERAL HOSPITAL — Insurance & Billing page.
+  Matches the Horizon Signature design system (Fraunces + Inter, calm navy/teal palette).
+  Verify insurer direct-billing agreements, desk hours, and contact numbers before launch.
+-->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Insurance &amp; Billing — Horizon General Hospital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box}*{margin:0;padding:0}
+:root{
+  --ink:#091b2d;--ink-2:#13293d;
+  --brand:#0877c9;--brand-2:#075b9e;--brand-3:#e6f2fb;
+  --accent:#17b8a6;--accent-soft:#e6fffb;
+  --sand:#f6f1e8;--paper:#fbfdff;
+  --gray-50:#f7fafc;--gray-100:#eef2f7;--gray-200:#dfe6ee;--gray-300:#c4cfdb;
+  --gray-400:#94a3b8;--gray-500:#6b7c8f;--gray-600:#4b5e72;--gray-700:#2f4156;--gray-800:#1f3145;
+  --red:#e11d48;
+  --radius:1.35rem;--radius-lg:2rem;
+  --shadow-sm:0 1px 2px rgba(9,27,45,.06),0 1px 3px rgba(9,27,45,.04);
+  --shadow-md:0 12px 35px -20px rgba(9,27,45,.22);
+  --shadow-lg:0 30px 60px -25px rgba(9,27,45,.28);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --font-serif:'Fraunces',Georgia,serif;
+  --font-sans:'Inter',system-ui,sans-serif;
+}
+::selection{background:rgba(23,184,166,.22);color:var(--ink)}
+html{scroll-behavior:smooth;scroll-padding-top:6rem}
+body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.6;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
+a{color:inherit;text-decoration:none}button,input{font:inherit;color:inherit}button{cursor:pointer;background:none;border:none}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:.5rem}
+a,button{-webkit-tap-highlight-color:transparent}
+.container{width:100%;max-width:1320px;margin-inline:auto;padding-inline:1.5rem}.app{flex:1}
+
+/* SCROLL PROGRESS & BACK TO TOP */
+.scroll-progress{position:fixed;z-index:100;top:0;left:0;width:100%;height:3px;pointer-events:none}
+.scroll-progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,#17b8a6,#0877c9);box-shadow:0 0 12px rgba(23,184,166,.45)}
+.back-top{position:fixed;right:1.25rem;bottom:1.25rem;z-index:45;width:2.9rem;height:2.9rem;border-radius:50%;display:grid;place-items:center;background:#0b263d;color:#fff;box-shadow:0 12px 30px -12px rgba(7,23,39,.65);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .25s,transform .25s,background .25s}
+.back-top.is-visible{opacity:1;transform:none;pointer-events:auto}.back-top:hover{background:var(--brand)}.back-top svg{width:1.1rem;height:1.1rem}
+
+/* EMERGENCY BAR */
+.emergency{background:linear-gradient(100deg,#071727,#102d43 65%,#0b3d56);color:#fff;font-size:.8125rem}
+.emergency__inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.75rem;padding-block:.625rem;min-height:2.65rem}
+.emergency__left{display:flex;align-items:center;gap:.625rem}
+.emergency__pulse{width:.5rem;height:.5rem;border-radius:50%;background:#ff4d6a;box-shadow:0 0 0 0 rgba(255,77,106,.7);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,77,106,.7)}70%{box-shadow:0 0 0 10px rgba(255,77,106,0)}100%{box-shadow:0 0 0 0 rgba(255,77,106,0)}}
+.emergency__left b{font-weight:600}.emergency__left a{color:#fff;text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.emergency__link{color:#c9d6e3;display:flex;align-items:center;gap:.375rem;transition:color .2s}.emergency__link:hover{color:#fff}.emergency__link svg{width:.875rem;height:.875rem}
+
+/* HEADER & DRAWER */
+.hdr{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid transparent;box-shadow:0 1px 0 rgba(9,27,45,.035);transition:border-color .3s,box-shadow .3s,background .3s}
+.hdr.is-scrolled{border-color:var(--gray-200);box-shadow:0 4px 20px -8px rgba(11,27,43,.08);background:rgba(255,255,255,.96)}
+.hdr__inner{display:flex;align-items:center;justify-content:space-between;padding-block:.875rem;gap:1rem}
+.logo{display:flex;align-items:center;gap:.625rem;flex-shrink:0}
+.logo__mark{width:2.5rem;height:2.5rem;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),var(--brand-2));border-radius:.875rem;color:#fff;box-shadow:0 8px 20px -8px rgba(14,111,190,.5);position:relative;isolation:isolate;overflow:hidden}
+.logo__mark::after{content:"";position:absolute;inset:-60%;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.34),transparent 65%);transform:translateX(-70%) rotate(18deg);animation:logoShine 7s var(--ease) infinite}
+@keyframes logoShine{0%,65%,100%{transform:translateX(-70%) rotate(18deg)}82%{transform:translateX(70%) rotate(18deg)}}
+.logo__mark svg{width:1.25rem;height:1.25rem}
+.logo__text{display:flex;flex-direction:column;line-height:1.1}
+.logo__name{font-family:var(--font-serif);font-weight:600;font-size:1.125rem;letter-spacing:-.01em;color:var(--ink)}
+.logo__sub{font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500);font-weight:500}
+.nav{display:none;gap:1.5rem;align-items:center}
+.nav a{font-size:.875rem;font-weight:500;color:var(--gray-700);position:relative;padding:.25rem 0;transition:color .2s}
+.nav a::after{content:'';position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--brand);transition:width .25s ease}
+.nav a:hover,.nav a[aria-current="page"]{color:var(--brand)}.nav a:hover::after,.nav a[aria-current="page"]::after{width:100%}
+.hdr__actions{display:flex;align-items:center;gap:.5rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.75rem 1.25rem;border-radius:999px;font-size:.875rem;font-weight:600;transition:transform .25s var(--ease),background .25s,box-shadow .25s,border-color .25s;border:1px solid transparent;white-space:nowrap;cursor:pointer}
+.btn:active{transform:translateY(1px) scale(.985)}
+.btn--primary{background:linear-gradient(135deg,#102d43,#071727);color:#fff;box-shadow:0 9px 22px -13px rgba(7,23,39,.75)}
+.btn--primary:hover{background:linear-gradient(135deg,#0877c9,#075b9e);transform:translateY(-1px);box-shadow:0 14px 30px -14px rgba(8,119,201,.75)}
+.btn--ghost{border-color:var(--gray-200);color:var(--ink);background:#fff}.btn--ghost:hover{border-color:var(--ink);transform:translateY(-1px)}
+.btn--light{background:#fff;color:var(--ink)}.btn--light:hover{background:var(--sand);transform:translateY(-1px)}
+.btn--accent{background:var(--accent);color:#fff}.btn--accent:hover{background:#0fa396;transform:translateY(-1px)}
+.btn svg{width:1rem;height:1rem}
+.hdr .btn--primary{padding:.625rem 1rem;font-size:.8125rem}
+.burger{display:grid;place-items:center;width:2.5rem;height:2.5rem;border-radius:.75rem;border:1px solid var(--gray-200);background:#fff}
+.burger svg{width:1.125rem;height:1.125rem;stroke:var(--ink)}
+@media(min-width:960px){.nav{display:flex}.burger{display:none}}
+
+.drawer{position:fixed;inset:0;background:rgba(11,27,43,.5);backdrop-filter:blur(4px);z-index:120;opacity:0;pointer-events:none;transition:opacity .3s}
+.drawer.is-open{opacity:1;pointer-events:auto}
+.drawer__panel{position:absolute;top:0;right:0;bottom:0;width:min(340px,88vw);background:#fff;transform:translateX(100%);transition:transform .35s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;padding:1.5rem;overflow-y:auto;box-shadow:-25px 0 70px -35px rgba(0,0,0,.45)}
+.drawer.is-open .drawer__panel{transform:none}
+.drawer__head{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem}
+.drawer__close{width:2.25rem;height:2.25rem;display:grid;place-items:center;border-radius:.75rem;border:1px solid var(--gray-200)}.drawer__close:hover{background:var(--gray-50)}
+.drawer__nav{display:flex;flex-direction:column;gap:.25rem}
+.drawer__nav a{padding:.875rem .75rem;border-radius:.75rem;font-size:1rem;font-weight:500;color:var(--gray-800);display:flex;justify-content:space-between;align-items:center;transition:background .2s,color .2s,transform .2s}
+.drawer__nav a:hover,.drawer__nav a[aria-current="page"]{background:var(--gray-50);color:var(--brand);transform:translateX(3px)}
+.drawer__nav a svg{width:1rem;height:1rem;color:var(--gray-300)}
+.drawer__nav a.danger{color:var(--red);margin-top:.5rem;border-top:1px solid var(--gray-200);padding-top:1rem}.drawer__nav a.danger:hover{background:#fff1f3}
+.drawer__cta{margin-top:1.5rem;display:flex;flex-direction:column;gap:.5rem}.drawer__cta .btn{width:100%}
+.drawer__foot{margin-top:auto;padding-top:1.5rem;border-top:1px solid var(--gray-200);font-size:.8125rem;color:var(--gray-500);line-height:1.6}
+.drawer__foot a{color:var(--brand);text-decoration:underline}
+
+/* PAGE HERO */
+.page-hero{position:relative;overflow:hidden;border-bottom:1px solid var(--gray-200);background:
+  radial-gradient(45rem 30rem at 90% 0%,rgba(23,184,166,.12),transparent 65%),
+  radial-gradient(45rem 30rem at 5% 80%,rgba(8,119,201,.10),transparent 65%),
+  linear-gradient(180deg,#f8fcff,#f2f8fd)}
+.page-hero__inner{padding-block:3.75rem 4.25rem;display:grid;gap:2.5rem;align-items:center}
+@media(min-width:960px){.page-hero__inner{grid-template-columns:1.15fr .85fr;gap:4rem}}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;padding:.375rem .75rem .375rem .5rem;background:#fff;border:1px solid var(--gray-200);border-radius:999px;font-size:.75rem;font-weight:500;color:var(--gray-600);box-shadow:var(--shadow-sm)}
+.eyebrow__dot{width:1.25rem;height:1.25rem;border-radius:50%;background:var(--accent-soft);display:grid;place-items:center}
+.eyebrow__dot svg{width:.75rem;height:.75rem;stroke:var(--accent)}
+.page-hero h1{font-family:var(--font-serif);font-weight:500;font-size:clamp(2.45rem,5vw,4rem);line-height:1.03;letter-spacing:-.035em;color:var(--ink);margin-top:1.15rem}
+.page-hero h1 em{font-style:italic;color:var(--brand)}
+.page-hero__lead{margin-top:1.25rem;font-size:1.0625rem;color:var(--gray-600);max-width:36rem;line-height:1.7}
+.page-hero__actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+
+.desk-card{background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:1.75rem;box-shadow:var(--shadow-md)}
+.desk-card__badge{display:inline-flex;align-items:center;gap:.45rem;font-size:.75rem;font-weight:600;color:#0fa396;background:var(--accent-soft);padding:.3rem .7rem;border-radius:999px;text-transform:uppercase;letter-spacing:.06em}
+.desk-card__badge::before{content:'';width:.45rem;height:.45rem;border-radius:50%;background:#0fa396;animation:pulse 2s infinite}
+.desk-card h2{font-family:var(--font-serif);font-size:1.35rem;font-weight:500;color:var(--ink);margin-top:.85rem}
+.desk-card p{font-size:.875rem;color:var(--gray-600);margin-top:.45rem}
+.desk-card__meta{margin-top:1.25rem;padding-top:1.1rem;border-top:1px solid var(--gray-100);display:grid;gap:.65rem;font-size:.8125rem}
+.desk-card__row{display:flex;justify-content:space-between;gap:1rem}
+.desk-card__row span:first-child{color:var(--gray-500)}
+.desk-card__row strong{color:var(--ink);font-weight:600;text-align:right}
+
+/* SECTIONS & HEADERS */
+.section{padding-block:5rem}
+.section--tint{background:var(--sand)}
+.kicker{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brand)}
+.kicker::before{content:'';width:1.5rem;height:1px;background:currentColor}
+.section-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:1.5rem;margin-bottom:2.25rem}
+.section-head h2{font-family:var(--font-serif);font-size:clamp(1.9rem,3.3vw,2.75rem);font-weight:500;letter-spacing:-.025em;line-height:1.1;color:var(--ink);margin-top:.65rem;max-width:34rem}
+.section-head p{color:var(--gray-600);max-width:32rem;margin-top:.65rem}
+
+/* FILTER BAR & INSURER GRID */
+.filter-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.75rem}
+.search-box{position:relative;flex:1;min-width:240px;max-width:360px}
+.search-box svg{position:absolute;left:1rem;top:50%;transform:translateY(-50%);width:1rem;height:1rem;color:var(--gray-400);pointer-events:none}
+.search-box input{width:100%;padding:.675rem 1rem .675rem 2.6rem;border-radius:999px;border:1px solid var(--gray-200);background:#fff;font-size:.875rem;color:var(--ink);transition:border-color .2s,box-shadow .2s}
+.search-box input:focus{border-color:var(--brand);box-shadow:0 0 0 3px rgba(8,119,201,.12);outline:none}
+.pills{display:flex;flex-wrap:wrap;gap:.45rem}
+.pill{padding:.5rem .95rem;border-radius:999px;font-size:.8125rem;font-weight:600;color:var(--gray-600);background:#fff;border:1px solid var(--gray-200);transition:all .2s}
+.pill:hover{border-color:var(--brand);color:var(--brand)}
+.pill.is-active{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+.insurers{display:grid;gap:1rem;grid-template-columns:1fr}
+@media(min-width:640px){.insurers{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.insurers{grid-template-columns:repeat(4,1fr)}}
+.insurer{background:#fff;border:1px solid rgba(9,27,45,.09);border-radius:var(--radius);padding:1.35rem;display:flex;flex-direction:column;justify-content:space-between;gap:1rem;box-shadow:0 12px 36px -32px rgba(9,27,45,.42);transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s}
+.insurer:hover{transform:translateY(-4px);border-color:rgba(8,119,201,.35);box-shadow:0 22px 42px -26px rgba(9,27,45,.28)}
+.insurer__top{display:flex;align-items:center;justify-content:space-between;gap:.75rem}
+.insurer__monogram{width:2.5rem;height:2.5rem;border-radius:.85rem;background:var(--brand-3);color:var(--brand);font-family:var(--font-serif);font-weight:600;font-size:1rem;display:grid;place-items:center;flex-shrink:0}
+.insurer__tag{font-size:.6875rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#0fa396;background:var(--accent-soft);padding:.25rem .6rem;border-radius:999px}
+.insurer__name{font-family:var(--font-serif);font-size:1.15rem;font-weight:500;color:var(--ink);line-height:1.25}
+.insurer__sub{font-size:.8125rem;color:var(--gray-500);margin-top:.25rem}
+.insurer__foot{padding-top:.85rem;border-top:1px solid var(--gray-100);display:flex;align-items:center;justify-content:space-between;font-size:.75rem;color:var(--gray-600)}
+.insurer__check{color:var(--brand);font-weight:600;display:inline-flex;align-items:center;gap:.25rem}
+.empty-state{display:none;text-align:center;padding:3rem 1.5rem;background:#fff;border:1px dashed var(--gray-300);border-radius:var(--radius);color:var(--gray-600)}
+.empty-state.is-shown{display:block}
+
+/* 3-STEP DIRECT BILLING FLOW */
+.steps{display:grid;gap:1rem;grid-template-columns:1fr;counter-reset:billstep}
+@media(min-width:768px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{background:#fff;border:1px solid rgba(9,27,45,.09);border-radius:var(--radius);padding:1.75rem;position:relative;counter-increment:billstep;box-shadow:0 12px 36px -32px rgba(9,27,45,.42)}
+.step::before{content:counter(billstep,decimal-leading-zero);position:absolute;top:1.1rem;right:1.35rem;font-family:var(--font-serif);font-size:2.4rem;font-style:italic;color:var(--gray-100);line-height:1;font-weight:500}
+.step__icon{width:2.75rem;height:2.75rem;border-radius:1rem;display:grid;place-items:center;background:var(--brand-3);color:var(--brand);margin-bottom:1rem}
+.step__icon svg{width:1.25rem;height:1.25rem}
+.step h3{font-family:var(--font-serif);font-size:1.1875rem;font-weight:500;color:var(--ink);position:relative;z-index:1}
+.step p{margin-top:.5rem;font-size:.875rem;color:var(--gray-600)}
+
+/* CHECKLIST & SELF-PAY CARDS */
+.two-col{display:grid;gap:1.5rem;grid-template-columns:1fr;margin-top:3rem}
+@media(min-width:860px){.two-col{grid-template-columns:1fr 1fr}}
+.panel{background:#fff;border:1px solid rgba(9,27,45,.09);border-radius:var(--radius-lg);padding:2rem;box-shadow:0 14px 40px -30px rgba(9,27,45,.38);display:flex;flex-direction:column;justify-content:space-between;gap:1.5rem}
+.panel h3{font-family:var(--font-serif);font-size:1.45rem;font-weight:500;color:var(--ink)}
+.panel > div > p{margin-top:.5rem;font-size:.9375rem;color:var(--gray-600)}
+.checklist{margin-top:1.25rem;display:flex;flex-direction:column;gap:.65rem;list-style:none}
+.checklist li{display:flex;align-items:flex-start;gap:.75rem;padding:.75rem .95rem;border-radius:.95rem;background:var(--gray-50);border:1px solid var(--gray-100);font-size:.875rem;color:var(--gray-700)}
+.checklist li svg{width:1.1rem;height:1.1rem;color:var(--accent);flex-shrink:0;margin-top:.12rem}
+.pay-methods{margin-top:1.25rem;display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}
+.pay-method{padding:.75rem .5rem;border-radius:.9rem;background:var(--gray-50);border:1px solid var(--gray-200);text-align:center;font-size:.8125rem;font-weight:600;color:var(--ink)}
+.guarantee-note{margin-top:1.1rem;padding:.95rem 1.1rem;border-radius:1rem;background:var(--brand-3);color:var(--ink-2);font-size:.8125rem;line-height:1.55}
+.panel__actions{display:flex;flex-wrap:wrap;gap:.75rem}
+
+/* FAQ ACCORDION */
+.faq{display:grid;gap:.75rem;max-width:52rem}
+.faq details{background:#fff;border:1px solid rgba(9,27,45,.09);border-radius:var(--radius);padding:1.25rem 1.5rem;transition:box-shadow .25s}
+.faq details[open]{box-shadow:var(--shadow-md)}
+.faq summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1rem;font-weight:600;font-size:.975rem;color:var(--ink);cursor:pointer}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary svg{width:1.1rem;height:1.1rem;color:var(--brand);flex-shrink:0;transition:transform .25s var(--ease)}
+.faq details[open] summary svg{transform:rotate(45deg)}
+.faq details p{margin-top:.85rem;padding-top:.85rem;border-top:1px solid var(--gray-100);font-size:.9rem;color:var(--gray-600)}
+
+/* CTA BANNER */
+.cta{position:relative;overflow:hidden;border-radius:var(--radius-lg);padding:3rem 2rem;color:#fff;background:linear-gradient(120deg,#0877c9,#075b9e 62%,#064a6f);box-shadow:0 30px 70px -38px rgba(8,119,201,.8);margin-block:4.5rem}
+@media(min-width:768px){.cta{padding:3.75rem 3rem}}
+.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(30rem 20rem at 100% 0%,rgba(23,184,166,.35),transparent 60%);pointer-events:none}
+.cta__inner{position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:2rem}
+.cta h2{font-family:var(--font-serif);font-size:clamp(1.75rem,3vw,2.45rem);font-weight:500;letter-spacing:-.02em;line-height:1.12}
+.cta p{margin-top:.75rem;color:rgba(255,255,255,.88);max-width:34rem}
+.cta__actions{display:flex;flex-wrap:wrap;gap:.75rem}
+
+/* FOOTER */
+.footer{background:radial-gradient(35rem 25rem at 85% 0%,rgba(8,119,201,.17),transparent 65%),#071727;color:#a9b8c7;margin-top:4rem;position:relative;overflow:hidden}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(20,184,166,.5),transparent)}
+.footer__inner{padding-block:4rem 2rem}
+.footer__grid{display:grid;gap:2.5rem;grid-template-columns:1fr}
+@media(min-width:640px){.footer__grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.footer__grid{grid-template-columns:1.5fr 1fr 1fr 1fr}}
+.footer__brand .logo__name{color:#fff}.footer__brand .logo__sub{color:#6b7c8f}
+.footer__about{margin-top:1.25rem;font-size:.875rem;line-height:1.6;max-width:22rem}
+.footer__contact{margin-top:1.5rem;display:flex;flex-direction:column;gap:.5rem;font-size:.875rem}
+.footer__contact a{display:flex;align-items:center;gap:.5rem;transition:color .2s}.footer__contact a:hover{color:#fff}
+.footer__contact svg{width:.875rem;height:.875rem;color:var(--accent);flex-shrink:0}
+.footer h4{color:#fff;font-size:.8125rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;margin-bottom:1rem}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.footer ul a{font-size:.875rem;transition:color .2s}.footer ul a:hover,.footer ul a[aria-current="page"]{color:#fff}
+.footer__bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.5rem;margin-top:3rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;font-size:.75rem}
+.footer__emergency{display:inline-flex;align-items:center;gap:.5rem;color:#fff;font-weight:600}
+.footer__emergency::before{content:'';width:.5rem;height:.5rem;border-radius:50%;background:#ff4d6a;animation:pulse 2s infinite}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.is-in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{animation-duration:0s!important;transition-duration:0s!important}}
+@media(max-width:767px){
+  .container{padding-inline:1.15rem}
+  .page-hero__inner{padding-block:2.75rem 3rem}
+  .section{padding-block:3.5rem}
+  .cta{padding:2.25rem 1.4rem;margin-block:3rem;border-radius:1.4rem}
+  .back-top{right:.9rem;bottom:.9rem;width:2.6rem;height:2.6rem}
+}
+</style>
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+
+<div class="emergency">
+  <div class="container emergency__inner">
+    <div class="emergency__left"><span class="emergency__pulse"></span><span><b>Emergency?</b> Call <a href="tel:907">907</a> — open 24/7</span></div>
+    <div><a href="emergency.html" class="emergency__link">Live ER wait times <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div>
+  </div>
+</div>
+
+<header class="hdr" id="hdr">
+  <div class="container hdr__inner">
+    <a href="index.html" class="logo">
+      <span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span>
+      <span class="logo__text"><span class="logo__name">Horizon</span><span class="logo__sub">General Hospital</span></span>
+    </a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="find-a-doctor.html">Find a doctor</a>
+      <a href="departments.html">Departments</a>
+      <a href="services.html">Services</a>
+      <a href="patients-visitors.html">Patients</a>
+      <a href="about.html">About</a>
+      <a href="news.html">News</a>
+    </nav>
+    <div class="hdr__actions">
+      <a href="book.html" class="btn btn--primary">Book a visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button type="button" class="burger" id="burger" aria-label="Open menu" aria-controls="drawer" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer__panel">
+    <div class="drawer__head">
+      <a href="index.html" class="logo"><span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span><span class="logo__text"><span class="logo__name">Horizon</span><span class="logo__sub">General Hospital</span></span></a>
+      <button type="button" class="drawer__close" id="drawerClose" aria-label="Close"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    </div>
+    <nav class="drawer__nav" aria-label="Mobile navigation">
+      <a href="find-a-doctor.html">Find a doctor <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="departments.html">Departments <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="services.html">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="book.html">Book a visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="patients-visitors.html">Patients &amp; visitors <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="about.html">About <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="portal.html">Patient portal <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="contact.html">Contact <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="careers.html">Careers <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="insurance.html" aria-current="page">Insurance <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="news.html">News <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="emergency.html" class="danger">Emergency <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+    </nav>
+    <div class="drawer__cta"><a href="book.html" class="btn btn--primary">Book a visit</a><a href="portal.html" class="btn btn--ghost">Patient portal</a></div>
+    <div class="drawer__foot"><p>Emergency? Call <a href="tel:907">907</a></p><p style="margin-top:.25rem">Bole Road, Addis Ababa · 24/7</p></div>
+  </div>
+</div>
+
+<main class="app">
+  <section class="page-hero">
+    <div class="container page-hero__inner">
+      <div class="reveal">
+        <span class="eyebrow">
+          <span class="eyebrow__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          Insurance &amp; Transparent Billing
+        </span>
+        <h1>Clear coverage, <em>no surprises</em>.</h1>
+        <p class="page-hero__lead">We partner with major Ethiopian and international insurers for direct cashless billing, and provide written itemized estimates before every planned procedure.</p>
+        <div class="page-hero__actions">
+          <a href="#insurers" class="btn btn--primary">Browse accepted insurers <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+          <a href="portal.html" class="btn btn--ghost">Pay a bill online</a>
+        </div>
+      </div>
+
+      <aside class="desk-card reveal" aria-label="Insurance Liaison Desk">
+        <span class="desk-card__badge">Insurance Liaison Desk · Open</span>
+        <h2>Need pre-authorization help?</h2>
+        <p>Our billing coordinators verify eligibility and submit inpatient or surgical pre-approvals directly to your insurer.</p>
+        <div class="desk-card__meta">
+          <div class="desk-card__row"><span>Location</span><strong>Ground Floor · Main Atrium</strong></div>
+          <div class="desk-card__row"><span>Outpatient Desk</span><strong>Mon – Sat, 07:30 – 20:00</strong></div>
+          <div class="desk-card__row"><span>Emergency Verification</span><strong>24 / 7 at Triage Desk</strong></div>
+          <div class="desk-card__row"><span>Direct Line</span><strong><a href="tel:+251115550104" style="color:var(--brand)">+251 11 555 0104</a></strong></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="insurers">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="kicker">Partner Network</span>
+          <h2>Accepted insurance providers.</h2>
+          <p>Bring your valid member card at check-in so our desk can settle eligible charges directly with your insurer.</p>
+        </div>
+      </div>
+
+      <div class="filter-bar reveal">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <input type="search" id="insurerSearch" placeholder="Search insurer name…" aria-label="Search accepted insurers" />
+        </div>
+        <div class="pills" role="group" aria-label="Filter insurers by plan type">
+          <button type="button" class="pill is-active" data-filter="all">All providers (8)</button>
+          <button type="button" class="pill" data-filter="direct">Direct cashless</button>
+          <button type="button" class="pill" data-filter="corporate">Corporate &amp; Group</button>
+        </div>
+      </div>
+
+      <div class="insurers" id="insurerGrid">
+        <article class="insurer reveal" data-cat="direct corporate" data-name="nyala insurance">
+          <div>
+            <div class="insurer__top"><span class="insurer__monogram">NY</span><span class="insurer__tag">Direct Billing</span></div>
+            <h3 class="insurer__name" style="margin-top:.85rem">Nyala Insurance</h3>
+            <p class="insurer__sub">Outpatient, inpatient, maternity &amp; diagnostics</p>
+          </div>
+          <div class="insurer__foot"><span>Pre-auth supported</span><span class="insurer__check">✓ Active</span></div>
+        </article>
+
+        <article class="insurer reveal" data-cat="direct corporate" data-name="awash insurance">
+          <div>
+            <div class="insurer__top"><span class="insurer__monogram">AW</span><span class="insurer__tag">Direct Billing</span></div>
+            <h3 class="insurer__name" style="margin-top:.85rem">Awash Insurance</h3>
+            <p class="insurer__sub">Outpatient, inpatient &amp; emergency care</p>
+          </div>
+          <div class="insurer__foot"><span>Pre-auth supported</span><span class="insurer__check">✓ Active</span></div>
+        </article>
+
+        <article class="insurer reveal" data-cat="direct corporate" data-name="ethiopian insurance corp eic">
+          <div>
+            <div class="insurer__top"><span class="insurer__monogram">EI</span><span class="insurer__tag">Direct Billing</span></div>
+            <h3 class="insurer__name" style="margin-top:.85rem">Ethiopian Insurance Corp.</h3>
+            <p class="insurer__sub">Individual, family &amp; institutional medical plans</p>
+          </div>
+          <div class="insurer__foot"><span>Pre-auth supported</span><span class="insurer__check">✓ Active</span></div>
+        </article>
+
+        <article class="insurer reveal" data-cat="direct" data-name="united insurance">
+          <div>
+            <div class="insurer__top"><span class="insurer__monogram">UI</span><span class="insurer__tag">Direct Billing</span></div>
+            <h3 class="insurer__name" style="margin-top:.85rem">United Insurance</h3>
+            <p class="insurer__sub">Specialist consultations, lab &amp; inpatient stays</p>
+          </div>
+          <div class="insurer__foot"><span>Pre-auth supported</span><span class="insurer__check">✓ Active</span></div>
+        </article>
+
+        <article class="insurer reveal" data-cat="corporate" data-name="global insurance">
+          <div>
+            <div class="insurer__top"><span class="insurer__monogram">GL</span><span class="insurer__tag">Corporate</span></div>
+            <h3 class="insurer__name" style="margin-top:.85rem">Global Insurance</h3>
+            <p class="insurer__sub">Employer health schemes &amp; surgical cover</p>
+          </div>
+          <div class="insurer__foot"><span>Guarantee letter</span><span class="insurer__check">✓ Active</span></div>
+        </article>
+
+        <article class="insurer reveal" data-cat="direct corporate" data-name="nile insurance">
+          <div>
+            <div class="insurer__top"><span class="insurer__monogram">NL</span><span class="insurer__tag">Direct Billing</span></div>
+            <h3 class="insurer__name" style="margin-top:.85rem">Nile Insurance</h3>
+            <p class="insurer__sub">Full outpatient, imaging &amp; inpatient cover</p>
+          </div>
+          <div class="insurer__foot"><span>Pre-auth supported</span><span class="insurer__check">✓ Active</span></div>
+        </article>
+
+        <article class="insurer reveal" data-cat="corporate" data-name="abay insurance">
+          <div>
+            <div class="insurer__top"><span class="insurer__monogram">AB</span><span class="insurer__tag">Corporate</span></div>
+            <h3 class="insurer__name" style="margin-top:.85rem">Abay Insurance</h3>
+            <p class="insurer__sub">Group medical plans &amp; diagnostic packages</p>
+          </div>
+          <div class="insurer__foot"><span>Guarantee letter</span><span class="insurer__check">✓ Active</span></div>
+        </article>
+
+        <article class="insurer reveal" data-cat="direct" data-name="oromia insurance">
+          <div>
+            <div class="insurer__top"><span class="insurer__monogram">OR</span><span class="insurer__tag">Direct Billing</span></div>
+            <h3 class="insurer__name" style="margin-top:.85rem">Oromia Insurance</h3>
+            <p class="insurer__sub">Outpatient clinics, pediatrics &amp; maternity</p>
+          </div>
+          <div class="insurer__foot"><span>Pre-auth supported</span><span class="insurer__check">✓ Active</span></div>
+        </article>
+      </div>
+
+      <div class="empty-state" id="emptyState">
+        No matching insurer found in the quick list. Contact our Liaison Desk at <strong>+251 11 555 0104</strong> — we also process embassy, NGO, and international reimbursement claims.
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="kicker">How Billing Works</span>
+          <h2>Three calm steps from check-in to checkout.</h2>
+        </div>
+      </div>
+
+      <div class="steps">
+        <div class="step reveal">
+          <span class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span>
+          <h3>Verify at reception</h3>
+          <p>Present your insurance card and photo ID 15 minutes before your appointment so we can confirm active policy limits.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg></span>
+          <h3>Approve your written estimate</h3>
+          <p>If labs, imaging, or a procedure are recommended, you see exact insurer coverage and any co-pay before proceeding.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <h3>Direct claim settlement</h3>
+          <p>We submit signed claim forms straight to your insurer and send an itemized digital receipt to your patient portal.</p>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <section class="panel reveal" aria-labelledby="bring-heading">
+          <div>
+            <h3 id="bring-heading">What to bring to your visit</h3>
+            <p>Having these items ready keeps registration under five minutes.</p>
+            <ul class="checklist">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Valid insurance card and active policy / member number</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Government ID, passport, or driver's license</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Pre-authorization / guarantee letter for planned surgeries or MRI/CT scans</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Primary physician referral letter if required by your plan tier</span></li>
+            </ul>
+          </div>
+          <div class="panel__actions">
+            <a href="book.html" class="btn btn--ghost">Book an appointment</a>
+          </div>
+        </section>
+
+        <section class="panel reveal" aria-labelledby="billing-heading">
+          <div>
+            <h3 id="billing-heading">Self-pay &amp; estimate guarantee</h3>
+            <p>Visiting without insurance or paying a co-share? All consultation and diagnostic fees are published upfront.</p>
+            <div class="pay-methods" aria-label="Accepted payment methods">
+              <div class="pay-method">Cash (ETB)</div>
+              <div class="pay-method">Debit / Credit</div>
+              <div class="pay-method">Bank Transfer</div>
+            </div>
+            <div class="guarantee-note">
+              <strong>Horizon Estimate Guarantee:</strong> Every planned procedure includes a signed written estimate beforehand — if the final hospital bill exceeds it, we absorb the difference.
+            </div>
+          </div>
+          <div class="panel__actions">
+            <a href="portal.html" class="btn btn--primary">Pay a bill in portal <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            <a href="contact.html" class="btn btn--ghost">Request an estimate</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="kicker">Common Questions</span>
+          <h2>Insurance &amp; billing answers.</h2>
+        </div>
+      </div>
+
+      <div class="faq reveal">
+        <details open>
+          <summary>What happens in an emergency if I don't have my insurance card with me? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <p>Emergency triage and stabilization always begin immediately without waiting for paperwork. Once you are stable, a family member or our 24/7 triage coordinator can verify your policy number by phone with your insurer.</p>
+        </details>
+        <details>
+          <summary>How long does pre-authorization take for planned procedures or advanced imaging? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <p>Most partner insurers respond to outpatient imaging requests within 2–4 hours, and planned inpatient admissions within 24 hours. Submitting your specialist's request at least two days ahead ensures smooth scheduling.</p>
+        </details>
+        <details>
+          <summary>Can I claim reimbursement if my insurer is international or not listed above? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <p>Yes. We provide stamped clinical summaries, diagnostic reports, and itemized English receipts formatted for international, diplomatic, and NGO medical reimbursement claims.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="cta reveal">
+      <div class="cta__inner">
+        <div>
+          <h2>Unsure what your plan covers?</h2>
+          <p>Share your insurer name and planned service with our billing team before your visit for a clear breakdown.</p>
+        </div>
+        <div class="cta__actions">
+          <a href="contact.html" class="btn btn--light">Ask the billing desk <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          <a href="book.html" class="btn btn--accent">Book a visit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="logo"><span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span><span class="logo__text"><span class="logo__name">Horizon</span><span class="logo__sub">General Hospital</span></span></a>
+        <p class="footer__about">Calm, clear care for Addis Ababa since 2008. Accredited, multilingual, and open 24/7 for emergencies.</p>
+        <div class="footer__contact">
+          <a href="tel:+251115550100"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>+251 11 555 0100</a>
+          <a href="mailto:info@horizonhospital.example"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>info@horizonhospital.example</a>
+        </div>
+      </div>
+      <div><h4>Care</h4><ul>
+        <li><a href="find-a-doctor.html">Find a doctor</a></li>
+        <li><a href="departments.html">Departments</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="book.html">Book a visit</a></li>
+        <li><a href="emergency.html">Emergency</a></li>
+      </ul></div>
+      <div><h4>Patients</h4><ul>
+        <li><a href="patients-visitors.html">Visiting hours</a></li>
+        <li><a href="portal.html">Patient portal</a></li>
+        <li><a href="insurance.html" aria-current="page">Insurance</a></li>
+      </ul></div>
+      <div><h4>Hospital</h4><ul>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 Horizon General Hospital. Not a substitute for medical advice.</span>
+      <span class="footer__emergency">Emergency? Call 907</span>
+    </div>
+  </div>
+</footer>
+
+<button type="button" class="back-top" id="backTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+const hdr = document.getElementById('hdr');
+const progressBar = document.getElementById('scrollProgress');
+const backTop = document.getElementById('backTop');
+
+function onScroll() {
+  const y = window.scrollY;
+  if (hdr) hdr.classList.toggle('is-scrolled', y > 8);
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = maxScroll > 0 ? Math.min(100, Math.max(0, (y / maxScroll) * 100)) : 0;
+  if (progressBar) progressBar.style.width = pct + '%';
+  if (backTop) backTop.classList.toggle('is-visible', y > 420);
+}
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+if (backTop) {
+  backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
+
+const drawer = document.getElementById('drawer');
+const burger = document.getElementById('burger');
+const drawerClose = document.getElementById('drawerClose');
+function openDrawer() {
+  drawer.classList.add('is-open');
+  drawer.setAttribute('aria-hidden', 'false');
+  burger.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
+function closeDrawer() {
+  drawer.classList.remove('is-open');
+  drawer.setAttribute('aria-hidden', 'true');
+  burger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+if (burger && drawer && drawerClose) {
+  burger.addEventListener('click', openDrawer);
+  drawerClose.addEventListener('click', closeDrawer);
+  drawer.addEventListener('click', (e) => { if (e.target === drawer) closeDrawer(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
+}
+
+// Insurer live search & category filter
+const searchInput = document.getElementById('insurerSearch');
+const pills = document.querySelectorAll('.pill');
+const cards = document.querySelectorAll('#insurerGrid .insurer');
+const emptyState = document.getElementById('emptyState');
+let activeCat = 'all';
+
+function filterInsurers() {
+  const q = (searchInput ? searchInput.value : '').trim().toLowerCase();
+  let visible = 0;
+  cards.forEach(card => {
+    const cats = card.dataset.cat || '';
+    const name = card.dataset.name || '';
+    const matchesCat = activeCat === 'all' || cats.includes(activeCat);
+    const matchesQuery = !q || name.includes(q);
+    const show = matchesCat && matchesQuery;
+    card.style.display = show ? '' : 'none';
+    if (show) visible++;
+  });
+  if (emptyState) emptyState.classList.toggle('is-shown', visible === 0);
+}
+
+if (searchInput) searchInput.addEventListener('input', filterInsurers);
+pills.forEach(pill => {
+  pill.addEventListener('click', () => {
+    pills.forEach(p => p.classList.remove('is-active'));
+    pill.classList.add('is-active');
+    activeCat = pill.dataset.filter || 'all';
+    filterInsurers();
+  });
+});
+
+// Scroll reveal
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('is-in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

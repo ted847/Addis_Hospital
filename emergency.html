@@ -1,0 +1,1490 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Emergency — Horizon General Hospital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+
+:root {
+  --ink: #0b1b2b;
+  --ink-2: #13293d;
+  --brand: #0e6fbe;
+  --brand-2: #0a5a9c;
+  --brand-3: #e6f2fb;
+  --accent: #14b8a6;
+  --accent-dark: #0d9488;
+  --accent-soft: #e6fffb;
+  --sand: #f6f1e8;
+  --sand-2: #ede5d8;
+  --ivory: #fcfaf6;
+  --paper: #ffffff;
+  --gray-50: #f7fafc;
+  --gray-100: #eef2f7;
+  --gray-200: #dfe6ee;
+  --gray-300: #c4cfdb;
+  --gray-400: #94a3b8;
+  --gray-500: #6b7c8f;
+  --gray-600: #4b5e72;
+  --gray-700: #2f4156;
+  --gray-800: #1f3145;
+  --red: #e11d48;
+  --red-dark: #be123c;
+  --red-soft: #ffe4e6;
+  --amber-soft: #fef3c7;
+  --amber-dark: #92400e;
+  --radius-sm: 0.75rem;
+  --radius: 1.25rem;
+  --radius-lg: 2rem;
+  --shadow-xs: 0 1px 2px rgba(11, 27, 43, 0.05);
+  --shadow-sm: 0 1px 2px rgba(11, 27, 43, 0.06), 0 1px 3px rgba(11, 27, 43, 0.04);
+  --shadow-md: 0 10px 30px -12px rgba(11, 27, 43, 0.18), 0 4px 12px -4px rgba(11, 27, 43, 0.08);
+  --shadow-lg: 0 30px 60px -20px rgba(11, 27, 43, 0.25), 0 12px 24px -8px rgba(11, 27, 43, 0.12);
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.55;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; cursor: pointer; background: none; border: none; }
+img, svg { display: block; max-width: 100%; }
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+  border-radius: 0.5rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.app { flex: 1; }
+
+/* Top 907 Emergency Bar */
+.emergency {
+  background: var(--ink);
+  color: #fff;
+  font-size: 0.8125rem;
+  position: relative;
+  z-index: 60;
+}
+
+.emergency__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-block: 0.625rem;
+}
+
+.emergency__left {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.emergency__pulse {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #ff4d6a;
+  box-shadow: 0 0 0 0 rgba(255, 77, 106, 0.7);
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 77, 106, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 77, 106, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 77, 106, 0); }
+}
+
+.emergency__left b { font-weight: 600; }
+.emergency__left a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+
+.emergency__link {
+  color: #c9d6e3;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  transition: color 0.2s;
+}
+.emergency__link:hover { color: #fff; }
+.emergency__link svg { width: 0.875rem; height: 0.875rem; }
+
+/* Sticky Frosted Header */
+.hdr {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.hdr.is-scrolled {
+  border-color: var(--gray-200);
+  box-shadow: 0 4px 20px -8px rgba(11, 27, 43, 0.08);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.hdr__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 0.875rem;
+  gap: 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  flex-shrink: 0;
+}
+
+.logo__mark {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  border-radius: 0.875rem;
+  color: #fff;
+  box-shadow: 0 8px 20px -8px rgba(14, 111, 190, 0.5);
+  transition: transform 0.25s var(--ease-out);
+}
+.logo:hover .logo__mark { transform: scale(1.04) rotate(-3deg); }
+.logo__mark svg { width: 1.25rem; height: 1.25rem; }
+
+.logo__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logo__name {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.logo__sub {
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  font-weight: 500;
+}
+
+.nav {
+  display: none;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gray-700);
+  position: relative;
+  padding: 0.25rem 0;
+  transition: color 0.2s;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 0;
+  background: var(--brand);
+  transition: width 0.25s ease;
+}
+
+.nav a:hover,
+.nav a[aria-current="page"] { color: var(--brand); }
+.nav a:hover::after,
+.nav a[aria-current="page"]::after { width: 100%; }
+
+.hdr__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Tactile Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s, border-color 0.2s;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.btn:active { transform: scale(0.98); }
+
+.btn--primary {
+  background: var(--ink);
+  color: #fff;
+}
+.btn--primary:hover {
+  background: var(--brand);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px -12px rgba(14, 111, 190, 0.6);
+}
+
+.btn--brand {
+  background: var(--brand);
+  color: #fff;
+}
+.btn--brand:hover {
+  background: var(--brand-2);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px -12px rgba(14, 111, 190, 0.6);
+}
+
+.btn--emergency {
+  background: var(--red);
+  color: #fff;
+  box-shadow: 0 12px 24px -10px rgba(225, 29, 72, 0.55);
+}
+.btn--emergency:hover {
+  background: var(--red-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 16px 28px -10px rgba(225, 29, 72, 0.7);
+}
+
+.btn--ghost {
+  border-color: var(--gray-200);
+  color: var(--ink);
+  background: #fff;
+}
+.btn--ghost:hover {
+  border-color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.btn--soft-red {
+  background: #fff;
+  color: var(--red-dark);
+  border-color: rgba(225, 29, 72, 0.28);
+}
+.btn--soft-red:hover {
+  background: var(--red-soft);
+  border-color: var(--red);
+  transform: translateY(-1px);
+}
+
+.btn--sm {
+  padding: 0.48rem 0.95rem;
+  font-size: 0.78rem;
+  gap: 0.35rem;
+}
+
+.btn svg { width: 1rem; height: 1rem; }
+.btn--sm svg { width: 0.85rem; height: 0.85rem; }
+
+.hdr .btn--primary {
+  padding: 0.625rem 1rem;
+  font-size: 0.8125rem;
+}
+
+.burger {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--gray-200);
+  background: #fff;
+}
+.burger svg { width: 1.125rem; height: 1.125rem; stroke: var(--ink); }
+.burger:hover { background: var(--gray-50); }
+
+@media (min-width: 960px) {
+  .nav { display: flex; }
+  .burger { display: none; }
+}
+
+/* Mobile Slide-Over Drawer */
+.drawer {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 27, 43, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 80;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.drawer.is-open { opacity: 1; pointer-events: auto; }
+
+.drawer__panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(340px, 88vw);
+  background: #fff;
+  transform: translateX(100%);
+  transition: transform 0.35s var(--ease-out);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+.drawer.is-open .drawer__panel { transform: none; }
+
+.drawer__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.drawer__close {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.75rem;
+  border: 1px solid var(--gray-200);
+}
+.drawer__close:hover { background: var(--gray-50); }
+
+.drawer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.drawer__nav a {
+  padding: 0.875rem 0.75rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--gray-800);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s;
+}
+.drawer__nav a:hover,
+.drawer__nav a[aria-current="page"] {
+  background: var(--brand-3);
+  color: var(--brand);
+}
+.drawer__nav a svg { width: 1rem; height: 1rem; color: var(--gray-300); }
+
+.drawer__nav a.danger {
+  color: var(--red);
+  margin-top: 0.5rem;
+  border-top: 1px solid var(--gray-200);
+  padding-top: 1rem;
+}
+.drawer__nav a.danger:hover { background: #fff1f3; }
+
+.drawer__cta {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.drawer__cta .btn { width: 100%; }
+
+.drawer__foot {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-200);
+  font-size: 0.8125rem;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+.drawer__foot a { color: var(--brand); text-decoration: underline; }
+
+/* Emergency Dispatch Hero */
+.er-hero {
+  position: relative;
+  background: linear-gradient(180deg, #fff9fa 0%, #fbfdff 55%, #f4f9ff 100%);
+  padding-block: 3.75rem 4.5rem;
+  border-bottom: 1px solid var(--gray-200);
+  overflow: hidden;
+}
+
+.er-hero__grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(225, 29, 72, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(14, 111, 190, 0.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 88% 82% at 50% 45%, #000 35%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 88% 82% at 50% 45%, #000 35%, transparent 100%);
+  pointer-events: none;
+}
+
+.er-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(48rem 28rem at 88% 8%, rgba(225, 29, 72, 0.09), transparent 60%),
+    radial-gradient(42rem 28rem at 8% 92%, rgba(14, 111, 190, 0.08), transparent 60%);
+  pointer-events: none;
+}
+
+.er-hero__layout {
+  position: relative;
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (min-width: 960px) {
+  .er-hero__layout {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 3.25rem;
+  }
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+
+.kicker--urgent {
+  color: var(--red-dark);
+}
+
+.kicker::before {
+  content: '';
+  width: 1.5rem;
+  height: 1.5px;
+  background: currentColor;
+}
+
+.er-hero h1 {
+  margin-top: 0.95rem;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(2.5rem, 5.2vw, 4rem);
+  line-height: 1.03;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+
+.er-hero h1 em {
+  font-style: italic;
+  color: var(--red);
+}
+
+.er-hero__lead {
+  margin-top: 1.25rem;
+  font-size: 1.0625rem;
+  color: var(--gray-700);
+  line-height: 1.65;
+  max-width: 40rem;
+}
+
+.er-hero__lead a {
+  color: var(--red-dark);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.dispatch-actions {
+  margin-top: 1.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Dispatch Triage Summary Card */
+.dispatch-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.dispatch-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--red), var(--brand), var(--accent));
+}
+
+.dispatch-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 1.1rem;
+}
+
+.live-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.live-pill__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-dark);
+  animation: pulse 2s infinite;
+}
+
+.dispatch-card__meta {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gray-500);
+}
+
+.dispatch-card h2 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 0.45rem;
+}
+
+.dispatch-card p {
+  font-size: 0.875rem;
+  color: var(--gray-600);
+  line-height: 1.55;
+}
+
+.hotline-grid {
+  margin-top: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+}
+
+@media (max-width: 480px) {
+  .hotline-grid { grid-template-columns: 1fr; }
+}
+
+.hotline-box {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.8rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.hotline-box:hover {
+  border-color: var(--red);
+  transform: translateY(-2px);
+}
+
+.hotline-box__label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gray-500);
+}
+
+.hotline-box__num {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--red-dark);
+}
+
+.hotline-box__sub {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--gray-600);
+}
+
+/* Sections & Editorial Headers */
+.section {
+  padding-block: 4.75rem;
+}
+
+.section--tint {
+  background: var(--sand);
+  border-block: 1px solid rgba(11, 27, 43, 0.06);
+}
+
+.section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.section-head h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.875rem, 3.2vw, 2.5rem);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-top: 0.75rem;
+}
+
+.section-head p {
+  color: var(--gray-600);
+  max-width: 36rem;
+  margin-top: 0.65rem;
+  font-size: 0.9375rem;
+}
+
+/* Live ER Wait-Times Telemetry Board */
+.telemetry-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.filter-pill {
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid var(--gray-200);
+  background: #fff;
+  color: var(--gray-700);
+  transition: all 0.2s;
+}
+
+.filter-pill:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+}
+
+.filter-pill.is-active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+.telemetry-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.telemetry-stamp {
+  font-size: 0.78rem;
+  color: var(--gray-500);
+  font-weight: 500;
+}
+
+.er-board-wrap {
+  background: #fff;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  overflow-x: auto;
+  box-shadow: var(--shadow-sm);
+}
+
+.er-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  min-width: 540px;
+}
+
+.er-table thead {
+  background: var(--gray-50);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gray-500);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.er-table th,
+.er-table td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.er-table tbody tr {
+  border-top: 1px solid var(--gray-100);
+  transition: background 0.2s;
+}
+
+.er-table tbody tr:hover {
+  background: #fbfdff;
+}
+
+.er-loc-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--ink);
+  display: block;
+}
+
+.er-loc-note {
+  font-size: 0.78rem;
+  color: var(--gray-500);
+  display: block;
+  margin-top: 0.15rem;
+}
+
+.er-wait-val {
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.28rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.status-badge--low {
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+}
+
+.status-badge--moderate {
+  background: var(--amber-soft);
+  color: var(--amber-dark);
+}
+
+.life-safety-note {
+  margin-top: 1rem;
+  padding: 0.95rem 1.2rem;
+  border-radius: var(--radius-sm);
+  background: #fff1f3;
+  border: 1px solid rgba(225, 29, 72, 0.22);
+  color: var(--red-dark);
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.life-safety-note svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 0.12rem;
+}
+
+/* Two-Column Clinical Triage & Bole Road Arrival Grid */
+.grid-2 {
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .grid-2 {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 2rem;
+  }
+}
+
+.box {
+  background: #fff;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 1.85rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.box h2 {
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-top: 0.65rem;
+}
+
+.box__lead {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  line-height: 1.55;
+}
+
+.flag-list {
+  list-style: none;
+  margin-top: 1.15rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.flag-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: var(--radius-sm);
+  background: var(--gray-50);
+  border: 1px solid var(--gray-100);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink-2);
+}
+
+.flag-list li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  margin-top: 0.42rem;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.14);
+}
+
+.arrival-svg-wrap {
+  margin-top: 1.15rem;
+  background: linear-gradient(155deg, #f4f9ff 0%, var(--sand) 100%);
+  border: 1px solid rgba(14, 111, 190, 0.14);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+}
+
+.arrival-details {
+  margin-top: 1.15rem;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.arrival-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.4rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-sm);
+  background: var(--gray-50);
+  font-size: 0.85rem;
+}
+
+.arrival-row span { color: var(--gray-500); font-weight: 500; }
+.arrival-row strong { color: var(--ink); font-weight: 600; }
+
+.arrival-actions {
+  margin-top: auto;
+  padding-top: 1.35rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Footer */
+.footer {
+  background: var(--ink);
+  color: #a9b8c7;
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(20, 184, 166, 0.5), transparent);
+}
+.footer__inner { padding-block: 4rem 2rem; }
+.footer__grid {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  .footer__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .footer__grid { grid-template-columns: 1.5fr 1fr 1fr 1fr; }
+}
+.footer__brand .logo__name { color: #fff; }
+.footer__brand .logo__sub { color: #6b7c8f; }
+.footer__about {
+  margin-top: 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  max-width: 22rem;
+}
+.footer__contact {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+.footer__contact a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s;
+}
+.footer__contact a:hover { color: #fff; }
+.footer__contact svg { width: 0.875rem; height: 0.875rem; color: var(--accent); flex-shrink: 0; }
+.footer h4 {
+  color: #fff;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 1rem;
+}
+.footer ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.footer ul a {
+  font-size: 0.875rem;
+  transition: color 0.2s;
+}
+.footer ul a:hover { color: #fff; }
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1.5rem;
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.75rem;
+}
+.footer__emergency {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+  font-weight: 600;
+}
+.footer__emergency::before {
+  content: '';
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #ff4d6a;
+  animation: pulse 2s infinite;
+}
+
+/* Reveal Choreography */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  * { animation-duration: 0s !important; transition-duration: 0s !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- Top 907 Emergency Bar -->
+<div class="emergency">
+  <div class="container emergency__inner">
+    <div class="emergency__left">
+      <span class="emergency__pulse"></span>
+      <span><b>Emergency?</b> Call <a href="tel:907">907</a> — open 24/7</span>
+    </div>
+    <div>
+      <a href="#er-wait-times" class="emergency__link">
+        Live ER wait times
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Sticky Frosted Header -->
+<header class="hdr" id="hdr">
+  <div class="container hdr__inner">
+    <a href="index.html" class="logo">
+      <span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span>
+      <span class="logo__text"><span class="logo__name">Horizon</span><span class="logo__sub">General Hospital</span></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="find-a-doctor.html">Find a doctor</a>
+      <a href="departments.html">Departments</a>
+      <a href="services.html">Services</a>
+      <a href="patients-visitors.html">Patients</a>
+      <a href="about.html">About</a>
+      <a href="news.html">News</a>
+    </nav>
+    <div class="hdr__actions">
+      <a href="book.html" class="btn btn--primary">
+        Book a visit
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Slide-Over Mobile Drawer -->
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer__panel">
+    <div class="drawer__head">
+      <a href="index.html" class="logo">
+        <span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span>
+        <span class="logo__text"><span class="logo__name">Horizon</span><span class="logo__sub">General Hospital</span></span>
+      </a>
+      <button class="drawer__close" id="drawerClose" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <nav class="drawer__nav" aria-label="Mobile navigation">
+      <a href="find-a-doctor.html">Find a doctor <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="departments.html">Departments <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="services.html">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="book.html">Book a visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="patients-visitors.html">Patients &amp; visitors <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="about.html">About <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="portal.html">Patient portal <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="contact.html">Contact <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="careers.html">Careers <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="insurance.html">Insurance <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="news.html">News <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="emergency.html" aria-current="page" class="danger">Emergency <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+    </nav>
+    <div class="drawer__cta">
+      <a href="tel:907" class="btn btn--emergency">Call ambulance — 907</a>
+      <a href="book.html" class="btn btn--primary">Book a visit</a>
+    </div>
+    <div class="drawer__foot">
+      <p>Emergency? Call <a href="tel:907">907</a></p>
+      <p style="margin-top:.25rem">Bole Road, Addis Ababa · 24/7</p>
+    </div>
+  </div>
+</div>
+
+<main class="app">
+  <!-- Emergency Dispatch Hero -->
+  <section class="er-hero">
+    <div class="er-hero__grid-bg" aria-hidden="true"></div>
+    <div class="container er-hero__layout">
+      <div class="reveal">
+        <span class="kicker kicker--urgent">24/7 Emergency Dispatch · Addis Ababa</span>
+        <h1>Immediate care, <em>when seconds count</em>.</h1>
+        <p class="er-hero__lead">If someone is unconscious, bleeding heavily, has chest pain, difficulty breathing, or has had a serious accident — call <a href="tel:907">907</a> immediately or proceed to our Ground Floor Emergency Entrance on Bole Road.</p>
+        <div class="dispatch-actions">
+          <a href="tel:907" class="btn btn--emergency">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            Call ambulance — 907
+          </a>
+          <a href="tel:991" class="btn btn--soft-red">Police — 991</a>
+          <a href="tel:939" class="btn btn--ghost">Fire — 939</a>
+        </div>
+      </div>
+
+      <!-- Dispatch Quick-Dial & Triage Summary Card -->
+      <div class="reveal">
+        <div class="dispatch-card">
+          <div class="dispatch-card__top">
+            <span class="live-pill"><span class="live-pill__dot"></span>24/7 Triage Active</span>
+            <span class="dispatch-card__meta">Addis Ababa · Ethiopia</span>
+          </div>
+          <h2>Direct Emergency Hotlines</h2>
+          <p>Reach medical ambulance dispatch or city emergency services directly from your phone.</p>
+
+          <div class="hotline-grid">
+            <a href="tel:907" class="hotline-box">
+              <span class="hotline-box__label">Ambulance</span>
+              <span class="hotline-box__num">907</span>
+              <span class="hotline-box__sub">Medical &amp; ER</span>
+            </a>
+            <a href="tel:991" class="hotline-box">
+              <span class="hotline-box__label">Police</span>
+              <span class="hotline-box__num">991</span>
+              <span class="hotline-box__sub">Public safety</span>
+            </a>
+            <a href="tel:939" class="hotline-box">
+              <span class="hotline-box__label">Fire</span>
+              <span class="hotline-box__num">939</span>
+              <span class="hotline-box__sub">Fire &amp; rescue</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live ER Wait-Times Telemetry Board -->
+  <section class="section" id="er-wait-times">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="kicker">Triage Telemetry</span>
+          <h2>Live ER wait times</h2>
+          <p>Estimates update every 15 minutes across our emergency bays. Clinical acuity always takes priority over arrival order.</p>
+        </div>
+      </div>
+
+      <div class="telemetry-toolbar reveal">
+        <div class="filter-pills" role="group" aria-label="Filter emergency bays by status">
+          <button type="button" class="filter-pill is-active" data-status-filter="all">All bays (3)</button>
+          <button type="button" class="filter-pill" data-status-filter="low">Low wait</button>
+          <button type="button" class="filter-pill" data-status-filter="moderate">Moderate wait</button>
+        </div>
+
+        <div class="telemetry-controls">
+          <span class="telemetry-stamp" id="telemetryStamp">Last synced: Live baseline</span>
+          <button type="button" class="btn btn--ghost btn--sm" id="refreshWaitBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-2.64-6.36L21 8"/><path d="M21 3v5h-5"/></svg>
+            Refresh estimate
+          </button>
+        </div>
+      </div>
+
+      <div class="er-board-wrap reveal">
+        <table class="er-table" aria-label="Live Emergency Room wait times">
+          <thead>
+            <tr>
+              <th>Location</th>
+              <th>Estimated wait</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="erWaitTbody">
+            <tr data-status="low">
+              <td>
+                <span class="er-loc-title">Main ER — Ground Floor</span>
+                <span class="er-loc-note">Adult resuscitation, medical triage &amp; observation</span>
+              </td>
+              <td><span class="er-wait-val" data-wait-text>~15 min</span></td>
+              <td><span class="status-badge status-badge--low">Low</span></td>
+            </tr>
+            <tr data-status="low">
+              <td>
+                <span class="er-loc-title">Pediatric ER — Level 1</span>
+                <span class="er-loc-note">Dedicated child &amp; infant emergency care</span>
+              </td>
+              <td><span class="er-wait-val" data-wait-text>~10 min</span></td>
+              <td><span class="status-badge status-badge--low">Low</span></td>
+            </tr>
+            <tr data-status="moderate">
+              <td>
+                <span class="er-loc-title">Trauma Bay — Ground Floor</span>
+                <span class="er-loc-note">Acute injury, stabilization &amp; rapid imaging link</span>
+              </td>
+              <td><span class="er-wait-val" data-wait-text>~30 min</span></td>
+              <td><span class="status-badge status-badge--moderate">Moderate</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="life-safety-note reveal" role="note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+        <span>In a life-threatening emergency, do not wait — call <strong>907</strong> or come straight to the Ground Floor Emergency Entrance.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- When to Come to the ER & Getting Here on Bole Road -->
+  <section class="section section--tint">
+    <div class="container">
+      <div class="grid-2">
+        <!-- Clinical Warning Signs Checklist -->
+        <div class="box reveal">
+          <span class="kicker kicker--urgent">Warning Signs</span>
+          <h2>When to come to the ER</h2>
+          <p class="box__lead">Seek immediate emergency evaluation if you or someone with you experiences any of the following symptoms:</p>
+          <ul class="flag-list">
+            <li>Chest pain or pressure</li>
+            <li>Difficulty breathing</li>
+            <li>Severe bleeding that won't stop</li>
+            <li>Sudden weakness or slurred speech</li>
+            <li>Head injury with confusion or vomiting</li>
+            <li>Severe abdominal pain</li>
+            <li>High fever in an infant under 3 months</li>
+          </ul>
+        </div>
+
+        <!-- Bole Road Arrival Card + Custom Inline SVG Campus/Ambulance Bay Schematic -->
+        <div class="box reveal">
+          <span class="kicker">Campus Arrival</span>
+          <h2>Getting here</h2>
+          <p class="box__lead">Bole Road, Addis Ababa, Ethiopia. Follow the red emergency signs to the dedicated ER entrance on the ground floor. Drop-off is directly outside the ER doors.</p>
+
+          <div class="arrival-svg-wrap">
+            <svg viewBox="0 0 420 175" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schematic of Bole Road ambulance approach, drop-off lane, and Ground Floor Emergency Entrance at Horizon General Hospital">
+              <rect x="6" y="6" width="408" height="163" rx="12" fill="#fbfdff" stroke="#dfe6ee" stroke-width="1.2"/>
+
+              <!-- Bole Road Corridor -->
+              <rect x="20" y="122" width="380" height="32" rx="7" fill="#0b1b2b"/>
+              <text x="210" y="142" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="10" font-weight="700" letter-spacing="0.06em">BOLE ROAD CORRIDOR · ADDIS ABABA</text>
+
+              <!-- Ambulance Drop-Off Lane -->
+              <path d="M 110 122 L 110 88 Q 110 74 126 74 L 188 74" stroke="#e11d48" stroke-width="3" stroke-dasharray="6 4"/>
+              <polygon points="188,69 198,74 188,79" fill="#e11d48"/>
+              <rect x="24" y="62" width="122" height="36" rx="7" fill="#fff1f3" stroke="#e11d48" stroke-width="1.2"/>
+              <text x="85" y="77" text-anchor="middle" fill="#be123c" font-family="Inter, sans-serif" font-size="8.5" font-weight="700">AMBULANCE &amp; DROP-OFF</text>
+              <text x="85" y="90" text-anchor="middle" fill="#4b5e72" font-family="Inter, sans-serif" font-size="8">Direct outside ER doors</text>
+
+              <!-- Ground Floor ER Entrance Building -->
+              <rect x="202" y="22" width="194" height="84" rx="10" fill="#e6f2fb" stroke="#0e6fbe" stroke-width="1.5"/>
+              <text x="299" y="44" text-anchor="middle" fill="#0a5a9c" font-family="Inter, sans-serif" font-size="8.5" font-weight="700">GROUND FLOOR · 24/7</text>
+              <text x="299" y="64" text-anchor="middle" fill="#0b1b2b" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="600">Emergency Entrance</text>
+              <rect x="218" y="74" width="162" height="22" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+              <text x="299" y="88" text-anchor="middle" fill="#1f3145" font-family="Inter, sans-serif" font-size="8" font-weight="600">Main ER · Trauma Bay · Imaging Link</text>
+            </svg>
+          </div>
+
+          <div class="arrival-details">
+            <div class="arrival-row">
+              <span>Address</span>
+              <strong>Bole Road, Addis Ababa, Ethiopia</strong>
+            </div>
+            <div class="arrival-row">
+              <span>Entrance</span>
+              <strong>Ground Floor — Red Emergency Signs</strong>
+            </div>
+            <div class="arrival-row">
+              <span>Drop-off</span>
+              <strong>Directly outside ER doors (24/7)</strong>
+            </div>
+          </div>
+
+          <div class="arrival-actions">
+            <a href="https://www.google.com/maps/search/?api=1&query=Bole+Road+Addis+Ababa+Ethiopia" target="_blank" rel="noopener noreferrer" class="btn btn--brand">
+              Open in maps
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a href="tel:907" class="btn btn--ghost">Call 907</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 4-Column Footer -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="logo">
+          <span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span>
+          <span class="logo__text"><span class="logo__name">Horizon</span><span class="logo__sub">General Hospital</span></span>
+        </a>
+        <p class="footer__about">Calm, clear care for Addis Ababa since 2008. Accredited, multilingual, and open 24/7 for emergencies.</p>
+        <div class="footer__contact">
+          <a href="tel:+251115550100"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>+251 11 555 0100</a>
+          <a href="mailto:info@horizonhospital.example"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>info@horizonhospital.example</a>
+        </div>
+      </div>
+      <div>
+        <h4>Care</h4>
+        <ul>
+          <li><a href="find-a-doctor.html">Find a doctor</a></li>
+          <li><a href="departments.html">Departments</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="book.html">Book a visit</a></li>
+          <li><a href="emergency.html">Emergency</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Patients</h4>
+        <ul>
+          <li><a href="patients-visitors.html">Visiting hours</a></li>
+          <li><a href="portal.html">Patient portal</a></li>
+          <li><a href="insurance.html">Insurance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hospital</h4>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 Horizon General Hospital. Not a substitute for medical advice.</span>
+      <span class="footer__emergency">Emergency? Call 907</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Sticky Header & Slide-Over Mobile Drawer
+const hdr = document.getElementById('hdr');
+window.addEventListener('scroll', () => hdr.classList.toggle('is-scrolled', window.scrollY > 8), { passive: true });
+
+const drawer = document.getElementById('drawer');
+const burger = document.getElementById('burger');
+const drawerClose = document.getElementById('drawerClose');
+
+function openDrawer() {
+  drawer.classList.add('is-open');
+  drawer.setAttribute('aria-hidden', 'false');
+  burger.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDrawer() {
+  drawer.classList.remove('is-open');
+  drawer.setAttribute('aria-hidden', 'true');
+  burger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+burger.addEventListener('click', openDrawer);
+drawerClose.addEventListener('click', closeDrawer);
+drawer.addEventListener('click', (e) => { if (e.target === drawer) closeDrawer(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
+
+// Scroll Reveal Choreography
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) {
+      e.target.classList.add('is-in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+// Live ER Wait-Times Telemetry Board Filter & Refresh Controls
+const WAIT_SNAPSHOTS = [
+  { stamp: "Synced just now (15-min cadence)", waits: ["~15 min", "~10 min", "~30 min"] },
+  { stamp: "Updated · Triage check complete", waits: ["~12 min", "~10 min", "~25 min"] },
+  { stamp: "Updated · Observation bay clear", waits: ["~15 min", "~12 min", "~30 min"] }
+];
+let snapshotIndex = 0;
+
+const filterPills = document.querySelectorAll('[data-status-filter]');
+const erRows = document.querySelectorAll('#erWaitTbody tr');
+const refreshWaitBtn = document.getElementById('refreshWaitBtn');
+const telemetryStamp = document.getElementById('telemetryStamp');
+
+filterPills.forEach((pill) => {
+  pill.addEventListener('click', () => {
+    const selected = pill.dataset.statusFilter;
+    filterPills.forEach((p) => p.classList.toggle('is-active', p === pill));
+    erRows.forEach((row) => {
+      const match = selected === 'all' || row.dataset.status === selected;
+      row.style.display = match ? '' : 'none';
+    });
+  });
+});
+
+refreshWaitBtn.addEventListener('click', () => {
+  snapshotIndex = (snapshotIndex + 1) % WAIT_SNAPSHOTS.length;
+  const current = WAIT_SNAPSHOTS[snapshotIndex];
+  erRows.forEach((row, idx) => {
+    const cell = row.querySelector('[data-wait-text]');
+    if (cell && current.waits[idx]) {
+      cell.textContent = current.waits[idx];
+    }
+  });
+  telemetryStamp.textContent = current.stamp;
+});
+</script>
+</body>
+</html>
