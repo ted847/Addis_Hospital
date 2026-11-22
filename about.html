@@ -730,6 +730,88 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   font-size: 1rem;
 }
 
+
+/* Mission, Vision & Leadership */
+.purpose-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+@media (min-width: 800px) {
+  .purpose-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+}
+.purpose-card {
+  position: relative;
+  min-height: 100%;
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  overflow: hidden;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  transition: transform .3s var(--ease-out), box-shadow .3s, border-color .3s;
+}
+.purpose-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(14,111,190,.35);
+  box-shadow: var(--shadow-md);
+}
+.purpose-card--mission { background: linear-gradient(145deg,#fff 0%,#f2f8fe 100%); }
+.purpose-card--vision { background: linear-gradient(145deg,#fff 0%,#effdfa 100%); }
+.purpose-card__icon {
+  width: 3.25rem; height: 3.25rem; display: grid; place-items: center;
+  border-radius: 1rem; color: var(--brand); background: var(--brand-3);
+  margin-bottom: 1.5rem;
+}
+.purpose-card--vision .purpose-card__icon { color: var(--accent-dark); background: var(--accent-soft); }
+.purpose-card__icon svg { width: 1.55rem; height: 1.55rem; }
+.purpose-card h3 {
+  font: 500 clamp(1.65rem, 2.5vw, 2rem)/1.15 var(--font-serif);
+  color: var(--ink); margin-bottom: .85rem;
+}
+.purpose-card p { color: var(--gray-600); line-height: 1.75; max-width: 38rem; }
+.purpose-card__label {
+  display: block; color: var(--brand); font-size: .72rem; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase; margin-bottom: .75rem;
+}
+.purpose-card--vision .purpose-card__label { color: var(--accent-dark); }
+
+.leadership-intro {
+  max-width: 48rem; color: var(--gray-600); line-height: 1.75; margin-top: .8rem;
+}
+.leadership-grid {
+  display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin-top: 2rem;
+}
+@media (min-width: 620px) {
+  .leadership-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1020px) {
+  .leadership-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+.leader-card {
+  padding: 1.65rem; background: #fff; border: 1px solid var(--gray-200);
+  border-radius: var(--radius); transition: transform .3s var(--ease-out), box-shadow .3s, border-color .3s;
+}
+.leader-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: rgba(14,111,190,.3); }
+.leader-card__top { display: flex; align-items: center; gap: .9rem; margin-bottom: 1.1rem; }
+.leader-card__symbol {
+  width: 3rem; height: 3rem; flex: 0 0 3rem; display: grid; place-items: center;
+  border-radius: 1rem; background: var(--brand-3); color: var(--brand);
+}
+.leader-card__symbol svg { width: 1.4rem; height: 1.4rem; }
+.leader-card__eyebrow {
+  display: block; color: var(--brand); font-size: .68rem; font-weight: 700;
+  letter-spacing: .11em; text-transform: uppercase; margin-bottom: .2rem;
+}
+.leader-card h3 { font: 500 1.25rem/1.2 var(--font-serif); color: var(--ink); }
+.leader-card p { color: var(--gray-600); font-size: .9rem; line-height: 1.7; }
+.leadership-note {
+  margin-top: 1.5rem; padding: 1rem 1.2rem; border: 1px solid var(--sand-2);
+  border-radius: var(--radius-sm); background: var(--ivory); color: var(--gray-600);
+  font-size: .85rem; line-height: 1.65;
+}
+
 /* Audited Metrics Grid */
 .stats {
   display: grid;
@@ -1683,10 +1765,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
       <div class="page-hero__content reveal">
         <div class="hero-eyebrow">
           <span class="hero-eyebrow__dot"></span>
-          <span>Bole Road · Addis Ababa · Est. 2008</span>
+          <span>Horizon General Hospital · Addis Ababa</span>
         </div>
-        <h1>Care that starts with <em>calm</em>.</h1>
-        <p class="hero-lead">Since 2008, Horizon has been the hospital Addis Ababa trusts for clear communication, real availability and outcomes we publish.</p>
+        <h1>Our story. Our purpose. <em>Your health.</em></h1>
+        <p class="hero-lead">Learn about the journey, purpose and people behind Horizon General Hospital. Our commitment is to make healthcare more accessible, respectful and centred on every patient.</p>
         <div class="hero-meta-strip">
           <div class="hero-meta-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
@@ -1763,6 +1845,37 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     </div>
   </section>
 
+  <!-- Mission & Vision -->
+  <section class="section" id="mission-vision">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="kicker">Our purpose</span>
+          <h2>Guided by purpose. Focused on people.</h2>
+          <p>Our mission and vision express the principles that guide how we serve patients, families and the wider community.</p>
+        </div>
+      </div>
+      <div class="purpose-grid">
+        <article class="purpose-card purpose-card--mission reveal">
+          <div class="purpose-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/><path d="M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></svg>
+          </div>
+          <span class="purpose-card__label">Our mission</span>
+          <h3>Deliver compassionate, dependable healthcare.</h3>
+          <p>To provide accessible, safe and patient-centred healthcare through skilled professionals, responsible clinical practice, clear communication and a commitment to treating every person with dignity and respect.</p>
+        </article>
+        <article class="purpose-card purpose-card--vision reveal">
+          <div class="purpose-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <span class="purpose-card__label">Our vision</span>
+          <h3>Be a trusted leader in quality healthcare.</h3>
+          <p>To be a trusted healthcare institution recognised for clinical excellence, continuous improvement, innovation and meaningful contribution to the health and wellbeing of our community.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- By The Numbers Section -->
   <section class="section" id="numbers">
     <div class="container">
@@ -1808,7 +1921,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
       <div class="section-head reveal">
         <div>
           <span class="kicker">Our journey</span>
-          <h2>Fifteen years of getting better.</h2>
+          <h2>A journey shaped by care and progress.</h2>
         </div>
       </div>
 
@@ -1924,6 +2037,83 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     </div>
   </section>
 
+  <!-- Leadership Section -->
+  <section class="section" id="leadership">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="kicker">Our leadership</span>
+          <h2>Leadership with responsibility and purpose.</h2>
+          <p class="leadership-intro">Horizon’s leadership brings together governance, clinical expertise and operational stewardship. Each function has an important role in supporting safe care, professional standards and a positive patient experience.</p>
+        </div>
+      </div>
+
+      <div class="leadership-grid">
+        <article class="leader-card reveal">
+          <div class="leader-card__top">
+            <span class="leader-card__symbol" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6M9 9h.01M15 9h.01M9 12h.01M15 12h.01"/></svg>
+            </span>
+            <div><span class="leader-card__eyebrow">Governance</span><h3>Board of Directors</h3></div>
+          </div>
+          <p>Provides strategic direction, oversight and accountability, helping ensure that the hospital is managed responsibly and remains focused on its long-term objectives.</p>
+        </article>
+
+        <article class="leader-card reveal">
+          <div class="leader-card__top">
+            <span class="leader-card__symbol" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>
+            </span>
+            <div><span class="leader-card__eyebrow">Executive leadership</span><h3>Chief Executive Officer</h3></div>
+          </div>
+          <p>Leads the hospital’s overall strategy and performance, aligning people, resources and services with the organisation’s mission and vision.</p>
+        </article>
+
+        <article class="leader-card reveal">
+          <div class="leader-card__top">
+            <span class="leader-card__symbol" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8M12 3v18M5 8h14M7 8l-2 5h4L7 8ZM17 8l-2 5h4l-2-5Z"/></svg>
+            </span>
+            <div><span class="leader-card__eyebrow">Clinical leadership</span><h3>Medical Director</h3></div>
+          </div>
+          <p>Provides clinical direction and supports quality of care, professional practice, patient safety and coordination across medical departments.</p>
+        </article>
+
+        <article class="leader-card reveal">
+          <div class="leader-card__top">
+            <span class="leader-card__symbol" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-8-4.5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.5-8 11-8 11Z"/><path d="M8 12h8M12 8v8"/></svg>
+            </span>
+            <div><span class="leader-card__eyebrow">Nursing &amp; patient care</span><h3>Nursing Leadership</h3></div>
+          </div>
+          <p>Supports nursing standards, compassionate bedside care, workforce development and coordinated patient-care practices throughout the hospital.</p>
+        </article>
+
+        <article class="leader-card reveal">
+          <div class="leader-card__top">
+            <span class="leader-card__symbol" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h5"/></svg>
+            </span>
+            <div><span class="leader-card__eyebrow">Hospital operations</span><h3>Operations &amp; Administration</h3></div>
+          </div>
+          <p>Coordinates the operational, administrative and support functions that help clinical teams deliver reliable and efficient services.</p>
+        </article>
+
+        <article class="leader-card reveal">
+          <div class="leader-card__top">
+            <span class="leader-card__symbol" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 7.5 12 12l9-4.5L12 3Z"/><path d="M3 12l9 4.5 9-4.5M3 16.5 12 21l9-4.5"/></svg>
+            </span>
+            <div><span class="leader-card__eyebrow">Quality &amp; safety</span><h3>Quality and Patient Safety</h3></div>
+          </div>
+          <p>Promotes continuous improvement, supports risk management and helps embed quality and patient-safety principles into everyday practice.</p>
+        </article>
+      </div>
+
+      <p class="leadership-note"><strong>Leadership directory:</strong> The roles above describe the hospital’s key leadership functions. Add the current office holders’ approved names, professional titles and photographs before publishing a named leadership directory.</p>
+    </div>
+  </section>
+
   <!-- Governance & Accountability Section -->
   <section class="section section--tint" id="governance">
     <div class="container">
@@ -1968,10 +2158,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
               <h3>Leadership</h3>
               <span class="info-card__tag">Clinician-Led</span>
             </div>
-            <p>Our clinical leadership is drawn from senior consultants in each department. The board includes independent members and a patient representative who rotates annually.</p>
+            <p>Our leadership structure brings together governance, executive management, clinical direction and operational oversight to support responsible decision-making and quality patient care.</p>
           </div>
           <div class="info-card__footer">
-            <span style="font-size:0.8125rem;color:var(--gray-500);">Rotating Patient Board Seat · Independent Governance</span>
+            <a href="#leadership" class="inline-action" style="text-decoration:none;">Meet our leadership structure →</a>
           </div>
         </div>
 
