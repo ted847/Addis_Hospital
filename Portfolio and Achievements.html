@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfolio & Achievements — Horizon General Hospital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box}*{margin:0;padding:0}
+:root{--ink:#0b1b2b;--ink-2:#13293d;--brand:#0e6fbe;--brand-2:#0a5a9c;--brand-3:#e6f2fb;--accent:#14b8a6;--accent-soft:#e6fffb;--sand:#f6f1e8;--paper:#fff;--gray-50:#f7fafc;--gray-100:#eef2f7;--gray-200:#dfe6ee;--gray-300:#c4cfdb;--gray-400:#94a3b8;--gray-500:#6b7c8f;--gray-600:#4b5e72;--gray-700:#2f4156;--gray-800:#1f3145;--red:#e11d48;--radius:1.25rem;--radius-lg:2rem;--shadow-sm:0 1px 2px rgba(11,27,43,.06),0 1px 3px rgba(11,27,43,.04);--shadow-md:0 10px 30px -12px rgba(11,27,43,.18);--shadow-lg:0 30px 60px -20px rgba(11,27,43,.25);--font-serif:'Fraunces',Georgia,serif;--font-sans:'Inter',system-ui,sans-serif}
+html{scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.55;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer;background:none;border:none}img{display:block;max-width:100%}
+a:focus-visible,button:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:.5rem}
+.container{width:100%;max-width:1320px;margin-inline:auto;padding-inline:1.5rem}.app{flex:1}
+.emergency{background:linear-gradient(100deg,#071727,#102d43 65%,#0b3d56);color:#fff;font-size:.8125rem}
+.emergency__inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.75rem;padding-block:.625rem;min-height:2.65rem}
+.emergency__left{display:flex;align-items:center;gap:.625rem}
+.emergency__pulse{width:.5rem;height:.5rem;border-radius:50%;background:#ff4d6a;box-shadow:0 0 0 0 rgba(255,77,106,.7);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,77,106,.7)}70%{box-shadow:0 0 0 10px rgba(255,77,106,0)}100%{box-shadow:0 0 0 0 rgba(255,77,106,0)}}
+.emergency__left b{font-weight:600}.emergency__left a{color:#fff;text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.emergency__link{color:#c9d6e3;display:flex;align-items:center;gap:.375rem;transition:color .2s}.emergency__link:hover{color:#fff}.emergency__link svg{width:.875rem;height:.875rem}
+.hdr{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s,background .3s;box-shadow:0 1px 0 rgba(9,27,45,.035)}
+.hdr.is-scrolled{border-color:var(--gray-200);box-shadow:0 4px 20px -8px rgba(11,27,43,.08);background:rgba(255,255,255,.95)}
+.hdr__inner{display:flex;align-items:center;justify-content:space-between;padding-block:.875rem;gap:1rem}
+.logo{display:flex;align-items:center;gap:.625rem;flex-shrink:0}
+.logo__mark{width:2.5rem;height:2.5rem;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),var(--brand-2));border-radius:.875rem;color:#fff;box-shadow:0 8px 20px -8px rgba(14,111,190,.5);position:relative;isolation:isolate;overflow:hidden}
+.logo__mark::after{content:"";position:absolute;inset:-60%;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.34),transparent 65%);transform:translateX(-70%) rotate(18deg);animation:logoShine 7s cubic-bezier(.2,.8,.2,1) infinite}
+@keyframes logoShine{0%,65%,100%{transform:translateX(-70%) rotate(18deg)}82%{transform:translateX(70%) rotate(18deg)}}
+.logo__mark svg{width:1.25rem;height:1.25rem}
+.logo__text{display:flex;flex-direction:column;line-height:1.1}
+.logo__name{font-family:var(--font-serif);font-weight:600;font-size:1.125rem;letter-spacing:-.01em;color:var(--ink)}
+.logo__sub{font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500);font-weight:500}
+.nav{display:none;gap:1.5rem;align-items:center}
+.nav a{font-size:.875rem;font-weight:500;color:var(--gray-700);position:relative;padding:.25rem 0;transition:color .2s}
+.nav a::after{content:'';position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--brand);transition:width .25s ease}
+.nav a:hover{color:var(--brand)}.nav a:hover::after{width:100%}
+.nav a[aria-current="page"]{color:var(--brand)}
+.nav a[aria-current="page"]::after{width:100%}
+.hdr__actions{display:flex;align-items:center;gap:.5rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.75rem 1.25rem;border-radius:999px;font-size:.875rem;font-weight:600;transition:transform .25s cubic-bezier(.2,.8,.2,1),background .25s,box-shadow .25s,border-color .25s;border:1px solid transparent;white-space:nowrap;cursor:pointer;box-shadow:0 0 0 0 rgba(8,119,201,0)}
+.btn:active{transform:translateY(1px) scale(.985)}
+.btn--primary{background:linear-gradient(135deg,#102d43,#071727);color:#fff;box-shadow:0 9px 22px -13px rgba(7,23,39,.75)}.btn--primary:hover{background:linear-gradient(135deg,#0877c9,#075b9e);transform:translateY(-1px);box-shadow:0 14px 30px -14px rgba(8,119,201,.75)}
+.btn--ghost{border-color:var(--gray-200);color:var(--ink);background:#fff}.btn--ghost:hover{border-color:var(--ink);transform:translateY(-1px)}
+.btn--light{background:#fff;color:var(--ink)}.btn--light:hover{background:var(--sand);transform:translateY(-1px)}
+.btn--accent{background:var(--accent);color:#fff}.btn--accent:hover{background:#0fa396;transform:translateY(-1px)}
+.btn svg{width:1rem;height:1rem}
+.hdr .btn--primary{padding:.625rem 1rem;font-size:.8125rem}
+.burger{display:grid;place-items:center;width:2.5rem;height:2.5rem;border-radius:.75rem;border:1px solid var(--gray-200);background:#fff}
+.burger svg{width:1.125rem;height:1.125rem;stroke:var(--ink)}
+@media(min-width:960px){.nav{display:flex}.burger{display:none}}
+.drawer{position:fixed;inset:0;background:rgba(11,27,43,.5);backdrop-filter:blur(4px);z-index:120;opacity:0;pointer-events:none;transition:opacity .3s}
+.drawer.is-open{opacity:1;pointer-events:auto}
+.drawer__panel{position:absolute;top:0;right:0;bottom:0;width:min(340px,88vw);background:#fff;transform:translateX(100%);transition:transform .35s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;padding:1.5rem;overflow-y:auto;box-shadow:-25px 0 70px -35px rgba(0,0,0,.45)}
+.drawer.is-open .drawer__panel{transform:none}
+.drawer__head{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem}
+.drawer__close{width:2.25rem;height:2.25rem;display:grid;place-items:center;border-radius:.75rem;border:1px solid var(--gray-200)}.drawer__close:hover{background:var(--gray-50)}
+.drawer__nav{display:flex;flex-direction:column;gap:.25rem}
+.drawer__nav a{padding:.875rem .75rem;border-radius:.75rem;font-size:1rem;font-weight:500;color:var(--gray-800);display:flex;justify-content:space-between;align-items:center;transition:background .2s,color .2s,transform .2s}
+.drawer__nav a:hover{background:var(--gray-50);color:var(--brand);transform:translateX(3px)}
+.drawer__nav a svg{width:1rem;height:1rem;color:var(--gray-300)}
+.drawer__nav a.danger{color:var(--red);margin-top:.5rem;border-top:1px solid var(--gray-200);padding-top:1rem}.drawer__nav a.danger:hover{background:#fff1f3}
+.drawer__cta{margin-top:1.5rem;display:flex;flex-direction:column;gap:.5rem}.drawer__cta .btn{width:100%}
+.drawer__foot{margin-top:auto;padding-top:1.5rem;border-top:1px solid var(--gray-200);font-size:.8125rem;color:var(--gray-500);line-height:1.6}
+.drawer__foot a{color:var(--brand);text-decoration:underline}
+
+/* ── PAGE HERO ── */
+.page-hero{position:relative;background:linear-gradient(180deg,#f8fcff 0%,#f0f7fc 55%,#fbfdff 100%);padding-block:5rem 4rem;border-bottom:1px solid var(--gray-200);overflow:hidden;isolation:isolate}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(45rem 35rem at 85% 5%,rgba(23,184,166,.14),transparent 65%),radial-gradient(50rem 35rem at 0% 35%,rgba(8,119,201,.12),transparent 65%);pointer-events:none;z-index:-1}
+.page-hero__inner{position:relative;text-align:center;max-width:52rem;margin-inline:auto}
+.page-hero h1{font-family:var(--font-serif);font-weight:500;font-size:clamp(2.75rem,6.2vw,4.75rem);line-height:.99;letter-spacing:-.045em;color:var(--ink)}
+.page-hero h1 em{font-style:italic;color:#0877c9;position:relative;white-space:nowrap}
+.page-hero h1 em::after{content:'';position:absolute;left:0;right:0;bottom:.06em;height:.12em;background:linear-gradient(90deg,rgba(20,184,166,.35),rgba(20,184,166,0));border-radius:2px;z-index:-1}
+.page-hero p{margin-top:1.5rem;font-size:1.125rem;color:var(--gray-600);line-height:1.75;max-width:40rem;margin-inline:auto}
+.page-hero__actions{margin-top:2rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center}
+
+/* ── SECTION ── */
+.section{padding-block:6rem}
+.section--tint{background:var(--sand)}
+.section-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:1.5rem;margin-bottom:2.75rem}
+.section-head h2{font-family:var(--font-serif);font-size:clamp(2.15rem,3.7vw,3.15rem);font-weight:500;letter-spacing:-.035em;line-height:1.1;color:var(--ink);margin-top:.75rem;max-width:32rem}
+.section-head p{color:var(--gray-600);max-width:30rem;margin-top:.75rem}
+.section-head .link{font-size:.875rem;font-weight:600;color:var(--brand);display:inline-flex;align-items:center;gap:.375rem;white-space:nowrap}
+.section-head .link svg{width:1rem;height:1rem;transition:transform .2s}
+.section-head .link:hover svg{transform:translateX(3px)}
+.kicker{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brand)}
+.kicker::before{content:'';width:1.5rem;height:1px;background:currentColor}
+
+/* ── PORTFOLIO GRID ── */
+.portfolio-grid{display:grid;gap:1.5rem;grid-template-columns:1fr}
+@media(min-width:768px){.portfolio-grid{grid-template-columns:repeat(2,1fr)}}
+.portfolio-card{position:relative;border-radius:1.5rem;overflow:hidden;background:#fff;border:1px solid rgba(9,27,45,.09);box-shadow:0 12px 36px -32px rgba(9,27,45,.42);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .35s;display:flex;flex-direction:column}
+.portfolio-card:hover{transform:translateY(-6px);box-shadow:0 24px 45px -28px rgba(9,27,45,.28);border-color:transparent}
+.portfolio-card__visual{position:relative;height:14rem;overflow:hidden;background:linear-gradient(135deg,#e6f2fb,#d9eaff)}
+.portfolio-card__visual img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.portfolio-card:hover .portfolio-card__visual img{transform:scale(1.06)}
+.portfolio-card__visual::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(7,23,39,.65));pointer-events:none}
+.portfolio-card__tag{position:absolute;top:1rem;left:1rem;z-index:2;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.6);color:var(--brand);font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.375rem .75rem;border-radius:999px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.portfolio-card__tag--accent{color:#0f766e;background:rgba(230,255,251,.92)}
+.portfolio-card__tag--ink{color:#fff;background:rgba(11,27,43,.8)}
+.portfolio-card__year{position:absolute;bottom:1rem;right:1rem;z-index:2;color:#fff;font-family:var(--font-serif);font-size:2rem;font-weight:600;line-height:1;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.portfolio-card__body{padding:1.5rem 1.5rem 1.75rem;display:flex;flex-direction:column;flex:1}
+.portfolio-card__body h3{font-family:var(--font-serif);font-size:1.5rem;font-weight:500;letter-spacing:-.015em;color:var(--ink);line-height:1.2}
+.portfolio-card__body p{margin-top:.75rem;font-size:.9375rem;color:var(--gray-600);line-height:1.65}
+.portfolio-card__meta{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--gray-100)}
+.portfolio-card__meta span{font-size:.8125rem;color:var(--gray-600);display:inline-flex;align-items:center;gap:.375rem}
+.portfolio-card__meta svg{width:.875rem;height:.875rem;color:var(--accent)}
+.portfolio-card__link{margin-top:auto;padding-top:1.25rem;display:inline-flex;align-items:center;gap:.375rem;font-size:.875rem;font-weight:600;color:var(--brand);transition:gap .2s}
+.portfolio-card:hover .portfolio-card__link{gap:.625rem}
+.portfolio-card__link svg{width:.875rem;height:.875rem;transition:transform .2s}
+.portfolio-card:hover .portfolio-card__link svg{transform:translateX(2px)}
+
+/* ── ACHIEVEMENTS ── */
+.achievements-grid{display:grid;gap:1.25rem;grid-template-columns:1fr}
+@media(min-width:768px){.achievements-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.achievements-grid{grid-template-columns:repeat(3,1fr)}}
+.ach{position:relative;background:#fff;border:1px solid rgba(9,27,45,.09);border-radius:1.35rem;padding:1.75rem;transition:transform .3s,box-shadow .3s,border-color .3s;overflow:hidden;display:flex;flex-direction:column}
+.ach:hover{transform:translateY(-5px);box-shadow:0 22px 42px -25px rgba(9,27,45,.32);border-color:transparent}
+.ach__icon{width:3rem;height:3rem;border-radius:1rem;display:grid;place-items:center;background:var(--brand-3);color:var(--brand);margin-bottom:1.25rem;transition:background .25s,color .25s}
+.ach:hover .ach__icon{background:var(--brand);color:#fff}
+.ach__icon svg{width:1.5rem;height:1.5rem}
+.ach h3{font-family:var(--font-serif);font-size:1.25rem;font-weight:500;letter-spacing:-.005em;color:var(--ink);line-height:1.25}
+.ach p{margin-top:.625rem;font-size:.9375rem;color:var(--gray-600);line-height:1.6}
+.ach__meta{margin-top:auto;padding-top:1.25rem;display:flex;flex-wrap:wrap;gap:.5rem}
+.ach__badge{font-size:.6875rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.375rem .75rem;border-radius:999px;background:var(--gray-50);color:var(--gray-600);border:1px solid var(--gray-200)}
+.ach__badge--gold{background:#fffbeb;color:#b45309;border-color:#fde68a}
+.ach__badge--teal{background:var(--accent-soft);color:#0f766e;border-color:#a7f3d0}
+
+/* ── AWARDS STRIP ── */
+.awards-strip{position:relative;border-radius:2rem;padding:3rem 2rem;background:linear-gradient(125deg,#071727,#0c2b43 58%,#07516a);color:#fff;overflow:hidden;margin-block:2rem 0}
+@media(min-width:768px){.awards-strip{padding:4rem 3rem}}
+.awards-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(35rem 25rem at 100% 0%,rgba(23,184,166,.28),transparent 60%),radial-gradient(25rem 20rem at 0% 100%,rgba(8,119,201,.22),transparent 60%);pointer-events:none}
+.awards-strip__inner{position:relative;display:grid;gap:2.5rem}
+@media(min-width:900px){.awards-strip__inner{grid-template-columns:1.1fr .9fr;align-items:center;gap:3.5rem}}
+.awards-strip h2{font-family:var(--font-serif);font-size:clamp(1.875rem,3.5vw,2.75rem);font-weight:500;letter-spacing:-.02em;line-height:1.1}
+.awards-strip p{margin-top:1rem;color:rgba(255,255,255,.8);font-size:1rem;line-height:1.65;max-width:34rem}
+.awards-strip__list{display:flex;flex-direction:column;gap:.75rem}
+.award-item{display:flex;align-items:center;gap:1rem;background:rgba(255,255,255,.07);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.13);padding:1rem 1.25rem;border-radius:1rem;transition:background .25s,border-color .25s}
+.award-item:hover{background:rgba(255,255,255,.11);border-color:rgba(23,184,166,.4)}
+.award-item__icon{width:2.5rem;height:2.5rem;flex-shrink:0;border-radius:.75rem;display:grid;place-items:center;background:rgba(23,184,166,.2);color:var(--accent)}
+.award-item__icon svg{width:1.15rem;height:1.15rem}
+.award-item__text{flex:1}
+.award-item__text strong{display:block;font-size:.9375rem;font-weight:600;color:#fff}
+.award-item__text span{display:block;font-size:.8125rem;color:rgba(255,255,255,.6);margin-top:.125rem}
+
+/* ── TIMELINE ── */
+.timeline{position:relative;display:flex;flex-direction:column;gap:0;margin-top:1rem}
+.timeline::before{content:'';position:absolute;left:1.25rem;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--brand),var(--accent),var(--brand-3));opacity:.35}
+@media(min-width:768px){.timeline::before{left:50%;transform:translateX(-50%)}}
+.tl-item{position:relative;padding-left:3.5rem;padding-bottom:2.5rem}
+.tl-item:last-child{padding-bottom:0}
+@media(min-width:768px){.tl-item{width:50%;padding-left:0;padding-right:2.5rem;align-self:flex-start}.tl-item:nth-child(even){align-self:flex-end;padding-right:0;padding-left:2.5rem;text-align:right}}
+.tl-item__dot{position:absolute;left:.75rem;top:.25rem;width:1.125rem;height:1.125rem;border-radius:50%;background:#fff;border:3px solid var(--brand);box-shadow:0 0 0 4px rgba(14,111,190,.12);z-index:2}
+@media(min-width:768px){.tl-item__dot{left:auto;right:-.5625rem}.tl-item:nth-child(even) .tl-item__dot{left:-.5625rem;right:auto}}
+.tl-item__year{font-family:var(--font-serif);font-size:1.5rem;font-weight:600;color:var(--brand);line-height:1;margin-bottom:.5rem}
+.tl-item h3{font-family:var(--font-serif);font-size:1.25rem;font-weight:500;color:var(--ink);line-height:1.25}
+.tl-item p{margin-top:.5rem;font-size:.9375rem;color:var(--gray-600);line-height:1.6}
+
+/* ── IMPACT ── */
+.impact{background:linear-gradient(135deg,#0b1b2b 0%,#13293d 100%);color:#fff;padding-block:4.5rem;position:relative;overflow:hidden}
+.impact::before{content:'';position:absolute;inset:0;background:radial-gradient(40rem 30rem at 90% 10%,rgba(20,184,166,.15),transparent 60%),radial-gradient(40rem 30rem at 10% 90%,rgba(14,111,190,.18),transparent 60%);pointer-events:none}
+.impact__head{position:relative;text-align:center;max-width:36rem;margin:0 auto 3rem}
+.impact__head h2{font-family:var(--font-serif);font-size:clamp(1.75rem,3vw,2.5rem);font-weight:500;letter-spacing:-.015em}
+.impact__head p{margin-top:.75rem;color:#a9b8c7}
+.impact__grid{position:relative;display:grid;gap:1rem;grid-template-columns:repeat(2,1fr)}
+@media(min-width:768px){.impact__grid{grid-template-columns:repeat(4,1fr)}}
+.impact-stat{padding:1.5rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);text-align:center;transition:background .3s,border-color .3s;backdrop-filter:blur(12px)}
+.impact-stat:hover{background:rgba(255,255,255,.07);border-color:rgba(20,184,166,.4)}
+.impact-stat b{display:block;font-family:var(--font-serif);font-size:clamp(2.25rem,4vw,3rem);font-weight:500;letter-spacing:-.02em;color:#fff;line-height:1;font-variant-numeric:tabular-nums}
+.impact-stat b span{color:var(--accent)}
+.impact-stat span{display:block;margin-top:.75rem;font-size:.8125rem;color:#a9b8c7;text-transform:uppercase;letter-spacing:.1em;font-weight:500}
+
+/* ── CTA ── */
+.cta{position:relative;overflow:hidden;border-radius:2rem;padding:3rem 2rem;color:#fff;background:linear-gradient(120deg,#0877c9,#075b9e 62%,#064a6f);margin-block:5rem;box-shadow:0 30px 70px -38px rgba(8,119,201,.8)}
+@media(min-width:768px){.cta{padding:4rem 3rem}}
+.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(30rem 20rem at 100% 0%,rgba(23,184,166,.35),transparent 60%),radial-gradient(30rem 20rem at 0% 100%,rgba(255,255,255,.12),transparent 60%);pointer-events:none}
+.cta__inner{position:relative;display:grid;gap:2.5rem;align-items:center}
+@media(min-width:960px){.cta__inner{grid-template-columns:1.1fr .9fr;gap:3rem}}
+.cta h2{font-family:var(--font-serif);font-size:clamp(1.875rem,3.5vw,2.75rem);font-weight:500;letter-spacing:-.015em;line-height:1.1}
+.cta p{margin-top:1rem;font-size:1.0625rem;color:rgba(255,255,255,.85);max-width:32rem;line-height:1.6}
+.cta__actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}.cta__actions .btn{padding:.875rem 1.5rem}
+.cta__features{display:grid;gap:.75rem}
+.cta__feature{display:flex;align-items:center;gap:.75rem;background:rgba(255,255,255,.1);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);padding:.875rem 1rem;border-radius:.875rem;font-size:.875rem;font-weight:500}
+.cta__feature svg{width:1.125rem;height:1.125rem;color:var(--accent);flex-shrink:0}
+
+/* ── FOOTER ── */
+.footer{background:radial-gradient(35rem 25rem at 85% 0%,rgba(8,119,201,.17),transparent 65%),#071727;color:#a9b8c7;margin-top:4rem;position:relative;overflow:hidden}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(20,184,166,.5),transparent)}
+.footer__inner{padding-block:4rem 2rem}
+.footer__grid{display:grid;gap:2.5rem;grid-template-columns:1fr}
+@media(min-width:640px){.footer__grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.footer__grid{grid-template-columns:1.5fr 1fr 1fr 1fr}}
+.footer__brand .logo__name{color:#fff}.footer__brand .logo__sub{color:#6b7c8f}
+.footer__about{margin-top:1.25rem;font-size:.875rem;line-height:1.6;max-width:22rem}
+.footer__contact{margin-top:1.5rem;display:flex;flex-direction:column;gap:.5rem;font-size:.875rem}
+.footer__contact a{display:flex;align-items:center;gap:.5rem;transition:color .2s}.footer__contact a:hover{color:#fff}
+.footer__contact svg{width:.875rem;height:.875rem;color:var(--accent);flex-shrink:0}
+.footer h4{color:#fff;font-size:.8125rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;margin-bottom:1rem}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.footer ul a{font-size:.875rem;transition:color .2s}.footer ul a:hover{color:#fff}
+.footer__bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.5rem;margin-top:3rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;font-size:.75rem}
+.footer__emergency{display:inline-flex;align-items:center;gap:.5rem;color:#fff;font-weight:600}
+.footer__emergency::before{content:'';width:.5rem;height:.5rem;border-radius:50%;background:#ff4d6a;animation:pulse 2s infinite}
+
+/* ── MOTION ── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .85s cubic-bezier(.2,.8,.2,1),transform .85s cubic-bezier(.2,.8,.2,1)}
+.reveal.is-in{opacity:1;transform:translateY(0)}
+.scroll-progress{position:fixed;z-index:100;top:0;left:0;width:100%;height:3px;pointer-events:none}
+.scroll-progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,#17b8a6,#0877c9);box-shadow:0 0 12px rgba(23,184,166,.45)}
+.back-top{position:fixed;right:1.25rem;bottom:1.25rem;z-index:45;width:2.9rem;height:2.9rem;border-radius:50%;display:grid;place-items:center;background:#0b263d;color:white;box-shadow:0 12px 30px -12px rgba(7,23,39,.65);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .25s,transform .25s,background .25s}
+.back-top.is-visible{opacity:1;transform:none;pointer-events:auto}
+.back-top:hover{background:#0877c9}
+.back-top svg{width:1.1rem;height:1.1rem}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{animation-duration:0s!important;transition-duration:0s!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+
+<div class="emergency">
+  <div class="container emergency__inner">
+    <div class="emergency__left"><span class="emergency__pulse"></span><span><b>Emergency?</b> Call <a href="tel:907">907</a> — open 24/7</span></div>
+    <div><a href="emergency.html" class="emergency__link">Live ER wait times <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div>
+  </div>
+</div>
+
+<header class="hdr" id="hdr">
+  <div class="container hdr__inner">
+    <a href="index.html" class="logo">
+      <span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span>
+      <span class="logo__text"><span class="logo__name">Horizon</span><span class="logo__sub">General Hospital</span></span>
+    </a>
+    <nav class="nav">
+      <a href="find-a-doctor.html">Find a doctor</a>
+      <a href="departments.html">Departments</a>
+      <a href="projects.html">Projects</a>
+      <a href="portfolio.html" aria-current="page">Portfolio</a>
+      <a href="patients-visitors.html">Patients</a>
+      <a href="about.html">About</a>
+      <a href="news.html">News</a>
+    </nav>
+    <div class="hdr__actions">
+      <a href="book.html" class="btn btn--primary">Book a visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer__panel">
+    <div class="drawer__head">
+      <a href="index.html" class="logo"><span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span><span class="logo__text"><span class="logo__name">Horizon</span><span class="logo__sub">General Hospital</span></span></a>
+      <button class="drawer__close" id="drawerClose" aria-label="Close"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    </div>
+    <nav class="drawer__nav">
+      <a href="find-a-doctor.html">Find a doctor <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="departments.html">Departments <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="projects.html">Projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="portfolio.html" style="color:var(--brand)">Portfolio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="book.html">Book a visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="patients-visitors.html">Patients &amp; visitors <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="about.html">About <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="portal.html">Patient portal <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="contact.html">Contact <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="careers.html">Careers <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="insurance.html">Insurance <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="news.html">News <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="emergency.html" class="danger">Emergency <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+    </nav>
+    <div class="drawer__cta"><a href="book.html" class="btn btn--primary">Book a visit</a><a href="portal.html" class="btn btn--ghost">Patient portal</a></div>
+    <div class="drawer__foot"><p>Emergency? Call <a href="tel:907">907</a></p><p style="margin-top:.25rem">Mon–Sun · 24/7</p></div>
+  </div>
+</div>
+
+<main class="app">
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="container page-hero__inner reveal">
+      <h1>Portfolio &amp; <em>Achievements</em>.</h1>
+      <p>A showcase of our clinical milestones, infrastructure projects, and the recognitions that reflect our commitment to extraordinary care in Addis Ababa.</p>
+      <div class="page-hero__actions">
+        <a href="#portfolio" class="btn btn--primary">Explore portfolio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        <a href="#achievements" class="btn btn--ghost">View achievements</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="section" id="portfolio">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="kicker">Our portfolio</span>
+          <h2>Projects that transformed care.</h2>
+          <p>From new facilities to digital platforms — a selection of the work that defines Horizon.</p>
+        </div>
+        <a href="projects.html" class="link">All projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="portfolio-grid">
+
+        <article class="portfolio-card reveal">
+          <div class="portfolio-card__visual">
+            <span class="portfolio-card__tag">Infrastructure</span>
+            <span class="portfolio-card__year">2026</span>
+            <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=800&q=80&auto=format&fit=crop" alt="East Wing &amp; Surgical Centre" loading="lazy" />
+          </div>
+          <div class="portfolio-card__body">
+            <h3>East Wing &amp; Surgical Centre</h3>
+            <p>A 120-bed expansion with six state-of-the-art operating theatres, an ambulatory care unit, and a rooftop garden for patient recovery.</p>
+            <div class="portfolio-card__meta">
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>120 beds</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>2026 completion</span>
+            </div>
+            <a href="projects.html" class="portfolio-card__link">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </article>
+
+        <article class="portfolio-card reveal">
+          <div class="portfolio-card__visual">
+            <span class="portfolio-card__tag portfolio-card__tag--accent">Community</span>
+            <span class="portfolio-card__year">2024</span>
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80&auto=format&fit=crop" alt="Mobile Health Clinics" loading="lazy" />
+          </div>
+          <div class="portfolio-card__body">
+            <h3>Mobile Health Clinics for Rural Addis</h3>
+            <p>Four fully equipped mobile units bringing primary care, maternal health, and chronic disease screening to underserved communities.</p>
+            <div class="portfolio-card__meta">
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>12k patients/yr</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>4 mobile units</span>
+            </div>
+            <a href="projects.html" class="portfolio-card__link">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </article>
+
+        <article class="portfolio-card reveal">
+          <div class="portfolio-card__visual">
+            <span class="portfolio-card__tag portfolio-card__tag--ink">Digital</span>
+            <span class="portfolio-card__year">2025</span>
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&auto=format&fit=crop" alt="Digital Health Platform" loading="lazy" />
+          </div>
+          <div class="portfolio-card__body">
+            <h3>Horizon Digital Health Platform</h3>
+            <p>A unified patient portal with telemedicine, e-prescriptions, lab results, and AI-assisted triage — making care accessible from anywhere.</p>
+            <div class="portfolio-card__meta">
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>98% uptime</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>24/7 telehealth</span>
+            </div>
+            <a href="projects.html" class="portfolio-card__link">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </article>
+
+        <article class="portfolio-card reveal">
+          <div class="portfolio-card__visual">
+            <span class="portfolio-card__tag portfolio-card__tag--accent">Sustainability</span>
+            <span class="portfolio-card__year">2025</span>
+            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80&auto=format&fit=crop" alt="Solar Energy Program" loading="lazy" />
+          </div>
+          <div class="portfolio-card__body">
+            <h3>Solar &amp; Energy Efficiency Program</h3>
+            <p>Rooftop solar arrays, LED retrofits, and smart HVAC controls reducing the hospital's carbon footprint by 40% while cutting operating costs.</p>
+            <div class="portfolio-card__meta">
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>1.2MW solar</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>40% CO₂ cut</span>
+            </div>
+            <a href="projects.html" class="portfolio-card__link">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section class="section section--tint" id="achievements">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="kicker">Our achievements</span>
+          <h2>Recognized for excellence.</h2>
+          <p>Accreditations, awards, and milestones that reflect our team's dedication.</p>
+        </div>
+      </div>
+      <div class="achievements-grid">
+
+        <article class="ach reveal">
+          <div class="ach__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3>JCI Accreditation</h3>
+          <p>Gold-standard international accreditation for patient safety and clinical quality, awarded in 2023 and renewed in 2025.</p>
+          <div class="ach__meta"><span class="ach__badge ach__badge--gold">Gold seal</span><span class="ach__badge">2023 · 2025</span></div>
+        </article>
+
+        <article class="ach reveal">
+          <div class="ach__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <h3>Best Hospital in Addis Ababa</h3>
+          <p>Voted #1 by patients and healthcare professionals in the 2024 Ethiopian Health Excellence Awards.</p>
+          <div class="ach__meta"><span class="ach__badge ach__badge--gold">Award winner</span><span class="ach__badge">2024</span></div>
+        </article>
+
+        <article class="ach reveal">
+          <div class="ach__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+          <h3>98% Patient Satisfaction</h3>
+          <p>Measured across 2,400+ verified post-discharge reviews — our highest score to date.</p>
+          <div class="ach__meta"><span class="ach__badge ach__badge--teal">Patient-rated</span><span class="ach__badge">2025</span></div>
+        </article>
+
+        <article class="ach reveal">
+          <div class="ach__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/><path d="M12 7v2M12 15v2"/></svg></div>
+          <h3>Center for Maternal Research</h3>
+          <p>Established a dedicated research unit with 8 active clinical trials and 3 university partners across East Africa.</p>
+          <div class="ach__meta"><span class="ach__badge ach__badge--teal">Research</span><span class="ach__badge">2024</span></div>
+        </article>
+
+        <article class="ach reveal">
+          <div class="ach__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+          <h3>Six Languages Spoken</h3>
+          <p>Amharic, English, Oromo, Tigrinya, Arabic, and French — with certified interpreters on call 24/7.</p>
+          <div class="ach__meta"><span class="ach__badge ach__badge--teal">Inclusive care</span><span class="ach__badge">Ongoing</span></div>
+        </article>
+
+        <article class="ach reveal">
+          <div class="ach__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <h3>Zero-Harm Surgery Initiative</h3>
+          <p>Achieved a 0.2% surgical complication rate — among the lowest in the region — through enhanced recovery protocols.</p>
+          <div class="ach__meta"><span class="ach__badge ach__badge--gold">Safety milestone</span><span class="ach__badge">2025</span></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS STRIP -->
+  <section class="section">
+    <div class="container">
+      <div class="awards-strip reveal">
+        <div class="awards-strip__inner">
+          <div>
+            <h2>Accredited. Awarded. Trusted.</h2>
+            <p>Our commitment to quality is recognized by independent bodies and the patients we serve. These are the standards we hold ourselves to every day.</p>
+          </div>
+          <div class="awards-strip__list">
+            <div class="award-item">
+              <div class="award-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/><path d="m9 12 2 2 4-4"/></svg></div>
+              <div class="award-item__text"><strong>JCI Accredited</strong><span>Gold standard since 2023</span></div>
+            </div>
+            <div class="award-item">
+              <div class="award-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <div class="award-item__text"><strong>Best Hospital 2024</strong><span>Ethiopian Health Excellence Awards</span></div>
+            </div>
+            <div class="award-item">
+              <div class="award-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+              <div class="award-item__text"><strong>Top Employer</strong><span>Healthcare workplace 2025</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section section--tint">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="kicker">Our journey</span>
+          <h2>Milestones that shaped us.</h2>
+          <p>From a 40-bed clinic in 2008 to a regional referral centre.</p>
+        </div>
+      </div>
+      <div class="timeline reveal">
+        <div class="tl-item">
+          <div class="tl-item__dot"></div>
+          <div class="tl-item__year">2008</div>
+          <h3>Horizon opens its doors</h3>
+          <p>Founded as a 40-bed general hospital with 6 consultants and a single operating theatre.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-item__dot"></div>
+          <div class="tl-item__year">2012</div>
+          <h3>First accreditation</h3>
+          <p>Received national quality certification and opened the first dedicated maternity wing.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-item__dot"></div>
+          <div class="tl-item__year">2016</div>
+          <h3>Expansion to 120 beds</h3>
+          <p>Added cardiology, orthopedics, and a 24/7 emergency department with trauma bays.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-item__dot"></div>
+          <div class="tl-item__year">2020</div>
+          <h3>Digital transformation</h3>
+          <p>Launched the Horizon Patient Portal, telemedicine, and e-prescriptions across all departments.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-item__dot"></div>
+          <div class="tl-item__year">2023</div>
+          <h3>JCI Gold Accreditation</h3>
+          <p>Awarded the Joint Commission International gold seal for patient safety and clinical quality.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-item__dot"></div>
+          <div class="tl-item__year">2025</div>
+          <h3>East Wing groundbreaking</h3>
+          <p>Began construction on a 120-bed expansion with six new operating theatres and a research centre.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT NUMBERS -->
+  <section class="impact">
+    <div class="container">
+      <div class="impact__head reveal">
+        <h2>Our impact, measured.</h2>
+        <p>Outcomes we publish every year — not marketing, but accountability.</p>
+      </div>
+      <div class="impact__grid">
+        <div class="impact-stat reveal"><b data-count="180">0</b><span>Beds</span></div>
+        <div class="impact-stat reveal"><b data-count="42">0</b><span>Consultants</span></div>
+        <div class="impact-stat reveal"><b data-count="12400">0</b><span>Admissions / yr</span></div>
+        <div class="impact-stat reveal"><b data-count="98">0<span>%</span></b><span>Would return</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="container">
+    <div class="cta reveal">
+      <div class="cta__inner">
+        <div>
+          <span class="kicker" style="color:var(--accent)">Work with us</span>
+          <h2 style="margin-top:.75rem">Ready to build the next milestone?</h2>
+          <p>Partner with Horizon on research, infrastructure, community health, or innovation. Let's create something extraordinary together.</p>
+          <div class="cta__actions">
+            <a href="contact.html" class="btn btn--light">Get in touch <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            <a href="about.html" class="btn btn--accent">About Horizon</a>
+          </div>
+        </div>
+        <div class="cta__features">
+          <div class="cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>JCI-accredited partner</div>
+          <div class="cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Multilingual clinical team</div>
+          <div class="cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Transparent reporting</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="logo"><span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span><span class="logo__text"><span class="logo__name">Horizon</span><span class="logo__sub">General Hospital</span></span></a>
+        <p class="footer__about">Calm, clear care for Addis Ababa since 2008. Accredited, multilingual, and open 24/7 for emergencies.</p>
+        <div class="footer__contact">
+          <a href="tel:+251115550100"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>+251 11 555 0100</a>
+          <a href="mailto:info@horizonhospital.example"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>info@horizonhospital.example</a>
+        </div>
+      </div>
+      <div><h4>Care</h4><ul><li><a href="find-a-doctor.html">Find a doctor</a></li><li><a href="departments.html">Departments</a></li><li><a href="projects.html">Projects</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="book.html">Book a visit</a></li><li><a href="emergency.html">Emergency</a></li></ul></div>
+      <div><h4>Patients</h4><ul><li><a href="patients-visitors.html">Visiting hours</a></li><li><a href="portal.html">Patient portal</a></li><li><a href="insurance.html">Insurance</a></li><li><a href="contact.html">Feedback</a></li></ul></div>
+      <div><h4>Hospital</h4><ul><li><a href="about.html">About us</a></li><li><a href="careers.html">Careers</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    </div>
+    <div class="footer__bottom"><span>© 2025 Horizon General Hospital. Not a substitute for medical advice.</span><span class="footer__emergency">Emergency? Call 907</span></div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  'use strict';
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+  const header = $('#hdr');
+  const drawer = $('#drawer');
+  const burger = $('#burger');
+  const drawerClose = $('#drawerClose');
+  const progress = $('#scrollProgress');
+  const backTop = $('#backTop');
+
+  const closeDrawer = () => {
+    if (!drawer || !burger) return;
+    drawer.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden', 'true');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    burger.focus({ preventScroll: true });
+  };
+  const openDrawer = () => {
+    if (!drawer || !burger) return;
+    drawer.classList.add('is-open');
+    drawer.setAttribute('aria-hidden', 'false');
+    burger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    const firstLink = $('a', drawer);
+    if (firstLink) firstLink.focus({ preventScroll: true });
+  };
+  burger?.addEventListener('click', () => {
+    burger.getAttribute('aria-expanded') === 'true' ? closeDrawer() : openDrawer();
+  });
+  drawerClose?.addEventListener('click', closeDrawer);
+  drawer?.addEventListener('click', e => { if (e.target === drawer) closeDrawer(); });
+  $$('.drawer__nav a, .drawer__cta a', drawer || document).forEach(link => {
+    link.addEventListener('click', () => {
+      drawer?.classList.remove('is-open');
+      drawer?.setAttribute('aria-hidden', 'true');
+      burger?.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && drawer?.classList.contains('is-open')) closeDrawer();
+    if (e.key === 'Tab' && drawer?.classList.contains('is-open')) {
+      const focusable = $$('a, button', drawer).filter(el => !el.hasAttribute('disabled'));
+      const first = focusable[0], last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last?.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first?.focus(); }
+    }
+  });
+
+  const updateScrollUI = () => {
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const percent = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
+    if (progress) progress.style.width = `${Math.min(100, percent)}%`;
+    header?.classList.toggle('is-scrolled', window.scrollY > 8);
+    backTop?.classList.toggle('is-visible', window.scrollY > 600);
+  };
+  window.addEventListener('scroll', updateScrollUI, { passive: true });
+  updateScrollUI();
+
+  backTop?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  });
+
+  // Reveal
+  const revealItems = $$('.reveal');
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -36px 0px' });
+    revealItems.forEach(item => revealObserver.observe(item));
+  } else {
+    revealItems.forEach(item => item.classList.add('is-in'));
+  }
+
+  // Counter animation for impact numbers
+  const animateCounter = el => {
+    if (el.dataset.animated === 'true') return;
+    el.dataset.animated = 'true';
+    const target = Number.parseInt(el.dataset.count, 10);
+    if (!Number.isFinite(target)) return;
+    const suffix = el.querySelector('span')?.outerHTML || '';
+    const duration = 1500;
+    const start = performance.now();
+    const tick = now => {
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 4);
+      el.innerHTML = Math.round(target * eased).toLocaleString() + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+  const counters = $$('.impact-stat b[data-count]');
+  if ('IntersectionObserver' in window) {
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.35 });
+    counters.forEach(c => counterObserver.observe(c));
+  } else {
+    counters.forEach(animateCounter);
+  }
+
+  // Broken image fallback
+  $$('img').forEach(img => {
+    img.addEventListener('error', () => {
+      img.classList.add('image-unavailable');
+      img.alt = img.alt || 'Image unavailable';
+    }, { once: true });
+  });
+})();
+</script>
+<button class="back-top" id="backTop" type="button" aria-label="Back to top" title="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
+</button>
+</body>
+</html>
