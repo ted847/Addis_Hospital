@@ -354,6 +354,27 @@ a,button{-webkit-tap-highlight-color:transparent}
  .reveal{opacity:1;transform:none}
 }
 
+
+/* WHO WE ARE — hospital identity and care overview */
+.about-horizon{position:relative;overflow:hidden;background:#fff}
+.about-horizon__grid{display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:center}
+@media(min-width:900px){.about-horizon__grid{grid-template-columns:.92fr 1.08fr;gap:4.5rem}}
+.about-horizon__visual{position:relative;min-height:22rem}
+.about-horizon__image{width:100%;height:100%;min-height:22rem;max-height:35rem;object-fit:cover;border-radius:1.7rem;box-shadow:0 28px 65px -35px rgba(9,27,45,.45)}
+.about-horizon__stamp{position:absolute;left:-.75rem;bottom:1.5rem;background:#0b263d;color:#fff;padding:1rem 1.2rem;border-radius:1rem;box-shadow:0 16px 35px -18px rgba(9,27,45,.6);max-width:13rem}
+.about-horizon__stamp strong{display:block;font-family:var(--font-serif);font-size:1.35rem;font-weight:500}
+.about-horizon__stamp span{display:block;color:#c5d6e4;font-size:.75rem;margin-top:.2rem}
+.about-horizon__copy h2{font-family:var(--font-serif);font-size:clamp(2.15rem,3.7vw,3.15rem);letter-spacing:-.035em;line-height:1.08;font-weight:500;margin-top:.75rem}
+.about-horizon__copy>p{margin-top:1.1rem;color:var(--gray-600);font-size:1rem;line-height:1.8}
+.about-horizon__pillars{display:grid;grid-template-columns:1fr;gap:.85rem;margin-top:1.6rem}
+@media(min-width:600px){.about-horizon__pillars{grid-template-columns:repeat(2,1fr)}}
+.about-horizon__pillar{display:flex;gap:.75rem;align-items:flex-start;padding:1rem;border:1px solid var(--gray-200);border-radius:1rem;background:#fbfdff}
+.about-horizon__pillar-icon{width:2.4rem;height:2.4rem;flex:0 0 2.4rem;border-radius:.8rem;background:var(--brand-3);color:var(--brand);display:grid;place-items:center}
+.about-horizon__pillar-icon svg{width:1.15rem;height:1.15rem}
+.about-horizon__pillar strong{display:block;font-size:.9rem;color:var(--ink)}
+.about-horizon__pillar span{display:block;font-size:.78rem;color:var(--gray-500);line-height:1.5;margin-top:.2rem}
+.about-horizon__actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.7rem}
+
 </style>
 </head>
 <body>
@@ -422,7 +443,7 @@ a,button{-webkit-tap-highlight-color:transparent}
           Accredited · Multilingual · 24/7 emergency
         </span>
         <h1>Healthcare that feels <em>human</em> again.</h1>
-        <p class="hero__lead">Book an appointment in under a minute, find the right specialist, or check wait times — from any device. Real people, real care, zero friction.</p>
+        <p class="hero__lead">Horizon General Hospital brings medical consultations, specialist care, diagnostic support, treatment and emergency services together around one priority: your health. Explore our services, find a specialist and take the next step in your care.</p>
         <div class="hero__cta">
           <a href="book.html" class="btn btn--primary">Book an appointment
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -480,6 +501,74 @@ a,button{-webkit-tap-highlight-color:transparent}
           <span class="quick__title">Pay a bill</span><span class="quick__desc">View balances, records and prescriptions.</span>
           <svg class="quick__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
         </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- WHO WE ARE -->
+  <section class="section about-horizon" id="about-horizon">
+    <div class="container about-horizon__grid">
+      <div class="about-horizon__visual reveal">
+        <img class="about-horizon__image"
+             src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1100&q=85&auto=format&fit=crop"
+             alt="Healthcare professionals working together in a modern clinical environment"
+             loading="lazy" />
+        <div class="about-horizon__stamp">
+          <strong>Care with purpose.</strong>
+          <span>People first. Every step of the way.</span>
+        </div>
+      </div>
+      <div class="about-horizon__copy reveal">
+        <span class="kicker">Who we are</span>
+        <h2>Healthcare built around people, not just appointments.</h2>
+        <p>
+          Horizon General Hospital is presented as a patient-focused healthcare
+          provider serving the Addis Ababa community. Our purpose is to make
+          quality healthcare easier to access through coordinated medical
+          services, knowledgeable healthcare professionals and a respectful
+          patient experience.
+        </p>
+        <p>
+          We bring different areas of care together — from consultations and
+          specialist assessment to diagnostic support, treatment, emergency
+          attention and follow-up. We aim to help patients and families
+          understand their care, make informed decisions and feel supported
+          throughout their healthcare journey.
+        </p>
+
+        <div class="about-horizon__pillars">
+          <div class="about-horizon__pillar">
+            <span class="about-horizon__pillar-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/><path d="m9 12 2 2 4-4"/></svg>
+            </span>
+            <div><strong>Patient-centred care</strong><span>Respect, clear communication and attention to each patient's needs.</span></div>
+          </div>
+          <div class="about-horizon__pillar">
+            <span class="about-horizon__pillar-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
+            </span>
+            <div><strong>Connected specialties</strong><span>Medical teams and services working together to support continuity of care.</span></div>
+          </div>
+          <div class="about-horizon__pillar">
+            <span class="about-horizon__pillar-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+            </span>
+            <div><strong>Modern healthcare experience</strong><span>Accessible information and practical digital tools for patients.</span></div>
+          </div>
+          <div class="about-horizon__pillar">
+            <span class="about-horizon__pillar-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9"/><path d="M14 3l-4 4 4 4"/><path d="M4 17h9"/><path d="m10 13 4 4-4 4"/></svg>
+            </span>
+            <div><strong>Support beyond the visit</strong><span>Guidance, follow-up and information to help patients manage next steps.</span></div>
+          </div>
+        </div>
+        <div class="about-horizon__actions">
+          <a href="about.html" class="btn btn--primary">Learn more about us
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="services.html" class="btn btn--ghost">Explore our services</a>
+        </div>
       </div>
     </div>
   </section>
