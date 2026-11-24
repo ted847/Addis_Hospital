@@ -2,186 +2,919 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Patients &amp; visitors — Addis Medical Center</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact &amp; feedback — Addis Medical Center</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
-*,*::before,*::after{box-sizing:border-box}*{margin:0;padding:0}
-:root{--ink:#0b1b2b;--brand:#0e6fbe;--brand-2:#0a5a9c;--brand-3:#e6f2fb;--accent:#14b8a6;--accent-soft:#e6fffb;--sand:#f6f1e8;--paper:#fff;--gray-50:#f7fafc;--gray-100:#eef2f7;--gray-200:#dfe6ee;--gray-300:#c4cfdb;--gray-400:#94a3b8;--gray-500:#6b7c8f;--gray-600:#4b5e72;--gray-700:#2f4156;--gray-800:#1f3145;--red:#e11d48;--radius:1.25rem;--radius-lg:2rem;--shadow-sm:0 1px 2px rgba(11,27,43,.06);--shadow-md:0 10px 30px -12px rgba(11,27,43,.18);--font-serif:'Fraunces',Georgia,serif;--font-sans:'Inter',system-ui,sans-serif}
-html{scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.55;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
-a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer;background:none;border:none}img{display:block;max-width:100%}
-a:focus-visible,button:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:.5rem}
-.container{width:100%;max-width:1240px;margin-inline:auto;padding-inline:1.5rem}.app{flex:1}
-.emergency{background:var(--ink);color:#fff;font-size:.8125rem}.emergency__inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.75rem;padding-block:.625rem}.emergency__left{display:flex;align-items:center;gap:.625rem}.emergency__pulse{width:.5rem;height:.5rem;border-radius:50%;background:#ff4d6a;box-shadow:0 0 0 0 rgba(255,77,106,.7);animation:pulse 2s infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,77,106,.7)}70%{box-shadow:0 0 0 10px rgba(255,77,106,0)}100%{box-shadow:0 0 0 0 rgba(255,77,106,0)}}
-.emergency__left b{font-weight:600}.emergency__left a{color:#fff;text-decoration:underline;text-underline-offset:3px;font-weight:600}.emergency__link{color:#c9d6e3;display:flex;align-items:center;gap:.375rem;transition:color .2s}.emergency__link:hover{color:#fff}.emergency__link svg{width:.875rem;height:.875rem}
-.hdr{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s,background .3s}.hdr.is-scrolled{border-color:var(--gray-200);box-shadow:0 4px 20px -8px rgba(11,27,43,.08);background:rgba(255,255,255,.95)}
-.hdr__inner{display:flex;align-items:center;justify-content:space-between;padding-block:.875rem;gap:1rem}.logo{display:flex;align-items:center;gap:.625rem;flex-shrink:0}.logo__mark{width:2.5rem;height:2.5rem;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),var(--brand-2));border-radius:.875rem;color:#fff;box-shadow:0 8px 20px -8px rgba(14,111,190,.5)}.logo__mark svg{width:1.25rem;height:1.25rem}.logo__text{display:flex;flex-direction:column;line-height:1.1}.logo__name{font-family:var(--font-serif);font-weight:600;font-size:1.125rem;color:var(--ink)}.logo__sub{font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500);font-weight:500}
-.nav{display:none;gap:1.5rem;align-items:center}.nav a{font-size:.875rem;font-weight:500;color:var(--gray-700);position:relative;padding:.25rem 0;transition:color .2s}.nav a::after{content:'';position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--brand);transition:width .25s ease}.nav a:hover{color:var(--brand)}.nav a:hover::after{width:100%}
-.hdr__actions{display:flex;align-items:center;gap:.5rem}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.75rem 1.25rem;border-radius:999px;font-size:.875rem;font-weight:600;transition:transform .2s,background .2s,box-shadow .2s;border:1px solid transparent;white-space:nowrap;cursor:pointer}.btn--primary{background:var(--ink);color:#fff}.btn--primary:hover{background:var(--brand);transform:translateY(-1px);box-shadow:0 12px 24px -12px rgba(14,111,190,.6)}.btn--ghost{border-color:var(--gray-200);color:var(--ink);background:#fff}.btn--ghost:hover{border-color:var(--ink);transform:translateY(-1px)}.btn--light{background:#fff;color:var(--ink)}.btn--light:hover{background:var(--sand)}.btn--accent{background:var(--accent);color:#fff}.btn--accent:hover{background:#0fa396}.btn svg{width:1rem;height:1rem}.hdr .btn--primary{padding:.625rem 1rem;font-size:.8125rem}
-.burger{display:grid;place-items:center;width:2.5rem;height:2.5rem;border-radius:.75rem;border:1px solid var(--gray-200);background:#fff}.burger svg{width:1.125rem;height:1.125rem;stroke:var(--ink)}
-@media(min-width:960px){.nav{display:flex}.burger{display:none}}
-.drawer{position:fixed;inset:0;background:rgba(11,27,43,.5);backdrop-filter:blur(4px);z-index:80;opacity:0;pointer-events:none;transition:opacity .3s}.drawer.is-open{opacity:1;pointer-events:auto}
-.drawer__panel{position:absolute;top:0;right:0;bottom:0;width:min(340px,88vw);background:#fff;transform:translateX(100%);transition:transform .35s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;padding:1.5rem;overflow-y:auto}.drawer.is-open .drawer__panel{transform:none}
-.drawer__head{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem}.drawer__close{width:2.25rem;height:2.25rem;display:grid;place-items:center;border-radius:.75rem;border:1px solid var(--gray-200)}
-.drawer__nav{display:flex;flex-direction:column;gap:.25rem}.drawer__nav a{padding:.875rem .75rem;border-radius:.75rem;font-size:1rem;font-weight:500;color:var(--gray-800);display:flex;justify-content:space-between;align-items:center;transition:background .2s}.drawer__nav a:hover{background:var(--gray-50)}.drawer__nav a svg{width:1rem;height:1rem;color:var(--gray-300)}.drawer__nav a.danger{color:var(--red);margin-top:.5rem;border-top:1px solid var(--gray-200);padding-top:1rem}.drawer__cta{margin-top:1.5rem;display:flex;flex-direction:column;gap:.5rem}.drawer__cta .btn{width:100%}.drawer__foot{margin-top:auto;padding-top:1.5rem;border-top:1px solid var(--gray-200);font-size:.8125rem;color:var(--gray-500)}.drawer__foot a{color:var(--brand);text-decoration:underline}
-.page-hero{position:relative;background:linear-gradient(180deg,#fbfdff 0%,#f4f9ff 100%);padding-block:4rem 5rem;border-bottom:1px solid var(--gray-200);overflow:hidden}.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(50rem 30rem at 90% 0%,rgba(20,184,166,.10),transparent 60%);pointer-events:none}
-.page-hero__inner{position:relative;text-align:center;max-width:44rem;margin-inline:auto}.page-hero h1{font-family:var(--font-serif);font-weight:500;font-size:clamp(2.5rem,5.5vw,4rem);line-height:1;letter-spacing:-.02em;color:var(--ink)}.page-hero h1 em{font-style:italic;color:var(--brand)}.page-hero p{margin-top:1.5rem;font-size:1.0625rem;color:var(--gray-600);line-height:1.6}
-.section{padding-block:5rem}.section--tint{background:var(--sand)}
-.kicker{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brand)}.kicker::before{content:'';width:1.5rem;height:1px;background:currentColor}
-.section-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:1.5rem;margin-bottom:2.5rem}.section-head h2{font-family:var(--font-serif);font-size:clamp(1.875rem,3vw,2.5rem);font-weight:500;letter-spacing:-.015em;line-height:1.1;color:var(--ink);margin-top:.75rem;max-width:32rem}.section-head p{color:var(--gray-600);max-width:30rem;margin-top:.75rem}
-/* GUIDE */
-.guide{display:grid;gap:1rem;grid-template-columns:1fr;counter-reset:step}@media(min-width:640px){.guide{grid-template-columns:repeat(2,1fr)}}@media(min-width:1024px){.guide{grid-template-columns:repeat(4,1fr)}}
-.step{background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius);padding:1.75rem;position:relative;transition:transform .25s,box-shadow .25s,border-color .25s;counter-increment:step}.step:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:transparent}.step::before{content:counter(step,decimal-leading-zero);position:absolute;top:1rem;right:1.25rem;font-family:var(--font-serif);font-size:2.5rem;font-style:italic;color:var(--gray-100);line-height:1;font-weight:500}
-.step__icon{width:2.75rem;height:2.75rem;border-radius:.875rem;display:grid;place-items:center;background:var(--brand-3);color:var(--brand);margin-bottom:1rem}.step__icon svg{width:1.25rem;height:1.25rem}
-.step h3{font-family:var(--font-serif);font-size:1.125rem;font-weight:500;color:var(--ink);line-height:1.25;position:relative;z-index:1}.step p{margin-top:.5rem;font-size:.875rem;color:var(--gray-600);line-height:1.55}
-/* INFO */
-.info-bar{background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius);padding:1.5rem;box-shadow:var(--shadow-sm);display:grid;gap:1rem;grid-template-columns:1fr;margin-bottom:3rem}@media(min-width:768px){.info-bar{grid-template-columns:repeat(3,1fr)}}
-.info-bar__item{display:flex;align-items:flex-start;gap:.75rem}.info-bar__item svg{width:1.25rem;height:1.25rem;color:var(--brand);flex-shrink:0;margin-top:2px}.info-bar__label{font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--gray-500)}.info-bar__value{font-size:.9375rem;font-weight:500;color:var(--ink);margin-top:.125rem}.info-bar__value a{color:var(--brand);text-decoration:underline}
-/* CARDS */
-.grid-2{display:grid;gap:1.5rem;grid-template-columns:1fr}@media(min-width:768px){.grid-2{grid-template-columns:repeat(2,1fr)}}
-.card{background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius);padding:1.75rem;transition:border-color .3s,box-shadow .3s}.card:hover{border-color:var(--brand);box-shadow:var(--shadow-sm)}.card h2{font-family:var(--font-serif);font-size:1.25rem;font-weight:500;color:var(--ink);margin-bottom:1rem}
-.card ul{list-style:none;display:flex;flex-direction:column;gap:.75rem}.card li{display:flex;gap:.5rem;font-size:.9375rem;color:var(--gray-600);line-height:1.5}.card li::before{content:'';width:.375rem;height:.375rem;border-radius:50%;background:var(--brand);flex-shrink:0;margin-top:.5rem}
-/* CTA */
-.cta{position:relative;overflow:hidden;border-radius:var(--radius-lg);padding:3rem 2rem;color:#fff;background:linear-gradient(135deg,var(--brand) 0%,var(--brand-2) 100%);margin-block:2rem 5rem}@media(min-width:768px){.cta{padding:4rem 3rem}}.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(30rem 20rem at 100% 0%,rgba(20,184,166,.35),transparent 60%);pointer-events:none}
-.cta__inner{position:relative;display:grid;gap:2rem;align-items:center;text-align:center}@media(min-width:768px){.cta__inner{grid-template-columns:1fr auto;text-align:left;gap:3rem}}
-.cta h2{font-family:var(--font-serif);font-size:clamp(1.75rem,3vw,2.5rem);font-weight:500;letter-spacing:-.015em;line-height:1.1}.cta p{margin-top:.75rem;color:rgba(255,255,255,.85);max-width:36rem;font-size:.9375rem}.cta__actions{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center}@media(min-width:768px){.cta__actions{justify-content:flex-end}}.cta__actions .btn{padding:.875rem 1.5rem}
-.footer{background:var(--ink);color:#a9b8c7;margin-top:2rem;position:relative;overflow:hidden}.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(20,184,166,.5),transparent)}
-.footer__inner{padding-block:4rem 2rem}.footer__grid{display:grid;gap:2.5rem;grid-template-columns:1fr}@media(min-width:640px){.footer__grid{grid-template-columns:repeat(2,1fr)}}@media(min-width:1024px){.footer__grid{grid-template-columns:1.5fr 1fr 1fr 1fr}}
-.footer__brand .logo__name{color:#fff}.footer__brand .logo__sub{color:#6b7c8f}.footer__about{margin-top:1.25rem;font-size:.875rem;line-height:1.6;max-width:22rem}.footer__contact{margin-top:1.5rem;display:flex;flex-direction:column;gap:.5rem;font-size:.875rem}.footer__contact a{display:flex;align-items:center;gap:.5rem;transition:color .2s}.footer__contact a:hover{color:#fff}.footer__contact svg{width:.875rem;height:.875rem;color:var(--accent);flex-shrink:0}
-.footer h4{color:#fff;font-size:.8125rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;margin-bottom:1rem}.footer ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}.footer ul a{font-size:.875rem;transition:color .2s}.footer ul a:hover{color:#fff}
-.footer__bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.5rem;margin-top:3rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:.75rem}.footer__emergency{display:inline-flex;align-items:center;gap:.5rem;color:#fff;font-weight:600}.footer__emergency::before{content:'';width:.5rem;height:.5rem;border-radius:50%;background:#ff4d6a;animation:pulse 2s infinite}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}.reveal.is-in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{animation-duration:0s!important;transition-duration:0s!important}}
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
 
-/* Addis Medical Center visual refinement */
-img{filter:saturate(1.12) contrast(1.04)}
+:root {
+  --ink: #0b1b2b;
+  --ink-2: #13293d;
+  --brand: #0e6fbe;
+  --brand-2: #0a5a9c;
+  --brand-3: #e6f2fb;
+  --accent: #14b8a6;
+  --accent-dark: #0d9488;
+  --accent-soft: #e6fffb;
+  --sand: #f6f1e8;
+  --sand-2: #ede5d8;
+  --ivory: #fcfaf6;
+  --paper: #ffffff;
+  --gray-50: #f7fafc;
+  --gray-100: #eef2f7;
+  --gray-200: #dfe6ee;
+  --gray-300: #c4cfdb;
+  --gray-400: #94a3b8;
+  --gray-500: #6b7c8f;
+  --gray-600: #4b5e72;
+  --gray-700: #2f4156;
+  --gray-800: #1f3145;
+  --red: #e11d48;
+  --em-50: #ecfdf5;
+  --em-200: #a7f3d0;
+  --em-800: #065f46;
+  --em-900: #064e3b;
+  --radius-sm: 0.75rem;
+  --radius: 1.25rem;
+  --radius-lg: 2rem;
+  --shadow-xs: 0 1px 2px rgba(11, 27, 43, 0.05);
+  --shadow-sm: 0 1px 2px rgba(11, 27, 43, 0.06), 0 1px 3px rgba(11, 27, 43, 0.04);
+  --shadow-md: 0 10px 30px -12px rgba(11, 27, 43, 0.18), 0 4px 12px -4px rgba(11, 27, 43, 0.08);
+  --shadow-lg: 0 30px 60px -20px rgba(11, 27, 43, 0.25), 0 12px 24px -8px rgba(11, 27, 43, 0.12);
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-sans);
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.55;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; cursor: pointer; background: none; border: none; }
+img, svg { display: block; max-width: 100%; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; border-radius: 0.5rem; }
+.container { width: 100%; max-width: 1240px; margin-inline: auto; padding-inline: 1.5rem; }
+.app { flex: 1; }
+
+/* Emergency Top Strip */
+.emergency { background: var(--ink); color: #fff; font-size: 0.8125rem; position: relative; z-index: 60; }
+.emergency__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; padding-block: 0.625rem; }
+.emergency__left { display: flex; align-items: center; gap: 0.625rem; }
+.emergency__pulse { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: #ff4d6a; box-shadow: 0 0 0 0 rgba(255, 77, 106, 0.7); animation: pulse 2s infinite; flex-shrink: 0; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255, 77, 106, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(255, 77, 106, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 77, 106, 0); } }
+.emergency__left b { font-weight: 600; }
+.emergency__left a { color: #fff; text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
+.emergency__link { color: #c9d6e3; display: flex; align-items: center; gap: 0.375rem; transition: color 0.2s; }
+.emergency__link:hover { color: #fff; }
+.emergency__link svg { width: 0.875rem; height: 0.875rem; }
+
+/* Sticky Header */
+.hdr { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, 0.85); backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px); border-bottom: 1px solid transparent; transition: border-color 0.3s, box-shadow 0.3s, background 0.3s; }
+.hdr.is-scrolled { border-color: var(--gray-200); box-shadow: 0 4px 20px -8px rgba(11, 27, 43, 0.08); background: rgba(255, 255, 255, 0.95); }
+.hdr__inner { display: flex; align-items: center; justify-content: space-between; padding-block: 0.875rem; gap: 1rem; }
+.logo { display: flex; align-items: center; gap: 0.625rem; flex-shrink: 0; }
+.logo__mark { width: 2.5rem; height: 2.5rem; display: grid; place-items: center; background: linear-gradient(135deg, var(--brand), var(--brand-2)); border-radius: 0.875rem; color: #fff; box-shadow: 0 8px 20px -8px rgba(14, 111, 190, 0.5); transition: transform 0.25s var(--ease-out); }
+.logo:hover .logo__mark { transform: scale(1.04) rotate(-3deg); }
+.logo__mark svg { width: 1.25rem; height: 1.25rem; }
+.logo__text { display: flex; flex-direction: column; line-height: 1.1; }
+.logo__name { font-family: var(--font-serif); font-weight: 600; font-size: 1.125rem; letter-spacing: -0.01em; color: var(--ink); }
+.logo__sub { font-size: 0.6875rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-500); font-weight: 500; }
+
+.nav { display: none; gap: 1.4rem; align-items: center; }
+.nav a { font-size: 0.875rem; font-weight: 500; color: var(--gray-700); position: relative; padding: 0.25rem 0; transition: color 0.2s; }
+.nav a::after { content: ''; position: absolute; left: 0; bottom: -2px; height: 2px; width: 0; background: var(--brand); transition: width 0.25s ease; }
+.nav a:hover { color: var(--brand); }
+.nav a:hover::after { width: 100%; }
+.nav a[aria-current="page"] { color: var(--brand); }
+.nav a[aria-current="page"]::after { width: 100%; }
+.hdr__actions { display: flex; align-items: center; gap: 0.5rem; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem 1.25rem; border-radius: 999px; font-size: 0.875rem; font-weight: 600; transition: transform 0.2s, background 0.2s, box-shadow 0.2s, border-color 0.2s; border: 1px solid transparent; white-space: nowrap; cursor: pointer; }
+.btn:active { transform: scale(0.98); }
+.btn--primary { background: var(--ink); color: #fff; }
+.btn--primary:hover { background: var(--brand); transform: translateY(-1px); box-shadow: 0 12px 24px -12px rgba(14, 111, 190, 0.6); }
+.btn--brand { background: var(--brand); color: #fff; }
+.btn--brand:hover { background: var(--brand-2); transform: translateY(-1px); }
+.btn--ghost { border-color: var(--gray-200); color: var(--ink); background: #fff; }
+.btn--ghost:hover { border-color: var(--ink); transform: translateY(-1px); }
+.btn--soft { background: var(--brand-3); color: var(--brand-2); border-color: rgba(14, 111, 190, 0.14); }
+.btn--soft:hover { background: var(--brand); color: #fff; transform: translateY(-1px); }
+.btn--light { background: #fff; color: var(--ink); }
+.btn--light:hover { background: var(--sand); transform: translateY(-1px); }
+.btn--accent { background: var(--accent); color: #fff; }
+.btn--accent:hover { background: #0fa396; transform: translateY(-1px); }
+.btn--sm { padding: 0.45rem 0.85rem; font-size: 0.78rem; gap: 0.35rem; }
+.btn svg { width: 1rem; height: 1rem; }
+.btn--sm svg { width: 0.85rem; height: 0.85rem; }
+.hdr .btn--primary { padding: 0.625rem 1rem; font-size: 0.8125rem; }
+.burger { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border-radius: 0.75rem; border: 1px solid var(--gray-200); background: #fff; }
+.burger svg { width: 1.125rem; height: 1.125rem; stroke: var(--ink); }
+.burger:hover { background: var(--gray-50); }
+@media (min-width: 960px) { .nav { display: flex; } .burger { display: none; } }
+
+/* Drawer */
+.drawer { position: fixed; inset: 0; background: rgba(11, 27, 43, 0.5); backdrop-filter: blur(4px); z-index: 80; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+.drawer.is-open { opacity: 1; pointer-events: auto; }
+.drawer__panel { position: absolute; top: 0; right: 0; bottom: 0; width: min(340px, 88vw); background: #fff; transform: translateX(100%); transition: transform 0.35s var(--ease-out); display: flex; flex-direction: column; padding: 1.5rem; overflow-y: auto; }
+.drawer.is-open .drawer__panel { transform: none; }
+.drawer__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+.drawer__close { width: 2.25rem; height: 2.25rem; display: grid; place-items: center; border-radius: 0.75rem; border: 1px solid var(--gray-200); }
+.drawer__close:hover { background: var(--gray-50); }
+.drawer__nav { display: flex; flex-direction: column; gap: 0.25rem; }
+.drawer__nav a { padding: 0.875rem 0.75rem; border-radius: 0.75rem; font-size: 1rem; font-weight: 500; color: var(--gray-800); display: flex; justify-content: space-between; align-items: center; transition: background 0.2s; }
+.drawer__nav a:hover, .drawer__nav a[aria-current="page"] { background: var(--brand-3); color: var(--brand); }
+.drawer__nav a svg { width: 1rem; height: 1rem; color: var(--gray-300); }
+.drawer__nav a.danger { color: var(--red); margin-top: 0.5rem; border-top: 1px solid var(--gray-200); padding-top: 1rem; }
+.drawer__nav a.danger:hover { background: #fff1f3; }
+.drawer__cta { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.drawer__cta .btn { width: 100%; }
+.drawer__foot { margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--gray-200); font-size: 0.8125rem; color: var(--gray-500); line-height: 1.6; }
+.drawer__foot a { color: var(--brand); text-decoration: underline; }
+
+/* Hero */
+.page-hero { position: relative; background: linear-gradient(180deg, #fbfdff 0%, #f4f9ff 100%); padding-block: 4rem 4.75rem; border-bottom: 1px solid var(--gray-200); overflow: hidden; }
+.page-hero__grid-bg { position: absolute; inset: 0; background-image: linear-gradient(to right, rgba(14, 111, 190, 0.045) 1px, transparent 1px), linear-gradient(to bottom, rgba(14, 111, 190, 0.045) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse 85% 80% at 50% 45%, #000 35%, transparent 100%); -webkit-mask-image: radial-gradient(ellipse 85% 80% at 50% 45%, #000 35%, transparent 100%); pointer-events: none; }
+.page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(50rem 30rem at 90% 0%, rgba(20, 184, 166, 0.11), transparent 60%), radial-gradient(40rem 30rem at 0% 100%, rgba(14, 111, 190, 0.09), transparent 60%); pointer-events: none; }
+.page-hero__layout { position: relative; display: grid; gap: 2.75rem; align-items: center; }
+@media (min-width: 960px) { .page-hero__layout { grid-template-columns: 1.12fr 0.88fr; gap: 3.5rem; } }
+.kicker { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brand); }
+.kicker::before { content: ''; width: 1.5rem; height: 1.5px; background: currentColor; }
+.page-hero h1 { margin-top: 1rem; font-family: var(--font-serif); font-weight: 500; font-size: clamp(2.5rem, 5.2vw, 4rem); line-height: 1.03; letter-spacing: -0.025em; color: var(--ink); }
+.page-hero h1 em { font-style: italic; color: var(--brand); }
+.page-hero p.hero-lead { margin-top: 1.35rem; font-size: 1.0625rem; color: var(--gray-600); line-height: 1.65; max-width: 38rem; }
+.hero-actions { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.hero-quick-meta { margin-top: 1.75rem; display: flex; flex-wrap: wrap; gap: 0.65rem 1.25rem; font-size: 0.825rem; color: var(--gray-600); font-weight: 500; }
+.hero-quick-meta span { display: inline-flex; align-items: center; gap: 0.4rem; }
+
+/* Campus Map Card */
+.campus-map-card { position: relative; background: #fff; border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 1.5rem; box-shadow: var(--shadow-lg); overflow: hidden; }
+.campus-map-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--brand), var(--accent)); }
+.campus-map-card__head { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
+.campus-badge { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.3rem 0.75rem; border-radius: 999px; background: var(--accent-soft); color: var(--accent-dark); font-size: 0.75rem; font-weight: 600; }
+.campus-coords { font-size: 0.72rem; font-weight: 600; color: var(--gray-500); font-variant-numeric: tabular-nums; }
+.campus-svg-frame { background: linear-gradient(150deg, #f4f9ff 0%, var(--sand) 100%); border: 1px solid rgba(14, 111, 190, 0.12); border-radius: var(--radius); padding: 0.75rem; }
+.campus-map-card__foot { margin-top: 1rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; padding-top: 0.85rem; border-top: 1px solid var(--gray-100); }
+.campus-map-card__addr { font-size: 0.825rem; color: var(--gray-700); font-weight: 500; }
+.campus-map-card__addr strong { display: block; color: var(--ink); font-weight: 600; }
+
+/* Sections */
+.section { padding-block: 4.75rem; }
+.section--tint { background: var(--sand); border-block: 1px solid rgba(11, 27, 43, 0.06); }
+.section-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1.5rem; margin-bottom: 2.5rem; }
+.section-head h2 { font-family: var(--font-serif); font-size: clamp(1.875rem, 3vw, 2.5rem); font-weight: 500; letter-spacing: -0.015em; line-height: 1.1; color: var(--ink); margin-top: 0.75rem; max-width: 34rem; }
+.section-head p { color: var(--gray-600); max-width: 32rem; margin-top: 0.75rem; }
+
+/* Desks */
+.desks-grid { display: grid; gap: 1.25rem; grid-template-columns: 1fr; margin-bottom: 3rem; }
+@media (min-width: 860px) { .desks-grid { grid-template-columns: repeat(3, 1fr); } }
+.desk-card { background: #fff; border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between; gap: 1.25rem; transition: transform 0.25s var(--ease-out), box-shadow 0.25s, border-color 0.25s; }
+.desk-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: rgba(14, 111, 190, 0.3); }
+.desk-card__top { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; margin-bottom: 1rem; }
+.desk-card__icon { width: 2.75rem; height: 2.75rem; border-radius: 0.9rem; display: grid; place-items: center; background: var(--brand-3); color: var(--brand); flex-shrink: 0; }
+.desk-card__icon svg { width: 1.35rem; height: 1.35rem; }
+.desk-card__hours { font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.7rem; border-radius: 999px; background: var(--gray-50); border: 1px solid var(--gray-200); color: var(--gray-600); }
+.desk-card h3 { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 500; color: var(--ink); }
+.desk-card p { margin-top: 0.45rem; font-size: 0.9rem; color: var(--gray-600); line-height: 1.58; }
+.desk-card__channels { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 1rem; border-top: 1px solid var(--gray-100); font-size: 0.835rem; }
+.channel-line { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
+.channel-line a { color: var(--brand); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.copy-mini { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.28rem 0.6rem; border-radius: 999px; border: 1px solid var(--gray-200); background: var(--gray-50); color: var(--gray-700); font-size: 0.72rem; font-weight: 600; flex-shrink: 0; transition: all 0.18s; }
+.copy-mini:hover { border-color: var(--brand); color: var(--brand); background: var(--brand-3); }
+.copy-mini.is-copied { background: var(--em-50); border-color: var(--em-200); color: var(--em-800); }
+.desk-card__foot { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+/* Contact grid */
+.contact-grid { display: grid; gap: 2rem; grid-template-columns: 1fr; }
+@media (min-width: 960px) { .contact-grid { grid-template-columns: 0.95fr 1.15fr; align-items: start; } }
+.contact-info { background: #fff; border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow-sm); }
+.contact-info h3 { font-family: var(--font-serif); font-size: 1.35rem; font-weight: 500; color: var(--ink); margin-bottom: 1.25rem; }
+.info-row { display: flex; gap: 0.85rem; padding: 0.85rem 0; border-bottom: 1px solid var(--gray-100); }
+.info-row:last-of-type { border-bottom: 0; padding-bottom: 0; }
+.info-row svg { width: 1.15rem; height: 1.15rem; color: var(--brand); flex-shrink: 0; margin-top: 0.2rem; }
+.info-row__content { flex: 1; min-width: 0; }
+.info-row .label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-500); }
+.info-row .value { font-size: 0.9375rem; color: var(--ink); margin-top: 0.15rem; font-weight: 500; display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap; }
+.info-row .value a { color: var(--brand); text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.map-link { margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 600; color: var(--brand); }
+.map-link svg { width: 0.875rem; height: 0.875rem; }
+
+/* Form */
+.form-card { background: #fff; border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow-sm); }
+.form-row-2 { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+@media (min-width: 560px) { .form-row-2 { grid-template-columns: 1fr 1fr; } }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.15rem; }
+.form-group label { font-size: 0.875rem; font-weight: 600; color: var(--gray-700); }
+.form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.75rem 1rem; font-size: 0.9375rem; border: 1px solid var(--gray-300); border-radius: 0.75rem; background: #fff; color: var(--ink); font-family: inherit; transition: border-color 0.2s, box-shadow 0.2s; }
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px rgba(14, 111, 190, 0.15); }
+.form-group textarea { min-height: 6.5rem; resize: vertical; }
+.topic-context-box { background: var(--brand-3); border: 1px solid rgba(14, 111, 190, 0.18); border-radius: var(--radius-sm); padding: 0.95rem 1.1rem; margin-bottom: 1.15rem; display: flex; flex-direction: column; gap: 0.75rem; }
+.topic-context-box__top { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; font-size: 0.835rem; color: var(--brand-2); line-height: 1.5; }
+.topic-context-box__top strong { display: block; font-weight: 700; color: var(--ink); margin-bottom: 0.15rem; }
+.topic-context-box__sla { flex-shrink: 0; font-size: 0.72rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 999px; background: #fff; color: var(--brand-2); border: 1px solid rgba(14, 111, 190, 0.2); }
+.rating-header { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap; }
+.rating-sentiment { font-size: 0.8rem; font-weight: 600; color: var(--brand-2); background: var(--gray-50); border: 1px solid var(--gray-200); padding: 0.2rem 0.65rem; border-radius: 999px; }
+.rating { display: flex; gap: 0.5rem; margin-top: 0.35rem; }
+.rating button { width: 2.85rem; height: 2.85rem; border-radius: 0.75rem; border: 1px solid var(--gray-300); background: #fff; color: var(--gray-600); font-weight: 700; font-size: 0.95rem; display: grid; place-items: center; transition: all 0.2s; }
+.rating button:hover { border-color: var(--brand); color: var(--brand); transform: translateY(-1px); }
+.rating button.active { border-color: var(--brand); background: var(--brand); color: #fff; box-shadow: 0 6px 14px -6px rgba(14, 111, 190, 0.6); }
+.form-submit { width: 100%; padding: 0.9rem 1.25rem; background: var(--ink); color: #fff; border-radius: 999px; font-size: 0.9375rem; font-weight: 600; border: 1px solid transparent; cursor: pointer; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; margin-top: 0.35rem; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; }
+.form-submit:hover { background: var(--brand); transform: translateY(-1px); box-shadow: 0 12px 24px -12px rgba(14, 111, 190, 0.6); }
+.form-hint { margin-top: 0.75rem; font-size: 0.78rem; color: var(--gray-500); text-align: center; }
+.receipt-card { display: none; padding: 1.75rem; background: var(--em-50); border: 1px solid var(--em-200); border-radius: var(--radius); color: var(--em-900); }
+.receipt-card.show { display: block; }
+.receipt-card__badge { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--em-800); background: #fff; border: 1px solid var(--em-200); padding: 0.25rem 0.65rem; border-radius: 999px; }
+.receipt-card h3 { margin-top: 0.85rem; font-family: var(--font-serif); font-size: 1.5rem; font-weight: 500; color: var(--em-900); line-height: 1.2; }
+.receipt-card__lead { margin-top: 0.5rem; font-size: 0.925rem; color: var(--em-800); line-height: 1.58; }
+.receipt-id-bar { margin-top: 1.15rem; padding: 0.85rem 1rem; background: #fff; border: 1px solid var(--em-200); border-radius: var(--radius-sm); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; }
+.receipt-id-bar code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 1rem; font-weight: 700; color: var(--em-900); letter-spacing: 0.04em; }
+.receipt-summary-grid { margin-top: 1rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.65rem; }
+@media (max-width: 500px) { .receipt-summary-grid { grid-template-columns: 1fr; } }
+.receipt-meta-item { background: rgba(255, 255, 255, 0.8); border: 1px solid rgba(6, 95, 70, 0.14); border-radius: 0.7rem; padding: 0.7rem 0.85rem; }
+.receipt-meta-item span { display: block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--em-800); opacity: 0.8; }
+.receipt-meta-item strong { display: block; margin-top: 0.15rem; font-size: 0.875rem; color: var(--em-900); }
+.receipt-actions { margin-top: 1.35rem; display: flex; flex-wrap: wrap; gap: 0.65rem; }
+
+/* CTA */
+.cta { position: relative; overflow: hidden; border-radius: var(--radius-lg); padding: 3rem 2rem; color: #fff; background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%); margin-block: 2.5rem 5rem; box-shadow: var(--shadow-lg); }
+@media (min-width: 768px) { .cta { padding: 4rem 3rem; } }
+.cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(30rem 20rem at 100% 0%, rgba(20, 184, 166, 0.35), transparent 60%); pointer-events: none; }
+.cta__inner { position: relative; display: grid; gap: 2rem; align-items: center; text-align: center; }
+@media (min-width: 768px) { .cta__inner { grid-template-columns: 1fr auto; text-align: left; gap: 3rem; } }
+.cta h2 { font-family: var(--font-serif); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 500; letter-spacing: -0.015em; line-height: 1.1; }
+.cta p { margin-top: 0.75rem; color: rgba(255, 255, 255, 0.88); max-width: 36rem; font-size: 0.9375rem; }
+.cta__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+@media (min-width: 768px) { .cta__actions { justify-content: flex-end; } }
+.cta__actions .btn { padding: 0.875rem 1.5rem; }
+
+/* Footer */
+.footer { background: var(--ink); color: #a9b8c7; margin-top: 2rem; position: relative; overflow: hidden; }
+.footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(20, 184, 166, 0.5), transparent); }
+.footer__inner { padding-block: 4rem 2rem; }
+.footer__grid { display: grid; gap: 2.5rem; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .footer__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .footer__grid { grid-template-columns: 1.5fr 1fr 1fr 1fr; } }
+.footer__brand .logo__name { color: #fff; }
+.footer__brand .logo__sub { color: #6b7c8f; }
+.footer__about { margin-top: 1.25rem; font-size: 0.875rem; line-height: 1.6; max-width: 22rem; }
+.footer__contact { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.875rem; }
+.footer__contact a { display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s; }
+.footer__contact a:hover { color: #fff; }
+.footer__contact svg { width: 0.875rem; height: 0.875rem; color: var(--accent); flex-shrink: 0; }
+.footer h4 { color: #fff; font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 1rem; }
+.footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.footer ul a { font-size: 0.875rem; transition: color 0.2s; }
+.footer ul a:hover { color: #fff; }
+.footer__bottom { border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 1.5rem; margin-top: 3rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; font-size: 0.75rem; }
+.footer__emergency { display: inline-flex; align-items: center; gap: 0.5rem; color: #fff; font-weight: 600; }
+.footer__emergency::before { content: ''; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: #ff4d6a; animation: pulse 2s infinite; }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out); }
+.reveal.is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } * { animation-duration: 0s !important; transition-duration: 0s !important; } }
 </style>
 </head>
 <body>
 
+<!-- Emergency Top Bar -->
 <div class="emergency">
   <div class="container emergency__inner">
-    <div class="emergency__left"><span class="emergency__pulse"></span><span><b>Emergency?</b> Call <a href="tel:907">907</a> — open 24/7</span></div>
-    <div><a href="emergency.html" class="emergency__link">Live ER wait times <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div>
+    <div class="emergency__left">
+      <span class="emergency__pulse"></span>
+      <span><b>Emergency?</b> Call <a href="tel:907">907</a> — open 24/7</span>
+    </div>
+    <div>
+      <a href="emergency.html" class="emergency__link">
+        Live ER wait times
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
   </div>
 </div>
 
+<!-- Header -->
 <header class="hdr" id="hdr">
   <div class="container hdr__inner">
-    <a href="index.html" class="logo"><span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span><span class="logo__text"><span class="logo__name">Addis Medical Center</span><span class="logo__sub">Medical Center</span></span></a>
-    <nav class="nav"><a href="index.html">Home</a><a href="find-a-doctor.html">Find a doctor</a><a href="departments.html">Departments</a><a href="services.html">Services</a><a href="patients-visitors-addis-medical-center.html">Patients</a><a href="about.html">About</a><a href="news.html">News</a></nav>
-    <div class="hdr__actions"><a href="book.html" class="btn btn--primary">Book a visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a><button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button></div>
+    <a href="index.html" class="logo">
+      <span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span>
+      <span class="logo__text"><span class="logo__name">Addis Medical</span><span class="logo__sub">Center</span></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="find-a-doctor.html">Find a doctor</a>
+      <a href="departments.html">Departments</a>
+      <a href="services.html">Services</a>
+      <a href="patients-visitors.html">Patients</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="news.html">News</a>
+    </nav>
+    <div class="hdr__actions">
+      <a href="book.html" class="btn btn--primary">
+        Book a visit
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 
+<!-- Drawer -->
 <div class="drawer" id="drawer" aria-hidden="true">
   <div class="drawer__panel">
-    <div class="drawer__head"><a href="index.html" class="logo"><span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span><span class="logo__text"><span class="logo__name">Addis Medical Center</span><span class="logo__sub">Medical Center</span></span></a><button class="drawer__close" id="drawerClose"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div>
-    <nav class="drawer__nav">
+    <div class="drawer__head">
+      <a href="index.html" class="logo">
+        <span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span>
+        <span class="logo__text"><span class="logo__name">Addis Medical</span><span class="logo__sub">Center</span></span>
+      </a>
+      <button class="drawer__close" id="drawerClose" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <nav class="drawer__nav" aria-label="Mobile navigation">
       <a href="find-a-doctor.html">Find a doctor <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
       <a href="departments.html">Departments <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
       <a href="services.html">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
       <a href="book.html">Book a visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
-      <a href="patients-visitors-addis-medical-center.html">Patients &amp; visitors <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="patients-visitors.html">Patients &amp; visitors <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
       <a href="about.html">About <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="portfolio.html">Portfolio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
       <a href="portal.html">Patient portal <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
-      <a href="contact.html">Contact <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="contact.html" aria-current="page">Contact <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
       <a href="careers.html">Careers <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
       <a href="insurance.html">Insurance <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
       <a href="news.html">News <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
       <a href="emergency.html" class="danger">Emergency <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
     </nav>
-    <div class="drawer__cta"><a href="book.html" class="btn btn--primary">Book a visit</a></div>
-    <div class="drawer__foot"><p>Emergency? Call <a href="tel:907">907</a></p></div>
+    <div class="drawer__cta">
+      <a href="book.html" class="btn btn--primary">Book a visit</a>
+      <a href="portal.html" class="btn btn--ghost">Patient portal</a>
+    </div>
+    <div class="drawer__foot">
+      <p>Emergency? Call <a href="tel:907">907</a></p>
+      <p style="margin-top:.25rem">Bole Road, Addis Ababa · 24/7</p>
+    </div>
   </div>
 </div>
 
 <main class="app">
+  <!-- Hero with Bole Road map card -->
   <section class="page-hero">
-    <div class="container page-hero__inner reveal">
-      <h1>Everything before you <em>arrive</em>.</h1>
-      <p>What happens step by step, plus hours, parking, and what to bring.</p>
-    </div>
-  </section>
-
-  <section class="section section--tint" id="location">
-    <div class="container">
-      <div class="section-head reveal"><div><span class="kicker">Find us</span><h2>Visit Addis Medical Center</h2><p>Bole Road, Addis Ababa, Ethiopia</p></div></div>
-      <div style="overflow:hidden;border-radius:1.25rem;border:1px solid var(--gray-200);box-shadow:var(--shadow-md)">
-        <iframe title="Map showing Bole Road, Addis Ababa" src="https://maps.google.com/maps?q=Bole%20Road%2C%20Addis%20Ababa%2C%20Ethiopia&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="360" style="border:0;display:block" loading="lazy" allowfullscreen></iframe>
+    <div class="page-hero__grid-bg" aria-hidden="true"></div>
+    <div class="container page-hero__layout">
+      <div class="reveal">
+        <span class="kicker">Contact &amp; Feedback</span>
+        <h1>Get in <em>touch</em> with clarity.</h1>
+        <p class="hero-lead">Send us a message, share honest feedback about your visit, reach a dedicated hospital desk, or find our Bole Road campus in Addis Ababa.</p>
+        <div class="hero-actions">
+          <a href="#message-form-section" class="btn btn--primary">
+            Send a message or feedback
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#hospital-desks" class="btn btn--ghost">Direct hospital desks</a>
+        </div>
+        <div class="hero-quick-meta">
+          <span>● Response within 1 business day</span>
+          <span>● 24/7 Emergency line: <a href="tel:907" style="color:var(--brand);font-weight:700;text-decoration:underline;">907</a></span>
+        </div>
       </div>
-      <p style="margin-top:1rem"><a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&query=Bole+Road+Addis+Ababa+Ethiopia" target="_blank" rel="noopener">Open map directions</a></p>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="info-bar reveal">
-        <div class="info-bar__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><div><div class="info-bar__label">Address</div><div class="info-bar__value">Bole Road, Addis Ababa</div></div></div>
-        <div class="info-bar__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg><div><div class="info-bar__label">Main line</div><div class="info-bar__value"><a href="tel:+251115550100">+251 11 555 0100</a></div></div></div>
-        <div class="info-bar__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><div><div class="info-bar__label">Emergency</div><div class="info-bar__value"><a href="tel:907">Call 907 — 24/7</a></div></div></div>
+      <!-- Bole Road Campus Map Card -->
+      <div class="reveal">
+        <div class="campus-map-card">
+          <div class="campus-map-card__head">
+            <span class="campus-badge">● Bole Road Campus · Open 24/7</span>
+            <span class="campus-coords">8.9954° N, 38.7892° E</span>
+          </div>
+          <div class="campus-svg-frame">
+            <svg viewBox="0 0 420 205" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schematic architectural map of Addis Medical Center on Bole Road in Addis Ababa">
+              <rect x="10" y="10" width="400" height="185" rx="12" fill="#f9fcff" stroke="#dfe6ee" stroke-width="1.2"/>
+              <rect x="26" y="24" width="110" height="44" rx="8" fill="#eef2f7"/>
+              <text x="81" y="44" text-anchor="middle" fill="#6b7c8f" font-family="Inter, sans-serif" font-size="9" font-weight="600">Bole Medhanialem</text>
+              <text x="81" y="56" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-size="8">North Approach</text>
+
+              <rect x="274" y="24" width="120" height="44" rx="8" fill="#eef2f7"/>
+              <text x="334" y="44" text-anchor="middle" fill="#6b7c8f" font-family="Inter, sans-serif" font-size="9" font-weight="600">Patient Drop-Off</text>
+              <text x="334" y="56" text-anchor="middle" fill="#0d9488" font-family="Inter, sans-serif" font-size="8" font-weight="600">Covered Canopy &amp; Valet</text>
+
+              <path d="M10 148H410" stroke="#0b1b2b" stroke-width="14" stroke-linecap="round"/>
+              <path d="M10 148H410" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="7 7"/>
+              <rect x="24" y="137" width="118" height="22" rx="6" fill="#0b1b2b"/>
+              <text x="83" y="151" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="9.5" font-weight="700">BOLE ROAD CORRIDOR</text>
+
+              <rect x="150" y="26" width="114" height="96" rx="12" fill="#ffffff" stroke="#0e6fbe" stroke-width="2"/>
+              <rect x="164" y="14" width="28" height="28" rx="8" fill="#0e6fbe"/>
+              <path d="M178 21V35M171 28H185" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"/>
+              <text x="207" y="58" text-anchor="middle" fill="#0b1b2b" font-family="Fraunces, Georgia, serif" font-size="12.5" font-weight="600">Addis Medical Center</text>
+              <text x="207" y="72" text-anchor="middle" fill="#4b5e72" font-family="Inter, sans-serif" font-size="8.5">Main Outpatient &amp; Liaison</text>
+
+              <rect x="162" y="84" width="88" height="24" rx="6" fill="#e6f2fb"/>
+              <circle cx="174" cy="96" r="3.5" fill="#0e6fbe"/>
+              <text x="182" y="99" fill="#0a5a9c" font-family="Inter, sans-serif" font-size="8.5" font-weight="700">Liaison &amp; Records</text>
+
+              <circle cx="326" cy="148" r="8" fill="#e11d48" stroke="#ffffff" stroke-width="2"/>
+              <rect x="274" y="114" width="104" height="20" rx="5" fill="#fff1f3" stroke="#fecdd3"/>
+              <text x="326" y="127" text-anchor="middle" fill="#be123c" font-family="Inter, sans-serif" font-size="8.5" font-weight="700">24/7 ER Gate · 907</text>
+
+              <circle cx="378" cy="176" r="12" fill="#ffffff" stroke="#cbd5e1"/>
+              <text x="378" y="179" text-anchor="middle" fill="#0b1b2b" font-family="Inter, sans-serif" font-size="8.5" font-weight="700">N</text>
+            </svg>
+          </div>
+          <div class="campus-map-card__foot">
+            <div class="campus-map-card__addr">
+              <strong>Bole Road, Addis Ababa, Ethiopia</strong>
+              Main line: <a href="tel:+251115550100" style="color:var(--brand);font-weight:600;text-decoration:underline;">+251 11 555 0100</a>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Bole+Road+Addis+Ababa+Ethiopia" target="_blank" rel="noopener noreferrer" class="btn btn--soft btn--sm">
+              Open in Maps
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section section--tint" style="padding-top:0">
+  <!-- Direct Desks + Contact Info + Form -->
+  <section class="section" id="hospital-desks">
     <div class="container">
-      <div class="section-head reveal"><div><span class="kicker">Step by step</span><h2>What happens when you arrive.</h2><p>Four stations. Clear handoffs. No confusion.</p></div></div>
-      <div class="guide">
-        <div class="step reveal"><div class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 4v4M16 4v4"/></svg></div><h3>Reception</h3><p>Check in at the front desk. New patients will be asked for medical history and ID.</p></div>
-        <div class="step reveal"><div class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><h3>Triage</h3><p>Vital signs checked, a quick consultation, and we route you to the right specialty.</p></div>
-        <div class="step reveal"><div class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div><h3>Cashier</h3><p>Transparent payment handling. Insurance or self-pay — you'll get an itemized estimate.</p></div>
-        <div class="step reveal"><div class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h3>OPD Station</h3><p>Payment confirmed, and you're added to your doctor's waiting list. We'll call your name.</p></div>
+      <div class="section-head reveal">
+        <div>
+          <span class="kicker">Direct Hospital Desks</span>
+          <h2>Reach the right team directly.</h2>
+          <p>Copy a desk address or phone number in one click, or pre-select a topic in our form below.</p>
+        </div>
       </div>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="grid-2">
-        <section class="card reveal"><h2>Visiting hours</h2><ul><li>General wards: 11:00–13:00 and 16:00–19:00, daily</li><li>Maternity: 16:00–19:00, daily</li><li>Intensive care: 17:00–18:00, immediate family only</li><li>Children under 12 must be accompanied by an adult</li></ul></section>
-        <section class="card reveal"><h2>What to bring</h2><ul><li>Photo ID and insurance card (if applicable)</li><li>Referral letter and previous test results</li><li>List of current medications</li><li>Comfortable clothing for day procedures</li></ul></section>
-        <section class="card reveal"><h2>Parking &amp; transport</h2><ul><li>Visitor parking on Level B1 and B2, first 2 hours free</li><li>Accessible bays near the main entrance</li><li>Taxi drop-off at the main entrance canopy</li><li>Shuttle from Bole junction every 30 minutes</li></ul></section>
-        <section class="card reveal"><h2>Arriving for surgery</h2><ul><li>Report to the admission desk 2 hours before your scheduled time</li><li>Nothing to eat 6 hours before general anesthesia</li><li>Bring your admission letter and ID</li><li>Arrange a companion for discharge</li></ul></section>
+      <div class="desks-grid">
+        <article class="desk-card reveal">
+          <div>
+            <div class="desk-card__top">
+              <div class="desk-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+              </div>
+              <span class="desk-card__hours">Mon–Sat · 08:00–18:00</span>
+            </div>
+            <h3>Patient Relations Desk</h3>
+            <p>Visit feedback, bedside support, accessibility assistance, and formal care reviews with our patient liaison team.</p>
+          </div>
+          <div>
+            <div class="desk-card__channels">
+              <div class="channel-line">
+                <a href="mailto:relations@addismedicalcenter.example">relations@addismedicalcenter.example</a>
+                <button type="button" class="copy-mini" data-copy="relations@addismedicalcenter.example">Copy</button>
+              </div>
+              <div class="channel-line">
+                <a href="tel:+251115550100">+251 11 555 0100 (Ext. 102)</a>
+                <button type="button" class="copy-mini" data-copy="+251115550100">Copy</button>
+              </div>
+            </div>
+            <div class="desk-card__foot" style="margin-top:1rem;">
+              <button type="button" class="btn btn--soft btn--sm" data-select-topic="feedback">Share feedback</button>
+              <button type="button" class="btn btn--ghost btn--sm" data-select-topic="complaint">Log a complaint</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="desk-card reveal">
+          <div>
+            <div class="desk-card__top">
+              <div class="desk-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              </div>
+              <span class="desk-card__hours">Mon–Sat · 08:00–17:30</span>
+            </div>
+            <h3>Billing &amp; Insurance Desk</h3>
+            <p>Itemized visit invoices, insurer pre-authorizations, corporate coverage verification, and payment receipts.</p>
+          </div>
+          <div>
+            <div class="desk-card__channels">
+              <div class="channel-line">
+                <a href="mailto:billing@addismedicalcenter.example">billing@addismedicalcenter.example</a>
+                <button type="button" class="copy-mini" data-copy="billing@addismedicalcenter.example">Copy</button>
+              </div>
+              <div class="channel-line">
+                <a href="tel:+251115550100">+251 11 555 0100 (Ext. 114)</a>
+                <button type="button" class="copy-mini" data-copy="+251115550100">Copy</button>
+              </div>
+            </div>
+            <div class="desk-card__foot" style="margin-top:1rem;">
+              <button type="button" class="btn btn--soft btn--sm" data-select-topic="billing">Billing inquiry</button>
+              <a href="insurance.html" class="btn btn--ghost btn--sm">Insurance list</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="desk-card reveal">
+          <div>
+            <div class="desk-card__top">
+              <div class="desk-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              </div>
+              <span class="desk-card__hours">Mon–Fri · 08:30–17:00</span>
+            </div>
+            <h3>Medical Records Desk</h3>
+            <p>Certified discharge summaries, imaging CD/DICOM requests, lab history transfers, and portal access support.</p>
+          </div>
+          <div>
+            <div class="desk-card__channels">
+              <div class="channel-line">
+                <a href="mailto:records@addismedicalcenter.example">records@addismedicalcenter.example</a>
+                <button type="button" class="copy-mini" data-copy="records@addismedicalcenter.example">Copy</button>
+              </div>
+              <div class="channel-line">
+                <a href="tel:+251115550100">+251 11 555 0100 (Ext. 128)</a>
+                <button type="button" class="copy-mini" data-copy="+251115550100">Copy</button>
+              </div>
+            </div>
+            <div class="desk-card__foot" style="margin-top:1rem;">
+              <button type="button" class="btn btn--soft btn--sm" data-select-topic="records">Request records</button>
+              <a href="portal.html" class="btn btn--ghost btn--sm">Patient portal</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Contact Info + Form -->
+      <div class="contact-grid" id="message-form-section">
+        <div class="contact-info reveal">
+          <h3>Reach us</h3>
+          <div class="info-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div class="info-row__content">
+              <div class="label">Address</div>
+              <div class="value">
+                <span>Bole Road, Addis Ababa, Ethiopia</span>
+                <button type="button" class="copy-mini" data-copy="Bole Road, Addis Ababa, Ethiopia">Copy</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            <div class="info-row__content">
+              <div class="label">Main line</div>
+              <div class="value">
+                <a href="tel:+251115550100">+251 11 555 0100</a>
+                <button type="button" class="copy-mini" data-copy="+251115550100">Copy</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+            <div class="info-row__content">
+              <div class="label">Email</div>
+              <div class="value">
+                <a href="mailto:info@addismedicalcenter.example">info@addismedicalcenter.example</a>
+                <button type="button" class="copy-mini" data-copy="info@addismedicalcenter.example">Copy</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            <div class="info-row__content">
+              <div class="label">Emergency (24/7)</div>
+              <div class="value">
+                <a href="tel:907">Call 907</a>
+                <a href="emergency.html" style="font-size:0.8rem;text-decoration:none;">ER wait times →</a>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://www.google.com/maps/search/?api=1&query=Bole+Road+Addis+Ababa+Ethiopia" target="_blank" rel="noopener noreferrer" class="map-link">
+            Open in maps
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="form-card reveal">
+          <form id="contact-form">
+            <h3 style="font-family:var(--font-serif);font-size:1.35rem;font-weight:500;color:var(--ink);margin-bottom:1.25rem;">Send us a message</h3>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="name">Your name *</label>
+                <input id="name" type="text" required placeholder="Full name" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input id="email" type="email" required placeholder="you@example.com" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="type">What's this about? *</label>
+              <select id="type" required>
+                <option value="">Choose one…</option>
+                <option value="feedback">Patient feedback</option>
+                <option value="question">General question</option>
+                <option value="billing">Billing or insurance</option>
+                <option value="records">Medical records</option>
+                <option value="complaint">Complaint</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="topic-context-box" id="topicContextBox" aria-live="polite">
+              <div class="topic-context-box__top">
+                <div>
+                  <strong id="topicContextTitle">Standard hospital inquiry</strong>
+                  <span id="topicContextDesc">Select a topic above to see targeted desk guidance and optional visit/reference prompts.</span>
+                </div>
+                <span class="topic-context-box__sla" id="topicContextSla">≤ 1 business day</span>
+              </div>
+              <div class="form-group" id="contextPromptWrap" style="display:none;margin-bottom:0;">
+                <label for="contextRef" id="contextPromptLabel">Reference or department</label>
+                <input id="contextRef" type="text" placeholder="" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" required placeholder="Tell us what's on your mind…"></textarea>
+            </div>
+
+            <div class="form-group">
+              <div class="rating-header">
+                <label>Rate your visit (optional)</label>
+                <span class="rating-sentiment" id="ratingSentiment">No rating selected</span>
+              </div>
+              <div class="rating" id="rating" role="group" aria-label="Rate your visit from 1 to 5">
+                <button type="button" data-score="1" aria-label="Rate 1 — Very poor">1</button>
+                <button type="button" data-score="2" aria-label="Rate 2 — Needs improvement">2</button>
+                <button type="button" data-score="3" aria-label="Rate 3 — Satisfactory">3</button>
+                <button type="button" data-score="4" aria-label="Rate 4 — Good care">4</button>
+                <button type="button" data-score="5" aria-label="Rate 5 — Exceptional care">5</button>
+              </div>
+            </div>
+
+            <button type="submit" class="form-submit">
+              Send message
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </button>
+            <p class="form-hint">We reply within one business day. For emergencies, call 907.</p>
+          </form>
+
+          <div class="receipt-card" id="receipt-card" aria-live="polite">
+            <span class="receipt-card__badge">● Message Logged · Ticket Confirmed</span>
+            <h3>Thank you, <span id="receiptName">Guest</span>.</h3>
+            <p class="receipt-card__lead">Your message has been routed to the appropriate Addis Medical desk. We reply within one business day.</p>
+
+            <div class="receipt-id-bar">
+              <div>
+                <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--em-800);">Tracking Ticket ID</div>
+                <code id="receiptTicketId">FB-000000</code>
+              </div>
+              <button type="button" class="copy-mini" id="copyTicketBtn" data-copy="">Copy ID</button>
+            </div>
+
+            <div class="receipt-summary-grid">
+              <div class="receipt-meta-item"><span>Topic</span><strong id="receiptTopic">—</strong></div>
+              <div class="receipt-meta-item"><span>Visit Rating</span><strong id="receiptRating">—</strong></div>
+              <div class="receipt-meta-item"><span>Routed To</span><strong id="receiptDesk">—</strong></div>
+              <div class="receipt-meta-item"><span>Reference / Dept</span><strong id="receiptRef">Not provided</strong></div>
+            </div>
+
+            <div class="receipt-actions">
+              <button type="button" class="btn btn--primary btn--sm" id="sendAnotherBtn">Send another message</button>
+              <a href="book.html" class="btn btn--ghost btn--sm">Book a visit</a>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="cta reveal">
         <div class="cta__inner">
-          <div><h2>Still have a question?</h2><p>Send us a message or book a consultation and we'll answer everything in person.</p></div>
-          <div class="cta__actions"><a href="contact.html" class="btn btn--light">Contact us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a><a href="book.html" class="btn btn--accent">Book a visit</a></div>
+          <div>
+            <h2>Prefer to book instead?</h2>
+            <p>Skip the form. Book an appointment in under a minute and we'll see you in person.</p>
+          </div>
+          <div class="cta__actions">
+            <a href="book.html" class="btn btn--light">
+              Book a visit
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 </main>
 
+<!-- Footer -->
 <footer class="footer">
   <div class="container footer__inner">
     <div class="footer__grid">
-      <div class="footer__brand"><a href="index.html" class="logo"><span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span><span class="logo__text"><span class="logo__name">Addis Medical Center</span><span class="logo__sub">Medical Center</span></span></a><p class="footer__about">Calm, clear care for Addis Ababa since 2008. Accredited, multilingual, and open 24/7 for emergencies.</p><div class="footer__contact"><a href="https://www.google.com/maps/search/?api=1&query=Bole+Road+Addis+Ababa+Ethiopia" target="_blank" rel="noopener">Bole Road, Addis Ababa, Ethiopia</a><a href="tel:+251115550100"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>+251 11 555 0100</a><a href="mailto:info@addismedicalcenter.example"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>info@addismedicalcenter.example</a></div></div>
-      <div><h4>Care</h4><ul><li><a href="find-a-doctor.html">Find a doctor</a></li><li><a href="departments.html">Departments</a></li><li><a href="services.html">Services</a></li><li><a href="book.html">Book a visit</a></li><li><a href="emergency.html">Emergency</a></li></ul></div>
-      <div><h4>Patients</h4><ul><li><a href="patients-visitors.html">Visiting hours</a></li><li><a href="portal.html">Patient portal</a></li><li><a href="insurance.html">Insurance</a></li><li><a href="contact.html">Feedback</a></li></ul></div>
-      <div><h4>Hospital</h4><ul><li><a href="about.html">About us</a></li><li><a href="careers.html">Careers</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer__brand">
+        <a href="index.html" class="logo">
+          <span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span>
+          <span class="logo__text"><span class="logo__name">Addis Medical</span><span class="logo__sub">Center</span></span>
+        </a>
+        <p class="footer__about">Calm, clear care for Addis Ababa since 2008. Accredited, multilingual, and open 24/7 for emergencies.</p>
+        <div class="footer__contact">
+          <a href="tel:+251115550100">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            +251 11 555 0100
+          </a>
+          <a href="mailto:info@addismedicalcenter.example">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+            info@addismedicalcenter.example
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Care</h4>
+        <ul>
+          <li><a href="find-a-doctor.html">Find a doctor</a></li>
+          <li><a href="departments.html">Departments</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="book.html">Book a visit</a></li>
+          <li><a href="emergency.html">Emergency</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Patients</h4>
+        <ul>
+          <li><a href="patients-visitors.html">Visiting hours</a></li>
+          <li><a href="portal.html">Patient portal</a></li>
+          <li><a href="insurance.html">Insurance</a></li>
+          <li><a href="contact.html">Feedback</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hospital</h4>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer__bottom"><span>© 2025 Addis Medical Center. Not a substitute for medical advice.</span><span class="footer__emergency">Emergency? Call 907</span></div>
+    <div class="footer__bottom">
+      <span>© 2025 Addis Medical Center. Not a substitute for medical advice.</span>
+      <span class="footer__emergency">Emergency? Call 907</span>
+    </div>
   </div>
 </footer>
 
 <script>
 const hdr = document.getElementById('hdr');
 window.addEventListener('scroll', () => hdr.classList.toggle('is-scrolled', window.scrollY > 8), { passive: true });
-const drawer = document.getElementById('drawer'), burger = document.getElementById('burger'), drawerClose = document.getElementById('drawerClose');
-function openDrawer(){ drawer.classList.add('is-open'); drawer.setAttribute('aria-hidden','false'); burger.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
-function closeDrawer(){ drawer.classList.remove('is-open'); drawer.setAttribute('aria-hidden','true'); burger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
-burger.addEventListener('click', openDrawer); drawerClose.addEventListener('click', closeDrawer);
+
+const drawer = document.getElementById('drawer');
+const burger = document.getElementById('burger');
+const drawerClose = document.getElementById('drawerClose');
+function openDrawer() { drawer.classList.add('is-open'); drawer.setAttribute('aria-hidden', 'false'); burger.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; }
+function closeDrawer() { drawer.classList.remove('is-open'); drawer.setAttribute('aria-hidden', 'true'); burger.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; }
+burger.addEventListener('click', openDrawer);
+drawerClose.addEventListener('click', closeDrawer);
 drawer.addEventListener('click', (e) => { if (e.target === drawer) closeDrawer(); });
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
-const io = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && drawer.classList.contains('is-open')) closeDrawer(); });
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+function copyTextToClipboard(text, btn) {
+  if (!text) return;
+  const finish = () => {
+    const prev = btn.textContent;
+    btn.textContent = '✓ Copied';
+    btn.classList.add('is-copied');
+    setTimeout(() => { btn.textContent = prev; btn.classList.remove('is-copied'); }, 1800);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(finish).catch(() => { fallbackCopy(text); finish(); });
+  } else { fallbackCopy(text); finish(); }
+}
+function fallbackCopy(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); } catch (_) {}
+  document.body.removeChild(ta);
+}
+document.querySelectorAll('[data-copy]').forEach((btn) => {
+  btn.addEventListener('click', () => { copyTextToClipboard(btn.dataset.copy || '', btn); });
+});
+
+const TOPIC_CONFIG = {
+  "": { label: "General inquiry", title: "Select a topic to tailor your message", desc: "Choose the subject below to show relevant department prompts, response timelines, and routing.", sla: "≤ 1 business day", desk: "General Reception & Liaison", showPrompt: false, promptLabel: "", placeholder: "" },
+  feedback: { label: "Patient feedback", title: "Patient feedback & clinician recognition", desc: "Tell us which department or team member made a positive impact during your visit.", sla: "Reviewed daily", desk: "Patient Relations Desk", showPrompt: true, promptLabel: "Department or clinician visited (optional)", placeholder: "e.g., Cardiology Clinic, Dr. Abebe, or Emergency Triage" },
+  question: { label: "General question", title: "General hospital information", desc: "Ask about visiting hours, parking, clinic availability, or directions on Bole Road.", sla: "≤ 1 business day", desk: "Patient Information Desk", showPrompt: true, promptLabel: "Department or topic area (optional)", placeholder: "e.g., Radiology, Outpatient Clinic, or Visiting Hours" },
+  billing: { label: "Billing or insurance", title: "Billing, invoices & insurance coverage", desc: "Include your invoice or claim reference number if available so our billing desk can pull up your account quickly.", sla: "≤ 1 business day", desk: "Billing & Insurance Desk", showPrompt: true, promptLabel: "Invoice / claim reference or insurer name (optional)", placeholder: "e.g., INV-2026-4491 or Nyala Insurance" },
+  records: { label: "Medical records", title: "Medical records, lab results & imaging copies", desc: "Specify the approximate visit date or record type needed. Photo ID or portal verification may apply at pickup.", sla: "1–2 business days", desk: "Medical Records Desk", showPrompt: true, promptLabel: "Approximate visit date or patient ID (optional)", placeholder: "e.g., Visit in October 2026 or MRN-10924" },
+  complaint: { label: "Complaint", title: "Formal care or service review", desc: "Your concern goes directly to Patient Relations leadership. We treat every complaint with fairness, confidentiality, and care.", sla: "Priority review ≤ 24h", desk: "Patient Relations Lead", showPrompt: true, promptLabel: "Date of visit & department involved (optional)", placeholder: "e.g., 14 Nov 2026 · Outpatient Pharmacy" },
+  other: { label: "Other", title: "Other inquiry", desc: "Share any other non-urgent message and we will route it to the right team at Addis Medical Center.", sla: "≤ 1 business day", desk: "Hospital Administration", showPrompt: true, promptLabel: "Subject or department (optional)", placeholder: "e.g., Partnerships, Community Health, or Facility" }
+};
+const RATING_SENTIMENTS = { 0: "No rating selected", 1: "1 / 5 — Very poor experience", 2: "2 / 5 — Needs improvement", 3: "3 / 5 — Satisfactory visit", 4: "4 / 5 — Good, calm care", 5: "5 / 5 — Exceptional care" };
+
+const typeSelect = document.getElementById('type');
+const topicContextTitle = document.getElementById('topicContextTitle');
+const topicContextDesc = document.getElementById('topicContextDesc');
+const topicContextSla = document.getElementById('topicContextSla');
+const contextPromptWrap = document.getElementById('contextPromptWrap');
+const contextPromptLabel = document.getElementById('contextPromptLabel');
+const contextRefInput = document.getElementById('contextRef');
+const ratingSentimentEl = document.getElementById('ratingSentiment');
+
+function applyTopicState(topicKey) {
+  const cfg = TOPIC_CONFIG[topicKey] || TOPIC_CONFIG[""];
+  topicContextTitle.textContent = cfg.title;
+  topicContextDesc.textContent = cfg.desc;
+  topicContextSla.textContent = cfg.sla;
+  if (cfg.showPrompt) {
+    contextPromptWrap.style.display = 'flex';
+    contextPromptLabel.textContent = cfg.promptLabel;
+    contextRefInput.placeholder = cfg.placeholder;
+  } else {
+    contextPromptWrap.style.display = 'none';
+    contextRefInput.value = '';
+  }
+}
+typeSelect.addEventListener('change', (e) => applyTopicState(e.target.value));
+
+document.querySelectorAll('[data-select-topic]').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const topicVal = btn.getAttribute('data-select-topic');
+    typeSelect.value = topicVal;
+    applyTopicState(topicVal);
+    document.getElementById('message-form-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(() => document.getElementById('name').focus(), 450);
+  });
+});
+
+let score = 0;
+document.querySelectorAll('#rating button').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const clicked = parseInt(btn.dataset.score, 10);
+    score = (score === clicked) ? 0 : clicked;
+    document.querySelectorAll('#rating button').forEach((x) => {
+      x.classList.toggle('active', score > 0 && parseInt(x.dataset.score, 10) <= score);
+    });
+    ratingSentimentEl.textContent = RATING_SENTIMENTS[score] || RATING_SENTIMENTS[0];
+  });
+});
+
+const contactForm = document.getElementById('contact-form');
+const receiptCard = document.getElementById('receipt-card');
+const copyTicketBtn = document.getElementById('copyTicketBtn');
+
+contactForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const fullName = document.getElementById('name').value.trim();
+  const topicKey = typeSelect.value;
+  const cfg = TOPIC_CONFIG[topicKey] || TOPIC_CONFIG.other;
+  const refVal = contextRefInput.value.trim();
+  const randomSixDigits = Math.floor(100000 + Math.random() * 900000);
+  const ticketId = `FB-${randomSixDigits}`;
+
+  document.getElementById('receiptName').textContent = fullName || 'Guest';
+  document.getElementById('receiptTicketId').textContent = ticketId;
+  copyTicketBtn.setAttribute('data-copy', ticketId);
+  copyTicketBtn.textContent = 'Copy ID';
+  copyTicketBtn.classList.remove('is-copied');
+  document.getElementById('receiptTopic').textContent = cfg.label;
+  document.getElementById('receiptRating').textContent = score > 0 ? RATING_SENTIMENTS[score] : 'Not rated';
+  document.getElementById('receiptDesk').textContent = cfg.desk;
+  document.getElementById('receiptRef').textContent = refVal || 'Not provided';
+
+  contactForm.style.display = 'none';
+  receiptCard.classList.add('show');
+  receiptCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
+
+document.getElementById('sendAnotherBtn').addEventListener('click', () => {
+  contactForm.reset();
+  score = 0;
+  document.querySelectorAll('#rating button').forEach((x) => x.classList.remove('active'));
+  ratingSentimentEl.textContent = RATING_SENTIMENTS[0];
+  applyTopicState("");
+  receiptCard.classList.remove('show');
+  contactForm.style.display = 'block';
+  document.getElementById('name').focus();
+});
 </script>
 </body>
 </html>
