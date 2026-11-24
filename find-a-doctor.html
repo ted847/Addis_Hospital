@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Find a doctor — Horizon General Hospital</title>
+<title>Find a doctor — Addis Medical Center</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -800,7 +800,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 .doc__img {
-  aspect-ratio: 16/10;
+  aspect-ratio: 16/9;
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, #0b1b2b 0%, var(--brand-2) 60%, var(--brand) 100%);
@@ -833,21 +833,21 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   height: 100%;
   object-fit: cover;
   object-position: top center;
-  opacity: 0.35;
-  mix-blend-mode: luminosity;
+  opacity: 0.96;
+  mix-blend-mode: normal;
   transition: transform 0.6s ease, opacity 0.4s;
 }
 
 .doc:hover .doc__img img.doc__photo-bg {
   transform: scale(1.06);
-  opacity: 0.48;
+  opacity: 1;
 }
 
 .doc__img::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(11, 27, 43, 0.15) 0%, rgba(11, 27, 43, 0.65) 100%);
+  background: linear-gradient(180deg, rgba(11, 27, 43, 0.05) 0%, rgba(11, 27, 43, 0.25) 100%);
   pointer-events: none;
 }
 
@@ -1325,7 +1325,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   <div class="container hdr__inner">
     <a href="index.html" class="logo">
       <span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span>
-      <span class="logo__text"><span class="logo__name">Horizon</span><span class="logo__sub">General Hospital</span></span>
+      <span class="logo__text"><span class="logo__name">Addis Medical Center</span><span class="logo__sub">General Hospital</span></span>
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="find-a-doctor.html" aria-current="page">Find a doctor</a>
@@ -1353,7 +1353,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     <div class="drawer__head">
       <a href="index.html" class="logo">
         <span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span>
-        <span class="logo__text"><span class="logo__name">Horizon</span><span class="logo__sub">General Hospital</span></span>
+        <span class="logo__text"><span class="logo__name">Addis Medical Center</span><span class="logo__sub">General Hospital</span></span>
       </a>
       <button class="drawer__close" id="drawerClose" aria-label="Close menu">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
@@ -1532,7 +1532,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
         <h4>Languages &amp; Interpreter Support</h4>
         <p id="profileLanguages"></p>
         <div class="p-note-banner">
-          Complimentary Horizon medical interpreters are available in Amharic, English, Oromo, Tigrinya, Arabic, and French at no extra charge.
+          Complimentary Addis Medical Center medical interpreters are available in Amharic, English, Oromo, Tigrinya, Arabic, and French at no extra charge.
         </div>
       </div>
 
@@ -1557,12 +1557,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
       <div class="footer__brand">
         <a href="index.html" class="logo">
           <span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span>
-          <span class="logo__text"><span class="logo__name">Horizon</span><span class="logo__sub">General Hospital</span></span>
+          <span class="logo__text"><span class="logo__name">Addis Medical Center</span><span class="logo__sub">General Hospital</span></span>
         </a>
         <p class="footer__about">Calm, clear care for Addis Ababa since 2008. Accredited, multilingual, and open 24/7 for emergencies.</p>
         <div class="footer__contact">
           <a href="tel:+251115550100"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>+251 11 555 0100</a>
-          <a href="mailto:info@horizonhospital.example"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>info@horizonhospital.example</a>
+          <a href="mailto:info@addismedicalcenter.example"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>info@addismedicalcenter.example</a>
         </div>
       </div>
       <div>
@@ -1594,7 +1594,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
       </div>
     </div>
     <div class="footer__bottom">
-      <span>© 2025 Horizon General Hospital. Not a substitute for medical advice.</span>
+      <span>© 2025 Addis Medical Center. Not a substitute for medical advice.</span>
       <span class="footer__emergency">Emergency? Call 907</span>
     </div>
   </div>
@@ -1664,7 +1664,7 @@ const PORTRAIT_PALETTES = {
   "dr-nahom-wolde": { bg: "#0b1b2b", ring: "#e11d48", accent: "#14b8a6", coat: "#0e6fbe", skin: "#bc7c54", hair: "#14100e" }
 };
 
-// All 8 Horizon Specialists
+// All 8 Addis Medical Center Specialists
 const DOCS = [
   {
     slug: "dr-selam-tesfaye",
@@ -1686,7 +1686,7 @@ const DOCS = [
     slot: "Tomorrow, 09:30",
     slots: ["Tomorrow, 09:30", "Tomorrow, 11:00", "Thu, 10:15", "Video · Fri, 14:30"],
     accepting: true,
-    photo: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80&auto=format&fit=crop&crop=faces"
+    photo: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=900&q=90&auto=format&fit=crop&crop=faces"
   },
   {
     slug: "dr-hanna-girma",
@@ -1708,7 +1708,7 @@ const DOCS = [
     slot: "Today, 14:00",
     slots: ["Today, 14:00", "Today, 15:30", "Tomorrow, 09:00", "Video · Tomorrow, 16:00"],
     accepting: true,
-    photo: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&q=80&auto=format&fit=crop&crop=faces"
+    photo: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=900&q=90&auto=format&fit=crop&crop=faces"
   },
   {
     slug: "dr-abel-mekonnen",
@@ -1730,7 +1730,7 @@ const DOCS = [
     slot: "Today, 16:30",
     slots: ["Today, 16:30", "Tomorrow, 08:45", "Tomorrow, 13:30", "Video · Thu, 11:00"],
     accepting: true,
-    photo: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80&auto=format&fit=crop&crop=faces"
+    photo: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=900&q=90&auto=format&fit=crop&crop=faces"
   },
   {
     slug: "dr-yonas-bekele",
@@ -1752,7 +1752,7 @@ const DOCS = [
     slot: "Thu, 10:00",
     slots: ["Thu, 10:00", "Thu, 11:30", "Sat, 09:30", "Mon, 10:30"],
     accepting: false,
-    photo: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&q=80&auto=format&fit=crop&crop=faces"
+    photo: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=900&q=90&auto=format&fit=crop&crop=faces"
   },
   {
     slug: "dr-meron-assefa",
@@ -1774,7 +1774,7 @@ const DOCS = [
     slot: "Tomorrow, 11:00",
     slots: ["Tomorrow, 11:00", "Tomorrow, 14:15", "Fri, 09:30", "Video · Fri, 15:00"],
     accepting: true,
-    photo: "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=600&q=80&auto=format&fit=crop&crop=faces"
+    photo: "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=900&q=90&auto=format&fit=crop&crop=faces"
   },
   {
     slug: "dr-dawit-haile",
@@ -1796,7 +1796,7 @@ const DOCS = [
     slot: "Today, 13:00",
     slots: ["Today, 13:00", "Today, 15:00", "Tomorrow, 10:00", "Thu, 14:00"],
     accepting: true,
-    photo: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=600&q=80&auto=format&fit=crop&crop=faces"
+    photo: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=900&q=90&auto=format&fit=crop&crop=faces"
   },
   {
     slug: "dr-rahel-tesfaye",
@@ -1818,7 +1818,7 @@ const DOCS = [
     slot: "Tomorrow, 08:30",
     slots: ["Tomorrow, 08:30", "Tomorrow, 10:30", "Fri, 09:00", "Video · Fri, 13:30"],
     accepting: true,
-    photo: "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=600&q=80&auto=format&fit=crop&crop=faces"
+    photo: "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=900&q=90&auto=format&fit=crop&crop=faces"
   },
   {
     slug: "dr-nahom-wolde",
@@ -1840,7 +1840,7 @@ const DOCS = [
     slot: "Walk-in 24/7",
     slots: ["Today · Immediate Triage", "Today, 17:00", "Tomorrow, 08:00", "24/7 Emergency Bay"],
     accepting: true,
-    photo: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&q=80&auto=format&fit=crop&crop=faces"
+    photo: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=900&q=90&auto=format&fit=crop&crop=faces"
   }
 ];
 
@@ -1895,12 +1895,10 @@ function renderDoc(d) {
   return `
   <article class="doc">
     <div class="doc__img">
-      <img src="${d.photo}" alt="${d.name}" class="doc__photo-bg" loading="lazy" onerror="this.remove()" />
+      <img src="${d.photo}" alt="African healthcare professional portrait representing ${d.name}" class="doc__photo-bg" loading="lazy" onerror="this.remove()" />
       <span class="doc__badge ${d.accepting ? '' : 'waitlist'}">${d.accepting ? 'Accepting' : 'Waitlist'}</span>
       ${d.videoConsult ? '<span class="doc__video-pill">Video consults</span>' : ''}
-      <div class="doc__portrait-svg">
-        ${portraitSVG}
-      </div>
+
     </div>
     <div class="doc__body">
       <div class="doc__top-row">
