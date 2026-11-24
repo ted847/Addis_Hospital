@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>News — Horizon General Hospital</title>
+<title>News — Addis Medical Center</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -116,7 +116,7 @@ a,button{-webkit-tap-highlight-color:transparent}
 .featured:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
 @media(min-width:960px){.featured{grid-template-columns:1.12fr .88fr;gap:0}}
 .featured__img{aspect-ratio:16/10;min-height:100%;overflow:hidden;background:linear-gradient(135deg,var(--brand),var(--brand-2));position:relative}
-.featured__img img{width:100%;height:100%;object-fit:cover;transition:transform .65s var(--ease)}
+.featured__img img{width:100%;height:100%;object-fit:cover;filter:saturate(1.16) contrast(1.04);transition:transform .65s var(--ease)}
 .featured:hover .featured__img img{transform:scale(1.04)}
 .featured__img::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(9,27,45,.18),transparent 60%);pointer-events:none}
 .featured__body{padding:2rem}
@@ -150,7 +150,7 @@ a,button{-webkit-tap-highlight-color:transparent}
 .news{background:#fff;border:1px solid rgba(9,27,45,.09);border-radius:var(--radius);overflow:hidden;box-shadow:0 12px 36px -32px rgba(9,27,45,.42);transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s;display:flex;flex-direction:column}
 .news:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:transparent}
 .news__img{aspect-ratio:16/10;overflow:hidden;background:linear-gradient(135deg,var(--brand-3),var(--gray-100));position:relative}
-.news__img img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.news__img img{width:100%;height:100%;object-fit:cover;filter:saturate(1.18) contrast(1.04);transition:transform .6s var(--ease)}
 .news:hover .news__img img{transform:scale(1.05)}
 .news__tag{position:absolute;top:.75rem;left:.75rem;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);padding:.35rem .75rem;border-radius:999px;font-size:.6875rem;font-weight:600;letter-spacing:.06em;color:var(--brand);text-transform:uppercase}
 .news__body{padding:1.5rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
@@ -238,7 +238,7 @@ a,button{-webkit-tap-highlight-color:transparent}
   <div class="container hdr__inner">
     <a href="index.html" class="logo">
       <span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span>
-      <span class="logo__text"><span class="logo__name">Horizon</span><span class="logo__sub">General Hospital</span></span>
+      <span class="logo__text"><span class="logo__name">Addis Medical Center</span><span class="logo__sub">Medical Center</span></span>
     </a>
     <nav class="nav" aria-label="Primary navigation">
       <a href="find-a-doctor.html">Find a doctor</a>
@@ -258,7 +258,7 @@ a,button{-webkit-tap-highlight-color:transparent}
 <div class="drawer" id="drawer" aria-hidden="true">
   <div class="drawer__panel">
     <div class="drawer__head">
-      <a href="index.html" class="logo"><span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span><span class="logo__text"><span class="logo__name">Horizon</span><span class="logo__sub">General Hospital</span></span></a>
+      <a href="index.html" class="logo"><span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span><span class="logo__text"><span class="logo__name">Addis Medical Center</span><span class="logo__sub">Medical Center</span></span></a>
       <button type="button" class="drawer__close" id="drawerClose" aria-label="Close"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
     </div>
     <nav class="drawer__nav" aria-label="Mobile navigation">
@@ -287,7 +287,7 @@ a,button{-webkit-tap-highlight-color:transparent}
         <span class="eyebrow__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
         Hospital Dispatches · Bole Road
       </span>
-      <h1>What's new at <em>Horizon</em>.</h1>
+      <h1>What's new at <em>Addis Medical Center</em>.</h1>
       <p>Announcements, clinical upgrades, seasonal clinics, and community updates from our care teams.</p>
     </div>
   </section>
@@ -296,7 +296,7 @@ a,button{-webkit-tap-highlight-color:transparent}
     <div class="container">
       <article class="featured reveal" data-story-id="mri-3t">
         <div class="featured__img">
-          <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1000&q=80&auto=format&fit=crop" alt="New 3T MRI scanner suite at Horizon General Hospital" loading="lazy" onerror="this.style.display='none'" />
+          <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1200&q=90&auto=format&fit=crop" alt="New 3T MRI scanner suite at Addis Medical Center" loading="lazy" onerror="this.style.display='none'" />
         </div>
         <div class="featured__body">
           <span class="featured__tag">Featured · Facility</span>
@@ -328,7 +328,7 @@ a,button{-webkit-tap-highlight-color:transparent}
       <div class="news-grid" id="newsGrid">
         <article class="news reveal" data-topic="health" data-search="flu vaccination clinic walk-in outpatient">
           <div class="news__img">
-            <img src="https://images.unsplash.com/photo-1605289982774-9a6fef564df8?w=600&q=80&auto=format&fit=crop" alt="Seasonal flu vaccination clinic" loading="lazy" onerror="this.style.display='none'" />
+            <img src="https://images.unsplash.com/photo-1605289982774-9a6fef564df8?w=1200&q=90&auto=format&fit=crop" alt="Seasonal flu vaccination clinic" loading="lazy" onerror="this.style.display='none'" />
             <span class="news__tag">Health</span>
           </div>
           <div class="news__body">
@@ -344,7 +344,7 @@ a,button{-webkit-tap-highlight-color:transparent}
 
         <article class="news reveal" data-topic="service" data-search="video consultations telehealth pediatrics chronic disease">
           <div class="news__img">
-            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80&auto=format&fit=crop" alt="Clinician conducting a remote video consultation" loading="lazy" onerror="this.style.display='none'" />
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&q=90&auto=format&fit=crop" alt="African clinician conducting a remote video consultation" loading="lazy" onerror="this.style.display='none'" />
             <span class="news__tag">Service</span>
           </div>
           <div class="news__body">
@@ -360,7 +360,7 @@ a,button{-webkit-tap-highlight-color:transparent}
 
         <article class="news reveal" data-topic="facility" data-search="maternity wing renovation neonatal care delivery">
           <div class="news__img">
-            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80&auto=format&fit=crop" alt="Renovated maternity wing corridor" loading="lazy" onerror="this.style.display='none'" />
+            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&q=90&auto=format&fit=crop" alt="Renovated maternity wing corridor" loading="lazy" onerror="this.style.display='none'" />
             <span class="news__tag">Facility</span>
           </div>
           <div class="news__body">
@@ -376,7 +376,7 @@ a,button{-webkit-tap-highlight-color:transparent}
 
         <article class="news reveal" data-topic="clinical" data-search="cardiac rehabilitation program cardiology recovery">
           <div class="news__img">
-            <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=600&q=80&auto=format&fit=crop" alt="Cardiology and rehabilitation specialists" loading="lazy" onerror="this.style.display='none'" />
+            <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=1200&q=90&auto=format&fit=crop" alt="Cardiology and rehabilitation specialists" loading="lazy" onerror="this.style.display='none'" />
             <span class="news__tag">Clinical</span>
           </div>
           <div class="news__body">
@@ -392,7 +392,7 @@ a,button{-webkit-tap-highlight-color:transparent}
 
         <article class="news reveal" data-topic="community" data-search="multilingual care program french interpreter amharic oromo tigrinya arabic">
           <div class="news__img">
-            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&q=80&auto=format&fit=crop" alt="Multilingual care coordination team" loading="lazy" onerror="this.style.display='none'" />
+            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&q=90&auto=format&fit=crop" alt="African multilingual care coordination team" loading="lazy" onerror="this.style.display='none'" />
             <span class="news__tag">Community</span>
           </div>
           <div class="news__body">
@@ -408,7 +408,7 @@ a,button{-webkit-tap-highlight-color:transparent}
 
         <article class="news reveal" data-topic="service" data-search="live er wait times emergency pediatric trauma">
           <div class="news__img">
-            <img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=600&q=80&auto=format&fit=crop" alt="Emergency triage and care bay" loading="lazy" onerror="this.style.display='none'" />
+            <img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=1200&q=90&auto=format&fit=crop" alt="Emergency triage and care bay" loading="lazy" onerror="this.style.display='none'" />
             <span class="news__tag">Service</span>
           </div>
           <div class="news__body">
@@ -431,7 +431,7 @@ a,button{-webkit-tap-highlight-color:transparent}
         <div class="cta__inner">
           <div>
             <h2>Have a question about any of this?</h2>
-            <p>Our team is one message away — or subscribe to monthly health notes and clinic announcements from Horizon.</p>
+            <p>Our team is one message away — or subscribe to monthly health notes and clinic announcements from Addis Medical Center.</p>
             <div class="cta__actions">
               <a href="contact.html" class="btn btn--light">Contact us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
               <a href="book.html" class="btn btn--accent">Book a visit</a>
@@ -475,11 +475,11 @@ a,button{-webkit-tap-highlight-color:transparent}
   <div class="container footer__inner">
     <div class="footer__grid">
       <div class="footer__brand">
-        <a href="index.html" class="logo"><span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span><span class="logo__text"><span class="logo__name">Horizon</span><span class="logo__sub">General Hospital</span></span></a>
+        <a href="index.html" class="logo"><span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span><span class="logo__text"><span class="logo__name">Addis Medical Center</span><span class="logo__sub">Medical Center</span></span></a>
         <p class="footer__about">Calm, clear care for Addis Ababa since 2008. Accredited, multilingual, and open 24/7 for emergencies.</p>
         <div class="footer__contact">
           <a href="tel:+251115550100"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>+251 11 555 0100</a>
-          <a href="mailto:info@horizonhospital.example"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>info@horizonhospital.example</a>
+          <a href="mailto:info@addismedicalcenter.example"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>info@addismedicalcenter.example</a>
         </div>
       </div>
       <div><h4>Care</h4><ul>
@@ -502,7 +502,7 @@ a,button{-webkit-tap-highlight-color:transparent}
       </ul></div>
     </div>
     <div class="footer__bottom">
-      <span>© 2025 Horizon General Hospital. Not a substitute for medical advice.</span>
+      <span>© 2025 Addis Medical Center. Not a substitute for medical advice.</span>
       <span class="footer__emergency">Emergency? Call 907</span>
     </div>
   </div>
@@ -582,11 +582,11 @@ const STORIES = {
     title: 'New 3T MRI scanner now operational.',
     date: '12 Oct 2025',
     read: '3 min read',
-    img: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1000&q=80&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1200&q=90&auto=format&fit=crop',
     paragraphs: [
       'Our Ground Floor Imaging & Diagnostic Centre has commissioned a high-field 3-Tesla MRI system designed to deliver high-resolution neuro, musculoskeletal, and vascular imaging with shorter scan durations.',
       'Most outpatient reports are reviewed by consultant radiologists and published to the patient portal the same day, while written fee estimates are provided ahead of scheduling.',
-      'Referrals are welcomed from both Horizon specialists and external clinics across Addis Ababa.'
+      'Referrals are welcomed from both Addis Medical Center specialists and external clinics across Addis Ababa.'
     ]
   },
   'flu-clinic': {
@@ -594,7 +594,7 @@ const STORIES = {
     title: 'Flu vaccination clinic opens for the season.',
     date: '28 Sep 2025',
     read: '2 min read',
-    img: 'https://images.unsplash.com/photo-1605289982774-9a6fef564df8?w=800&q=80&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1605289982774-9a6fef564df8?w=1200&q=90&auto=format&fit=crop',
     paragraphs: [
       'Seasonal influenza vaccination is now open for walk-in visits at our Outpatient Clinic Monday through Saturday from 09:00 to 16:00.',
       'We especially recommend timely immunization for older adults, pregnant patients, young children, and individuals managing chronic respiratory or cardiac conditions.'
@@ -605,7 +605,7 @@ const STORIES = {
     title: 'Video consultations now available for more specialties.',
     date: '05 Sep 2025',
     read: '2 min read',
-    img: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&q=90&auto=format&fit=crop',
     paragraphs: [
       'Patients can now book scheduled video consultations for general medicine, pediatric follow-ups, and ongoing chronic-care check-ins.',
       'Prescriptions, lab orders, and visit summaries appear directly inside your portal account afterward.'
@@ -616,7 +616,7 @@ const STORIES = {
     title: 'Maternity wing renovation now complete.',
     date: '18 Aug 2025',
     read: '3 min read',
-    img: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&q=90&auto=format&fit=crop',
     paragraphs: [
       'Level 4 now features expanded private delivery suites, upgraded neonatal monitoring, and quiet family recovery rooms.',
       'Expectant parents can arrange a calm walkthrough with our maternity nursing team prior to delivery.'
@@ -627,10 +627,10 @@ const STORIES = {
     title: 'Cardiac rehabilitation program expands.',
     date: '22 Jul 2025',
     read: '3 min read',
-    img: 'https://images.unsplash.com/photo-1551076805-e1869033e561?w=800&q=80&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1551076805-e1869033e561?w=1200&q=90&auto=format&fit=crop',
     paragraphs: [
       'Our 12-week supervised cardiac rehabilitation track pairs cardiologists, physiotherapists, and clinical nutritionists to support safe recovery after cardiac events or procedures.',
-      'Enrollment begins with a referral from your Horizon or visiting cardiologist.'
+      'Enrollment begins with a referral from your Addis Medical Center or visiting cardiologist.'
     ]
   },
   'french-care': {
@@ -638,9 +638,9 @@ const STORIES = {
     title: 'Multilingual care program adds French.',
     date: '10 Jun 2025',
     read: '2 min read',
-    img: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&q=90&auto=format&fit=crop',
     paragraphs: [
-      'Horizon now provides interpreter support across six languages — Amharic, English, Afaan Oromo, Tigrinya, Arabic, and French — at no additional charge.',
+      'Addis Medical Center now provides interpreter support across six languages — Amharic, English, Afaan Oromo, Tigrinya, Arabic, and French — at no additional charge.',
       'Mention your preferred language when booking or at reception so we can have support ready.'
     ]
   },
@@ -649,7 +649,7 @@ const STORIES = {
     title: 'Live ER wait times now on the website.',
     date: '04 May 2025',
     read: '2 min read',
-    img: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=800&q=80&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=1200&q=90&auto=format&fit=crop',
     paragraphs: [
       'Our Emergency page displays current triage wait estimates so families know what to expect before arriving at Bole Road.',
       'Critical and life-threatening emergencies are always prioritized immediately upon arrival — or call 907 for ambulance dispatch.'
@@ -700,7 +700,7 @@ if (subForm && subStatus) {
   subForm.addEventListener('submit', e => {
     e.preventDefault();
     const email = document.getElementById('subEmail').value.trim();
-    subStatus.textContent = `Subscribed ${email} for monthly Horizon health notices.`;
+    subStatus.textContent = `Subscribed ${email} for monthly Addis Medical Center health notices.`;
     subForm.reset();
   });
 }
