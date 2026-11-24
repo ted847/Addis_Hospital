@@ -1,13 +1,8 @@
-Here is the updated code. I have carefully selected high-quality, professional photographs exclusively featuring Black/African individuals, doctors, and patients. 
-
-These images perfectly represent the Ethiopian demographic while maintaining the stunning, premium design of your medical center page. Everything else (the layout, CSS, and functionality) remains completely untouched!
-
-```html
 <!doctype html>
 <html lang="en">
 <head>
 <!--
-  ADDIS MEDICAL CENTER — premium front-end concept.
+  ADDIS MEDICAL CENTER — premium front-end concept (ETHIOPIAN EDITION)
   Replace demo contact details, staff profiles, ratings, statistics, emergency
   numbers, and availability with verified hospital information before launch.
   Booking, patient portal, live ER status and other linked pages require a backend.
@@ -17,7 +12,7 @@ These images perfectly represent the Ethiopian demographic while maintaining the
 <title>Addis Medical Center — Care that starts with calm</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600&display=swap" rel="stylesheet" />
 <style>
 *,*::before,*::after{box-sizing:border-box}*{margin:0;padding:0}
 :root{--ink:#0b1b2b;--ink-2:#13293d;--brand:#0e6fbe;--brand-2:#0a5a9c;--brand-3:#e6f2fb;--accent:#14b8a6;--accent-soft:#e6fffb;--sand:#f6f1e8;--paper:#fff;--gray-50:#f7fafc;--gray-100:#eef2f7;--gray-200:#dfe6ee;--gray-300:#c4cfdb;--gray-400:#94a3b8;--gray-500:#6b7c8f;--gray-600:#4b5e72;--gray-700:#2f4156;--gray-800:#1f3145;--red:#e11d48;--radius:1.25rem;--radius-lg:2rem;--shadow-sm:0 1px 2px rgba(11,27,43,.06),0 1px 3px rgba(11,27,43,.04);--shadow-md:0 10px 30px -12px rgba(11,27,43,.18);--shadow-lg:0 30px 60px -20px rgba(11,27,43,.25);--font-serif:'Fraunces',Georgia,serif;--font-sans:'Inter',system-ui,sans-serif}
@@ -254,6 +249,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brand);outline-offs
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
 .reveal.is-in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{animation-duration:0s!important;transition-duration:0s!important}}
+
 /* ─────────────────────────────────────────────────────────────
    ADDIS SIGNATURE LAYER — refined motion, depth & usability
    ───────────────────────────────────────────────────────────── */
@@ -261,6 +257,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brand);outline-offs
   --brand:#0877c9;--brand-2:#075b9e;--accent:#17b8a6;
   --ink:#091b2d;--radius:1.35rem;
   --ease:cubic-bezier(.2,.8,.2,1);
+  --ethiopian-green:#078930;--ethiopian-yellow:#fcdd09;--ethiopian-red:#da121a;
 }
 ::selection{background:rgba(23,184,166,.22);color:var(--ink)}
 html{scroll-padding-top:6rem}
@@ -376,6 +373,125 @@ a,button{-webkit-tap-highlight-color:transparent}
 .about-horizon__pillar strong{display:block;font-size:.9rem;color:var(--ink)}
 .about-horizon__pillar span{display:block;font-size:.78rem;color:var(--gray-500);line-height:1.5;margin-top:.2rem}
 .about-horizon__actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.7rem}
+
+/* ─── ETHIOPIAN PRIDE ACCENTS ─── */
+.ethio-stripe{display:flex;height:3px;border-radius:999px;overflow:hidden;margin-top:.75rem}
+.ethio-stripe span{flex:1}
+.ethio-stripe span:nth-child(1){background:var(--ethiopian-green)}
+.ethio-stripe span:nth-child(2){background:var(--ethiopian-yellow)}
+.ethio-stripe span:nth-child(3){background:var(--ethiopian-red)}
+
+/* ─── AMHARIC ACCENT TEXT ─── */
+.amharic-accent{font-family:'Noto Sans Ethiopic','Inter',sans-serif;font-size:.75rem;letter-spacing:.02em;color:var(--gray-400);font-weight:400}
+
+/* ─── ENHANCED HERO IMAGE TREATMENT ─── */
+.hero__main-img{
+  position:relative;
+  background:linear-gradient(145deg,#d4e8f5,#b8d4e8);
+}
+.hero__main-img::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  border-radius:2.1rem;
+  box-shadow:inset 0 0 60px rgba(7,29,49,.08);
+  pointer-events:none;
+}
+
+/* ─── AFRICAN PATTERN DECORATION ─── */
+.pattern-border{
+  position:relative;
+  padding-top:1.5rem;
+}
+.pattern-border::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:6px;
+  background:repeating-linear-gradient(90deg,
+    var(--ethiopian-green) 0px, var(--ethiopian-green) 8px,
+    var(--ethiopian-yellow) 8px, var(--ethiopian-yellow) 16px,
+    var(--ethiopian-red) 16px, var(--ethiopian-red) 24px);
+  border-radius:999px 999px 0 0;
+  opacity:.85;
+}
+
+/* ─── ENHANCED CARD SHADOWS WITH WARM TONE ─── */
+.dept,.doc,.testi,.feature,.step{
+  box-shadow:0 12px 36px -28px rgba(9,27,45,.35), 0 4px 12px -6px rgba(7,61,90,.08);
+}
+.dept:hover,.doc:hover{
+  box-shadow:0 28px 55px -30px rgba(9,27,45,.45), 0 8px 20px -8px rgba(7,61,90,.12);
+}
+
+/* ─── ENHANCED DOCTOR BADGE ─── */
+.doc__badge{
+  background:rgba(255,255,255,.97);
+  box-shadow:0 4px 12px -4px rgba(0,0,0,.15);
+}
+
+/* ─── STATS SECTION WARM GLOW ─── */
+.stats::after{
+  content:'';
+  position:absolute;
+  bottom:-20%;right:-10%;
+  width:50%;height:80%;
+  background:radial-gradient(circle,rgba(252,221,9,.06),transparent 70%);
+  pointer-events:none;
+}
+
+/* ─── PARTNERS SECTION ENHANCEMENT ─── */
+.partner:nth-child(1):hover{color:var(--ethiopian-green);border-color:var(--ethiopian-green)}
+.partner:nth-child(3):hover{color:var(--ethiopian-yellow);border-color:var(--ethiopian-yellow)}
+.partner:nth-child(5):hover{color:var(--ethiopian-red);border-color:var(--ethiopian-red)}
+
+/* ─── ENHANCED CTA WITH WARM GRADIENT ─── */
+.cta{
+  background:linear-gradient(120deg,#0877c9,#075b9e 40%,#064a6f 70%,#052f4a);
+  position:relative;
+}
+.cta::after{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:4px;
+  background:linear-gradient(90deg,var(--ethiopian-green),var(--ethiopian-yellow),var(--ethiopian-red));
+  border-radius:2rem 2rem 0 0;
+}
+
+/* ─── WELLNESS IMAGE CARDS ─── */
+.hero__card-icon--teal svg,
+.hero__card-icon--blue svg{
+  filter:drop-shadow(0 1px 2px rgba(0,0,0,.1));
+}
+
+/* ─── ETHIOPIAN CROSS MOTIF IN LOGO AREA ─── */
+.logo__mark svg{
+  filter:drop-shadow(0 1px 1px rgba(0,0,0,.15));
+}
+
+/* ─── SMOOTH IMAGE REVEAL ─── */
+img{
+  transition:opacity .4s ease, filter .4s ease;
+}
+img[loading="lazy"]{
+  opacity:.92;
+}
+img[loading="lazy"].loaded{
+  opacity:1;
+}
+
+/* ─── ACCESSIBILITY ─── */
+@media(prefers-reduced-motion:reduce){
+  .ethio-stripe span{transition:none}
+}
+
+/* ─── PRINT STYLES ─── */
+@media print{
+  .emergency,.hdr,.drawer,.back-top,.scroll-progress{display:none!important}
+  body{color:#000;background:#fff}
+  .hero,.stats,.cta,.footer{background:#fff!important;color:#000!important}
+}
 </style>
 </head>
 <body>
@@ -449,10 +565,10 @@ a,button{-webkit-tap-highlight-color:transparent}
         </div>
         <div class="hero__trust">
           <div class="hero__avatars">
-            <img src="https://images.unsplash.com/photo-1531123414780-f74242c2b052?w=80&h=80&fit=crop&crop=faces&q=80" alt="" />
-            <img src="https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=80&h=80&fit=crop&crop=faces&q=80" alt="" />
-            <img src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?w=80&h=80&fit=crop&crop=faces&q=80" alt="" />
-            <img src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?w=80&h=80&fit=crop&crop=faces&q=80" alt="" />
+            <img src="https://images.unsplash.com/photo-1531123414780-f74242c2b052?w=80&h=80&fit=crop&crop=faces&q=80" alt="Patient portrait" />
+            <img src="https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=80&h=80&fit=crop&crop=faces&q=80" alt="Patient portrait" />
+            <img src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?w=80&h=80&fit=crop&crop=faces&q=80" alt="Patient portrait" />
+            <img src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?w=80&h=80&fit=crop&crop=faces&q=80" alt="Patient portrait" />
           </div>
           <div class="hero__trust-text"><span class="stars">★★★★★</span>
 <strong>4.9 / 5</strong> from <strong>2,400+</strong> patient reviews</div>
@@ -463,7 +579,7 @@ a,button{-webkit-tap-highlight-color:transparent}
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
           Live · updated now
         </span>
-        <img class="hero__main-img" src="https://images.unsplash.com/photo-1603398938378-e54e4926ceb2?w=800&q=80&auto=format&fit=crop" alt="Caring doctor at Addis Medical Center" />
+        <img class="hero__main-img" src="https://images.unsplash.com/photo-1580281658626-ee379f3cce93?w=800&q=80&auto=format&fit=crop" alt="Caring Ethiopian doctor at Addis Medical Center" />
         <div class="hero__card hero__card--wait">
           <div class="hero__card-icon hero__card-icon--teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
           <div><div class="hero__card-label">ER wait time</div><div class="hero__card-value live">~12 min</div></div>
@@ -506,8 +622,8 @@ a,button{-webkit-tap-highlight-color:transparent}
     <div class="container about-horizon__grid">
       <div class="about-horizon__visual reveal">
         <img class="about-horizon__image"
-             src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=1100&q=85&auto=format&fit=crop"
-             alt="Healthcare professionals working together in a modern clinical environment"
+             src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1100&q=85&auto=format&fit=crop"
+             alt="Ethiopian healthcare professionals collaborating in a modern clinical setting"
              loading="lazy" />
         <div class="about-horizon__stamp">
           <strong>Care with purpose.</strong>
@@ -518,10 +634,10 @@ a,button{-webkit-tap-highlight-color:transparent}
         <span class="kicker">Who we are</span>
         <h2>Healthcare built around people, not just appointments.</h2>
         <p>
-          Addis Medical Center is presented as a patient-focused healthcare
-          provider serving the Addis Ababa community. Our purpose is to make
-          quality healthcare easier to access through coordinated medical
-          services, knowledgeable healthcare professionals and a respectful
+          Addis Medical Center is a patient-focused healthcare provider serving
+          the Addis Ababa community and beyond. Our purpose is to make quality
+          healthcare easier to access through coordinated medical services,
+          knowledgeable Ethiopian healthcare professionals and a respectful
           patient experience.
         </p>
         <p>
@@ -573,10 +689,10 @@ a,button{-webkit-tap-highlight-color:transparent}
         <a href="departments.html" class="link">All departments <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
       </div>
       <div class="depts">
-        <a href="department.html?slug=cardiology" class="dept reveal"><img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&q=80&auto=format&fit=crop" alt="Cardiology" loading="lazy" /><span class="dept__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span><div class="dept__body"><div class="dept__name">Cardiology</div><div class="dept__meta">Heart &amp; vascular</div></div></a>
-        <a href="department.html?slug=pediatrics" class="dept reveal"><img src="https://images.unsplash.com/photo-1544284764-6725dc012a64?w=600&q=80&auto=format&fit=crop" alt="Pediatrics" loading="lazy" /><span class="dept__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span><div class="dept__body"><div class="dept__name">Pediatrics</div><div class="dept__meta">Newborn to teen</div></div></a>
-        <a href="department.html?slug=orthopedics" class="dept reveal"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80&auto=format&fit=crop" alt="Orthopedics" loading="lazy" /><span class="dept__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span><div class="dept__body"><div class="dept__name">Orthopedics</div><div class="dept__meta">Bones &amp; joints</div></div></a>
-        <a href="department.html?slug=obstetrics-gynecology" class="dept reveal"><img src="https://images.unsplash.com/photo-1531983412531-1f49a365ffed?w=600&q=80&auto=format&fit=crop" alt="Maternity" loading="lazy" /><span class="dept__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span><div class="dept__body"><div class="dept__name">Maternity</div><div class="dept__meta">Women's health</div></div></a>
+        <a href="department.html?slug=cardiology" class="dept reveal"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80&auto=format&fit=crop" alt="Cardiology department" loading="lazy" /><span class="dept__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span><div class="dept__body"><div class="dept__name">Cardiology</div><div class="dept__meta">Heart &amp; vascular</div></div></a>
+        <a href="department.html?slug=pediatrics" class="dept reveal"><img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&q=80&auto=format&fit=crop" alt="Pediatrics department" loading="lazy" /><span class="dept__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span><div class="dept__body"><div class="dept__name">Pediatrics</div><div class="dept__meta">Newborn to teen</div></div></a>
+        <a href="department.html?slug=orthopedics" class="dept reveal"><img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=600&q=80&auto=format&fit=crop" alt="Orthopedics department" loading="lazy" /><span class="dept__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span><div class="dept__body"><div class="dept__name">Orthopedics</div><div class="dept__meta">Bones &amp; joints</div></div></a>
+        <a href="department.html?slug=obstetrics-gynecology" class="dept reveal"><img src="https://images.unsplash.com/photo-1584516150909-c43483ee7932?w=600&q=80&auto=format&fit=crop" alt="Maternity department" loading="lazy" /><span class="dept__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span><div class="dept__body"><div class="dept__name">Maternity</div><div class="dept__meta">Women's health</div></div></a>
       </div>
     </div>
   </section>
@@ -642,9 +758,9 @@ a,button{-webkit-tap-highlight-color:transparent}
     <div class="container">
       <div class="section-head reveal"><div><span class="kicker">Meet the team</span><h2>Specialists you'll actually see.</h2><p>Real availability, not a waitlist. Book directly with the consultant.</p></div><a href="find-a-doctor.html" class="link">All doctors <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div>
       <div class="doctors">
-        <article class="doc reveal"><div class="doc__img"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&q=80&auto=format&fit=crop&crop=faces" alt="Dr. Selam Tesfaye" loading="lazy" /><span class="doc__badge">Accepting</span></div><div class="doc__body"><h3 class="doc__name">Dr. Selam Tesfaye</h3><p class="doc__role">Consultant Cardiologist</p><div class="doc__meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>14 yrs</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>Amharic · English</span></div><div class="doc__footer"><span class="doc__next">Tomorrow · 09:30</span><a href="book.html" class="doc__cta">Book <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div></div></article>
-        <article class="doc reveal"><div class="doc__img"><img src="https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?w=600&q=80&auto=format&fit=crop&crop=faces" alt="Dr. Hanna Girma" loading="lazy" /><span class="doc__badge">Accepting</span></div><div class="doc__body"><h3 class="doc__name">Dr. Hanna Girma</h3><p class="doc__role">Consultant Pediatrician</p><div class="doc__meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>11 yrs</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>Amharic · English · Oromo</span></div><div class="doc__footer"><span class="doc__next">Today · 14:00</span><a href="book.html" class="doc__cta">Book <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div></div></article>
-        <article class="doc reveal"><div class="doc__img"><img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=600&q=80&auto=format&fit=crop&crop=faces" alt="Dr. Abel Mekonnen" loading="lazy" /><span class="doc__badge">Accepting</span></div><div class="doc__body"><h3 class="doc__name">Dr. Abel Mekonnen</h3><p class="doc__role">Internist</p><div class="doc__meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>9 yrs</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>Amharic · English</span></div><div class="doc__footer"><span class="doc__next">Today · 16:30</span><a href="book.html" class="doc__cta">Book <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div></div></article>
+        <article class="doc reveal"><div class="doc__img"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&q=80&auto=format&fit=crop&crop=faces" alt="Dr. Selam Tesfaye — Consultant Cardiologist" loading="lazy" /><span class="doc__badge">Accepting</span></div><div class="doc__body"><h3 class="doc__name">Dr. Selam Tesfaye</h3><p class="doc__role">Consultant Cardiologist</p><div class="doc__meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>14 yrs</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>Amharic · English</span></div><div class="doc__footer"><span class="doc__next">Tomorrow · 09:30</span><a href="book.html" class="doc__cta">Book <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div></div></article>
+        <article class="doc reveal"><div class="doc__img"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80&auto=format&fit=crop&crop=faces" alt="Dr. Hanna Girma — Consultant Pediatrician" loading="lazy" /><span class="doc__badge">Accepting</span></div><div class="doc__body"><h3 class="doc__name">Dr. Hanna Girma</h3><p class="doc__role">Consultant Pediatrician</p><div class="doc__meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>11 yrs</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>Amharic · English · Oromo</span></div><div class="doc__footer"><span class="doc__next">Today · 14:00</span><a href="book.html" class="doc__cta">Book <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div></div></article>
+        <article class="doc reveal"><div class="doc__img"><img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=600&q=80&auto=format&fit=crop&crop=faces" alt="Dr. Abel Mekonnen — Internist" loading="lazy" /><span class="doc__badge">Accepting</span></div><div class="doc__body"><h3 class="doc__name">Dr. Abel Mekonnen</h3><p class="doc__role">Internist</p><div class="doc__meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>9 yrs</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>Amharic · English</span></div><div class="doc__footer"><span class="doc__next">Today · 16:30</span><a href="book.html" class="doc__cta">Book <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div></div></article>
       </div>
     </div>
   </section>
@@ -667,9 +783,9 @@ a,button{-webkit-tap-highlight-color:transparent}
     <div class="container">
       <div class="section-head reveal"><div><span class="kicker">Patient stories</span><h2>Real people. Real outcomes.</h2><p>2,400+ reviews, verified after discharge.</p></div></div>
       <div class="testis">
-        <blockquote class="testi reveal"><div class="testi__quote">"</div><div class="testi__stars">★★★★★</div><p class="testi__text">Booked in 40 seconds. Seen in 15 minutes. No forms, no chaos. This is what healthcare should feel like.</p><footer class="testi__who"><img src="https://images.unsplash.com/photo-1531123414780-f74242c2b052?w=100&h=100&fit=crop&crop=faces&q=80" alt="" /><div><div class="testi__who-name">Marta A.</div><div class="testi__who-role">Cardiology patient</div></div></footer></blockquote>
-        <blockquote class="testi reveal"><div class="testi__quote">"</div><div class="testi__stars">★★★★★</div><p class="testi__text">The pediatric team treated my daughter like family. Calm, patient, explained everything. We felt safe.</p><footer class="testi__who"><img src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?w=100&h=100&fit=crop&crop=faces&q=80" alt="" /><div><div class="testi__who-name">Daniel K.</div><div class="testi__who-role">Parent</div></div></footer></blockquote>
-        <blockquote class="testi reveal"><div class="testi__quote">"</div><div class="testi__stars">★★★★★</div><p class="testi__text">After my surgery, the portal showed every appointment, bill and prescription in one place. Never had to call once.</p><footer class="testi__who"><img src="https://images.unsplash.com/photo-1563132337-f159f484226c?w=100&h=100&fit=crop&crop=faces&q=80" alt="" /><div><div class="testi__who-name">Rahel T.</div><div class="testi__who-role">Orthopedics patient</div></div></footer></blockquote>
+        <blockquote class="testi reveal"><div class="testi__quote">"</div><div class="testi__stars">★★★★★</div><p class="testi__text">Booked in 40 seconds. Seen in 15 minutes. No forms, no chaos. This is what healthcare should feel like.</p><footer class="testi__who"><img src="https://images.unsplash.com/photo-1531123414780-f74242c2b052?w=100&h=100&fit=crop&crop=faces&q=80" alt="Marta A. — patient portrait" /><div><div class="testi__who-name">Marta A.</div><div class="testi__who-role">Cardiology patient</div></div></footer></blockquote>
+        <blockquote class="testi reveal"><div class="testi__quote">"</div><div class="testi__stars">★★★★★</div><p class="testi__text">The pediatric team treated my daughter like family. Calm, patient, explained everything. We felt safe.</p><footer class="testi__who"><img src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?w=100&h=100&fit=crop&crop=faces&q=80" alt="Daniel K. — parent" /><div><div class="testi__who-name">Daniel K.</div><div class="testi__who-role">Parent</div></div></footer></blockquote>
+        <blockquote class="testi reveal"><div class="testi__quote">"</div><div class="testi__stars">★★★★★</div><p class="testi__text">After my surgery, the portal showed every appointment, bill and prescription in one place. Never had to call once.</p><footer class="testi__who"><img src="https://images.unsplash.com/photo-1563132337-f159f484226c?w=100&h=100&fit=crop&crop=faces&q=80" alt="Rahel T. — patient portrait" /><div><div class="testi__who-name">Rahel T.</div><div class="testi__who-role">Orthopedics patient</div></div></footer></blockquote>
       </div>
     </div>
   </section>
@@ -692,6 +808,7 @@ a,button{-webkit-tap-highlight-color:transparent}
           <a href="tel:+251115550100"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>+251 11 555 0100</a>
           <a href="mailto:info@addismedicalcenter.example"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>info@addismedicalcenter.example</a>
         </div>
+        <div class="ethio-stripe" aria-hidden="true"><span></span><span></span><span></span></div>
       </div>
       <div><h4>Care</h4><ul><li><a href="find-a-doctor.html">Find a doctor</a></li><li><a href="departments.html">Departments</a></li><li><a href="projects.html">Projects</a></li><li><a href="book.html">Book a visit</a></li><li><a href="emergency.html">Emergency</a></li></ul></div>
       <div><h4>Patients</h4><ul><li><a href="patients-visitors.html">Visiting hours</a></li><li><a href="portal.html">Patient portal</a></li><li><a href="insurance.html">Insurance</a></li><li><a href="contact.html">Feedback</a></li></ul></div>
@@ -769,7 +886,6 @@ a,button{-webkit-tap-highlight-color:transparent}
   backTop?.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   });
-  // Reveal content only when it enters the viewport; gracefully degrade without IO.
   const revealItems = $$('.reveal');
   if ('IntersectionObserver' in window) {
     const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -784,7 +900,6 @@ a,button{-webkit-tap-highlight-color:transparent}
   } else {
     revealItems.forEach(item => item.classList.add('is-in'));
   }
-  // Count-up statistics. Preserve suffix markup and avoid replaying animations.
   const animateCounter = element => {
     if (element.dataset.animated === 'true') return;
     element.dataset.animated = 'true';
@@ -815,18 +930,21 @@ a,button{-webkit-tap-highlight-color:transparent}
   } else {
     counters.forEach(animateCounter);
   }
-  // Mark the current page in the primary navigation.
   const currentFile = location.pathname.split('/').pop() || 'index.html';
   $$('.nav a').forEach(link => {
     const targetFile = link.getAttribute('href')?.split('?')[0];
     if (targetFile === currentFile) link.setAttribute('aria-current', 'page');
   });
-  // Avoid broken-image icons if a remote demo image is unavailable.
   $$('img').forEach(image => {
     image.addEventListener('error', () => {
       image.classList.add('image-unavailable');
       image.alt = image.alt || 'Image unavailable';
     }, { once: true });
+    if (image.complete) {
+      image.classList.add('loaded');
+    } else {
+      image.addEventListener('load', () => image.classList.add('loaded'), { once: true });
+    }
   });
 })();
 </script>
@@ -835,4 +953,3 @@ a,button{-webkit-tap-highlight-color:transparent}
 </button>
 </body>
 </html>
-```
