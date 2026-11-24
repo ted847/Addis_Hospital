@@ -1,1254 +1,777 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YERAS TIBEB · Home</title>
-  <meta name="description" content="YERAS TIBEB · modern Ethiopian clothing, handwoven stories." />
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-    :root {
-      --ink: #1e1818;
-      --wine: #6c2732;
-      --wine-deep: #35191f;
-      --coral: #d35343;
-      --clay: #b86d4e;
-      --sand: #f1ebdd;
-      --linen: #f8f5ed;
-      --line: rgba(30, 24, 24, 0.18);
-      --gold: #c9a84c;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--sand);
-      color: var(--ink);
-      font-family: 'Manrope', sans-serif;
-      overflow-x: hidden;
-    }
-    .font-display { font-family: 'Playfair Display', serif; }
-    .eyebrow { letter-spacing: 0.16em; text-transform: uppercase; font-size: 0.67rem; font-weight: 700; }
+<!--
+  HORIZON GENERAL HOSPITAL — premium front-end concept.
+  Replace demo contact details, staff profiles, ratings, statistics, emergency
+  numbers, and availability with verified hospital information before launch.
+  Booking, patient portal, live ER status and other linked pages require a backend.
+-->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Horizon General Hospital — Care that starts with calm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box}*{margin:0;padding:0}
+:root{--ink:#0b1b2b;--ink-2:#13293d;--brand:#0e6fbe;--brand-2:#0a5a9c;--brand-3:#e6f2fb;--accent:#14b8a6;--accent-soft:#e6fffb;--sand:#f6f1e8;--paper:#fff;--gray-50:#f7fafc;--gray-100:#eef2f7;--gray-200:#dfe6ee;--gray-300:#c4cfdb;--gray-400:#94a3b8;--gray-500:#6b7c8f;--gray-600:#4b5e72;--gray-700:#2f4156;--gray-800:#1f3145;--red:#e11d48;--radius:1.25rem;--radius-lg:2rem;--shadow-sm:0 1px 2px rgba(11,27,43,.06),0 1px 3px rgba(11,27,43,.04);--shadow-md:0 10px 30px -12px rgba(11,27,43,.18);--shadow-lg:0 30px 60px -20px rgba(11,27,43,.25);--font-serif:'Fraunces',Georgia,serif;--font-sans:'Inter',system-ui,sans-serif}
+html{scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.55;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer;background:none;border:none}img{display:block;max-width:100%}
+a:focus-visible,button:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:.5rem}
+.container{width:100%;max-width:1240px;margin-inline:auto;padding-inline:1.5rem}.app{flex:1}
+.emergency{background:var(--ink);color:#fff;font-size:.8125rem}
+.emergency__inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.75rem;padding-block:.625rem}
+.emergency__left{display:flex;align-items:center;gap:.625rem}
+.emergency__pulse{width:.5rem;height:.5rem;border-radius:50%;background:#ff4d6a;box-shadow:0 0 0 0 rgba(255,77,106,.7);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,77,106,.7)}70%{box-shadow:0 0 0 10px rgba(255,77,106,0)}100%{box-shadow:0 0 0 0 rgba(255,77,106,0)}}
+.emergency__left b{font-weight:600}.emergency__left a{color:#fff;text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.emergency__link{color:#c9d6e3;display:flex;align-items:center;gap:.375rem;transition:color .2s}.emergency__link:hover{color:#fff}.emergency__link svg{width:.875rem;height:.875rem}
+.hdr{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s,background .3s}
+.hdr.is-scrolled{border-color:var(--gray-200);box-shadow:0 4px 20px -8px rgba(11,27,43,.08);background:rgba(255,255,255,.95)}
+.hdr__inner{display:flex;align-items:center;justify-content:space-between;padding-block:.875rem;gap:1rem}
+.logo{display:flex;align-items:center;gap:.625rem;flex-shrink:0}
+.logo__mark{width:2.5rem;height:2.5rem;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),var(--brand-2));border-radius:.875rem;color:#fff;box-shadow:0 8px 20px -8px rgba(14,111,190,.5)}
+.logo__mark svg{width:1.25rem;height:1.25rem}
+.logo__text{display:flex;flex-direction:column;line-height:1.1}
+.logo__name{font-family:var(--font-serif);font-weight:600;font-size:1.125rem;letter-spacing:-.01em;color:var(--ink)}
+.logo__sub{font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500);font-weight:500}
+.nav{display:none;gap:1.5rem;align-items:center}
+.nav a{font-size:.875rem;font-weight:500;color:var(--gray-700);position:relative;padding:.25rem 0;transition:color .2s}
+.nav a::after{content:'';position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--brand);transition:width .25s ease}
+.nav a:hover{color:var(--brand)}.nav a:hover::after{width:100%}
+.hdr__actions{display:flex;align-items:center;gap:.5rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.75rem 1.25rem;border-radius:999px;font-size:.875rem;font-weight:600;transition:transform .2s,background .2s,box-shadow .2s;border:1px solid transparent;white-space:nowrap;cursor:pointer}
+.btn--primary{background:var(--ink);color:#fff}.btn--primary:hover{background:var(--brand);transform:translateY(-1px);box-shadow:0 12px 24px -12px rgba(14,111,190,.6)}
+.btn--ghost{border-color:var(--gray-200);color:var(--ink);background:#fff}.btn--ghost:hover{border-color:var(--ink);transform:translateY(-1px)}
+.btn--light{background:#fff;color:var(--ink)}.btn--light:hover{background:var(--sand);transform:translateY(-1px)}
+.btn--accent{background:var(--accent);color:#fff}.btn--accent:hover{background:#0fa396;transform:translateY(-1px)}
+.btn svg{width:1rem;height:1rem}
+.hdr .btn--primary{padding:.625rem 1rem;font-size:.8125rem}
+.burger{display:grid;place-items:center;width:2.5rem;height:2.5rem;border-radius:.75rem;border:1px solid var(--gray-200);background:#fff}
+.burger svg{width:1.125rem;height:1.125rem;stroke:var(--ink)}
+@media(min-width:960px){.nav{display:flex}.burger{display:none}}
+.drawer{position:fixed;inset:0;background:rgba(11,27,43,.5);backdrop-filter:blur(4px);z-index:80;opacity:0;pointer-events:none;transition:opacity .3s}
+.drawer.is-open{opacity:1;pointer-events:auto}
+.drawer__panel{position:absolute;top:0;right:0;bottom:0;width:min(340px,88vw);background:#fff;transform:translateX(100%);transition:transform .35s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;padding:1.5rem;overflow-y:auto}
+.drawer.is-open .drawer__panel{transform:none}
+.drawer__head{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem}
+.drawer__close{width:2.25rem;height:2.25rem;display:grid;place-items:center;border-radius:.75rem;border:1px solid var(--gray-200)}.drawer__close:hover{background:var(--gray-50)}
+.drawer__nav{display:flex;flex-direction:column;gap:.25rem}
+.drawer__nav a{padding:.875rem .75rem;border-radius:.75rem;font-size:1rem;font-weight:500;color:var(--gray-800);display:flex;justify-content:space-between;align-items:center;transition:background .2s}
+.drawer__nav a:hover{background:var(--gray-50)}
+.drawer__nav a svg{width:1rem;height:1rem;color:var(--gray-300)}
+.drawer__nav a.danger{color:var(--red);margin-top:.5rem;border-top:1px solid var(--gray-200);padding-top:1rem}.drawer__nav a.danger:hover{background:#fff1f3}
+.drawer__cta{margin-top:1.5rem;display:flex;flex-direction:column;gap:.5rem}.drawer__cta .btn{width:100%}
+.drawer__foot{margin-top:auto;padding-top:1.5rem;border-top:1px solid var(--gray-200);font-size:.8125rem;color:var(--gray-500);line-height:1.6}
+.drawer__foot a{color:var(--brand);text-decoration:underline}
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#fbfdff 0%,#f4f9ff 55%,#fbfdff 100%)}
+.hero__bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(60rem 40rem at 85% -10%,rgba(20,184,166,.10),transparent 60%),radial-gradient(50rem 40rem at 5% 20%,rgba(14,111,190,.10),transparent 60%)}
+.hero__inner{position:relative;padding-block:4rem 5rem;display:grid;gap:3rem;align-items:center}
+@media(min-width:1024px){.hero__inner{grid-template-columns:1.05fr .95fr;gap:4rem;padding-block:5rem 6rem}}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;padding:.375rem .75rem .375rem .5rem;background:#fff;border:1px solid var(--gray-200);border-radius:999px;font-size:.75rem;font-weight:500;color:var(--gray-600);box-shadow:var(--shadow-sm)}
+.eyebrow__dot{width:1.25rem;height:1.25rem;border-radius:50%;background:var(--accent-soft);display:grid;place-items:center}
+.eyebrow__dot svg{width:.75rem;height:.75rem;stroke:var(--accent)}
+.hero h1{font-family:var(--font-serif);font-weight:500;font-size:clamp(2.5rem,5.5vw,4.25rem);line-height:1.02;letter-spacing:-.02em;color:var(--ink);margin-top:1.25rem}
+.hero h1 em{font-style:italic;color:var(--brand);position:relative;white-space:nowrap}
+.hero h1 em::after{content:'';position:absolute;left:0;right:0;bottom:.06em;height:.12em;background:linear-gradient(90deg,rgba(20,184,166,.35),rgba(20,184,166,0));border-radius:2px;z-index:-1}
+.hero__lead{margin-top:1.5rem;font-size:clamp(1.0625rem,1.4vw,1.1875rem);color:var(--gray-600);max-width:34rem;line-height:1.6}
+.hero__cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}.hero__cta .btn{padding:.875rem 1.5rem;font-size:.9375rem}
+.hero__trust{margin-top:2.5rem;display:flex;align-items:center;gap:1rem;padding-top:2rem;border-top:1px solid var(--gray-200)}
+.hero__avatars{display:flex}
+.hero__avatars img{width:2.25rem;height:2.25rem;border-radius:50%;border:2px solid #fff;object-fit:cover;margin-left:-.5rem;box-shadow:var(--shadow-sm)}
+.hero__avatars img:first-child{margin-left:0}
+.hero__trust-text{font-size:.875rem;color:var(--gray-600);line-height:1.4}
+.hero__trust-text strong{color:var(--ink);font-weight:600}
+.hero__trust-text .stars{color:#f59e0b;letter-spacing:1px;font-size:.875rem}
+.hero__visual{position:relative;min-height:28rem;display:grid;place-items:center}
+.hero__main-img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg)}
+.hero__card{position:absolute;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow-lg);padding:1rem 1.125rem;border:1px solid var(--gray-200);display:flex;align-items:center;gap:.75rem;animation:floatCard 6s ease-in-out infinite}
+.hero__card--wait{top:1.5rem;right:-1rem;animation-delay:0s}
+.hero__card--doctor{bottom:1.5rem;left:-1rem;animation-delay:1.5s}
+@keyframes floatCard{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media(max-width:1024px){.hero__card--wait{right:0}.hero__card--doctor{left:0}}
+.hero__card-icon{width:2.5rem;height:2.5rem;border-radius:.875rem;display:grid;place-items:center;flex-shrink:0}
+.hero__card-icon--teal{background:var(--accent-soft);color:#0fa396}
+.hero__card-icon--blue{background:var(--brand-3);color:var(--brand)}
+.hero__card-icon svg{width:1.125rem;height:1.125rem}
+.hero__card-label{font-size:.6875rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gray-500);font-weight:500}
+.hero__card-value{font-size:.9375rem;font-weight:600;color:var(--ink);margin-top:.125rem}
+.hero__card-value.live{color:#0fa396;display:flex;align-items:center;gap:.375rem}
+.hero__card-value.live::before{content:'';width:.5rem;height:.5rem;border-radius:50%;background:#0fa396;animation:pulse 2s infinite}
+.hero__badge{position:absolute;top:-1rem;left:2rem;background:var(--ink);color:#fff;padding:.5rem 1rem;border-radius:999px;font-size:.75rem;font-weight:600;letter-spacing:.02em;display:flex;align-items:center;gap:.5rem;box-shadow:var(--shadow-md);z-index:2}
+.hero__badge svg{width:.875rem;height:.875rem;color:var(--accent)}
+.quick{position:relative;margin-top:-3rem;z-index:10}
+.quick__grid{display:grid;gap:.75rem;grid-template-columns:1fr}
+@media(min-width:640px){.quick__grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.quick__grid{grid-template-columns:repeat(4,1fr)}}
+.quick__item{background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius);padding:1.25rem;display:flex;flex-direction:column;gap:.75rem;transition:transform .25s,border-color .25s,box-shadow .25s;position:relative;overflow:hidden}
+.quick__item::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--brand-3),transparent);opacity:0;transition:opacity .3s;pointer-events:none}
+.quick__item:hover{transform:translateY(-3px);border-color:transparent;box-shadow:var(--shadow-md)}
+.quick__item:hover::before{opacity:1}
+.quick__item > *{position:relative}
+.quick__icon{width:2.5rem;height:2.5rem;border-radius:.875rem;display:grid;place-items:center;background:var(--brand-3);color:var(--brand);transition:background .25s,color .25s}
+.quick__item:hover .quick__icon{background:var(--brand);color:#fff}
+.quick__icon svg{width:1.125rem;height:1.125rem}
+.quick__title{font-weight:600;font-size:1rem;color:var(--ink)}
+.quick__desc{font-size:.8125rem;color:var(--gray-500);line-height:1.5}
+.quick__arrow{position:absolute;top:1.25rem;right:1.25rem;width:1.25rem;height:1.25rem;stroke:var(--gray-300);transition:stroke .25s,transform .25s}
+.quick__item:hover .quick__arrow{stroke:var(--brand);transform:translate(2px,-2px)}
+.section{padding-block:5rem}
+.section--tint{background:var(--sand)}
+.kicker{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brand)}
+.kicker::before{content:'';width:1.5rem;height:1px;background:currentColor}
+.section-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:1.5rem;margin-bottom:2.5rem}
+.section-head h2{font-family:var(--font-serif);font-size:clamp(1.875rem,3vw,2.5rem);font-weight:500;letter-spacing:-.015em;line-height:1.1;color:var(--ink);margin-top:.75rem;max-width:32rem}
+.section-head p{color:var(--gray-600);max-width:30rem;margin-top:.75rem}
+.section-head .link{font-size:.875rem;font-weight:600;color:var(--brand);display:inline-flex;align-items:center;gap:.375rem;white-space:nowrap}
+.section-head .link svg{width:1rem;height:1rem;transition:transform .2s}
+.section-head .link:hover svg{transform:translateX(3px)}
+.depts{display:grid;gap:1rem;grid-template-columns:1fr}
+@media(min-width:640px){.depts{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.depts{grid-template-columns:repeat(4,1fr)}}
+.dept{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;display:block;isolation:isolate;color:#fff;box-shadow:var(--shadow-sm);background:linear-gradient(135deg,#0e6fbe,#0a5a9c)}
+.dept img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease;z-index:-2}
+.dept::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,27,43,0) 30%,rgba(11,27,43,.85) 100%);z-index:-1;transition:background .3s}
+.dept:hover img{transform:scale(1.06)}
+.dept:hover::after{background:linear-gradient(180deg,rgba(14,111,190,.25) 0%,rgba(11,27,43,.92) 100%)}
+.dept__body{position:absolute;inset:auto 0 0 0;padding:1.25rem}
+.dept__name{font-family:var(--font-serif);font-size:1.25rem;font-weight:500;letter-spacing:-.01em;line-height:1.2}
+.dept__meta{margin-top:.375rem;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:.5rem}
+.dept__arrow{position:absolute;top:1rem;right:1rem;width:2rem;height:2rem;border-radius:50%;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);display:grid;place-items:center;transition:background .3s,transform .3s}
+.dept__arrow svg{width:.875rem;height:.875rem;stroke:#fff}
+.dept:hover .dept__arrow{background:var(--accent);transform:rotate(-45deg)}
+/* VISITORS GUIDE */
+.guide{display:grid;gap:1rem;grid-template-columns:1fr;counter-reset:step}
+@media(min-width:640px){.guide{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.guide{grid-template-columns:repeat(4,1fr)}}
+.step{background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius);padding:1.75rem;position:relative;transition:transform .25s,box-shadow .25s,border-color .25s;counter-increment:step}
+.step:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:transparent}
+.step::before{content:counter(step,decimal-leading-zero);position:absolute;top:1rem;right:1.25rem;font-family:var(--font-serif);font-size:2.5rem;font-style:italic;color:var(--gray-100);line-height:1;font-weight:500}
+.step__icon{width:2.75rem;height:2.75rem;border-radius:.875rem;display:grid;place-items:center;background:var(--brand-3);color:var(--brand);margin-bottom:1rem}
+.step__icon svg{width:1.25rem;height:1.25rem}
+.step h3{font-family:var(--font-serif);font-size:1.125rem;font-weight:500;color:var(--ink);line-height:1.25;position:relative;z-index:1}
+.step p{margin-top:.5rem;font-size:.875rem;color:var(--gray-600);line-height:1.55}
+/* PARTNERS */
+.partners{display:grid;gap:1.5rem;grid-template-columns:repeat(2,1fr);align-items:center;margin-top:2rem}
+@media(min-width:640px){.partners{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:960px){.partners{grid-template-columns:repeat(6,1fr)}}
+.partner{background:#fff;border:1px solid var(--gray-200);border-radius:.875rem;padding:1.25rem;display:flex;align-items:center;justify-content:center;text-align:center;min-height:5rem;font-size:.75rem;font-weight:600;color:var(--gray-500);letter-spacing:.04em;text-transform:uppercase;transition:border-color .2s,color .2s,transform .2s}
+.partner:hover{border-color:var(--brand);color:var(--brand);transform:translateY(-2px)}
+/* FEATURES */
+.features{display:grid;gap:1rem;grid-template-columns:1fr}
+@media(min-width:768px){.features{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.features{grid-template-columns:repeat(3,1fr)}}
+.feature{background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius);padding:1.75rem;transition:transform .25s,box-shadow .25s,border-color .25s}
+.feature:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:transparent}
+.feature__icon{width:3rem;height:3rem;border-radius:1rem;display:grid;place-items:center;background:var(--brand-3);color:var(--brand);margin-bottom:1.25rem}
+.feature__icon svg{width:1.5rem;height:1.5rem}
+.feature h3{font-family:var(--font-serif);font-size:1.25rem;font-weight:500;letter-spacing:-.005em;color:var(--ink)}
+.feature p{margin-top:.625rem;font-size:.9375rem;color:var(--gray-600);line-height:1.6}
+/* STATS */
+.stats{background:linear-gradient(135deg,#0b1b2b 0%,#13293d 100%);color:#fff;padding-block:4.5rem;position:relative;overflow:hidden}
+.stats::before{content:'';position:absolute;inset:0;background:radial-gradient(40rem 30rem at 90% 10%,rgba(20,184,166,.15),transparent 60%),radial-gradient(40rem 30rem at 10% 90%,rgba(14,111,190,.18),transparent 60%);pointer-events:none}
+.stats__head{position:relative;text-align:center;max-width:36rem;margin:0 auto 3rem}
+.stats__head h2{font-family:var(--font-serif);font-size:clamp(1.75rem,3vw,2.5rem);font-weight:500;letter-spacing:-.015em}
+.stats__head p{margin-top:.75rem;color:#a9b8c7}
+.stats__grid{position:relative;display:grid;gap:1rem;grid-template-columns:repeat(2,1fr)}
+@media(min-width:768px){.stats__grid{grid-template-columns:repeat(4,1fr)}}
+.stat{padding:1.5rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);text-align:center;transition:background .3s,border-color .3s}
+.stat:hover{background:rgba(255,255,255,.07);border-color:rgba(20,184,166,.4)}
+.stat__num{font-family:var(--font-serif);font-size:clamp(2.25rem,4vw,3rem);font-weight:500;letter-spacing:-.02em;color:#fff;line-height:1}
+.stat__num span{color:var(--accent)}
+.stat__label{margin-top:.75rem;font-size:.8125rem;color:#a9b8c7;text-transform:uppercase;letter-spacing:.1em;font-weight:500}
+/* DOCTORS */
+.doctors{display:grid;gap:1.25rem;grid-template-columns:1fr}
+@media(min-width:768px){.doctors{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.doctors{grid-template-columns:repeat(3,1fr)}}
+.doc{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--gray-200);transition:transform .3s,box-shadow .3s,border-color .3s;display:flex;flex-direction:column}
+.doc:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:transparent}
+.doc__img{aspect-ratio:5/4;position:relative;overflow:hidden;background:var(--gray-100)}
+.doc__img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.doc:hover .doc__img img{transform:scale(1.05)}
+.doc__badge{position:absolute;top:.75rem;left:.75rem;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);padding:.375rem .75rem;border-radius:999px;font-size:.6875rem;font-weight:600;letter-spacing:.04em;color:#0fa396;display:flex;align-items:center;gap:.375rem;text-transform:uppercase}
+.doc__badge::before{content:'';width:.375rem;height:.375rem;border-radius:50%;background:#0fa396}
+.doc__body{padding:1.25rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+.doc__name{font-family:var(--font-serif);font-size:1.125rem;font-weight:500;letter-spacing:-.005em;color:var(--ink)}
+.doc__role{font-size:.8125rem;color:var(--gray-500);font-weight:500}
+.doc__meta{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem;padding-top:.75rem;border-top:1px solid var(--gray-100)}
+.doc__meta span{font-size:.75rem;color:var(--gray-600);display:inline-flex;align-items:center;gap:.25rem}
+.doc__meta span svg{width:.75rem;height:.75rem;color:var(--gray-400)}
+.doc__footer{margin-top:auto;padding-top:1rem;display:flex;gap:.5rem;align-items:center;justify-content:space-between}
+.doc__next{font-size:.75rem;color:#0fa396;font-weight:600;display:flex;align-items:center;gap:.375rem}
+.doc__next::before{content:'';width:.375rem;height:.375rem;border-radius:50%;background:#0fa396}
+.doc__cta{font-size:.8125rem;font-weight:600;color:var(--brand);display:inline-flex;align-items:center;gap:.25rem}
+.doc__cta svg{width:.875rem;height:.875rem;transition:transform .2s}
+.doc:hover .doc__cta svg{transform:translateX(2px)}
+/* TESTIMONIALS */
+.testis{display:grid;gap:1.25rem;grid-template-columns:1fr}
+@media(min-width:768px){.testis{grid-template-columns:repeat(3,1fr)}}
+.testi{background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius);padding:1.75rem;position:relative;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.testi:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.testi__quote{position:absolute;top:1rem;right:1.25rem;font-family:var(--font-serif);font-size:4rem;line-height:1;color:var(--brand-3);pointer-events:none;font-weight:600}
+.testi__stars{color:#f59e0b;font-size:.875rem;letter-spacing:.125rem;margin-bottom:1rem;position:relative}
+.testi__text{font-size:.9375rem;color:var(--gray-700);line-height:1.65;position:relative;font-style:italic;font-family:var(--font-serif)}
+.testi__who{display:flex;align-items:center;gap:.75rem;margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid var(--gray-100);position:relative}
+.testi__who img{width:2.5rem;height:2.5rem;border-radius:50%;object-fit:cover}
+.testi__who-name{font-size:.875rem;font-weight:600;color:var(--ink)}
+.testi__who-role{font-size:.75rem;color:var(--gray-500)}
+/* CTA */
+.cta{position:relative;overflow:hidden;border-radius:var(--radius-lg);padding:3rem 2rem;color:#fff;background:linear-gradient(135deg,var(--brand) 0%,var(--brand-2) 100%);margin-block:5rem}
+@media(min-width:768px){.cta{padding:4rem 3rem}}
+.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(30rem 20rem at 100% 0%,rgba(20,184,166,.35),transparent 60%),radial-gradient(30rem 20rem at 0% 100%,rgba(255,255,255,.12),transparent 60%);pointer-events:none}
+.cta__inner{position:relative;display:grid;gap:2.5rem;align-items:center}
+@media(min-width:960px){.cta__inner{grid-template-columns:1.1fr .9fr;gap:3rem}}
+.cta h2{font-family:var(--font-serif);font-size:clamp(1.875rem,3.5vw,2.75rem);font-weight:500;letter-spacing:-.015em;line-height:1.1}
+.cta p{margin-top:1rem;font-size:1.0625rem;color:rgba(255,255,255,.85);max-width:32rem;line-height:1.6}
+.cta__actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}.cta__actions .btn{padding:.875rem 1.5rem}
+.cta__features{display:grid;gap:.75rem}
+.cta__feature{display:flex;align-items:center;gap:.75rem;background:rgba(255,255,255,.1);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);padding:.875rem 1rem;border-radius:.875rem;font-size:.875rem;font-weight:500}
+.cta__feature svg{width:1.125rem;height:1.125rem;color:var(--accent);flex-shrink:0}
+/* FOOTER */
+.footer{background:var(--ink);color:#a9b8c7;margin-top:4rem;position:relative;overflow:hidden}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(20,184,166,.5),transparent)}
+.footer__inner{padding-block:4rem 2rem}
+.footer__grid{display:grid;gap:2.5rem;grid-template-columns:1fr}
+@media(min-width:640px){.footer__grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.footer__grid{grid-template-columns:1.5fr 1fr 1fr 1fr}}
+.footer__brand .logo__name{color:#fff}.footer__brand .logo__sub{color:#6b7c8f}
+.footer__about{margin-top:1.25rem;font-size:.875rem;line-height:1.6;max-width:22rem}
+.footer__contact{margin-top:1.5rem;display:flex;flex-direction:column;gap:.5rem;font-size:.875rem}
+.footer__contact a{display:flex;align-items:center;gap:.5rem;transition:color .2s}.footer__contact a:hover{color:#fff}
+.footer__contact svg{width:.875rem;height:.875rem;color:var(--accent);flex-shrink:0}
+.footer h4{color:#fff;font-size:.8125rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;margin-bottom:1rem}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.footer ul a{font-size:.875rem;transition:color .2s}.footer ul a:hover{color:#fff}
+.footer__bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.5rem;margin-top:3rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:.75rem}
+.footer__emergency{display:inline-flex;align-items:center;gap:.5rem;color:#fff;font-weight:600}
+.footer__emergency::before{content:'';width:.5rem;height:.5rem;border-radius:50%;background:#ff4d6a;animation:pulse 2s infinite}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.reveal.is-in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{animation-duration:0s!important;transition-duration:0s!important}}
 
-    /* Image fallback styling */
-    img {
-      background: var(--wine-deep);
-    }
-    img.img-fallback {
-      object-fit: cover;
-      background: linear-gradient(135deg, var(--wine-deep), var(--wine));
-    }
+/* ─────────────────────────────────────────────────────────────
+   HORIZON SIGNATURE LAYER — refined motion, depth & usability
+   ───────────────────────────────────────────────────────────── */
+:root{
+  --brand:#0877c9;--brand-2:#075b9e;--accent:#17b8a6;
+  --ink:#091b2d;--radius:1.35rem;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+::selection{background:rgba(23,184,166,.22);color:var(--ink)}
+html{scroll-padding-top:6rem}
+body{background:#fbfdff}
+.container{max-width:1320px}
+.emergency{background:linear-gradient(100deg,#071727,#102d43 65%,#0b3d56)}
+.emergency__inner{min-height:2.65rem}
+.hdr{box-shadow:0 1px 0 rgba(9,27,45,.035)}
+.logo__mark{position:relative;isolation:isolate;overflow:hidden}
+.logo__mark::after{content:"";position:absolute;inset:-60%;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.34),transparent 65%);transform:translateX(-70%) rotate(18deg);animation:logoShine 7s var(--ease) infinite}
+@keyframes logoShine{0%,65%,100%{transform:translateX(-70%) rotate(18deg)}82%{transform:translateX(70%) rotate(18deg)}}
+.nav a[aria-current="page"]{color:var(--brand)}
+.nav a[aria-current="page"]::after{width:100%}
+.btn{box-shadow:0 0 0 0 rgba(8,119,201,0);transition:transform .25s var(--ease),background .25s,box-shadow .25s,border-color .25s}
+.btn:active{transform:translateY(1px) scale(.985)}
+.btn--primary{background:linear-gradient(135deg,#102d43,#071727);box-shadow:0 9px 22px -13px rgba(7,23,39,.75)}
+.btn--primary:hover{background:linear-gradient(135deg,#0877c9,#075b9e);box-shadow:0 14px 30px -14px rgba(8,119,201,.75)}
+.hero{isolation:isolate}
+.hero__bg{background:
+ radial-gradient(45rem 35rem at 85% 5%,rgba(23,184,166,.14),transparent 65%),
+ radial-gradient(50rem 35rem at 0% 35%,rgba(8,119,201,.12),transparent 65%),
+ linear-gradient(180deg,#f8fcff,#f0f7fc 55%,#fbfdff)}
+.hero__inner{padding-block:5rem 6.25rem}
+.hero h1{font-size:clamp(3rem,6.2vw,5.25rem);letter-spacing:-.045em;line-height:.99;max-width:11ch}
+.hero h1 em{color:#0877c9}
+.hero__lead{max-width:36rem;font-size:1.1rem;line-height:1.75}
+.hero__visual{min-height:34rem;padding:1rem}
+.hero__main-img{aspect-ratio:4/4.65;border-radius:2.1rem;box-shadow:0 35px 90px -35px rgba(7,29,49,.48);filter:saturate(.9)}
+.hero__visual::before{content:"";position:absolute;inset:7% -2% 2% 10%;border:1px solid rgba(8,119,201,.18);border-radius:2.5rem;transform:rotate(3deg);z-index:-1}
+.hero__visual::after{content:"";position:absolute;width:9rem;height:9rem;border-radius:50%;right:-1.4rem;bottom:3rem;background:rgba(23,184,166,.12);filter:blur(2px);z-index:-1}
+.hero__card{backdrop-filter:blur(16px);background:rgba(255,255,255,.94);border-color:rgba(255,255,255,.85);box-shadow:0 20px 55px -25px rgba(7,29,49,.4)}
+.hero__card--wait{right:-1.5rem;top:2.25rem}
+.hero__card--doctor{left:-1.5rem;bottom:2.25rem}
+.hero__badge{background:linear-gradient(110deg,#0a263d,#0c4966)}
+.hero__trust{border-color:rgba(9,27,45,.1)}
+.quick{margin-top:-3.25rem}
+.quick__item{padding:1.45rem;min-height:11rem;border-color:rgba(9,27,45,.09);box-shadow:0 12px 35px -28px rgba(9,27,45,.45)}
+.quick__item:hover{transform:translateY(-6px);box-shadow:0 22px 42px -25px rgba(9,27,45,.32)}
+.quick__icon,.feature__icon,.step__icon{border-radius:1rem}
+.section{padding-block:6rem}
+.section-head{margin-bottom:2.75rem}
+.section-head h2{font-size:clamp(2.15rem,3.7vw,3.15rem);letter-spacing:-.035em}
+.dept{border-radius:1.5rem;box-shadow:0 18px 45px -28px rgba(9,27,45,.45)}
+.dept::after{background:linear-gradient(180deg,rgba(7,23,39,0) 15%,rgba(7,23,39,.88) 100%)}
+.dept__body{padding:1.5rem}
+.dept__name{font-size:1.55rem}
+.step,.feature,.doc,.testi{border-color:rgba(9,27,45,.09);box-shadow:0 12px 36px -32px rgba(9,27,45,.42)}
+.step:hover,.feature:hover{transform:translateY(-6px);box-shadow:0 24px 45px -28px rgba(9,27,45,.28)}
+.stats{background:linear-gradient(125deg,#071727,#0c2b43 58%,#07516a)}
+.stat{backdrop-filter:blur(12px);border-color:rgba(255,255,255,.12)}
+.stat__num{font-variant-numeric:tabular-nums}
+.doc{border-radius:1.4rem}
+.doc__img{aspect-ratio:5/4.1}
+.doc__body{padding:1.5rem}
+.testi{border-radius:1.4rem}
+.cta{border-radius:2rem;background:linear-gradient(120deg,#0877c9,#075b9e 62%,#064a6f);box-shadow:0 30px 70px -38px rgba(8,119,201,.8)}
+.footer{background:radial-gradient(35rem 25rem at 85% 0%,rgba(8,119,201,.17),transparent 65%),#071727}
+.footer__bottom{align-items:center}
+.reveal{transform:translateY(30px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.reveal.is-in{transform:translateY(0)}
+/* Small, polished utility controls */
+.scroll-progress{position:fixed;z-index:100;top:0;left:0;width:100%;height:3px;pointer-events:none}
+.scroll-progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,#17b8a6,#0877c9);box-shadow:0 0 12px rgba(23,184,166,.45)}
+.back-top{position:fixed;right:1.25rem;bottom:1.25rem;z-index:45;width:2.9rem;height:2.9rem;border-radius:50%;display:grid;place-items:center;background:#0b263d;color:white;box-shadow:0 12px 30px -12px rgba(7,23,39,.65);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .25s,transform .25s,background .25s}
+.back-top.is-visible{opacity:1;transform:none;pointer-events:auto}
+.back-top:hover{background:#0877c9}
+.back-top svg{width:1.1rem;height:1.1rem}
+.drawer{z-index:120}
+.drawer__panel{box-shadow:-25px 0 70px -35px rgba(0,0,0,.45)}
+.drawer__nav a{transition:background .2s,color .2s,transform .2s}
+.drawer__nav a:hover{color:var(--brand);transform:translateX(3px)}
+img{background:linear-gradient(120deg,#eaf2f8,#f7fafc)}
+a,button{-webkit-tap-highlight-color:transparent}
+@media(min-width:1024px){
+ .hero__inner{grid-template-columns:1.02fr .98fr;gap:5rem}
+ .hero__copy{padding-block:1.5rem}
+}
+@media(max-width:767px){
+ .container{padding-inline:1.15rem}
+ .hero__inner{padding-block:3.5rem 5rem;gap:2rem}
+ .hero h1{font-size:clamp(2.8rem,12vw,4.2rem)}
+ .hero__visual{min-height:26rem;padding:.4rem}
+ .hero__main-img{aspect-ratio:4/4.6}
+ .hero__card{padding:.8rem .9rem}
+ .hero__card--wait{right:-.2rem;top:1rem}
+ .hero__card--doctor{left:-.2rem;bottom:1rem}
+ .hero__badge{left:1rem;top:-.2rem}
+ .section{padding-block:4.25rem}
+ .cta{margin-block:3rem;padding:2.25rem 1.4rem}
+ .footer__inner{padding-block:3rem 1.5rem}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ .logo__mark::after{animation:none}
+ .reveal{opacity:1;transform:none}
+}
 
-    /* HEADER */
-    .site-header {
-      position: fixed;
-      z-index: 40;
-      top: 0;
-      left: 0;
-      right: 0;
-      color: var(--linen);
-      background: rgba(20, 12, 14, 0.3);
-      backdrop-filter: blur(4px);
-      transition: background 0.3s ease;
-    }
-    .site-header.scrolled { background: rgba(20, 12, 14, 0.92); backdrop-filter: blur(12px); }
-    .nav-shell {
-      border-bottom: 1px solid rgba(248, 245, 237, 0.12);
-      padding: 10px 0;
-      background: transparent;
-    }
-    .brand-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      text-decoration: none;
-    }
-    .brand-logo img {
-      height: 48px;
-      width: auto;
-      max-width: 180px;
-      object-fit: contain;
-      border-radius: 6px;
-      filter: brightness(1.05) drop-shadow(0 2px 8px rgba(0,0,0,0.2));
-      transition: transform 0.25s ease;
-    }
-    .brand-logo img:hover { transform: scale(1.02); }
-    .brand-logo .logo-text {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: white;
-      letter-spacing: 0.03em;
-      border-left: 1px solid rgba(255,255,255,0.15);
-      padding-left: 12px;
-      line-height: 1.2;
-    }
-    .brand-logo .logo-text span { color: var(--gold); }
-    .nav-link {
-      position: relative;
-      opacity: 0.8;
-      transition: opacity 180ms ease;
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: white;
-      text-decoration: none;
-    }
-    .nav-link:hover { opacity: 1; }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 100%;
-      bottom: -0.55rem;
-      height: 2px;
-      background: var(--gold);
-      transition: right 220ms ease;
-    }
-    .nav-link:hover::after { right: 0; }
-
-    .header-social {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .header-social a {
-      color: rgba(255,255,255,0.7);
-      transition: all 0.3s ease;
-      font-size: 1.4rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      text-decoration: none;
-    }
-    .header-social a:hover {
-      color: var(--gold);
-      transform: translateY(-3px) scale(1.08);
-      background: rgba(255,255,255,0.15);
-      border-color: var(--gold);
-      box-shadow: 0 4px 20px rgba(201, 168, 76, 0.25);
-    }
-    .header-social .divider {
-      width: 1px;
-      height: 32px;
-      background: rgba(255,255,255,0.15);
-    }
-
-    .icon-button {
-      position: relative;
-      display: grid;
-      place-items: center;
-      width: 60px;
-      height: 60px;
-      transition: color 180ms ease, transform 180ms ease;
-      background: transparent;
-      border: none;
-      color: white;
-      cursor: pointer;
-    }
-    .icon-button svg {
-      width: 38px;
-      height: 38px;
-    }
-    .icon-button:hover { color: var(--gold); transform: translateY(-1px); }
-    .cart-count {
-      position: absolute;
-      top: -2px;
-      right: -4px;
-      display: grid;
-      place-items: center;
-      min-width: 24px;
-      height: 24px;
-      padding: 0 6px;
-      border-radius: 999px;
-      background: var(--coral);
-      color: white;
-      font-size: 0.7rem;
-      font-weight: 800;
-    }
-
-    .button-primary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.7rem;
-      min-height: 50px;
-      padding: 0.85rem 1.5rem;
-      border: none;
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: all 250ms ease;
-      background: var(--coral);
-      color: white;
-      border-radius: 4px;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    .button-primary:hover { background: #e06654; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(211,83,67,0.35); }
-    .button-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.7rem;
-      min-height: 50px;
-      padding: 0.85rem 1.5rem;
-      border: 1px solid rgba(248, 245, 237, 0.5);
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: all 250ms ease;
-      color: var(--linen);
-      border-radius: 4px;
-      background: transparent;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    .button-secondary:hover { border-color: white; background: rgba(255,255,255,0.08); transform: translateY(-2px); }
-    .section { padding: clamp(4rem, 10vw, 8rem) 0; }
-
-    /* HERO */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: flex-end;
-      overflow: hidden;
-      color: var(--linen);
-      background: #2c1a1f;
-      cursor: pointer;
-    }
-    .hero-bg-wrapper {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      background: #2c1a1f;
-      transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    .hero-bg-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center center;
-      transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    .hero.bg-expanded .hero-bg-wrapper {
-      background: #0a0507;
-    }
-    .hero.bg-expanded .hero-bg-wrapper img {
-      object-fit: contain;
-      transform: scale(1);
-    }
-    .hero.bg-expanded::after {
-      opacity: 0.3;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(26,14,17,0.65) 0%, rgba(26,14,17,0.3) 50%, rgba(26,14,17,0.1) 80%),
-                  linear-gradient(0deg, rgba(24,12,15,0.7) 0%, rgba(24,12,15,0.05) 55%);
-      z-index: 1;
-      transition: opacity 0.8s ease;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      padding-bottom: clamp(4.5rem, 12vh, 8rem);
-      pointer-events: none;
-    }
-    .hero-content .hero-logo-area,
-    .hero-content .hero-actions,
-    .hero-content .trust-badges,
-    .hero-content .hero-badge {
-      pointer-events: auto;
-    }
-
-    .hero-logo-area {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      animation: riseIn 900ms 100ms both;
-    }
-    .hero-brand-text {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(3rem, 8vw, 6rem);
-      font-weight: 600;
-      line-height: 1;
-      color: white;
-      text-shadow: 0 4px 40px rgba(0,0,0,0.4);
-      letter-spacing: -0.02em;
-    }
-    .hero-brand-text .highlight {
-      color: var(--gold);
-    }
-    .hero-tagline {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.2rem, 2.5vw, 2.2rem);
-      font-weight: 500;
-      font-style: italic;
-      color: var(--gold);
-      text-shadow: 0 2px 30px rgba(0,0,0,0.3);
-      margin-top: -0.2rem;
-      letter-spacing: 0.04em;
-    }
-
-    .hero-actions {
-      animation: riseIn 800ms 390ms both;
-      margin-top: 1.5rem;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1rem;
-    }
-    .hero-actions .button-primary,
-    .hero-actions .button-secondary {
-      min-width: 200px;
-    }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(255,255,255,0.06);
-      backdrop-filter: blur(8px);
-      padding: 0.3rem 0.8rem;
-      border-radius: 50px;
-      font-size: 0.6rem;
-      letter-spacing: 0.08em;
-      border: 1px solid rgba(255,255,255,0.08);
-      margin-bottom: 0.5rem;
-    }
-
-    .trust-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem 1.8rem;
-      margin-top: 1.8rem;
-      animation: riseIn 800ms 450ms both;
-    }
-    .trust-badges span {
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: rgba(255,255,255,0.5);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .trust-badges span i { color: var(--gold); font-size: 0.7rem; }
-
-    .click-hint {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 3;
-      color: rgba(255,255,255,0.3);
-      font-size: 0.6rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      animation: pulse 2s ease-in-out infinite;
-      pointer-events: none;
-      transition: opacity 0.5s ease;
-    }
-    .hero.bg-expanded .click-hint {
-      opacity: 0;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 0.3; transform: translateX(-50%) translateY(0); }
-      50% { opacity: 0.7; transform: translateX(-50%) translateY(-4px); }
-    }
-
-    /* SLIDESHOW */
-    .slideshow-container {
-      position: relative;
-      overflow: hidden;
-      border-radius: 16px;
-      aspect-ratio: 16/9;
-      background: var(--wine-deep);
-    }
-    .slideshow-container .slides {
-      display: flex;
-      transition: transform 0.8s cubic-bezier(.2,.8,.2,1);
-      height: 100%;
-    }
-    .slideshow-container .slide {
-      min-width: 100%;
-      height: 100%;
-      position: relative;
-    }
-    .slideshow-container .slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
-    }
-    .slideshow-container .slide .slide-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(26,14,17,0.6) 0%, transparent 60%);
-      display: flex;
-      align-items: center;
-      padding: 3rem;
-    }
-    .slideshow-container .slide .slide-overlay h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 4vw, 4rem);
-      color: white;
-      max-width: 500px;
-      line-height: 1.1;
-    }
-    .slideshow-container .slide .slide-overlay h2 em { color: var(--gold); font-weight: 400; }
-    .slideshow-container .slide .slide-overlay p {
-      color: rgba(255,255,255,0.7);
-      margin-top: 0.5rem;
-      font-size: 1rem;
-    }
-    .slideshow-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: white;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      z-index: 10;
-      display: grid;
-      place-items: center;
-    }
-    .slideshow-btn:hover {
-      background: rgba(255,255,255,0.3);
-      transform: translateY(-50%) scale(1.05);
-    }
-    .slideshow-btn.prev { left: 20px; }
-    .slideshow-btn.next { right: 20px; }
-    .slideshow-dots {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 10px;
-      z-index: 10;
-    }
-    .slideshow-dots .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.3);
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .slideshow-dots .dot.active { background: var(--gold); width: 30px; border-radius: 5px; }
-
-    /* FEATURE CARDS */
-    .feature-card-standalone {
-      background: white;
-      padding: 2.5rem 2rem;
-      border-radius: 16px;
-      text-align: center;
-      transition: all 0.4s cubic-bezier(.2,.8,.2,1);
-      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-      border: 1px solid rgba(0,0,0,0.03);
-    }
-    .feature-card-standalone:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 16px 48px rgba(0,0,0,0.1);
-    }
-    .feature-card-standalone .icon {
-      font-size: 4.2rem;
-      color: var(--coral);
-      margin-bottom: 1.2rem;
-      display: block;
-    }
-    .feature-card-standalone h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
-      color: var(--ink);
-    }
-    .feature-card-standalone p {
-      color: rgba(30,24,24,0.7);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      max-width: 320px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* COLLECTION PREVIEW */
-    .collection-preview {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      transition: all 0.4s ease;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-    }
-    .collection-preview:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-    }
-    .collection-preview .preview-img {
-      width: 100%;
-      height: 340px;
-      object-fit: cover;
-      object-position: center center;
-      transition: transform 0.6s ease;
-    }
-    .collection-preview:hover .preview-img { transform: scale(1.04); }
-    .collection-preview .p-4 { padding: 1.2rem 1.2rem 1.5rem; }
-
-    /* STATS */
-    .stat-card {
-      text-align: center;
-      padding: 1.8rem 1.5rem;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-      transition: all 0.3s ease;
-    }
-    .stat-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-    }
-    .stat-icon {
-      font-size: 4.6rem;
-      color: var(--coral);
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-    .stat-label { font-size: 1rem; font-weight: 700; color: var(--ink); letter-spacing: 0.04em; }
-    .stat-sub { font-size: 0.75rem; color: rgba(30,24,24,0.5); margin-top: 0.2rem; }
-
-    /* TESTIMONIALS */
-    .testimonial-card {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-      transition: all 0.3s ease;
-    }
-    .testimonial-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-    }
-    .testimonial-card .quote-icon { color: var(--coral); font-size: 2.8rem; opacity: 0.3; margin-bottom: 0.5rem; }
-    .testimonial-card .quote-text {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
-      font-style: italic;
-      color: var(--ink);
-      line-height: 1.7;
-    }
-
-    /* CTA */
-    .cta-section {
-      background: linear-gradient(135deg, var(--wine-deep) 0%, var(--wine) 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    .cta-section::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(211,83,67,0.08) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-
-    /* INSTAGRAM FEED */
-    .instagram-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 8px;
-    }
-    .instagram-grid .insta-img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      object-position: center center;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-      border-radius: 8px;
-    }
-    .instagram-grid .insta-img:hover { transform: scale(1.04); }
-
-    /* FOOTER */
-    .footer { background: var(--ink); color: var(--linen); }
-    .footer-grid { display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: 2rem; }
-    .footer-brand { max-width: 260px; }
-    .footer-brand .footer-logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 0.8rem;
-    }
-    .footer-brand .footer-logo img {
-      height: 60px;
-      width: auto;
-      max-width: 180px;
-      object-fit: contain;
-      border-radius: 8px;
-    }
-    .footer-brand .footer-logo .ft-text {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: white;
-      letter-spacing: 0.04em;
-      border-left: 1px solid rgba(255,255,255,0.15);
-      padding-left: 12px;
-    }
-    .footer-brand .footer-logo .ft-text span { color: var(--gold); }
-    .footer-brand p { color: rgba(248,245,237,0.58); font-size: 0.78rem; line-height: 1.65; }
-    .footer-heading { color: var(--gold); font-size: 0.66rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; }
-    .footer-links { display: grid; gap: 0.7rem; margin-top: 1rem; color: rgba(248,245,237,0.7); font-size: 0.78rem; }
-    .footer-links a:hover { color: white; }
-
-    .footer-social {
-      display: flex;
-      gap: 16px;
-      margin-top: 1.2rem;
-    }
-    .footer-social a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: rgba(255,255,255,0.5);
-      font-size: 1.5rem;
-      transition: all 0.3s ease;
-      text-decoration: none;
-    }
-    .footer-social a:hover {
-      color: var(--gold);
-      background: rgba(255,255,255,0.12);
-      border-color: var(--gold);
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 4px 24px rgba(201, 168, 76, 0.2);
-    }
-
-    .footer-bottom { display: flex; justify-content: space-between; gap: 1rem; margin-top: 5rem; padding-top: 1.2rem; border-top: 1px solid rgba(248,245,237,0.12); color: rgba(248,245,237,0.45); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; }
-
-    .mobile-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; padding: 1.5rem; background: rgba(35,18,22,0.98); border-bottom: 1px solid rgba(248,245,237,0.1); backdrop-filter: blur(8px); }
-    .mobile-menu.is-open { display: grid; gap: 1rem; }
-    .mobile-menu a { color: rgba(248,245,237,0.82); font-family: 'Playfair Display', serif; font-size: 1.5rem; transition: color 0.3s; text-decoration: none; }
-    .mobile-menu a:hover { color: var(--gold); }
-    .mobile-social {
-      display: flex;
-      gap: 16px;
-      padding-top: 0.8rem;
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-    .mobile-social a {
-      color: rgba(255,255,255,0.5);
-      font-size: 1.6rem;
-      transition: color 0.3s ease, transform 0.3s ease;
-      width: 44px;
-      height: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.06);
-      text-decoration: none;
-    }
-    .mobile-social a:hover {
-      color: var(--gold);
-      transform: scale(1.1);
-      background: rgba(255,255,255,0.1);
-    }
-
-    .toast { position: fixed; z-index: 70; left: 50%; bottom: 1.5rem; padding: 0.85rem 1.1rem; background: var(--wine); color: white; box-shadow: 0 12px 30px rgba(30,24,24,0.22); opacity: 0; pointer-events: none; transform: translate(-50%, 1rem); transition: opacity 220ms ease, transform 220ms ease; font-size: 0.7rem; letter-spacing: 0.04em; border-radius: 8px; }
-    .toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s cubic-bezier(.2,.8,.2,1), transform 0.7s cubic-bezier(.2,.8,.2,1);
-    }
-    .reveal.is-visible { opacity: 1; transform: translateY(0); }
-
-    .banner-image {
-      width: 100%;
-      height: 500px;
-      object-fit: contain;
-      object-position: center center;
-      border-radius: 12px;
-      background: var(--sand);
-    }
-    .gallery-row-img {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
-      object-position: center center;
-      border-radius: 10px;
-      transition: transform 0.5s ease;
-    }
-    .gallery-row-img:hover { transform: scale(1.04); }
-    .final-banner-img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      object-position: center center;
-      border-radius: 10px;
-      transition: transform 0.5s ease;
-    }
-    .final-banner-img:hover { transform: scale(1.03); }
-
-    @keyframes riseIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-    @media (max-width: 900px) {
-      .desktop-nav { display: none; }
-      .mobile-toggle { display: grid !important; }
-      .header-social a { width: 40px; height: 40px; font-size: 1.2rem; }
-      .instagram-grid { grid-template-columns: repeat(3, 1fr); }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .banner-image { height: 350px; }
-      .collection-preview .preview-img { height: 280px; }
-      .gallery-row-img { height: 200px; }
-      .final-banner-img { height: 220px; }
-    }
-
-    @media (max-width: 640px) {
-      .hero { min-height: 760px; }
-      .hero-bg-wrapper img { object-position: center center; }
-      .hero::after { background: linear-gradient(90deg, rgba(26,14,17,0.6), rgba(26,14,17,0.2)), linear-gradient(0deg, rgba(24,12,15,0.7), rgba(24,12,15,0.05) 65%); }
-      .hero-content { padding-bottom: 4.2rem; }
-      .hero-actions { flex-direction: column; align-items: flex-start; }
-      .hero-actions .button-primary,
-      .hero-actions .button-secondary { width: 100%; min-width: unset; }
-      .hero-brand-text { font-size: 2.8rem; }
-      .hero-tagline { font-size: 1.1rem; }
-      .trust-badges { gap: 0.6rem 1rem; }
-      .trust-badges span { font-size: 0.5rem; }
-      .header-social { display: none !important; }
-      .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .footer-bottom { display: grid; gap: 0.45rem; margin-top: 3.5rem; }
-      .stat-card { padding: 1.2rem; }
-      .stat-icon { font-size: 4.0rem; }
-      .stat-label { font-size: 0.85rem; }
-      .feature-card-standalone { padding: 1.8rem 1.2rem; }
-      .feature-card-standalone .icon { font-size: 3.4rem; }
-      .feature-card-standalone h3 { font-size: 1.2rem; }
-      .feature-card-standalone p { font-size: 0.85rem; }
-      .instagram-grid { grid-template-columns: repeat(2, 1fr); gap: 4px; }
-      .footer-brand .footer-logo img { height: 50px; max-width: 140px; }
-      .footer-brand .footer-logo .ft-text { font-size: 0.85rem; padding-left: 8px; }
-      .banner-image { height: 220px; }
-      .collection-preview .preview-img { height: 220px; }
-      .gallery-row-img { height: 150px; }
-      .final-banner-img { height: 160px; }
-      .slideshow-container .slide .slide-overlay { padding: 1.5rem; }
-      .slideshow-container .slide .slide-overlay h2 { font-size: 1.5rem; }
-      .slideshow-btn { width: 32px; height: 32px; font-size: 0.8rem; }
-      .slideshow-btn.prev { left: 8px; }
-      .slideshow-btn.next { right: 8px; }
-      .icon-button { width: 52px; height: 52px; }
-      .icon-button svg { width: 32px; height: 32px; }
-      .footer-social a { width: 52px; height: 52px; font-size: 1.6rem; }
-      .click-hint { font-size: 0.5rem; bottom: 20px; }
-      .brand-logo img { height: 38px; max-width: 120px; }
-      .brand-logo .logo-text { font-size: 0.9rem; padding-left: 6px; }
-    }
-  </style>
+</style>
 </head>
 <body>
-  <header class="site-header" id="siteHeader">
-    <div class="nav-shell">
-      <div class="mx-auto flex max-w-[1400px] items-center justify-between px-5 py-2 lg:px-10">
-        <a href="index.html" class="brand-logo">
-          <img src="1.jpg" alt="YERAS TIBEB logo"
-               onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2248%22 height=%2248%22 viewBox=%220 0 48 48%22><rect width=%2248%22 height=%2248%22 rx=%226%22 fill=%22%236c2732%22/><text x=%2224%22 y=%2232%22 font-size=%2224%22 fill=%22%23c9a84c%22 text-anchor=%22middle%22 font-family=%22serif%22 font-weight=%22bold%22>Y</text></svg>';" />
-          <span class="logo-text">YERAS <span>TIBEB</span></span>
+<div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+
+<div class="emergency">
+  <div class="container emergency__inner">
+    <div class="emergency__left"><span class="emergency__pulse"></span><span><b>Emergency?</b> Call <a href="tel:907">907</a> — open 24/7</span></div>
+    <div><a href="emergency.html" class="emergency__link">Live ER wait times <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div>
+  </div>
+</div>
+
+<header class="hdr" id="hdr">
+  <div class="container hdr__inner">
+    <a href="index.html" class="logo">
+      <span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span>
+      <span class="logo__text"><span class="logo__name">Horizon</span><span class="logo__sub">General Hospital</span></span>
+    </a>
+    <nav class="nav">
+      <a href="find-a-doctor.html">Find a doctor</a>
+      <a href="departments.html">Departments</a>
+      <a href="services.html">Services</a>
+      <a href="patients-visitors.html">Patients</a>
+      <a href="about.html">About</a>
+      <a href="news.html">News</a>
+    </nav>
+    <div class="hdr__actions">
+      <a href="book.html" class="btn btn--primary">Book a visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer__panel">
+    <div class="drawer__head">
+      <a href="index.html" class="logo"><span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span><span class="logo__text"><span class="logo__name">Horizon</span><span class="logo__sub">General Hospital</span></span></a>
+      <button class="drawer__close" id="drawerClose" aria-label="Close"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    </div>
+    <nav class="drawer__nav">
+      <a href="find-a-doctor.html">Find a doctor <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="departments.html">Departments <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="services.html">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="book.html">Book a visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="patients-visitors.html">Patients &amp; visitors <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="about.html">About <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="portal.html">Patient portal <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="contact.html">Contact <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="careers.html">Careers <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="insurance.html">Insurance <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="news.html">News <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="emergency.html" class="danger">Emergency <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+    </nav>
+    <div class="drawer__cta"><a href="book.html" class="btn btn--primary">Book a visit</a><a href="portal.html" class="btn btn--ghost">Patient portal</a></div>
+    <div class="drawer__foot"><p>Emergency? Call <a href="tel:907">907</a></p><p style="margin-top:.25rem">Mon–Sun · 24/7</p></div>
+  </div>
+</div>
+
+<main class="app">
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="container hero__inner">
+      <div class="hero__copy reveal">
+        <span class="eyebrow">
+          <span class="eyebrow__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+          Accredited · Multilingual · 24/7 emergency
+        </span>
+        <h1>Healthcare that feels <em>human</em> again.</h1>
+        <p class="hero__lead">Book an appointment in under a minute, find the right specialist, or check wait times — from any device. Real people, real care, zero friction.</p>
+        <div class="hero__cta">
+          <a href="book.html" class="btn btn--primary">Book an appointment
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="find-a-doctor.html" class="btn btn--ghost">Find a doctor</a>
+        </div>
+        <div class="hero__trust">
+          <div class="hero__avatars">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=faces&q=80" alt="" />
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=faces&q=80" alt="" />
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=80&h=80&fit=crop&crop=faces&q=80" alt="" />
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=faces&q=80" alt="" />
+          </div>
+          <div class="hero__trust-text"><span class="stars">★★★★★</span><br><strong>4.9 / 5</strong> from <strong>2,400+</strong> patient reviews</div>
+        </div>
+      </div>
+      <div class="hero__visual reveal">
+        <span class="hero__badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          Live · updated now
+        </span>
+        <img class="hero__main-img" src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&q=80&auto=format&fit=crop" alt="Caring nurse at Horizon General Hospital" />
+        <div class="hero__card hero__card--wait">
+          <div class="hero__card-icon hero__card-icon--teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div><div class="hero__card-label">ER wait time</div><div class="hero__card-value live">~12 min</div></div>
+        </div>
+        <div class="hero__card hero__card--doctor">
+          <div class="hero__card-icon hero__card-icon--blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div><div class="hero__card-label">Next available</div><div class="hero__card-value">Today · 14:30</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quick">
+    <div class="container">
+      <div class="quick__grid">
+        <a href="book.html" class="quick__item reveal">
+          <span class="quick__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+          <span class="quick__title">Book a visit</span><span class="quick__desc">In-person or video in under 60 seconds.</span>
+          <svg class="quick__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
         </a>
-        <nav class="desktop-nav flex items-center gap-8" aria-label="Main navigation">
-          <a class="nav-link" href="index.html">Home</a>
-          <a class="nav-link" href="shop.html">Shop</a>
-          <a class="nav-link" href="about.html">About</a>
-          <a class="nav-link" href="contact.html">Contact</a>
-        </nav>
-        <div class="flex items-center gap-3">
-          <div class="header-social">
-            <a href="https://www.facebook.com/profile.php?id=100088839946852&mibextid=LQQJ4d" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="tel:+251910103956" aria-label="Telephone"><i class="fas fa-phone"></i></a>
-            <a href="https://pin.it/4uNPbwy" target="_blank" rel="noopener" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kidistdemessew@gmail.com" target="_blank" rel="noopener" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            <span class="divider"></span>
-          </div>
-          <button class="icon-button" id="cartButton" aria-label="Open shopping bag">
-            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5.5 8.5h13l1 12h-15l1-12Z"/><path d="M9 9V6.5a3 3 0 0 1 6 0V9"/></svg>
-            <span class="cart-count" id="cartCount">0</span>
-          </button>
-          <button class="icon-button mobile-toggle hidden" id="menuButton" aria-label="Open menu">
-            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-          </button>
-        </div>
+        <a href="find-a-doctor.html" class="quick__item reveal">
+          <span class="quick__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/></svg></span>
+          <span class="quick__title">Find a doctor</span><span class="quick__desc">Filter by specialty, language or availability.</span>
+          <svg class="quick__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+        <a href="emergency.html" class="quick__item reveal">
+          <span class="quick__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+          <span class="quick__title">Check ER wait</span><span class="quick__desc">Live wait times · directions · when to call.</span>
+          <svg class="quick__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+        <a href="portal.html" class="quick__item reveal">
+          <span class="quick__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span>
+          <span class="quick__title">Pay a bill</span><span class="quick__desc">View balances, records and prescriptions.</span>
+          <svg class="quick__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
       </div>
-      <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
-        <a href="index.html"><i class="fas fa-home mr-3"></i>Home</a>
-        <a href="shop.html"><i class="fas fa-shopping-bag mr-3"></i>Shop</a>
-        <a href="about.html"><i class="fas fa-info-circle mr-3"></i>About</a>
-        <a href="contact.html"><i class="fas fa-envelope mr-3"></i>Contact</a>
-        <div class="mobile-social">
-          <a href="https://www.facebook.com/profile.php?id=100088839946852&mibextid=LQQJ4d" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="tel:+251910103956" aria-label="Telephone"><i class="fas fa-phone"></i></a>
-          <a href="https://pin.it/4uNPbwy" target="_blank" rel="noopener" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kidistdemessew@gmail.com" target="_blank" rel="noopener" aria-label="Email"><i class="fas fa-envelope"></i></a>
-        </div>
-      </nav>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <!-- HERO SECTION -->
-    <section class="hero" id="heroSection" aria-labelledby="hero-title">
-      <div class="hero-bg-wrapper">
-        <img src="50.jpg" alt="Ethiopian heritage"
-             onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%221600%22 height=%22900%22><defs><linearGradient id=%22g%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22><stop offset=%220%22 stop-color=%22%2335191f%22/><stop offset=%221%22 stop-color=%22%236c2732%22/></linearGradient></defs><rect width=%221600%22 height=%22900%22 fill=%22url(%23g)%22/><text x=%22800%22 y=%22450%22 font-family=%22serif%22 font-size=%2280%22 fill=%22%23c9a84c%22 text-anchor=%22middle%22 opacity=%220.4%22>YERAS TIBEB</text></svg>';" />
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <div><span class="kicker">Our specialties</span><h2>World-class care, every department.</h2><p>Eight specialist teams working together for a single, seamless experience.</p></div>
+        <a href="departments.html" class="link">All departments <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
       </div>
-      <div class="click-hint"><i class="fas fa-mouse-pointer mr-2"></i> Click to view full image</div>
-      <div class="hero-content">
-        <div class="mx-auto max-w-[1400px] px-5 lg:px-10">
-          <div class="flex flex-wrap items-center gap-3 mb-4 hero-badge">
-            <span><i class="fas fa-flag" style="color:var(--gold);"></i></span>
-            <span>Ethiopian heritage · handwoven with love</span>
-          </div>
-          <div class="hero-logo-area">
-            <h1 class="hero-brand-text">
-              YERAS<br />
-              <span class="highlight">TIBEB</span>
-            </h1>
-            <p class="hero-tagline">MAKE IT ETHIOPIA</p>
-          </div>
-          <div class="hero-actions">
-            <a class="button-primary" href="shop.html"><i class="fas fa-shopping-bag"></i> Explore the collection <span aria-hidden="true">&#8594;</span></a>
-            <a class="button-secondary" href="about.html"><i class="fas fa-users"></i> Meet the makers</a>
-          </div>
-          <div class="trust-badges">
-            <span><i class="fas fa-check-circle"></i> Ethically made</span>
-            <span><i class="fas fa-check-circle"></i> Handwoven</span>
-            <span><i class="fas fa-check-circle"></i> Slow fashion</span>
-            <span><i class="fas fa-check-circle"></i> Fair trade</span>
-          </div>
-        </div>
+      <div class="depts">
+        <a href="department.html?slug=cardiology" class="dept reveal"><img src="https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?w=600&q=80&auto=format&fit=crop" alt="Cardiology" loading="lazy" /><span class="dept__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span><div class="dept__body"><div class="dept__name">Cardiology</div><div class="dept__meta">Heart &amp; vascular</div></div></a>
+        <a href="department.html?slug=pediatrics" class="dept reveal"><img src="https://images.unsplash.com/photo-1632053002928-1919f4d93e2b?w=600&q=80&auto=format&fit=crop" alt="Pediatrics" loading="lazy" /><span class="dept__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span><div class="dept__body"><div class="dept__name">Pediatrics</div><div class="dept__meta">Newborn to teen</div></div></a>
+        <a href="department.html?slug=orthopedics" class="dept reveal"><img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80&auto=format&fit=crop" alt="Orthopedics" loading="lazy" /><span class="dept__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span><div class="dept__body"><div class="dept__name">Orthopedics</div><div class="dept__meta">Bones &amp; joints</div></div></a>
+        <a href="department.html?slug=obstetrics-gynecology" class="dept reveal"><img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=600&q=80&auto=format&fit=crop" alt="Maternity" loading="lazy" /><span class="dept__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span><div class="dept__body"><div class="dept__name">Maternity</div><div class="dept__meta">Women's health</div></div></a>
       </div>
-    </section>
-
-    <!-- STATS SECTION -->
-    <section class="section bg-white">
-      <div class="mx-auto max-w-[1400px] px-5 lg:px-10">
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="stat-card reveal"><span class="stat-icon"><i class="fas fa-smile"></i></span><div class="stat-label">Happy Customers</div><div class="stat-sub">Across the globe</div></div>
-          <div class="stat-card reveal"><span class="stat-icon"><i class="fas fa-hands"></i></span><div class="stat-label">Master Weavers</div><div class="stat-sub">Preserving heritage</div></div>
-          <div class="stat-card reveal"><span class="stat-icon"><i class="fas fa-heart"></i></span><div class="stat-label">Handcrafted</div><div class="stat-sub">With love & care</div></div>
-          <div class="stat-card reveal"><span class="stat-icon"><i class="fas fa-star"></i></span><div class="stat-label">Customer Rating</div><div class="stat-sub">Excellence guaranteed</div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SLIDESHOW -->
-    <section style="background: var(--sand); padding-top: 2rem;">
-      <div class="mx-auto max-w-[1400px] px-5 lg:px-10">
-        <div class="slideshow-container reveal" id="slideshow">
-          <div class="slides" id="slides">
-            <div class="slide"><img src="51.jpg" alt="Ethiopian Textiles" onerror="imgFallback(this)" /><div class="slide-overlay"><div><h2>Timeless <em>craftsmanship</em></h2><p>Ancient techniques meet modern silhouettes</p></div></div></div>
-            <div class="slide"><img src="52.jpg" alt="YERAS TIBEB Collection" onerror="imgFallback(this)" /><div class="slide-overlay"><div><h2>Handwoven <em>with love</em></h2><p>Every piece tells a story of Ethiopian heritage</p></div></div></div>
-            <div class="slide"><img src="54.jpg" alt="Ethiopian Weaving" onerror="imgFallback(this)" /><div class="slide-overlay"><div><h2>Preserving <em>heritage</em></h2><p>Supporting master weavers across Ethiopia</p></div></div></div>
-            <div class="slide"><img src="55.jpg" alt="YERAS TIBEB Collection" onerror="imgFallback(this)" /><div class="slide-overlay"><div><h2>Modern <em>Ethiopian</em></h2><p>Contemporary fashion rooted in tradition</p></div></div></div>
-          </div>
-          <button class="slideshow-btn prev" id="prevSlide" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
-          <button class="slideshow-btn next" id="nextSlide" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
-          <div class="slideshow-dots" id="dots"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FULL WIDTH BANNER -->
-    <section class="section" style="background: var(--sand); padding: 0;">
-      <div class="mx-auto max-w-[1400px] px-5 lg:px-10">
-        <div class="reveal banner-wrapper">
-          <img src="64.jpg" alt="Ethiopian textile showcase" class="banner-image" loading="lazy" onerror="imgFallback(this)" />
-        </div>
-      </div>
-    </section>
-
-    <!-- FEATURE CARDS -->
-    <section class="section" style="background: var(--sand); padding-top: 3rem; padding-bottom: 4rem;">
-      <div class="mx-auto max-w-[1400px] px-5 lg:px-10">
-        <div class="text-center mb-12 reveal">
-          <p class="eyebrow" style="color:var(--coral);"><i class="fas fa-heart mr-1"></i> Made with intention</p>
-          <h2 class="font-display text-3xl md:text-4xl mt-2">Every piece is a collaboration <br/>between <em style="color:var(--coral);">tradition</em> and <em style="color:var(--coral);">modernity</em>.</h2>
-        </div>
-        <div class="grid gap-8 md:grid-cols-3">
-          <div class="feature-card-standalone reveal">
-            <span class="icon"><i class="fas fa-hands"></i></span>
-            <h3>Handwoven with Care</h3>
-            <p>Every piece is crafted by skilled artisans using traditional Ethiopian weaving techniques passed down through generations.</p>
-          </div>
-          <div class="feature-card-standalone reveal">
-            <span class="icon"><i class="fas fa-leaf"></i></span>
-            <h3>Sustainable Materials</h3>
-            <p>We use organic cotton, hand-spun wool, and natural dyes that honor the earth and preserve ancient techniques.</p>
-          </div>
-          <div class="feature-card-standalone reveal">
-            <span class="icon"><i class="fas fa-heart"></i></span>
-            <h3>Ethical Fashion</h3>
-            <p>Fair wages, safe working conditions, and a deep commitment to preserving Ethiopian cultural heritage.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- COLLECTION PREVIEW -->
-    <section class="section bg-white">
-      <div class="mx-auto max-w-[1400px] px-5 lg:px-10">
-        <div class="text-center mb-12 reveal">
-          <p class="eyebrow" style="color:var(--coral);"><i class="fas fa-tshirt mr-1"></i> The Collection</p>
-          <h2 class="font-display text-4xl md:text-5xl mt-2">Bestselling <em style="color:var(--coral);">pieces</em></h2>
-          <p class="mt-3 text-black/60 max-w-lg mx-auto">Each garment carries the stories of the hands that made it.</p>
-        </div>
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <div class="collection-preview reveal">
-            <img src="65.jpg" alt="The Segen Dress" class="preview-img" loading="lazy" onerror="imgFallback(this)" />
-            <div class="p-4">
-              <h4 class="font-display text-lg">The Segen Dress</h4>
-              <p class="text-sm text-black/50">Handloom cotton · coral</p>
-              <div class="mt-2"><a href="shop.html" style="color:var(--coral);" class="hover:underline text-sm font-semibold">Shop now →</a></div>
-            </div>
-          </div>
-          <div class="collection-preview reveal">
-            <img src="66.jpg" alt="The Addis Wrap" class="preview-img" loading="lazy" onerror="imgFallback(this)" />
-            <div class="p-4">
-              <h4 class="font-display text-lg">The Addis Wrap</h4>
-              <p class="text-sm text-black/50">Hand-spun cotton · indigo</p>
-              <div class="mt-2"><a href="shop.html" style="color:var(--coral);" class="hover:underline text-sm font-semibold">Shop now →</a></div>
-            </div>
-          </div>
-          <div class="collection-preview reveal">
-            <img src="67.jpg" alt="The Simien Dress" class="preview-img" loading="lazy" onerror="imgFallback(this)" />
-            <div class="p-4">
-              <h4 class="font-display text-lg">The Simien Dress</h4>
-              <p class="text-sm text-black/50">Organic cotton · ivory</p>
-              <div class="mt-2"><a href="shop.html" style="color:var(--coral);" class="hover:underline text-sm font-semibold">Shop now →</a></div>
-            </div>
-          </div>
-          <div class="collection-preview reveal">
-            <img src="68.jpg" alt="The Wollo Shawl" class="preview-img" loading="lazy" onerror="imgFallback(this)" />
-            <div class="p-4">
-              <h4 class="font-display text-lg">The Wollo Shawl</h4>
-              <p class="text-sm text-black/50">Handwoven wool · earth</p>
-              <div class="mt-2"><a href="shop.html" style="color:var(--coral);" class="hover:underline text-sm font-semibold">Shop now →</a></div>
-            </div>
-          </div>
-        </div>
-        <div class="text-center mt-10 reveal"><a href="shop.html" style="color:var(--coral);" class="inline-flex items-center gap-2 font-bold hover:gap-3 transition-all">View all pieces <span aria-hidden="true">&#8594;</span></a></div>
-      </div>
-    </section>
-
-    <!-- ADDITIONAL GALLERY ROW -->
-    <section class="section" style="background: var(--sand);">
-      <div class="mx-auto max-w-[1400px] px-5 lg:px-10">
-        <div class="grid gap-4 grid-cols-2 md:grid-cols-4">
-          <div class="reveal overflow-hidden rounded-lg"><img src="70.jpg" alt="Ethiopian textile" class="gallery-row-img" loading="lazy" onerror="imgFallback(this)" /></div>
-          <div class="reveal overflow-hidden rounded-lg"><img src="71.jpg" alt="Traditional weaving" class="gallery-row-img" loading="lazy" onerror="imgFallback(this)" /></div>
-          <div class="reveal overflow-hidden rounded-lg"><img src="72.jpg" alt="Handwoven fabric" class="gallery-row-img" loading="lazy" onerror="imgFallback(this)" /></div>
-          <div class="reveal overflow-hidden rounded-lg"><img src="73.jpg" alt="Ethiopian culture" class="gallery-row-img" loading="lazy" onerror="imgFallback(this)" /></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section class="section bg-white">
-      <div class="mx-auto max-w-[1400px] px-5 lg:px-10">
-        <div class="text-center mb-12 reveal">
-          <p class="eyebrow" style="color:var(--coral);"><i class="fas fa-quote-left mr-1"></i> Testimonials</p>
-          <h2 class="font-display text-4xl md:text-5xl mt-2">What our <em style="color:var(--coral);">community</em> says</h2>
-        </div>
-        <div class="grid gap-6 md:grid-cols-3">
-          <div class="testimonial-card reveal"><div class="quote-icon"><i class="fas fa-quote-left"></i></div><div class="flex text-sm mb-3" style="color:var(--gold);"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="quote-text">"The Segen Dress is absolutely stunning. The fabric feels like it has a soul — you can tell it was made with intention."</p><p class="mt-3 text-sm font-bold text-black/60">— Sara M., Addis Ababa</p></div>
-          <div class="testimonial-card reveal"><div class="quote-icon"><i class="fas fa-quote-left"></i></div><div class="flex text-sm mb-3" style="color:var(--gold);"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="quote-text">"I love that I'm wearing a piece of Ethiopian heritage. The quality is incredible and the design is timeless."</p><p class="mt-3 text-sm font-bold text-black/60">— David K., London</p></div>
-          <div class="testimonial-card reveal"><div class="quote-icon"><i class="fas fa-quote-left"></i></div><div class="flex text-sm mb-3" style="color:var(--gold);"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="quote-text">"Every piece tells a story. Yeras Tibeb is more than clothing — it's a movement to preserve our culture."</p><p class="mt-3 text-sm font-bold text-black/60">— Tigist W., Washington D.C.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- INSTAGRAM FEED -->
-    <section class="section" style="background: var(--sand);">
-      <div class="mx-auto max-w-[1400px] px-5 lg:px-10">
-        <div class="text-center mb-10 reveal">
-          <p class="eyebrow" style="color:var(--coral);"><i class="fab fa-instagram mr-1"></i> Follow us</p>
-          <h2 class="font-display text-3xl md:text-4xl mt-2">@yerastibeb</h2>
-          <p class="mt-2 text-black/60">Join our community and see the stories behind the stitches.</p>
-        </div>
-        <div class="instagram-grid">
-          <img src="74.jpg" alt="Instagram feed" class="insta-img" loading="lazy" onerror="imgFallback(this)" />
-          <img src="78.jpg" alt="Instagram feed" class="insta-img" loading="lazy" onerror="imgFallback(this)" />
-          <img src="80.jpg" alt="Instagram feed" class="insta-img" loading="lazy" onerror="imgFallback(this)" />
-          <img src="51.jpg" alt="Instagram feed" class="insta-img" loading="lazy" onerror="imgFallback(this)" />
-          <img src="52.jpg" alt="Instagram feed" class="insta-img" loading="lazy" onerror="imgFallback(this)" />
-        </div>
-        <div class="text-center mt-6 reveal"><a href="#" style="color:var(--coral);" class="inline-flex items-center gap-2 font-bold hover:gap-3 transition-all text-sm uppercase tracking-[0.1em]"><i class="fab fa-instagram"></i> Follow @yerastibeb</a></div>
-      </div>
-    </section>
-
-    <!-- CTA BANNER -->
-    <section class="cta-section section">
-      <div class="mx-auto max-w-[1400px] px-5 lg:px-10 text-center relative z-10">
-        <div class="reveal">
-          <p class="eyebrow" style="color:var(--gold);"><i class="fas fa-gem mr-1"></i> Discover the collection</p>
-          <h2 class="font-display text-4xl md:text-5xl text-white mt-2 leading-[1.1]">Wear a piece<br class="sm:hidden"/> of <em style="color:var(--gold); font-weight:400;">Ethiopia.</em></h2>
-          <p class="text-white/70 max-w-md mx-auto mt-3 text-lg">Each garment carries the stories of the hands that made it.</p>
-          <div class="mt-8 flex flex-wrap justify-center gap-4">
-            <a href="shop.html" class="button-primary" style="background: var(--gold); color: var(--ink);"><i class="fas fa-shopping-bag"></i> Shop now <span aria-hidden="true">&#8594;</span></a>
-            <a href="about.html" class="button-secondary" style="border-color: rgba(255,255,255,0.3); color: white;"><i class="fas fa-info-circle"></i> Our story</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FINAL GALLERY BANNER -->
-    <section class="section" style="background: var(--sand); padding: 0;">
-      <div class="mx-auto max-w-[1400px] px-5 lg:px-10">
-        <div class="grid gap-4 grid-cols-2 md:grid-cols-3 reveal">
-          <img src="55.jpg" alt="Ethiopian fashion" class="final-banner-img" loading="lazy" onerror="imgFallback(this)" />
-          <img src="56.jpg" alt="Traditional textile" class="final-banner-img" loading="lazy" onerror="imgFallback(this)" />
-          <img src="57.jpg" alt="Handwoven fabric" class="final-banner-img hidden md:block" loading="lazy" onerror="imgFallback(this)" />
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer section pb-6">
-    <div class="mx-auto max-w-[1400px] px-5 lg:px-10">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="footer-logo">
-            <img src="1.jpg" alt="YERAS TIBEB"
-                 onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22><rect width=%2260%22 height=%2260%22 rx=%228%22 fill=%22%236c2732%22/><text x=%2230%22 y=%2240%22 font-size=%2230%22 fill=%22%23c9a84c%22 text-anchor=%22middle%22 font-family=%22serif%22 font-weight=%22bold%22>Y</text></svg>';" />
-            <span class="ft-text">YERAS <span>TIBEB</span></span>
-          </div>
-          <p>Thoughtful clothing for people who know that the best things take time.</p>
-          <div class="footer-social">
-            <a href="https://www.facebook.com/profile.php?id=100088839946852&mibextid=LQQJ4d" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="tel:+251910103956" aria-label="Telephone"><i class="fas fa-phone"></i></a>
-            <a href="https://pin.it/4uNPbwy" target="_blank" rel="noopener" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kidistdemessew@gmail.com" target="_blank" rel="noopener" aria-label="Email"><i class="fas fa-envelope"></i></a>
-          </div>
-        </div>
-        <div>
-          <p class="footer-heading">Explore</p>
-          <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="shop.html">Shop</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-          </div>
-        </div>
-        <div>
-          <p class="footer-heading">Stay close</p>
-          <p class="mt-3 max-w-[250px] text-[0.78rem] leading-relaxed text-white/55">New releases, studio notes and stories from the loom.</p>
-          <form class="newsletter-form flex border-b border-white/30 mt-3" id="newsletterForm">
-            <input class="flex-1 bg-transparent py-2 outline-none text-sm text-white placeholder:text-white/40" type="email" placeholder="Your email" required />
-            <button class="text-xs font-bold uppercase tracking-[0.1em] hover:text-white transition" style="color:var(--gold);" type="submit">Join</button>
-          </form>
-          <p class="newsletter-message text-xs mt-2" style="color:var(--gold);" id="newsletterMessage"></p>
-        </div>
-      </div>
-      <div class="footer-bottom"><span><i class="far fa-copyright mr-1"></i> Yeras Tibeb · Addis Ababa</span><span>Crafted with care <i class="fas fa-heart mx-1" style="color:var(--coral);"></i> 2024</span></div>
     </div>
-  </footer>
+  </section>
 
-  <div class="toast" id="toast"></div>
+  <!-- VISITORS GUIDE (from Hallelujah) -->
+  <section class="section section--tint">
+    <div class="container">
+      <div class="section-head reveal">
+        <div><span class="kicker">Your visit</span><h2>What happens when you arrive.</h2><p>Four simple steps from front desk to your doctor — no confusion, no queue surprises.</p></div>
+        <a href="patients-visitors.html" class="link">Full visitor guide <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="guide">
+        <div class="step reveal">
+          <div class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 4v4M16 4v4"/></svg></div>
+          <h3>Reception</h3>
+          <p>Check in at the front desk. New patients will be asked for medical history and ID.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <h3>Triage</h3>
+          <p>Vital signs checked, a quick consultation, and we route you to the right specialty.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+          <h3>Cashier</h3>
+          <p>Transparent payment handling. Insurance or self-pay — you'll get an itemized estimate.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <h3>OPD Station</h3>
+          <p>Payment confirmed, and you're added to your doctor's waiting list. We'll call your name.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <script>
-    // ============================================================
-    // IMAGE FALLBACK — generates a styled SVG placeholder if a
-    // local image fails to load (e.g. missing on GitHub Pages).
-    // ============================================================
-    function imgFallback(imgEl) {
-      imgEl.onerror = null;
-      imgEl.classList.add('img-fallback');
-      const label = (imgEl.alt || 'YERAS TIBEB').replace(/[<>&"]/g, '');
-      const svg =
-        '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">' +
-          '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
-            '<stop offset="0" stop-color="#35191f"/>' +
-            '<stop offset="1" stop-color="#6c2732"/>' +
-          '</linearGradient></defs>' +
-          '<rect width="800" height="600" fill="url(#g)"/>' +
-          '<text x="400" y="285" font-family="Georgia, serif" font-size="34" fill="#c9a84c" text-anchor="middle" opacity="0.85">' + label + '</text>' +
-          '<text x="400" y="330" font-family="Georgia, serif" font-size="18" fill="#f8f5ed" text-anchor="middle" opacity="0.55">YERAS TIBEB</text>' +
-        '</svg>';
-      imgEl.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
-    }
+  <!-- WHY US -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal"><div><span class="kicker">Why Horizon</span><h2>Design that respects your time and dignity.</h2><p>Every detail built around the patient — because good care starts with feeling calm.</p></div></div>
+      <div class="features">
+        <div class="feature reveal"><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><h3>Book in under a minute</h3><p>No forms, no phone queues. Three taps from first visit to confirmed appointment.</p></div>
+        <div class="feature reveal"><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><h3>Care that listens</h3><p>Average consultation 24 minutes. Enough time to be heard, not just seen.</p></div>
+        <div class="feature reveal"><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div><h3>Six languages spoken</h3><p>Amharic, English, Oromo, Tigrinya, Arabic, French — interpreters on call.</p></div>
+        <div class="feature reveal"><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div><h3>Transparent pricing</h3><p>Itemized estimates before every procedure. No surprise bills, ever.</p></div>
+        <div class="feature reveal"><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><h3>Live ER visibility</h3><p>Real-time wait times updated every 15 minutes across all emergency bays.</p></div>
+        <div class="feature reveal"><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3>Records in your pocket</h3><p>Access results, prescriptions and visit summaries from any device.</p></div>
+      </div>
+    </div>
+  </section>
 
-    // ============================================================
-    // CART
-    // ============================================================
-    let cart = [];
-    try { cart = JSON.parse(localStorage.getItem('cart') || '[]'); } catch (e) { cart = []; }
-    function updateCartCount() {
-      const count = cart.reduce((s, i) => s + (i.qty || 0), 0);
-      const el = document.getElementById('cartCount');
-      if (el) el.textContent = count;
-    }
-    updateCartCount();
+  <!-- STATS -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats__head reveal"><h2>Numbers that mean something.</h2><p>Not marketing — measured outcomes we publish every year.</p></div>
+      <div class="stats__grid">
+        <div class="stat reveal"><div class="stat__num" data-target="180">0</div><div class="stat__label">Beds</div></div>
+        <div class="stat reveal"><div class="stat__num" data-target="42">0</div><div class="stat__label">Consultants</div></div>
+        <div class="stat reveal"><div class="stat__num" data-target="12400">0</div><div class="stat__label">Admissions / yr</div></div>
+        <div class="stat reveal"><div class="stat__num" data-target="98">0<span>%</span></div><div class="stat__label">Would return</div></div>
+      </div>
+    </div>
+  </section>
 
-    const cartButton = document.getElementById('cartButton');
-    if (cartButton) cartButton.addEventListener('click', () => { window.location.href = 'shop.html'; });
+  <!-- DOCTORS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal"><div><span class="kicker">Meet the team</span><h2>Specialists you'll actually see.</h2><p>Real availability, not a waitlist. Book directly with the consultant.</p></div><a href="find-a-doctor.html" class="link">All doctors <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div>
+      <div class="doctors">
+        <article class="doc reveal"><div class="doc__img"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80&auto=format&fit=crop&crop=faces" alt="Dr. Selam Tesfaye" loading="lazy" /><span class="doc__badge">Accepting</span></div><div class="doc__body"><h3 class="doc__name">Dr. Selam Tesfaye</h3><p class="doc__role">Consultant Cardiologist</p><div class="doc__meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>14 yrs</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>Amharic · English</span></div><div class="doc__footer"><span class="doc__next">Tomorrow · 09:30</span><a href="book.html" class="doc__cta">Book <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div></div></article>
+        <article class="doc reveal"><div class="doc__img"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&q=80&auto=format&fit=crop&crop=faces" alt="Dr. Hanna Girma" loading="lazy" /><span class="doc__badge">Accepting</span></div><div class="doc__body"><h3 class="doc__name">Dr. Hanna Girma</h3><p class="doc__role">Consultant Pediatrician</p><div class="doc__meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>11 yrs</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>Amharic · English · Oromo</span></div><div class="doc__footer"><span class="doc__next">Today · 14:00</span><a href="book.html" class="doc__cta">Book <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div></div></article>
+        <article class="doc reveal"><div class="doc__img"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80&auto=format&fit=crop&crop=faces" alt="Dr. Abel Mekonnen" loading="lazy" /><span class="doc__badge">Accepting</span></div><div class="doc__body"><h3 class="doc__name">Dr. Abel Mekonnen</h3><p class="doc__role">Internist</p><div class="doc__meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>9 yrs</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>Amharic · English</span></div><div class="doc__footer"><span class="doc__next">Today · 16:30</span><a href="book.html" class="doc__cta">Book <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div></div></article>
+      </div>
+    </div>
+  </section>
 
-    // ============================================================
-    // MOBILE MENU
-    // ============================================================
-    const menuButton = document.getElementById('menuButton');
-    const mobileMenu = document.getElementById('mobileMenu');
-    if (menuButton && mobileMenu) {
-      menuButton.addEventListener('click', () => mobileMenu.classList.toggle('is-open'));
-      mobileMenu.querySelectorAll('a').forEach(a =>
-        a.addEventListener('click', () => mobileMenu.classList.remove('is-open'))
-      );
-    }
+  <!-- PARTNERS (from Hallelujah) -->
+  <section class="section section--tint">
+    <div class="container">
+      <div class="section-head reveal"><div><span class="kicker">Our partners</span><h2>Trusted by insurers and institutions.</h2><p>Direct billing with major insurers — no paperwork, no surprises.</p></div><a href="insurance.html" class="link">See insurers <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div>
+      <div class="partners reveal">
+        <div class="partner">Nyala Insurance</div>
+        <div class="partner">Awash Insurance</div>
+        <div class="partner">Ethiopian Insurance</div>
+        <div class="partner">United Insurance</div>
+        <div class="partner">Global Insurance</div>
+        <div class="partner">Nile Insurance</div>
+      </div>
+    </div>
+  </section>
 
-    // ============================================================
-    // HEADER SCROLL
-    // ============================================================
-    const siteHeader = document.getElementById('siteHeader');
-    window.addEventListener('scroll', () => {
-      if (siteHeader) siteHeader.classList.toggle('scrolled', window.scrollY > 20);
+  <!-- TESTIMONIALS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal"><div><span class="kicker">Patient stories</span><h2>Real people. Real outcomes.</h2><p>2,400+ reviews, verified after discharge.</p></div></div>
+      <div class="testis">
+        <blockquote class="testi reveal"><div class="testi__quote">"</div><div class="testi__stars">★★★★★</div><p class="testi__text">Booked in 40 seconds. Seen in 15 minutes. No forms, no chaos. This is what healthcare should feel like.</p><footer class="testi__who"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=faces&q=80" alt="" /><div><div class="testi__who-name">Marta A.</div><div class="testi__who-role">Cardiology patient</div></div></footer></blockquote>
+        <blockquote class="testi reveal"><div class="testi__quote">"</div><div class="testi__stars">★★★★★</div><p class="testi__text">The pediatric team treated my daughter like family. Calm, patient, explained everything. We felt safe.</p><footer class="testi__who"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=faces&q=80" alt="" /><div><div class="testi__who-name">Daniel K.</div><div class="testi__who-role">Parent</div></div></footer></blockquote>
+        <blockquote class="testi reveal"><div class="testi__quote">"</div><div class="testi__stars">★★★★★</div><p class="testi__text">After my surgery, the portal showed every appointment, bill and prescription in one place. Never had to call once.</p><footer class="testi__who"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=100&h=100&fit=crop&crop=faces&q=80" alt="" /><div><div class="testi__who-name">Rahel T.</div><div class="testi__who-role">Orthopedics patient</div></div></footer></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="cta reveal">
+      <div class="cta__inner">
+        <div><span class="kicker" style="color:var(--accent)">Ready when you are</span><h2 style="margin-top:.75rem">Your next visit can start right now.</h2><p>Book online in under a minute. Or open the live ER dashboard if you're not sure where to go.</p><div class="cta__actions"><a href="book.html" class="btn btn--light">Book an appointment <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a><a href="emergency.html" class="btn btn--accent">ER wait times</a></div></div>
+        <div class="cta__features"><div class="cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>No account needed to book</div><div class="cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>SMS confirmation in 30 min</div><div class="cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Free rescheduling up to 24h</div></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="logo"><span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span><span class="logo__text"><span class="logo__name">Horizon</span><span class="logo__sub">General Hospital</span></span></a>
+        <p class="footer__about">Calm, clear care for Addis Ababa since 2008. Accredited, multilingual, and open 24/7 for emergencies.</p>
+        <div class="footer__contact">
+          <a href="tel:+251115550100"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>+251 11 555 0100</a>
+          <a href="mailto:info@horizonhospital.example"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>info@horizonhospital.example</a>
+        </div>
+      </div>
+      <div><h4>Care</h4><ul><li><a href="find-a-doctor.html">Find a doctor</a></li><li><a href="departments.html">Departments</a></li><li><a href="services.html">Services</a></li><li><a href="book.html">Book a visit</a></li><li><a href="emergency.html">Emergency</a></li></ul></div>
+      <div><h4>Patients</h4><ul><li><a href="patients-visitors.html">Visiting hours</a></li><li><a href="portal.html">Patient portal</a></li><li><a href="insurance.html">Insurance</a></li><li><a href="contact.html">Feedback</a></li></ul></div>
+      <div><h4>Hospital</h4><ul><li><a href="about.html">About us</a></li><li><a href="careers.html">Careers</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    </div>
+    <div class="footer__bottom"><span>© 2025 Horizon General Hospital. Not a substitute for medical advice.</span><span class="footer__emergency">Emergency? Call 907</span></div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  'use strict';
+
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+
+  const header = $('#hdr');
+  const drawer = $('#drawer');
+  const burger = $('#burger');
+  const drawerClose = $('#drawerClose');
+  const progress = $('#scrollProgress');
+  const backTop = $('#backTop');
+  let lastScrollY = window.scrollY;
+
+  const closeDrawer = () => {
+    if (!drawer || !burger) return;
+    drawer.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden', 'true');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    burger.focus({ preventScroll: true });
+  };
+
+  const openDrawer = () => {
+    if (!drawer || !burger) return;
+    drawer.classList.add('is-open');
+    drawer.setAttribute('aria-hidden', 'false');
+    burger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    const firstLink = $('a', drawer);
+    if (firstLink) firstLink.focus({ preventScroll: true });
+  };
+
+  burger?.addEventListener('click', () => {
+    burger.getAttribute('aria-expanded') === 'true' ? closeDrawer() : openDrawer();
+  });
+  drawerClose?.addEventListener('click', closeDrawer);
+  drawer?.addEventListener('click', event => {
+    if (event.target === drawer) closeDrawer();
+  });
+  $$('.drawer__nav a, .drawer__cta a', drawer || document).forEach(link => {
+    link.addEventListener('click', () => {
+      drawer?.classList.remove('is-open');
+      drawer?.setAttribute('aria-hidden', 'true');
+      burger?.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
     });
+  });
 
-    // ============================================================
-    // NEWSLETTER
-    // ============================================================
-    const newsletterForm = document.getElementById('newsletterForm');
-    if (newsletterForm) {
-      newsletterForm.addEventListener('submit', e => {
-        e.preventDefault();
-        const msg = document.getElementById('newsletterMessage');
-        if (msg) msg.textContent = '✓ You are on the list. Welcome in.';
-        e.target.reset();
-      });
-    }
-
-    // ============================================================
-    // TOAST
-    // ============================================================
-    const toast = document.getElementById('toast');
-    let toastTimer;
-    function showToast(msg) {
-      if (!toast) return;
-      toast.textContent = msg;
-      toast.classList.add('is-visible');
-      clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => toast.classList.remove('is-visible'), 2400);
-    }
-
-    // ============================================================
-    // REVEAL ON SCROLL
-    // ============================================================
-    if ('IntersectionObserver' in window) {
-      const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add('is-visible');
-        });
-      }, { threshold: 0.12 });
-
-      document.querySelectorAll('.reveal').forEach((el, i) => {
-        el.style.transitionDelay = Math.min(i * 60, 400) + 'ms';
-        revealObserver.observe(el);
-      });
-    } else {
-      document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
-    }
-
-    // ============================================================
-    // HERO CLICK TO EXPAND
-    // ============================================================
-    const heroSection = document.getElementById('heroSection');
-    if (heroSection) {
-      heroSection.addEventListener('click', function (e) {
-        if (e.target.closest('a') || e.target.closest('button')) return;
-        this.classList.toggle('bg-expanded');
-      });
-    }
-
-    // ============================================================
-    // SLIDESHOW
-    // ============================================================
-    (function initSlideshow() {
-      const slidesEl = document.getElementById('slides');
-      const dotsContainer = document.getElementById('dots');
-      const slideshow = document.getElementById('slideshow');
-      const prevBtn = document.getElementById('prevSlide');
-      const nextBtn = document.getElementById('nextSlide');
-      if (!slidesEl || !dotsContainer || !slideshow) return;
-
-      const slides = slidesEl.querySelectorAll('.slide');
-      const total = slides.length;
-      if (total === 0) return;
-
-      let index = 0;
-      let intervalId;
-
-      dotsContainer.innerHTML = '';
-      for (let i = 0; i < total; i++) {
-        const dot = document.createElement('div');
-        dot.className = 'dot' + (i === 0 ? ' active' : '');
-        dot.addEventListener('click', () => goTo(i));
-        dotsContainer.appendChild(dot);
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && drawer?.classList.contains('is-open')) closeDrawer();
+    if (event.key === 'Tab' && drawer?.classList.contains('is-open')) {
+      const focusable = $$('a, button', drawer).filter(el => !el.hasAttribute('disabled'));
+      const first = focusable[0], last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault(); last?.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault(); first?.focus();
       }
+    }
+  });
 
-      function goTo(i) {
-        index = (i + total) % total;
-        slidesEl.style.transform = 'translateX(-' + (index * 100) + '%)';
-        dotsContainer.querySelectorAll('.dot').forEach((d, di) =>
-          d.classList.toggle('active', di === index)
-        );
-      }
+  const updateScrollUI = () => {
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const percent = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
+    if (progress) progress.style.width = `${Math.min(100, percent)}%`;
+    header?.classList.toggle('is-scrolled', window.scrollY > 8);
+    backTop?.classList.toggle('is-visible', window.scrollY > 600);
+    lastScrollY = window.scrollY;
+  };
+  window.addEventListener('scroll', updateScrollUI, { passive: true });
+  updateScrollUI();
 
-      function next() { goTo(index + 1); }
-      function prev() { goTo(index - 1); }
+  backTop?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  });
 
-      if (prevBtn) prevBtn.addEventListener('click', prev);
-      if (nextBtn) nextBtn.addEventListener('click', next);
+  // Reveal content only when it enters the viewport; gracefully degrade without IO.
+  const revealItems = $$('.reveal');
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -36px 0px' });
+    revealItems.forEach(item => revealObserver.observe(item));
+  } else {
+    revealItems.forEach(item => item.classList.add('is-in'));
+  }
 
-      function start() { stop(); intervalId = setInterval(next, 5000); }
-      function stop() { clearInterval(intervalId); }
+  // Count-up statistics. Preserve suffix markup and avoid replaying animations.
+  const animateCounter = element => {
+    if (element.dataset.animated === 'true') return;
+    element.dataset.animated = 'true';
+    const target = Number.parseInt(element.dataset.target, 10);
+    if (!Number.isFinite(target)) return;
+    const suffix = element.querySelector('span')?.outerHTML || '';
+    const duration = 1500;
+    const start = performance.now();
+    const tick = now => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 4);
+      element.innerHTML = Math.round(target * eased).toLocaleString() + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
 
-      slideshow.addEventListener('mouseenter', stop);
-      slideshow.addEventListener('mouseleave', start);
-      start();
-    })();
-  </script>
+  const counters = $$('.stat__num[data-target]');
+  if ('IntersectionObserver' in window) {
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.35 });
+    counters.forEach(counter => counterObserver.observe(counter));
+  } else {
+    counters.forEach(animateCounter);
+  }
+
+  // Mark the current page in the primary navigation.
+  const currentFile = location.pathname.split('/').pop() || 'index.html';
+  $$('.nav a').forEach(link => {
+    const targetFile = link.getAttribute('href')?.split('?')[0];
+    if (targetFile === currentFile) link.setAttribute('aria-current', 'page');
+  });
+
+  // Avoid broken-image icons if a remote demo image is unavailable.
+  $$('img').forEach(image => {
+    image.addEventListener('error', () => {
+      image.classList.add('image-unavailable');
+      image.alt = image.alt || 'Image unavailable';
+    }, { once: true });
+  });
+})();
+</script>
+<button class="back-top" id="backTop" type="button" aria-label="Back to top" title="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
+</button>
 </body>
 </html>
