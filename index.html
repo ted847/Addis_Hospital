@@ -36,7 +36,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brand);outline-offs
 .logo__text{display:flex;flex-direction:column;line-height:1.1}
 .logo__name{font-family:var(--font-serif);font-weight:600;font-size:1.125rem;letter-spacing:-.01em;color:var(--ink)}
 .logo__sub{font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500);font-weight:500}
-.nav{display:none;gap:1.5rem;align-items:center}
+.nav{display:none;gap:1.4rem;align-items:center}
 .nav a{font-size:.875rem;font-weight:500;color:var(--gray-700);position:relative;padding:.25rem 0;transition:color .2s}
 .nav a::after{content:'';position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--brand);transition:width .25s ease}
 .nav a:hover{color:var(--brand)}.nav a:hover::after{width:100%}
@@ -128,96 +128,24 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brand);outline-offs
 .section-head .link svg{width:1rem;height:1rem;transition:transform .2s}
 .section-head .link:hover svg{transform:translateX(3px)}
 
-/* NEW: What we do / About the hospital */
-.whatweare{
-  display:grid;gap:2.5rem;align-items:center;
-  grid-template-columns:1fr;
-}
-@media(min-width:960px){
-  .whatweare{grid-template-columns:1.05fr .95fr;gap:4rem}
-}
+/* What we do */
+.whatweare{display:grid;gap:2.5rem;align-items:center;grid-template-columns:1fr}
+@media(min-width:960px){.whatweare{grid-template-columns:1.05fr .95fr;gap:4rem}}
 .whatweare__copy{max-width:36rem}
-.whatweare__copy h2{
-  font-family:var(--font-serif);
-  font-size:clamp(2rem,3.4vw,2.75rem);
-  font-weight:500;
-  letter-spacing:-.02em;
-  line-height:1.1;
-  color:var(--ink);
-  margin-top:.75rem;
-}
-.whatweare__copy .lead{
-  margin-top:1.25rem;
-  font-size:1.0625rem;
-  color:var(--gray-600);
-  line-height:1.7;
-}
+.whatweare__copy h2{font-family:var(--font-serif);font-size:clamp(2rem,3.4vw,2.75rem);font-weight:500;letter-spacing:-.02em;line-height:1.1;color:var(--ink);margin-top:.75rem}
+.whatweare__copy .lead{margin-top:1.25rem;font-size:1.0625rem;color:var(--gray-600);line-height:1.7}
 .whatweare__copy .lead strong{color:var(--ink);font-weight:600}
-.whatweare__list{
-  list-style:none;
-  margin-top:1.5rem;
-  display:grid;
-  gap:.85rem;
-}
-.whatweare__list li{
-  display:flex;
-  gap:.85rem;
-  align-items:flex-start;
-  font-size:.9375rem;
-  color:var(--gray-600);
-  line-height:1.6;
-}
-.whatweare__check{
-  flex-shrink:0;
-  width:1.5rem;
-  height:1.5rem;
-  border-radius:50%;
-  background:var(--accent-soft);
-  color:var(--accent);
-  display:grid;
-  place-items:center;
-  margin-top:.15rem;
-}
+.whatweare__list{list-style:none;margin-top:1.5rem;display:grid;gap:.85rem}
+.whatweare__list li{display:flex;gap:.85rem;align-items:flex-start;font-size:.9375rem;color:var(--gray-600);line-height:1.6}
+.whatweare__check{flex-shrink:0;width:1.5rem;height:1.5rem;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;margin-top:.15rem}
 .whatweare__check svg{width:.9rem;height:.9rem}
 .whatweare__cta{margin-top:1.75rem;display:flex;flex-wrap:wrap;gap:.75rem}
-.whatweare__media{
-  position:relative;
-  border-radius:var(--radius-lg);
-  overflow:hidden;
-  box-shadow:var(--shadow-lg);
-  aspect-ratio:5/6;
-  min-height:24rem;
-}
+.whatweare__media{position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:5/6;min-height:24rem}
 .whatweare__media img{width:100%;height:100%;object-fit:cover;display:block}
-.whatweare__caption{
-  position:absolute;
-  left:1rem;right:1rem;bottom:1rem;
-  padding:.9rem 1rem;
-  border-radius:.9rem;
-  background:rgba(255,255,255,.9);
-  backdrop-filter:blur(10px);
-  border:1px solid rgba(255,255,255,.7);
-  font-size:.8rem;
-  color:var(--gray-600);
-  line-height:1.45;
-}
+.whatweare__caption{position:absolute;left:1rem;right:1rem;bottom:1rem;padding:.9rem 1rem;border-radius:.9rem;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.7);font-size:.8rem;color:var(--gray-600);line-height:1.45}
 .whatweare__caption strong{color:var(--ink);font-weight:600}
-.service-pills{
-  margin-top:1.5rem;
-  display:flex;
-  flex-wrap:wrap;
-  gap:.45rem;
-}
-.service-pill{
-  font-size:.75rem;
-  font-weight:600;
-  padding:.4rem .8rem;
-  border-radius:999px;
-  background:#fff;
-  border:1px solid var(--gray-200);
-  color:var(--gray-700);
-  transition:border-color .2s,color .2s,transform .2s;
-}
+.service-pills{margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.45rem}
+.service-pill{font-size:.75rem;font-weight:600;padding:.4rem .8rem;border-radius:999px;background:#fff;border:1px solid var(--gray-200);color:var(--gray-700);transition:border-color .2s,color .2s,transform .2s}
 .service-pill:hover{border-color:var(--brand);color:var(--brand);transform:translateY(-1px)}
 
 .depts{display:grid;gap:1rem;grid-template-columns:1fr}
@@ -234,7 +162,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brand);outline-offs
 .dept__arrow{position:absolute;top:1rem;right:1rem;width:2rem;height:2rem;border-radius:50%;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);display:grid;place-items:center;transition:background .3s,transform .3s}
 .dept__arrow svg{width:.875rem;height:.875rem;stroke:#fff}
 .dept:hover .dept__arrow{background:var(--accent);transform:rotate(-45deg)}
-/* VISITORS GUIDE */
 .guide{display:grid;gap:1rem;grid-template-columns:1fr;counter-reset:step}
 @media(min-width:640px){.guide{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1024px){.guide{grid-template-columns:repeat(4,1fr)}}
@@ -245,13 +172,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brand);outline-offs
 .step__icon svg{width:1.25rem;height:1.25rem}
 .step h3{font-family:var(--font-serif);font-size:1.125rem;font-weight:500;color:var(--ink);line-height:1.25;position:relative;z-index:1}
 .step p{margin-top:.5rem;font-size:.875rem;color:var(--gray-600);line-height:1.55}
-/* PARTNERS */
 .partners{display:grid;gap:1.5rem;grid-template-columns:repeat(2,1fr);align-items:center;margin-top:2rem}
 @media(min-width:640px){.partners{grid-template-columns:repeat(3,1fr)}}
 @media(min-width:960px){.partners{grid-template-columns:repeat(6,1fr)}}
 .partner{background:#fff;border:1px solid var(--gray-200);border-radius:.875rem;padding:1.25rem;display:flex;align-items:center;justify-content:center;text-align:center;min-height:5rem;font-size:.75rem;font-weight:600;color:var(--gray-500);letter-spacing:.04em;text-transform:uppercase;transition:border-color .2s,color .2s,transform .2s}
 .partner:hover{border-color:var(--brand);color:var(--brand);transform:translateY(-2px)}
-/* FEATURES */
 .features{display:grid;gap:1rem;grid-template-columns:1fr}
 @media(min-width:768px){.features{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1024px){.features{grid-template-columns:repeat(3,1fr)}}
@@ -261,7 +186,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brand);outline-offs
 .feature__icon svg{width:1.5rem;height:1.5rem}
 .feature h3{font-family:var(--font-serif);font-size:1.25rem;font-weight:500;letter-spacing:-.005em;color:var(--ink)}
 .feature p{margin-top:.625rem;font-size:.9375rem;color:var(--gray-600);line-height:1.6}
-/* STATS */
 .stats{background:linear-gradient(135deg,#0b1b2b 0%,#13293d 100%);color:#fff;padding-block:4.5rem;position:relative;overflow:hidden}
 .stats::before{content:'';position:absolute;inset:0;background:radial-gradient(40rem 30rem at 90% 10%,rgba(20,184,166,.15),transparent 60%),radial-gradient(40rem 30rem at 10% 90%,rgba(14,111,190,.18),transparent 60%);pointer-events:none}
 .stats__head{position:relative;text-align:center;max-width:36rem;margin:0 auto 3rem}
@@ -274,7 +198,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brand);outline-offs
 .stat__num{font-family:var(--font-serif);font-size:clamp(2.25rem,4vw,3rem);font-weight:500;letter-spacing:-.02em;color:#fff;line-height:1}
 .stat__num span{color:var(--accent)}
 .stat__label{margin-top:.75rem;font-size:.8125rem;color:#a9b8c7;text-transform:uppercase;letter-spacing:.1em;font-weight:500}
-/* DOCTORS */
 .doctors{display:grid;gap:1.25rem;grid-template-columns:1fr}
 @media(min-width:768px){.doctors{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1024px){.doctors{grid-template-columns:repeat(3,1fr)}}
@@ -297,7 +220,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brand);outline-offs
 .doc__cta{font-size:.8125rem;font-weight:600;color:var(--brand);display:inline-flex;align-items:center;gap:.25rem}
 .doc__cta svg{width:.875rem;height:.875rem;transition:transform .2s}
 .doc:hover .doc__cta svg{transform:translateX(2px)}
-/* TESTIMONIALS */
 .testis{display:grid;gap:1.25rem;grid-template-columns:1fr}
 @media(min-width:768px){.testis{grid-template-columns:repeat(3,1fr)}}
 .testi{background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius);padding:1.75rem;position:relative;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
@@ -309,7 +231,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brand);outline-offs
 .testi__who img{width:2.5rem;height:2.5rem;border-radius:50%;object-fit:cover}
 .testi__who-name{font-size:.875rem;font-weight:600;color:var(--ink)}
 .testi__who-role{font-size:.75rem;color:var(--gray-500)}
-/* CTA */
 .cta{position:relative;overflow:hidden;border-radius:var(--radius-lg);padding:3rem 2rem;color:#fff;background:linear-gradient(135deg,var(--brand) 0%,var(--brand-2) 100%);margin-block:5rem}
 @media(min-width:768px){.cta{padding:4rem 3rem}}
 .cta::before{content:'';position:absolute;inset:0;background:radial-gradient(30rem 20rem at 100% 0%,rgba(20,184,166,.35),transparent 60%),radial-gradient(30rem 20rem at 0% 100%,rgba(255,255,255,.12),transparent 60%);pointer-events:none}
@@ -321,7 +242,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brand);outline-offs
 .cta__features{display:grid;gap:.75rem}
 .cta__feature{display:flex;align-items:center;gap:.75rem;background:rgba(255,255,255,.1);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);padding:.875rem 1rem;border-radius:.875rem;font-size:.875rem;font-weight:500}
 .cta__feature svg{width:1.125rem;height:1.125rem;color:var(--accent);flex-shrink:0}
-/* FOOTER */
 .footer{background:var(--ink);color:#a9b8c7;margin-top:4rem;position:relative;overflow:hidden}
 .footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(20,184,166,.5),transparent)}
 .footer__inner{padding-block:4rem 2rem}
@@ -343,14 +263,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brand);outline-offs
 .reveal.is-in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{animation-duration:0s!important;transition-duration:0s!important}}
 
-/* ─────────────────────────────────────────────────────────────
-   ADDIS MEDICAL SIGNATURE LAYER — refined motion, depth & usability
-   ───────────────────────────────────────────────────────────── */
-:root{
-  --brand:#0877c9;--brand-2:#075b9e;--accent:#17b8a6;
-  --ink:#091b2d;--radius:1.35rem;
-  --ease:cubic-bezier(.2,.8,.2,1);
-}
+:root{--brand:#0877c9;--brand-2:#075b9e;--accent:#17b8a6;--ink:#091b2d;--radius:1.35rem;--ease:cubic-bezier(.2,.8,.2,1)}
 ::selection{background:rgba(23,184,166,.22);color:var(--ink)}
 html{scroll-padding-top:6rem}
 body{background:#fbfdff}
@@ -368,10 +281,7 @@ body{background:#fbfdff}
 .btn--primary{background:linear-gradient(135deg,#102d43,#071727);box-shadow:0 9px 22px -13px rgba(7,23,39,.75)}
 .btn--primary:hover{background:linear-gradient(135deg,#0877c9,#075b9e);box-shadow:0 14px 30px -14px rgba(8,119,201,.75)}
 .hero{isolation:isolate}
-.hero__bg{background:
- radial-gradient(45rem 35rem at 85% 5%,rgba(23,184,166,.14),transparent 65%),
- radial-gradient(50rem 35rem at 0% 35%,rgba(8,119,201,.12),transparent 65%),
- linear-gradient(180deg,#f8fcff,#f0f7fc 55%,#fbfdff)}
+.hero__bg{background:radial-gradient(45rem 35rem at 85% 5%,rgba(23,184,166,.14),transparent 65%),radial-gradient(50rem 35rem at 0% 35%,rgba(8,119,201,.12),transparent 65%),linear-gradient(180deg,#f8fcff,#f0f7fc 55%,#fbfdff)}
 .hero__inner{padding-block:5rem 6.25rem}
 .hero h1{font-size:clamp(3rem,6.2vw,5.25rem);letter-spacing:-.045em;line-height:.99;max-width:11ch}
 .hero h1 em{color:#0877c9}
@@ -410,7 +320,6 @@ body{background:#fbfdff}
 .footer__bottom{align-items:center}
 .reveal{transform:translateY(30px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
 .reveal.is-in{transform:translateY(0)}
-/* Small, polished utility controls */
 .scroll-progress{position:fixed;z-index:100;top:0;left:0;width:100%;height:3px;pointer-events:none}
 .scroll-progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,#17b8a6,#0877c9);box-shadow:0 0 12px rgba(23,184,166,.45)}
 .back-top{position:fixed;right:1.25rem;bottom:1.25rem;z-index:45;width:2.9rem;height:2.9rem;border-radius:50%;display:grid;place-items:center;background:#0b263d;color:white;box-shadow:0 12px 30px -12px rgba(7,23,39,.65);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .25s,transform .25s,background .25s}
@@ -423,10 +332,7 @@ body{background:#fbfdff}
 .drawer__nav a:hover{color:var(--brand);transform:translateX(3px)}
 img{background:linear-gradient(120deg,#eaf2f8,#f7fafc)}
 a,button{-webkit-tap-highlight-color:transparent}
-@media(min-width:1024px){
- .hero__inner{grid-template-columns:1.02fr .98fr;gap:5rem}
- .hero__copy{padding-block:1.5rem}
-}
+@media(min-width:1024px){.hero__inner{grid-template-columns:1.02fr .98fr;gap:5rem}.hero__copy{padding-block:1.5rem}}
 @media(max-width:767px){
  .container{padding-inline:1.15rem}
  .hero__inner{padding-block:3.5rem 5rem;gap:2rem}
@@ -442,12 +348,7 @@ a,button{-webkit-tap-highlight-color:transparent}
  .footer__inner{padding-block:3rem 1.5rem}
  .whatweare__media{aspect-ratio:4/3;min-height:0}
 }
-@media(prefers-reduced-motion:reduce){
- html{scroll-behavior:auto}
- .logo__mark::after{animation:none}
- .reveal{opacity:1;transform:none}
-}
-
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.logo__mark::after{animation:none}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -472,6 +373,7 @@ a,button{-webkit-tap-highlight-color:transparent}
       <a href="services.html">Services</a>
       <a href="patients-visitors.html">Patients</a>
       <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
       <a href="news.html">News</a>
     </nav>
     <div class="hdr__actions">
@@ -494,6 +396,7 @@ a,button{-webkit-tap-highlight-color:transparent}
       <a href="book.html">Book a visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
       <a href="patients-visitors.html">Patients &amp; visitors <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
       <a href="about.html">About <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="portfolio.html">Portfolio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
       <a href="portal.html">Patient portal <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
       <a href="contact.html">Contact <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
       <a href="careers.html">Careers <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
@@ -569,16 +472,16 @@ a,button{-webkit-tap-highlight-color:transparent}
           <span class="quick__title">Check ER wait</span><span class="quick__desc">Live wait times · directions · when to call.</span>
           <svg class="quick__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
         </a>
-        <a href="portal.html" class="quick__item reveal">
-          <span class="quick__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span>
-          <span class="quick__title">Pay a bill</span><span class="quick__desc">View balances, records and prescriptions.</span>
+        <a href="portfolio.html" class="quick__item reveal">
+          <span class="quick__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></span>
+          <span class="quick__title">Our portfolio</span><span class="quick__desc">Accreditations, publications &amp; outcomes.</span>
           <svg class="quick__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ===================== NEW: WHAT WE DO / ABOUT THE HOSPITAL ===================== -->
+  <!-- What we do -->
   <section class="section" id="what-we-do">
     <div class="container">
       <div class="whatweare">
@@ -610,7 +513,7 @@ a,button{-webkit-tap-highlight-color:transparent}
           </ul>
           <div class="whatweare__cta">
             <a href="services.html" class="btn btn--primary">See all services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-            <a href="about.html" class="btn btn--ghost">More about us</a>
+            <a href="portfolio.html" class="btn btn--ghost">View portfolio</a>
           </div>
           <div class="service-pills" aria-label="Quick list of services">
             <span class="service-pill">Emergency</span>
@@ -650,7 +553,6 @@ a,button{-webkit-tap-highlight-color:transparent}
     </div>
   </section>
 
-  <!-- VISITORS GUIDE -->
   <section class="section section--tint">
     <div class="container">
       <div class="section-head reveal">
@@ -682,7 +584,6 @@ a,button{-webkit-tap-highlight-color:transparent}
     </div>
   </section>
 
-  <!-- WHY US -->
   <section class="section">
     <div class="container">
       <div class="section-head reveal"><div><span class="kicker">Why Addis Medical</span><h2>Design that respects your time and dignity.</h2><p>Every detail built around the patient — because good care starts with feeling calm.</p></div></div>
@@ -697,7 +598,6 @@ a,button{-webkit-tap-highlight-color:transparent}
     </div>
   </section>
 
-  <!-- STATS -->
   <section class="stats">
     <div class="container">
       <div class="stats__head reveal"><h2>Numbers that mean something.</h2><p>Not marketing — measured outcomes we publish every year.</p></div>
@@ -710,7 +610,6 @@ a,button{-webkit-tap-highlight-color:transparent}
     </div>
   </section>
 
-  <!-- DOCTORS -->
   <section class="section">
     <div class="container">
       <div class="section-head reveal"><div><span class="kicker">Meet the team</span><h2>Specialists you'll actually see.</h2><p>Real availability, not a waitlist. Book directly with the consultant.</p></div><a href="find-a-doctor.html" class="link">All doctors <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div>
@@ -722,7 +621,6 @@ a,button{-webkit-tap-highlight-color:transparent}
     </div>
   </section>
 
-  <!-- PARTNERS -->
   <section class="section section--tint">
     <div class="container">
       <div class="section-head reveal"><div><span class="kicker">Our partners</span><h2>Trusted by insurers and institutions.</h2><p>Direct billing with major insurers — no paperwork, no surprises.</p></div><a href="insurance.html" class="link">See insurers <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div>
@@ -737,7 +635,6 @@ a,button{-webkit-tap-highlight-color:transparent}
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
   <section class="section">
     <div class="container">
       <div class="section-head reveal"><div><span class="kicker">Patient stories</span><h2>Real people. Real outcomes.</h2><p>2,400+ reviews, verified after discharge.</p></div></div>
@@ -772,7 +669,7 @@ a,button{-webkit-tap-highlight-color:transparent}
       </div>
       <div><h4>Care</h4><ul><li><a href="find-a-doctor.html">Find a doctor</a></li><li><a href="departments.html">Departments</a></li><li><a href="services.html">Services</a></li><li><a href="book.html">Book a visit</a></li><li><a href="emergency.html">Emergency</a></li></ul></div>
       <div><h4>Patients</h4><ul><li><a href="patients-visitors.html">Visiting hours</a></li><li><a href="portal.html">Patient portal</a></li><li><a href="insurance.html">Insurance</a></li><li><a href="contact.html">Feedback</a></li></ul></div>
-      <div><h4>Hospital</h4><ul><li><a href="about.html">About us</a></li><li><a href="careers.html">Careers</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Hospital</h4><ul><li><a href="about.html">About us</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="careers.html">Careers</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     </div>
     <div class="footer__bottom"><span>© 2025 Addis Medical Center. Not a substitute for medical advice.</span><span class="footer__emergency">Emergency? Call 907</span></div>
   </div>
@@ -781,17 +678,14 @@ a,button{-webkit-tap-highlight-color:transparent}
 <script>
 (() => {
   'use strict';
-
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
-
   const header = $('#hdr');
   const drawer = $('#drawer');
   const burger = $('#burger');
   const drawerClose = $('#drawerClose');
   const progress = $('#scrollProgress');
   const backTop = $('#backTop');
-  let lastScrollY = window.scrollY;
 
   const closeDrawer = () => {
     if (!drawer || !burger) return;
@@ -801,7 +695,6 @@ a,button{-webkit-tap-highlight-color:transparent}
     document.body.style.overflow = '';
     burger.focus({ preventScroll: true });
   };
-
   const openDrawer = () => {
     if (!drawer || !burger) return;
     drawer.classList.add('is-open');
@@ -811,14 +704,11 @@ a,button{-webkit-tap-highlight-color:transparent}
     const firstLink = $('a', drawer);
     if (firstLink) firstLink.focus({ preventScroll: true });
   };
-
   burger?.addEventListener('click', () => {
     burger.getAttribute('aria-expanded') === 'true' ? closeDrawer() : openDrawer();
   });
   drawerClose?.addEventListener('click', closeDrawer);
-  drawer?.addEventListener('click', event => {
-    if (event.target === drawer) closeDrawer();
-  });
+  drawer?.addEventListener('click', e => { if (e.target === drawer) closeDrawer(); });
   $$('.drawer__nav a, .drawer__cta a', drawer || document).forEach(link => {
     link.addEventListener('click', () => {
       drawer?.classList.remove('is-open');
@@ -827,18 +717,8 @@ a,button{-webkit-tap-highlight-color:transparent}
       document.body.style.overflow = '';
     });
   });
-
-  document.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && drawer?.classList.contains('is-open')) closeDrawer();
-    if (event.key === 'Tab' && drawer?.classList.contains('is-open')) {
-      const focusable = $$('a, button', drawer).filter(el => !el.hasAttribute('disabled'));
-      const first = focusable[0], last = focusable[focusable.length - 1];
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault(); last?.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault(); first?.focus();
-      }
-    }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && drawer?.classList.contains('is-open')) closeDrawer();
   });
 
   const updateScrollUI = () => {
@@ -847,11 +727,9 @@ a,button{-webkit-tap-highlight-color:transparent}
     if (progress) progress.style.width = `${Math.min(100, percent)}%`;
     header?.classList.toggle('is-scrolled', window.scrollY > 8);
     backTop?.classList.toggle('is-visible', window.scrollY > 600);
-    lastScrollY = window.scrollY;
   };
   window.addEventListener('scroll', updateScrollUI, { passive: true });
   updateScrollUI();
-
   backTop?.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   });
@@ -880,14 +758,13 @@ a,button{-webkit-tap-highlight-color:transparent}
     const duration = 1500;
     const start = performance.now();
     const tick = now => {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 4);
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 4);
       element.innerHTML = Math.round(target * eased).toLocaleString() + suffix;
-      if (progress < 1) requestAnimationFrame(tick);
+      if (p < 1) requestAnimationFrame(tick);
     };
     requestAnimationFrame(tick);
   };
-
   const counters = $$('.stat__num[data-target]');
   if ('IntersectionObserver' in window) {
     const counterObserver = new IntersectionObserver((entries, observer) => {
@@ -907,13 +784,6 @@ a,button{-webkit-tap-highlight-color:transparent}
   $$('.nav a').forEach(link => {
     const targetFile = link.getAttribute('href')?.split('?')[0];
     if (targetFile === currentFile) link.setAttribute('aria-current', 'page');
-  });
-
-  $$('img').forEach(image => {
-    image.addEventListener('error', () => {
-      image.classList.add('image-unavailable');
-      image.alt = image.alt || 'Image unavailable';
-    }, { once: true });
   });
 })();
 </script>
