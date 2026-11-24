@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Portfolio &amp; Achievements — Addis Medical Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+
+:root {
+  --ink: #0b1b2b;
+  --ink-2: #13293d;
+  --brand: #0e6fbe;
+  --brand-2: #084d87;
+  --brand-3: #e8f3fc;
+  --accent: #14b8a6;
+  --accent-dark: #0d9488;
+  --accent-soft: #e6fffb;
+  --sand: #f6f1e8;
+  --sand-2: #ede5d8;
+  --ivory: #fcfaf6;
+  --paper: #ffffff;
+  --gray-50: #f8fafc;
+  --gray-100: #eef2f7;
+  --gray-200: #dfe6ee;
+  --gray-300: #c4cfdb;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #2f4156;
+  --gray-800: #1e293b;
+  --red: #e11d48;
+  --radius-sm: 0.75rem;
+  --radius: 1.25rem;
+  --radius-lg: 2rem;
+  --shadow-xs: 0 1px 2px rgba(11, 27, 43, 0.05);
+  --shadow-sm: 0 4px 14px -2px rgba(11, 27, 43, 0.06), 0 1px 3px rgba(11, 27, 43, 0.04);
+  --shadow-md: 0 16px 36px -12px rgba(11, 27, 43, 0.14), 0 4px 12px -4px rgba(11, 27, 43, 0.06);
+  --shadow-lg: 0 32px 64px -18px rgba(11, 27, 43, 0.22), 0 12px 24px -8px rgba(11, 27, 43, 0.1);
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; cursor: pointer; background: none; border: none; }
+img, svg { display: block; max-width: 100%; }
+
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+  border-radius: 0.5rem;
+}
+
+.container { width: 100%; max-width: 1240px; margin-inline: auto; padding-inline: 1.5rem; }
+.app { flex: 1; }
+
+/* Emergency Top Strip */
+.emergency { background: var(--ink); color: #fff; font-size: 0.8125rem; position: relative; z-index: 60; }
+.emergency__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; padding-block: 0.625rem; }
+.emergency__left { display: flex; align-items: center; gap: 0.625rem; }
+.emergency__pulse { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: #ff4d6a; box-shadow: 0 0 0 0 rgba(255, 77, 106, 0.7); animation: pulse 2s infinite; flex-shrink: 0; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255, 77, 106, 0.75); } 70% { box-shadow: 0 0 0 10px rgba(255, 77, 106, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 77, 106, 0); } }
+.emergency__left b { font-weight: 600; }
+.emergency__left a { color: #fff; text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
+.emergency__link { color: #cbd5e1; display: inline-flex; align-items: center; gap: 0.375rem; font-weight: 500; transition: color 0.2s, transform 0.2s; }
+.emergency__link:hover { color: #fff; transform: translateX(2px); }
+.emergency__link svg { width: 0.875rem; height: 0.875rem; }
+
+/* Sticky Header */
+.hdr { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, 0.84); backdrop-filter: saturate(180%) blur(16px); -webkit-backdrop-filter: saturate(180%) blur(16px); border-bottom: 1px solid rgba(223, 230, 238, 0.45); transition: border-color 0.3s, box-shadow 0.3s, background 0.3s; }
+.hdr.is-scrolled { border-color: var(--gray-200); box-shadow: 0 8px 28px -10px rgba(11, 27, 43, 0.09); background: rgba(255, 255, 255, 0.96); }
+.hdr__inner { display: flex; align-items: center; justify-content: space-between; padding-block: 0.875rem; gap: 1rem; }
+.logo { display: flex; align-items: center; gap: 0.65rem; flex-shrink: 0; }
+.logo__mark { width: 2.5rem; height: 2.5rem; display: grid; place-items: center; background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%); border-radius: 0.875rem; color: #fff; box-shadow: 0 10px 20px -8px rgba(14, 111, 190, 0.55); transition: transform 0.3s var(--ease-out); }
+.logo:hover .logo__mark { transform: scale(1.04) rotate(-3deg); }
+.logo__mark svg { width: 1.25rem; height: 1.25rem; }
+.logo__text { display: flex; flex-direction: column; line-height: 1.1; }
+.logo__name { font-family: var(--font-serif); font-weight: 600; font-size: 1.15rem; letter-spacing: -0.015em; color: var(--ink); }
+.logo__sub { font-size: 0.6875rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-500); font-weight: 500; }
+
+.nav { display: none; gap: 1.4rem; align-items: center; }
+.nav a { font-size: 0.875rem; font-weight: 500; color: var(--gray-700); position: relative; padding: 0.35rem 0; transition: color 0.2s; }
+.nav a::after { content: ''; position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--brand); border-radius: 99px; transition: width 0.28s var(--ease-out); }
+.nav a:hover, .nav a[aria-current="page"] { color: var(--brand); }
+.nav a:hover::after, .nav a[aria-current="page"]::after { width: 100%; }
+.hdr__actions { display: flex; align-items: center; gap: 0.625rem; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem 1.35rem; border-radius: 999px; font-size: 0.875rem; font-weight: 600; transition: transform 0.22s var(--ease-out), background 0.22s, box-shadow 0.22s, border-color 0.22s; border: 1px solid transparent; white-space: nowrap; cursor: pointer; }
+.btn:active { transform: scale(0.98); }
+.btn--primary { background: var(--ink); color: #fff; }
+.btn--primary:hover { background: var(--brand); transform: translateY(-1.5px); box-shadow: 0 14px 26px -10px rgba(14, 111, 190, 0.55); }
+.btn--ghost { border-color: var(--gray-200); color: var(--ink); background: #fff; }
+.btn--ghost:hover { border-color: var(--ink); background: var(--gray-50); transform: translateY(-1.5px); }
+.btn--soft { background: var(--brand-3); color: var(--brand-2); border-color: rgba(14, 111, 190, 0.14); }
+.btn--soft:hover { background: var(--brand); color: #fff; transform: translateY(-1.5px); box-shadow: 0 12px 24px -10px rgba(14, 111, 190, 0.45); }
+.btn--light { background: #fff; color: var(--ink); box-shadow: 0 8px 20px -6px rgba(11, 27, 43, 0.2); }
+.btn--light:hover { background: var(--sand); transform: translateY(-1.5px); }
+.btn--accent { background: var(--accent); color: #fff; box-shadow: 0 8px 20px -6px rgba(20, 184, 166, 0.4); }
+.btn--accent:hover { background: var(--accent-dark); transform: translateY(-1.5px); }
+.btn svg { width: 1rem; height: 1rem; transition: transform 0.22s var(--ease-out); }
+.btn:hover svg { transform: translateX(2px); }
+.hdr .btn--primary { padding: 0.625rem 1.1rem; font-size: 0.8125rem; }
+
+.burger { display: grid; place-items: center; width: 2.625rem; height: 2.625rem; border-radius: 0.75rem; border: 1px solid var(--gray-200); background: #fff; transition: background 0.2s; }
+.burger svg { width: 1.15rem; height: 1.15rem; stroke: var(--ink); }
+.burger:hover { background: var(--gray-50); }
+@media (min-width: 960px) { .nav { display: flex; } .burger { display: none; } }
+
+/* Mobile Drawer */
+.drawer { position: fixed; inset: 0; background: rgba(11, 27, 43, 0.52); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); z-index: 80; opacity: 0; pointer-events: none; transition: opacity 0.3s var(--ease-out); }
+.drawer.is-open { opacity: 1; pointer-events: auto; }
+.drawer__panel { position: absolute; top: 0; right: 0; bottom: 0; width: min(360px, 90vw); background: #fff; transform: translateX(100%); transition: transform 0.38s var(--ease-out); display: flex; flex-direction: column; padding: 1.5rem; overflow-y: auto; box-shadow: -20px 0 50px rgba(11, 27, 43, 0.18); }
+.drawer.is-open .drawer__panel { transform: none; }
+.drawer__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.75rem; }
+.drawer__close { width: 2.5rem; height: 2.5rem; display: grid; place-items: center; border-radius: 0.75rem; border: 1px solid var(--gray-200); transition: background 0.2s; }
+.drawer__close:hover { background: var(--gray-50); }
+.drawer__nav { display: flex; flex-direction: column; gap: 0.2rem; }
+.drawer__nav a { padding: 0.85rem 0.75rem; border-radius: 0.75rem; font-size: 0.975rem; font-weight: 500; color: var(--gray-800); display: flex; justify-content: space-between; align-items: center; transition: background 0.2s, color 0.2s; }
+.drawer__nav a:hover, .drawer__nav a[aria-current="page"] { background: var(--brand-3); color: var(--brand); }
+.drawer__nav a svg { width: 1rem; height: 1rem; color: var(--gray-400); }
+.drawer__nav a.danger { color: var(--red); margin-top: 0.5rem; border-top: 1px solid var(--gray-200); padding-top: 1rem; border-radius: 0 0 0.75rem 0.75rem; }
+.drawer__nav a.danger:hover { background: #fff1f3; }
+.drawer__cta { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.625rem; }
+.drawer__cta .btn { width: 100%; }
+.drawer__foot { margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--gray-200); font-size: 0.8125rem; color: var(--gray-500); line-height: 1.6; }
+.drawer__foot a { color: var(--brand); text-decoration: underline; font-weight: 600; }
+
+/* Page Hero */
+.page-hero { position: relative; background: linear-gradient(180deg, var(--ivory) 0%, #f1f7fd 100%); padding-block: 4.5rem 5.5rem; border-bottom: 1px solid var(--gray-200); overflow: hidden; }
+.page-hero__grid-bg { position: absolute; inset: 0; background-image: linear-gradient(to right, rgba(14, 111, 190, 0.045) 1px, transparent 1px), linear-gradient(to bottom, rgba(14, 111, 190, 0.045) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse 80% 75% at 50% 45%, #000 35%, transparent 100%); -webkit-mask-image: radial-gradient(ellipse 80% 75% at 50% 45%, #000 35%, transparent 100%); pointer-events: none; }
+.page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(52rem 34rem at 92% -5%, rgba(20, 184, 166, 0.13), transparent 62%), radial-gradient(45rem 32rem at -5% 100%, rgba(14, 111, 190, 0.1), transparent 62%); pointer-events: none; }
+.page-hero__layout { position: relative; display: grid; gap: 3rem; align-items: center; }
+@media (min-width: 960px) { .page-hero__layout { grid-template-columns: 1.15fr 0.85fr; gap: 4rem; } }
+.page-hero h1 { font-family: var(--font-serif); font-weight: 500; font-size: clamp(2.65rem, 5.4vw, 4.35rem); line-height: 1.03; letter-spacing: -0.025em; color: var(--ink); margin-top: 1.1rem; }
+.page-hero h1 em { font-style: italic; font-weight: 400; color: var(--brand); }
+.hero-lead { margin-top: 1.5rem; font-size: 1.125rem; color: var(--gray-600); line-height: 1.65; max-width: 36rem; }
+.hero-actions { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+.kicker { display: inline-flex; align-items: center; gap: 0.55rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brand); }
+.kicker::before { content: ''; width: 1.5rem; height: 1.5px; background: currentColor; border-radius: 2px; }
+
+.campus-stats-row { margin-top: 2.25rem; padding-top: 1.5rem; border-top: 1px solid rgba(11, 27, 43, 0.08); display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+@media (max-width: 640px) { .campus-stats-row { grid-template-columns: 1fr; } }
+.campus-stat strong { display: block; font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; color: var(--ink); line-height: 1.2; }
+.campus-stat span { display: block; margin-top: 0.2rem; font-size: 0.78rem; color: var(--gray-500); }
+
+/* Hero wayfinding card */
+.wayfinding-card { position: relative; background: #fff; border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 1.75rem; box-shadow: var(--shadow-lg); overflow: hidden; }
+.wayfinding-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--brand), var(--accent)); }
+.wayfinding-card__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; }
+.wayfinding-badge { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; font-weight: 600; color: var(--accent-dark); background: var(--accent-soft); padding: 0.3rem 0.7rem; border-radius: 999px; }
+.wayfinding-sub { font-size: 0.75rem; font-weight: 500; color: var(--gray-500); }
+.wayfinding-svg-box { width: 100%; border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(14, 111, 190, 0.1); background: #fbfdff; }
+.wayfinding-svg-box svg { width: 100%; height: auto; display: block; }
+.wayfinding-legend { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; font-size: 0.75rem; color: var(--gray-600); font-weight: 500; }
+.wayfinding-legend > div { display: inline-flex; align-items: center; gap: 0.4rem; }
+.dot-brand, .dot-accent, .dot-red { width: 0.5rem; height: 0.5rem; border-radius: 50%; display: inline-block; }
+.dot-brand { background: var(--brand); } .dot-accent { background: var(--accent); } .dot-red { background: var(--red); }
+
+/* Sections */
+.section { padding-block: 5.5rem; position: relative; }
+.section--tint { background: var(--sand); border-block: 1px solid rgba(11, 27, 43, 0.06); }
+.section-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1.5rem; margin-bottom: 3rem; }
+.section-head h2 { font-family: var(--font-serif); font-size: clamp(2rem, 3.4vw, 2.75rem); font-weight: 500; letter-spacing: -0.02em; line-height: 1.1; color: var(--ink); margin-top: 0.75rem; max-width: 34rem; }
+.section-head p { color: var(--gray-600); max-width: 32rem; margin-top: 0.75rem; font-size: 1rem; }
+
+/* Card grid shared */
+.depts { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .depts { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .depts { grid-template-columns: repeat(3, 1fr); } }
+
+.dept { position: relative; border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; background: #fff; border: 1px solid var(--gray-200); box-shadow: var(--shadow-sm); transition: transform 0.3s var(--ease-out), box-shadow 0.3s, border-color 0.3s; }
+.dept:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: rgba(14, 111, 190, 0.3); }
+.dept__img { position: relative; aspect-ratio: 16/9; background: linear-gradient(135deg, var(--brand-3), var(--accent-soft)); display: grid; place-items: center; overflow: hidden; }
+.dept__emblem { width: 4rem; height: 4rem; border-radius: 50%; display: grid; place-items: center; background: #fff; color: var(--brand); box-shadow: 0 12px 30px -12px rgba(14, 111, 190, 0.4); }
+.dept__emblem svg { width: 1.75rem; height: 1.75rem; }
+.dept__tag-badge { position: absolute; top: 0.75rem; right: 0.75rem; background: rgba(255, 255, 255, 0.95); padding: 0.3rem 0.75rem; border-radius: 999px; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.04em; color: var(--accent-dark); text-transform: uppercase; }
+.dept__body { padding: 1.25rem 1.25rem 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
+.dept__name { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 500; color: var(--ink); line-height: 1.25; }
+.dept__desc { font-size: 0.875rem; color: var(--gray-600); line-height: 1.6; flex: 1; }
+.dept__meta { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--gray-100); font-size: 0.75rem; color: var(--gray-500); display: flex; align-items: center; gap: 0.4rem; }
+
+/* CTA */
+.cta { position: relative; overflow: hidden; border-radius: var(--radius-lg); padding: 3.25rem 2rem; color: #fff; background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%); margin-block: 2rem 5rem; box-shadow: var(--shadow-lg); }
+@media (min-width: 768px) { .cta { padding: 4.25rem 3.5rem; } }
+.cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(34rem 24rem at 100% 0%, rgba(20, 184, 166, 0.38), transparent 62%); pointer-events: none; }
+.cta__inner { position: relative; display: grid; gap: 2rem; align-items: center; text-align: center; }
+@media (min-width: 768px) { .cta__inner { grid-template-columns: 1fr auto; text-align: left; gap: 3rem; } }
+.cta h2 { font-family: var(--font-serif); font-size: clamp(1.85rem, 3.2vw, 2.65rem); font-weight: 500; letter-spacing: -0.02em; line-height: 1.1; }
+.cta p { margin-top: 0.875rem; color: rgba(255, 255, 255, 0.88); max-width: 36rem; font-size: 1rem; }
+.cta__actions { display: flex; flex-wrap: wrap; gap: 0.875rem; justify-content: center; }
+@media (min-width: 768px) { .cta__actions { justify-content: flex-end; } }
+.cta__actions .btn { padding: 0.9rem 1.65rem; }
+
+/* Footer */
+.footer { background: var(--ink); color: #a9b8c7; margin-top: 2rem; position: relative; overflow: hidden; }
+.footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(20, 184, 166, 0.55), transparent); }
+.footer__inner { padding-block: 4.5rem 2.25rem; }
+.footer__grid { display: grid; gap: 2.5rem; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .footer__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .footer__grid { grid-template-columns: 1.5fr 1fr 1fr 1fr; } }
+.footer__brand .logo__name { color: #fff; }
+.footer__brand .logo__sub { color: #7e90a4; }
+.footer__about { margin-top: 1.25rem; font-size: 0.875rem; line-height: 1.65; max-width: 22rem; }
+.footer__contact { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.625rem; font-size: 0.875rem; }
+.footer__contact a { display: inline-flex; align-items: center; gap: 0.55rem; transition: color 0.2s; }
+.footer__contact a:hover { color: #fff; }
+.footer__contact svg { width: 0.95rem; height: 0.95rem; color: var(--accent); flex-shrink: 0; }
+.footer h4 { color: #fff; font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 1.125rem; }
+.footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+.footer ul a { font-size: 0.875rem; transition: color 0.2s, transform 0.2s; display: inline-block; }
+.footer ul a:hover { color: #fff; transform: translateX(2px); }
+.footer__bottom { border-top: 1px solid rgba(255, 255, 255, 0.09); padding-top: 1.5rem; margin-top: 3.25rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; font-size: 0.78rem; }
+.footer__emergency { display: inline-flex; align-items: center; gap: 0.5rem; color: #fff; font-weight: 600; }
+.footer__emergency::before { content: ''; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: #ff4d6a; animation: pulse 2s infinite; }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out); }
+.reveal.is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } * { animation-duration: 0s !important; transition-duration: 0s !important; } }
+</style>
+</head>
+<body>
+
+<!-- Emergency Top Bar -->
+<div class="emergency">
+  <div class="container emergency__inner">
+    <div class="emergency__left">
+      <span class="emergency__pulse"></span>
+      <span><b>Emergency?</b> Call <a href="tel:907">907</a> — open 24/7</span>
+    </div>
+    <div>
+      <a href="emergency.html" class="emergency__link">
+        Live ER wait times
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="hdr" id="hdr">
+  <div class="container hdr__inner">
+    <a href="index.html" class="logo">
+      <span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span>
+      <span class="logo__text"><span class="logo__name">Addis Medical</span><span class="logo__sub">Center</span></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="find-a-doctor.html">Find a doctor</a>
+      <a href="departments.html">Departments</a>
+      <a href="services.html">Services</a>
+      <a href="patients-visitors.html">Patients</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html" aria-current="page">Portfolio</a>
+      <a href="news.html">News</a>
+    </nav>
+    <div class="hdr__actions">
+      <a href="book.html" class="btn btn--primary">Book a visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<!-- Drawer -->
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer__panel">
+    <div class="drawer__head">
+      <a href="index.html" class="logo"><span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span><span class="logo__text"><span class="logo__name">Addis Medical</span><span class="logo__sub">Center</span></span></a>
+      <button class="drawer__close" id="drawerClose" aria-label="Close"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    </div>
+    <nav class="drawer__nav" aria-label="Mobile navigation">
+      <a href="find-a-doctor.html">Find a doctor <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="departments.html">Departments <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="services.html">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="book.html">Book a visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="patients-visitors.html">Patients &amp; visitors <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="about.html">About <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="portfolio.html" aria-current="page">Portfolio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="portal.html">Patient portal <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="contact.html">Contact <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="careers.html">Careers <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="insurance.html">Insurance <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="news.html">News <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="emergency.html" class="danger">Emergency <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+    </nav>
+    <div class="drawer__cta">
+      <a href="book.html" class="btn btn--primary">Book a visit</a>
+      <a href="portal.html" class="btn btn--ghost">Patient portal</a>
+    </div>
+    <div class="drawer__foot">
+      <p>Emergency? Call <a href="tel:907">907</a></p>
+      <p style="margin-top:.25rem">Mon–Sun · 24/7</p>
+    </div>
+  </div>
+</div>
+
+<main class="app">
+
+<!-- Hero -->
+<section class="page-hero">
+  <div class="page-hero__grid-bg" aria-hidden="true"></div>
+  <div class="container page-hero__layout">
+    <div class="reveal">
+      <span class="kicker">Portfolio &amp; Achievements</span>
+      <h1>A record measured in <em>outcomes</em>.</h1>
+      <p class="hero-lead">Seventeen years of building clinical capacity in Addis Ababa — the accreditations we've earned, the research we've published, and the patient outcomes we report every year.</p>
+      <div class="hero-actions">
+        <a href="#accreditations" class="btn btn--primary">View accreditations <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        <a href="book.html" class="btn btn--ghost">Book a visit</a>
+      </div>
+      <div class="campus-stats-row">
+        <div class="campus-stat"><strong>8 accreditations</strong><span>JCI, ISO &amp; MoH</span></div>
+        <div class="campus-stat"><strong>4 publications</strong><span>Peer-reviewed</span></div>
+        <div class="campus-stat"><strong>98% would return</strong><span>2025 audit</span></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="wayfinding-card">
+        <div class="wayfinding-card__head"><span class="wayfinding-badge">● Outcomes at a glance</span><span class="wayfinding-sub">2024–2025</span></div>
+        <div class="wayfinding-svg-box">
+          <svg viewBox="0 0 420 210" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Key outcomes table">
+            <rect x="8" y="8" width="404" height="194" rx="12" fill="#fbfdff" stroke="#dfe6ee" stroke-width="1.2"/>
+            <text x="30" y="40" fill="#0a5a9c" font-family="Inter" font-size="9" font-weight="700">KEY METRIC</text>
+            <text x="390" y="40" text-anchor="end" fill="#0a5a9c" font-family="Inter" font-size="9" font-weight="700">VALUE</text>
+            <line x1="30" y1="50" x2="390" y2="50" stroke="#e6f2fb"/>
+            <text x="30" y="76" fill="#0b1b2b" font-family="Fraunces" font-size="11.5" font-weight="600">Annual admissions</text>
+            <text x="390" y="76" text-anchor="end" fill="#0e6fbe" font-family="Fraunces" font-size="13" font-weight="600">12,400+</text>
+            <text x="30" y="106" fill="#0b1b2b" font-family="Fraunces" font-size="11.5" font-weight="600">Scans &amp; labs per year</text>
+            <text x="390" y="106" text-anchor="end" fill="#0e6fbe" font-family="Fraunces" font-size="13" font-weight="600">48,000+</text>
+            <text x="30" y="136" fill="#0b1b2b" font-family="Fraunces" font-size="11.5" font-weight="600">Emergency visits / yr</text>
+            <text x="390" y="136" text-anchor="end" fill="#0e6fbe" font-family="Fraunces" font-size="13" font-weight="600">3,200+</text>
+            <text x="30" y="166" fill="#0b1b2b" font-family="Fraunces" font-size="11.5" font-weight="600">Would return</text>
+            <text x="390" y="166" text-anchor="end" fill="#14b8a6" font-family="Fraunces" font-size="13" font-weight="600">98%</text>
+            <text x="30" y="196" fill="#0b1b2b" font-family="Fraunces" font-size="11.5" font-weight="600">Verified patient reviews</text>
+            <text x="390" y="196" text-anchor="end" fill="#0e6fbe" font-family="Fraunces" font-size="13" font-weight="600">2,400+</text>
+          </svg>
+        </div>
+        <div class="wayfinding-legend"><div><span class="dot-brand"></span>Clinical</div><div><span class="dot-accent"></span>Satisfaction</div><div><span class="dot-red"></span>Quality</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Accreditations -->
+<section class="section" id="accreditations">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="kicker">Accreditations</span>
+        <h2>Verifications you can look up.</h2>
+        <p>Each is an independent audit — with a body, scope and last review date so you can check.</p>
+      </div>
+    </div>
+    <div class="depts">
+      <article class="dept reveal">
+        <div class="dept__img"><div class="dept__emblem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div><span class="dept__tag-badge">Verified</span></div>
+        <div class="dept__body"><h3 class="dept__name">ISO 15189 — Medical Labs</h3><p class="dept__desc">Independent accreditation of our pathology lab, covering 400+ test panels and 24/7 sample processing.</p><div class="dept__meta"><span>Last reviewed: March 2025</span></div></div>
+      </article>
+      <article class="dept reveal">
+        <div class="dept__img"><div class="dept__emblem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div><span class="dept__tag-badge">Verified</span></div>
+        <div class="dept__body"><h3 class="dept__name">JCI-Aligned Quality Program</h3><p class="dept__desc">Independent audit against Joint Commission International standards for safety, infection control and medication management.</p><div class="dept__meta"><span>Last reviewed: November 2024</span></div></div>
+      </article>
+      <article class="dept reveal">
+        <div class="dept__img"><div class="dept__emblem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div><span class="dept__tag-badge">Verified</span></div>
+        <div class="dept__body"><h3 class="dept__name">Ethiopian MoH — Tier 3</h3><p class="dept__desc">Licensed at the highest private-hospital tier by the Ethiopian Federal Ministry of Health, with annual inspection.</p><div class="dept__meta"><span>Last reviewed: January 2025</span></div></div>
+      </article>
+      <article class="dept reveal">
+        <div class="dept__img"><div class="dept__emblem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div><span class="dept__tag-badge">Verified</span></div>
+        <div class="dept__body"><h3 class="dept__name">Radiation Safety Licence</h3><p class="dept__desc">Licensed for diagnostic and interventional radiology, with quarterly dosimetry audits of all imaging equipment.</p><div class="dept__meta"><span>Last reviewed: August 2024</span></div></div>
+      </article>
+      <article class="dept reveal">
+        <div class="dept__img"><div class="dept__emblem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div><span class="dept__tag-badge">Verified</span></div>
+        <div class="dept__body"><h3 class="dept__name">Blood Bank Licence</h3><p class="dept__desc">National Blood Bank licence for on-site storage, cross-matching and transfusion — reducing wait time for surgical cases.</p><div class="dept__meta"><span>Last reviewed: June 2025</span></div></div>
+      </article>
+      <article class="dept reveal">
+        <div class="dept__img"><div class="dept__emblem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div><span class="dept__tag-badge">Verified</span></div>
+        <div class="dept__body"><h3 class="dept__name">Fire &amp; Life Safety</h3><p class="dept__desc">Annual fire-safety inspection with sprinkler, suppression and evacuation drills audited by the Addis Ababa Fire Authority.</p><div class="dept__meta"><span>Last reviewed: February 2025</span></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Research -->
+<section class="section section--tint" id="research">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="kicker">Research &amp; publications</span>
+        <h2>The science behind the standard.</h2>
+        <p>Selected peer-reviewed publications from our consultants — the evidence we build protocols on.</p>
+      </div>
+    </div>
+    <div class="depts" style="grid-template-columns:1fr;">
+      <article class="dept reveal" style="flex-direction:row;gap:1rem;padding:1.25rem;">
+        <div style="flex-shrink:0;font-family:var(--font-serif);font-size:1.1rem;color:var(--brand-2);font-weight:600;min-width:3rem;">2025</div>
+        <div><h3 class="dept__name" style="font-size:1rem;">Door-to-doctor time reductions in a private Addis emergency department</h3><p class="dept__desc" style="margin-top:.25rem;">Tesfaye S., Mekonnen A., Girma H. · Ethiopian Journal of Health Sciences, 35(2)</p></div>
+      </article>
+      <article class="dept reveal" style="flex-direction:row;gap:1rem;padding:1.25rem;">
+        <div style="flex-shrink:0;font-family:var(--font-serif);font-size:1.1rem;color:var(--brand-2);font-weight:600;min-width:3rem;">2024</div>
+        <div><h3 class="dept__name" style="font-size:1rem;">Open-bore 3.0T MRI: patient tolerance and image quality</h3><p class="dept__desc" style="margin-top:.25rem;">Hailu T., Bekele D. · Journal of Medical Imaging &amp; Radiation Oncology, 68(4)</p></div>
+      </article>
+      <article class="dept reveal" style="flex-direction:row;gap:1rem;padding:1.25rem;">
+        <div style="flex-shrink:0;font-family:var(--font-serif);font-size:1.1rem;color:var(--brand-2);font-weight:600;min-width:3rem;">2024</div>
+        <div><h3 class="dept__name" style="font-size:1rem;">Trilingual care pathways in maternal health</h3><p class="dept__desc" style="margin-top:.25rem;">Tadesse Y., Girma H. · African Journal of Reproductive Health, 28(3)</p></div>
+      </article>
+      <article class="dept reveal" style="flex-direction:row;gap:1rem;padding:1.25rem;">
+        <div style="flex-shrink:0;font-family:var(--font-serif);font-size:1.1rem;color:var(--brand-2);font-weight:600;min-width:3rem;">2023</div>
+        <div><h3 class="dept__name" style="font-size:1rem;">Reducing surgical site infections through a JCI-aligned bundle</h3><p class="dept__desc" style="margin-top:.25rem;">Bekele D., Tesfaye S. · World Journal of Surgery, 47(9)</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="container">
+  <div class="cta reveal">
+    <div class="cta__inner">
+      <div>
+        <h2>Want to be part of the next chapter?</h2>
+        <p>Book a visit, or read our annual quality report.</p>
+      </div>
+      <div class="cta__actions">
+        <a href="book.html" class="btn btn--light">Book a visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        <a href="about.html" class="btn btn--light" style="background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.3)">Read about us</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="logo">
+          <span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span>
+          <span class="logo__text"><span class="logo__name">Addis Medical</span><span class="logo__sub">Center</span></span>
+        </a>
+        <p class="footer__about">Calm, clear care for Addis Ababa since 2008. Accredited, multilingual, and open 24/7 for emergencies.</p>
+        <div class="footer__contact">
+          <a href="tel:+251115550100"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>+251 11 555 0100</a>
+          <a href="mailto:info@addismedicalcenter.example"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>info@addismedicalcenter.example</a>
+        </div>
+      </div>
+      <div><h4>Care</h4><ul><li><a href="find-a-doctor.html">Find a doctor</a></li><li><a href="departments.html">Departments</a></li><li><a href="services.html">Services</a></li><li><a href="book.html">Book a visit</a></li><li><a href="emergency.html">Emergency</a></li></ul></div>
+      <div><h4>Patients</h4><ul><li><a href="patients-visitors.html">Visiting hours</a></li><li><a href="portal.html">Patient portal</a></li><li><a href="insurance.html">Insurance</a></li></ul></div>
+      <div><h4>Hospital</h4><ul><li><a href="about.html">About us</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="careers.html">Careers</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 Addis Medical Center. Not a substitute for medical advice.</span>
+      <span class="footer__emergency">Emergency? Call 907</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Sticky header
+const hdr = document.getElementById('hdr');
+window.addEventListener('scroll', () => {
+  hdr.classList.toggle('is-scrolled', window.scrollY > 8);
+}, { passive: true });
+
+// Mobile drawer
+const drawer = document.getElementById('drawer');
+const burger = document.getElementById('burger');
+const drawerClose = document.getElementById('drawerClose');
+
+function openDrawer() {
+  drawer.classList.add('is-open');
+  drawer.setAttribute('aria-hidden', 'false');
+  burger.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
+function closeDrawer() {
+  drawer.classList.remove('is-open');
+  drawer.setAttribute('aria-hidden', 'true');
+  burger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+burger.addEventListener('click', openDrawer);
+drawerClose.addEventListener('click', closeDrawer);
+drawer.addEventListener('click', (e) => { if (e.target === drawer) closeDrawer(); });
+
+// Scroll reveal
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-in');
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+// Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && drawer.classList.contains('is-open')) closeDrawer();
+});
+</script>
+</body>
+</html>
