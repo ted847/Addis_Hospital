@@ -3,1808 +3,248 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Book a visit — Horizon General Hospital</title>
+<title>Book a visit — Addis Medical Center</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
 *, *::before, *::after { box-sizing: border-box; }
 * { margin: 0; padding: 0; }
-
 :root {
-  --ink: #0b1b2b;
-  --ink-2: #13293d;
-  --brand: #0e6fbe;
-  --brand-2: #084d87;
-  --brand-3: #e8f3fc;
-  --accent: #14b8a6;
-  --accent-dark: #0d9488;
-  --accent-soft: #e6fffb;
-  --sand: #f6f1e8;
-  --sand-2: #ede5d8;
-  --ivory: #fcfaf6;
-  --paper: #ffffff;
-  --gray-50: #f8fafc;
-  --gray-100: #eef2f7;
-  --gray-200: #dfe6ee;
-  --gray-300: #c4cfdb;
-  --gray-400: #94a3b8;
-  --gray-500: #64748b;
-  --gray-600: #475569;
-  --gray-700: #2f4156;
-  --gray-800: #1e293b;
+  --ink: #0b1b2b; --ink-2: #13293d; --brand: #0e6fbe; --brand-2: #084d87; --brand-3: #e8f3fc;
+  --accent: #14b8a6; --accent-dark: #0d9488; --accent-soft: #e6fffb;
+  --sand: #f6f1e8; --sand-2: #ede5d8; --ivory: #fcfaf6; --paper: #ffffff;
+  --gray-50: #f8fafc; --gray-100: #eef2f7; --gray-200: #dfe6ee; --gray-300: #c4cfdb;
+  --gray-400: #94a3b8; --gray-500: #64748b; --gray-600: #475569; --gray-700: #2f4156; --gray-800: #1e293b;
   --red: #e11d48;
-  --em-50: #ecfdf5;
-  --em-100: #d1fae5;
-  --em-200: #a7f3d0;
-  --em-800: #065f46;
-  --em-900: #064e3b;
-  --radius-sm: 0.75rem;
-  --radius: 1.25rem;
-  --radius-lg: 2rem;
-  --shadow-xs: 0 1px 2px rgba(11, 27, 43, 0.05);
-  --shadow-sm: 0 4px 14px -2px rgba(11, 27, 43, 0.06), 0 1px 3px rgba(11, 27, 43, 0.04);
-  --shadow-md: 0 16px 36px -12px rgba(11, 27, 43, 0.14), 0 4px 12px -4px rgba(11, 27, 43, 0.06);
-  --shadow-lg: 0 32px 64px -18px rgba(11, 27, 43, 0.22), 0 12px 24px -8px rgba(11, 27, 43, 0.1);
+  --radius-sm: .75rem; --radius: 1.25rem; --radius-lg: 2rem;
+  --shadow-xs: 0 1px 2px rgba(11,27,43,.05);
+  --shadow-sm: 0 4px 14px -2px rgba(11,27,43,.06), 0 1px 3px rgba(11,27,43,.04);
+  --shadow-md: 0 16px 36px -12px rgba(11,27,43,.14), 0 4px 12px -4px rgba(11,27,43,.06);
+  --shadow-lg: 0 32px 64px -18px rgba(11,27,43,.22), 0 12px 24px -8px rgba(11,27,43,.1);
   --font-serif: 'Fraunces', Georgia, serif;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-html {
-  scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  font-family: var(--font-sans);
-  background: var(--paper);
-  color: var(--ink);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-}
-
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { font-family: var(--font-sans); background: var(--paper); color: var(--ink); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; cursor: pointer; background: none; border: none; }
 img, svg { display: block; max-width: 100%; }
-
-a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
-  outline: 2px solid var(--brand);
-  outline-offset: 3px;
-  border-radius: 0.5rem;
-}
-
-.container {
-  width: 100%;
-  max-width: 1240px;
-  margin-inline: auto;
-  padding-inline: 1.5rem;
-}
-
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; border-radius: .5rem; }
+.container { width: 100%; max-width: 1240px; margin-inline: auto; padding-inline: 1.5rem; }
 .app { flex: 1; }
 
-/* Emergency Top Strip */
-.emergency {
-  background: var(--ink);
-  color: #fff;
-  font-size: 0.8125rem;
-  position: relative;
-  z-index: 60;
-}
-
-.emergency__inner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  padding-block: 0.625rem;
-}
-
-.emergency__left {
-  display: flex;
-  align-items: center;
-  gap: 0.625rem;
-}
-
-.emergency__pulse {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background: #ff4d6a;
-  box-shadow: 0 0 0 0 rgba(255, 77, 106, 0.7);
-  animation: pulse 2s infinite;
-  flex-shrink: 0;
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(255, 77, 106, 0.75); }
-  70% { box-shadow: 0 0 0 10px rgba(255, 77, 106, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 77, 106, 0); }
-}
-
+.emergency { background: var(--ink); color: #fff; font-size: .8125rem; position: relative; z-index: 60; }
+.emergency__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; padding-block: .625rem; }
+.emergency__left { display: flex; align-items: center; gap: .625rem; }
+.emergency__pulse { width: .5rem; height: .5rem; border-radius: 50%; background: #ff4d6a; box-shadow: 0 0 0 0 rgba(255,77,106,.7); animation: pulse 2s infinite; flex-shrink: 0; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,77,106,.75); } 70% { box-shadow: 0 0 0 10px rgba(255,77,106,0); } 100% { box-shadow: 0 0 0 0 rgba(255,77,106,0); } }
 .emergency__left b { font-weight: 600; }
-.emergency__left a {
-  color: #fff;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  font-weight: 600;
-}
-
-.emergency__link {
-  color: #cbd5e1;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.375rem;
-  font-weight: 500;
-  transition: color 0.2s, transform 0.2s;
-}
+.emergency__left a { color: #fff; text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
+.emergency__link { color: #cbd5e1; display: inline-flex; align-items: center; gap: .375rem; font-weight: 500; transition: color .2s, transform .2s; }
 .emergency__link:hover { color: #fff; transform: translateX(2px); }
-.emergency__link svg { width: 0.875rem; height: 0.875rem; }
+.emergency__link svg { width: .875rem; height: .875rem; }
 
-/* Sticky Glassmorphism Header */
-.hdr {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(255, 255, 255, 0.86);
-  backdrop-filter: saturate(180%) blur(16px);
-  -webkit-backdrop-filter: saturate(180%) blur(16px);
-  border-bottom: 1px solid rgba(223, 230, 238, 0.45);
-  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
-}
-
-.hdr.is-scrolled {
-  border-color: var(--gray-200);
-  box-shadow: 0 8px 28px -10px rgba(11, 27, 43, 0.09);
-  background: rgba(255, 255, 255, 0.96);
-}
-
-.hdr__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-block: 0.875rem;
-  gap: 1rem;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  flex-shrink: 0;
-}
-
-.logo__mark {
-  width: 2.5rem;
-  height: 2.5rem;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
-  border-radius: 0.875rem;
-  color: #fff;
-  box-shadow: 0 10px 20px -8px rgba(14, 111, 190, 0.55);
-  transition: transform 0.3s var(--ease-out);
-}
+.hdr { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.86); backdrop-filter: saturate(180%) blur(16px); -webkit-backdrop-filter: saturate(180%) blur(16px); border-bottom: 1px solid rgba(223,230,238,.45); transition: border-color .3s, box-shadow .3s, background .3s; }
+.hdr.is-scrolled { border-color: var(--gray-200); box-shadow: 0 8px 28px -10px rgba(11,27,43,.09); background: rgba(255,255,255,.96); }
+.hdr__inner { display: flex; align-items: center; justify-content: space-between; padding-block: .875rem; gap: 1rem; }
+.logo { display: flex; align-items: center; gap: .65rem; flex-shrink: 0; }
+.logo__mark { width: 2.5rem; height: 2.5rem; display: grid; place-items: center; background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%); border-radius: .875rem; color: #fff; box-shadow: 0 10px 20px -8px rgba(14,111,190,.55); transition: transform .3s var(--ease-out); }
 .logo:hover .logo__mark { transform: scale(1.04) rotate(-3deg); }
 .logo__mark svg { width: 1.25rem; height: 1.25rem; }
+.logo__text { display: flex; flex-direction: column; line-height: 1.1; }
+.logo__name { font-family: var(--font-serif); font-weight: 600; font-size: 1.15rem; letter-spacing: -.015em; color: var(--ink); }
+.logo__sub { font-size: .6875rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gray-500); font-weight: 500; }
+.nav { display: none; gap: 1.625rem; align-items: center; }
+.nav a { font-size: .875rem; font-weight: 500; color: var(--gray-700); position: relative; padding: .35rem 0; transition: color .2s; }
+.nav a::after { content: ''; position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--brand); border-radius: 99px; transition: width .28s var(--ease-out); }
+.nav a:hover, .nav a[aria-current="page"] { color: var(--brand); }
+.nav a:hover::after, .nav a[aria-current="page"]::after { width: 100%; }
+.hdr__actions { display: flex; align-items: center; gap: .625rem; }
 
-.logo__text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.logo__name {
-  font-family: var(--font-serif);
-  font-weight: 600;
-  font-size: 1.15rem;
-  letter-spacing: -0.015em;
-  color: var(--ink);
-}
-
-.logo__sub {
-  font-size: 0.6875rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--gray-500);
-  font-weight: 500;
-}
-
-.nav {
-  display: none;
-  gap: 1.625rem;
-  align-items: center;
-}
-
-.nav a {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--gray-700);
-  position: relative;
-  padding: 0.35rem 0;
-  transition: color 0.2s;
-}
-
-.nav a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 2px;
-  width: 0;
-  background: var(--brand);
-  border-radius: 99px;
-  transition: width 0.28s var(--ease-out);
-}
-
-.nav a:hover,
-.nav a[aria-current="page"] { color: var(--brand); }
-.nav a:hover::after,
-.nav a[aria-current="page"]::after { width: 100%; }
-
-.hdr__actions {
-  display: flex;
-  align-items: center;
-  gap: 0.625rem;
-}
-
-/* Buttons */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.35rem;
-  border-radius: 999px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  transition: transform 0.22s var(--ease-out), background 0.22s, box-shadow 0.22s, border-color 0.22s;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
-.btn:active:not(:disabled) { transform: scale(0.98); }
-
-.btn--primary {
-  background: var(--ink);
-  color: #fff;
-}
-.btn--primary:hover:not(:disabled) {
-  background: var(--brand);
-  transform: translateY(-1.5px);
-  box-shadow: 0 14px 26px -10px rgba(14, 111, 190, 0.55);
-}
-.btn--primary:disabled {
-  opacity: 0.38;
-  cursor: not-allowed;
-}
-
-.btn--ghost {
-  border-color: var(--gray-200);
-  color: var(--ink);
-  background: #fff;
-}
-.btn--ghost:hover:not(:disabled) {
-  border-color: var(--ink);
-  background: var(--gray-50);
-  transform: translateY(-1.5px);
-}
-.btn--ghost:disabled {
-  opacity: 0.38;
-  cursor: not-allowed;
-}
-
-.btn--soft {
-  background: var(--brand-3);
-  color: var(--brand-2);
-  border-color: rgba(14, 111, 190, 0.14);
-}
-.btn--soft:hover {
-  background: var(--brand);
-  color: #fff;
-  transform: translateY(-1.5px);
-}
-
-.btn--accent {
-  background: var(--accent);
-  color: #fff;
-}
-.btn--accent:hover {
-  background: var(--accent-dark);
-  transform: translateY(-1.5px);
-}
-
-.btn svg {
-  width: 1rem;
-  height: 1rem;
-  transition: transform 0.22s var(--ease-out);
-}
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .75rem 1.35rem; border-radius: 999px; font-size: .875rem; font-weight: 600; transition: transform .22s var(--ease-out), background .22s, box-shadow .22s, border-color .22s; border: 1px solid transparent; white-space: nowrap; cursor: pointer; }
+.btn:active:not(:disabled) { transform: scale(.98); }
+.btn--primary { background: var(--ink); color: #fff; }
+.btn--primary:hover:not(:disabled) { background: var(--brand); transform: translateY(-1.5px); box-shadow: 0 14px 26px -10px rgba(14,111,190,.55); }
+.btn--primary:disabled { opacity: .38; cursor: not-allowed; }
+.btn--ghost { border-color: var(--gray-200); color: var(--ink); background: #fff; }
+.btn--ghost:hover:not(:disabled) { border-color: var(--ink); background: var(--gray-50); transform: translateY(-1.5px); }
+.btn--ghost:disabled { opacity: .38; cursor: not-allowed; }
+.btn--soft { background: var(--brand-3); color: var(--brand-2); border-color: rgba(14,111,190,.14); }
+.btn--soft:hover { background: var(--brand); color: #fff; transform: translateY(-1.5px); }
+.btn--accent { background: var(--accent); color: #fff; }
+.btn--accent:hover { background: var(--accent-dark); transform: translateY(-1.5px); }
+.btn svg { width: 1rem; height: 1rem; transition: transform .22s var(--ease-out); }
 .btn:hover:not(:disabled) svg.arrow-right { transform: translateX(2px); }
-
-.hdr .btn--primary {
-  padding: 0.625rem 1.1rem;
-  font-size: 0.8125rem;
-}
-
-.burger {
-  display: grid;
-  place-items: center;
-  width: 2.625rem;
-  height: 2.625rem;
-  border-radius: 0.75rem;
-  border: 1px solid var(--gray-200);
-  background: #fff;
-  transition: background 0.2s;
-}
+.hdr .btn--primary { padding: .625rem 1.1rem; font-size: .8125rem; }
+.burger { display: grid; place-items: center; width: 2.625rem; height: 2.625rem; border-radius: .75rem; border: 1px solid var(--gray-200); background: #fff; transition: background .2s; }
 .burger svg { width: 1.15rem; height: 1.15rem; stroke: var(--ink); }
 .burger:hover { background: var(--gray-50); }
+@media (min-width: 960px) { .nav { display: flex; } .burger { display: none; } }
 
-@media (min-width: 960px) {
-  .nav { display: flex; }
-  .burger { display: none; }
-}
-
-/* Mobile Drawer */
-.drawer {
-  position: fixed;
-  inset: 0;
-  background: rgba(11, 27, 43, 0.52);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  z-index: 80;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s var(--ease-out);
-}
-
+.drawer { position: fixed; inset: 0; background: rgba(11,27,43,.52); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); z-index: 80; opacity: 0; pointer-events: none; transition: opacity .3s var(--ease-out); }
 .drawer.is-open { opacity: 1; pointer-events: auto; }
-
-.drawer__panel {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: min(360px, 90vw);
-  background: #fff;
-  transform: translateX(100%);
-  transition: transform 0.38s var(--ease-out);
-  display: flex;
-  flex-direction: column;
-  padding: 1.5rem;
-  overflow-y: auto;
-  box-shadow: -20px 0 50px rgba(11, 27, 43, 0.18);
-}
-
+.drawer__panel { position: absolute; top: 0; right: 0; bottom: 0; width: min(360px, 90vw); background: #fff; transform: translateX(100%); transition: transform .38s var(--ease-out); display: flex; flex-direction: column; padding: 1.5rem; overflow-y: auto; box-shadow: -20px 0 50px rgba(11,27,43,.18); }
 .drawer.is-open .drawer__panel { transform: none; }
-
-.drawer__head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.75rem;
-}
-
-.drawer__close {
-  width: 2.5rem;
-  height: 2.5rem;
-  display: grid;
-  place-items: center;
-  border-radius: 0.75rem;
-  border: 1px solid var(--gray-200);
-}
+.drawer__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.75rem; }
+.drawer__close { width: 2.5rem; height: 2.5rem; display: grid; place-items: center; border-radius: .75rem; border: 1px solid var(--gray-200); }
 .drawer__close:hover { background: var(--gray-50); }
-
-.drawer__nav {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-
-.drawer__nav a {
-  padding: 0.85rem 0.75rem;
-  border-radius: 0.75rem;
-  font-size: 0.975rem;
-  font-weight: 500;
-  color: var(--gray-800);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background 0.2s, color 0.2s;
-}
-
-.drawer__nav a:hover,
-.drawer__nav a[aria-current="page"] {
-  background: var(--brand-3);
-  color: var(--brand);
-}
-
+.drawer__nav { display: flex; flex-direction: column; gap: .2rem; }
+.drawer__nav a { padding: .85rem .75rem; border-radius: .75rem; font-size: .975rem; font-weight: 500; color: var(--gray-800); display: flex; justify-content: space-between; align-items: center; transition: background .2s, color .2s; }
+.drawer__nav a:hover, .drawer__nav a[aria-current="page"] { background: var(--brand-3); color: var(--brand); }
 .drawer__nav a svg { width: 1rem; height: 1rem; color: var(--gray-400); }
-
-.drawer__nav a.danger {
-  color: var(--red);
-  margin-top: 0.5rem;
-  border-top: 1px solid var(--gray-200);
-  padding-top: 1rem;
-  border-radius: 0 0 0.75rem 0.75rem;
-}
+.drawer__nav a.danger { color: var(--red); margin-top: .5rem; border-top: 1px solid var(--gray-200); padding-top: 1rem; border-radius: 0 0 .75rem .75rem; }
 .drawer__nav a.danger:hover { background: #fff1f3; }
-
-.drawer__cta {
-  margin-top: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.625rem;
-}
+.drawer__cta { margin-top: 1.5rem; display: flex; flex-direction: column; gap: .625rem; }
 .drawer__cta .btn { width: 100%; }
-
-.drawer__foot {
-  margin-top: auto;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--gray-200);
-  font-size: 0.8125rem;
-  color: var(--gray-500);
-}
+.drawer__foot { margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--gray-200); font-size: .8125rem; color: var(--gray-500); }
 .drawer__foot a { color: var(--brand); text-decoration: underline; font-weight: 600; }
 
-/* Architectural Editorial Hero */
-.page-hero {
-  position: relative;
-  background: linear-gradient(180deg, var(--ivory) 0%, #f2f8fe 100%);
-  padding-block: 3.5rem 3rem;
-  border-bottom: 1px solid var(--gray-200);
-  overflow: hidden;
-}
-
-.page-hero__grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(to right, rgba(14, 111, 190, 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(14, 111, 190, 0.045) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: radial-gradient(ellipse 85% 80% at 50% 45%, #000 35%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 85% 80% at 50% 45%, #000 35%, transparent 100%);
-  pointer-events: none;
-}
-
-.page-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(48rem 28rem at 92% 0%, rgba(20, 184, 166, 0.12), transparent 60%),
-    radial-gradient(42rem 28rem at 0% 100%, rgba(14, 111, 190, 0.08), transparent 60%);
-  pointer-events: none;
-}
-
-.page-hero__inner {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  padding: 0.35rem 0.85rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid var(--gray-200);
-  box-shadow: var(--shadow-xs);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--brand-2);
-  margin-bottom: 1.125rem;
-}
-
-.hero-eyebrow__dot {
-  width: 0.45rem;
-  height: 0.45rem;
-  border-radius: 50%;
-  background: var(--accent);
-}
-
-.page-hero h1 {
-  font-family: var(--font-serif);
-  font-weight: 500;
-  font-size: clamp(2.35rem, 4.8vw, 3.65rem);
-  line-height: 1.04;
-  letter-spacing: -0.025em;
-  color: var(--ink);
-  max-width: 38rem;
-}
-
-.page-hero h1 em {
-  font-style: italic;
-  font-weight: 400;
-  color: var(--brand);
-}
-
-.page-hero p.hero-lead {
-  margin-top: 1rem;
-  font-size: 1.0625rem;
-  color: var(--gray-600);
-  line-height: 1.6;
-  max-width: 36rem;
-}
-
-.hero-trust-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.625rem;
-}
-
-.trust-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.5rem 0.875rem;
-  border-radius: 999px;
-  background: #fff;
-  border: 1px solid var(--gray-200);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--gray-700);
-  box-shadow: var(--shadow-xs);
-}
-.trust-pill svg { width: 0.95rem; height: 0.95rem; color: var(--accent-dark); }
-
-/* Booking Studio Split Layout */
-.studio-section {
-  padding-block: 3rem 5.5rem;
-  background: linear-gradient(180deg, #ffffff 0%, var(--ivory) 100%);
-}
-
-.studio-grid {
-  display: grid;
-  gap: 2.25rem;
-  align-items: start;
-}
-
-@media (min-width: 1024px) {
-  .studio-grid {
-    grid-template-columns: 1.38fr 0.82fr;
-    gap: 2.75rem;
-  }
-}
-
-/* Progress Stepper */
-.stepper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
-  margin-bottom: 1.75rem;
-}
-
-.step-node {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.875rem 1rem;
-  border-radius: var(--radius);
-  background: #fff;
-  border: 1px solid var(--gray-200);
-  text-align: left;
-  transition: all 0.25s var(--ease-out);
-  cursor: pointer;
-}
-
-.step-node:disabled {
-  cursor: default;
-  opacity: 0.65;
-}
-
-.step-node--active {
-  border-color: var(--brand);
-  background: var(--brand-3);
-  box-shadow: 0 8px 20px -8px rgba(14, 111, 190, 0.28);
-}
-
-.step-node--done {
-  border-color: rgba(20, 184, 166, 0.45);
-  background: #fff;
-}
-
-.step-node__badge {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 0.8125rem;
-  font-weight: 700;
-  background: var(--gray-100);
-  color: var(--gray-600);
-  flex-shrink: 0;
-  transition: all 0.25s;
-}
-
-.step-node--active .step-node__badge {
-  background: var(--brand);
-  color: #fff;
-}
-
-.step-node--done .step-node__badge {
-  background: var(--accent);
-  color: #fff;
-}
-
-.step-node__text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
-  min-width: 0;
-}
-
-.step-node__kicker {
-  font-size: 0.6875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--gray-500);
-  font-weight: 600;
-}
-
-.step-node__title {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--ink);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* Studio Card Container */
-.studio-card {
-  background: #fff;
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius-lg);
-  padding: 1.75rem;
-  box-shadow: var(--shadow-md);
-}
-
-@media (min-width: 640px) {
-  .studio-card { padding: 2.25rem; }
-}
-
-.studio-card__head {
-  margin-bottom: 1.75rem;
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--gray-100);
-}
-
-.studio-card__head h2 {
-  font-family: var(--font-serif);
-  font-size: 1.65rem;
-  font-weight: 500;
-  color: var(--ink);
-  letter-spacing: -0.015em;
-  line-height: 1.15;
-}
-
-.studio-card__head p {
-  margin-top: 0.35rem;
-  font-size: 0.925rem;
-  color: var(--gray-600);
-}
-
-/* Step 1: Specialty Filter & Doctor Cards */
-.filter-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-  margin-bottom: 1.35rem;
-}
-
-.filter-pill {
-  padding: 0.45rem 0.9rem;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  border: 1px solid var(--gray-200);
-  background: var(--gray-50);
-  color: var(--gray-700);
-  transition: all 0.2s;
-}
-
-.filter-pill:hover {
-  border-color: var(--brand);
-  color: var(--brand);
-}
-
-.filter-pill.is-active {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: #fff;
-}
-
-.doc-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.875rem;
-  margin-bottom: 1.75rem;
-}
-
-@media (min-width: 640px) {
-  .doc-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-.doc-card {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  gap: 0.95rem;
-  padding: 1.1rem;
-  border-radius: var(--radius);
-  border: 1.5px solid var(--gray-200);
-  background: #fff;
-  text-align: left;
-  transition: all 0.24s var(--ease-out);
-  cursor: pointer;
-}
-
-.doc-card:hover {
-  border-color: rgba(14, 111, 190, 0.45);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
-}
-
-.doc-card.is-selected {
-  border-color: var(--brand);
-  background: linear-gradient(145deg, #f4f9ff 0%, #ffffff 100%);
-  box-shadow: 0 12px 26px -12px rgba(14, 111, 190, 0.35);
-}
-
-.doc-avatar {
-  width: 3.25rem;
-  height: 3.25rem;
-  border-radius: 1rem;
-  flex-shrink: 0;
-  overflow: hidden;
-  border: 1px solid rgba(11, 27, 43, 0.08);
-}
-
-.doc-card__info {
-  flex: 1;
-  min-width: 0;
-}
-
-.doc-card__name {
-  font-family: var(--font-serif);
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--ink);
-  line-height: 1.25;
-}
-
-.doc-card__spec {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--brand);
-  margin-top: 0.15rem;
-}
-
-.doc-card__focus {
-  font-size: 0.775rem;
-  color: var(--gray-500);
-  margin-top: 0.35rem;
-  line-height: 1.4;
-}
-
-.doc-card__tags {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.4rem;
-  margin-top: 0.6rem;
-}
-
-.doc-badge {
-  font-size: 0.7rem;
-  font-weight: 600;
-  padding: 0.2rem 0.55rem;
-  border-radius: 999px;
-  background: var(--accent-soft);
-  color: var(--accent-dark);
-}
-
-.doc-lang-tag {
-  font-size: 0.7rem;
-  color: var(--gray-500);
-  font-weight: 500;
-}
-
-.doc-check {
-  width: 1.35rem;
-  height: 1.35rem;
-  border-radius: 50%;
-  border: 1.5px solid var(--gray-300);
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  color: transparent;
-  transition: all 0.2s;
-}
-
-.doc-card.is-selected .doc-check {
-  background: var(--brand);
-  border-color: var(--brand);
-  color: #fff;
-}
-
-/* Visit Mode Selector Cards */
-.field-label {
-  display: block;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--ink);
-  margin-bottom: 0.65rem;
-}
-
-.mode-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.875rem;
-}
-
-@media (min-width: 640px) {
-  .mode-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-.mode-card {
-  padding: 1.2rem;
-  border-radius: var(--radius);
-  border: 1.5px solid var(--gray-200);
-  background: #fff;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
-  transition: all 0.22s var(--ease-out);
-  cursor: pointer;
-}
-
-.mode-card:hover {
-  border-color: rgba(14, 111, 190, 0.45);
-}
-
-.mode-card.is-selected {
-  border-color: var(--brand);
-  background: var(--brand-3);
-}
-
-.mode-card__top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.mode-card__icon {
-  width: 2.25rem;
-  height: 2.25rem;
-  border-radius: 0.65rem;
-  background: #fff;
-  color: var(--brand);
-  display: grid;
-  place-items: center;
-  box-shadow: var(--shadow-xs);
-}
-
-.mode-card__fee {
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--ink);
-  background: #fff;
-  padding: 0.25rem 0.65rem;
-  border-radius: 999px;
-}
-
-.mode-card__title {
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--ink);
-  margin-top: 0.25rem;
-}
-
-.mode-card__desc {
-  font-size: 0.8125rem;
-  color: var(--gray-600);
-  line-height: 1.45;
-}
-
-/* Step 2: Quick Date Strip & Categorized Time Slots */
-.date-strip {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-@media (min-width: 640px) {
-  .date-strip { grid-template-columns: repeat(7, 1fr); }
-}
-
-.date-chip {
-  padding: 0.65rem 0.35rem;
-  border-radius: var(--radius-sm);
-  border: 1.5px solid var(--gray-200);
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.15rem;
-  transition: all 0.2s;
-  cursor: pointer;
-}
-
-.date-chip:hover {
-  border-color: var(--brand);
-  transform: translateY(-1px);
-}
-
-.date-chip.is-selected {
-  background: var(--brand);
-  border-color: var(--brand);
-  color: #fff;
-  box-shadow: 0 8px 18px -6px rgba(14, 111, 190, 0.45);
-}
-
-.date-chip__day {
-  font-size: 0.6875rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  opacity: 0.78;
-}
-
-.date-chip__num {
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 600;
-  line-height: 1.15;
-}
-
-.date-chip__dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--accent);
-  margin-top: 0.15rem;
-}
-
-.date-chip.is-selected .date-chip__dot {
-  background: #fff;
-}
-
-.date-fallback-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  padding: 0.875rem 1rem;
-  border-radius: var(--radius-sm);
-  background: var(--gray-50);
-  border: 1px solid var(--gray-200);
-  margin-bottom: 1.75rem;
-}
-
-.date-fallback-row label {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--gray-700);
-}
-
-.date-fallback-row input[type="date"] {
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.6rem;
-  border: 1px solid var(--gray-300);
-  font: inherit;
-  font-size: 0.875rem;
-  color: var(--ink);
-  background: #fff;
-}
-
-.slot-group {
-  margin-bottom: 1.35rem;
-}
-
-.slot-group__header {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-size: 0.78rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--gray-500);
-  margin-bottom: 0.65rem;
-}
-
-.slots-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.6rem;
-}
-
-@media (min-width: 520px) {
-  .slots-grid { grid-template-columns: repeat(4, 1fr); }
-}
-
-.slot-btn {
-  padding: 0.75rem 0.5rem;
-  border-radius: var(--radius-sm);
-  border: 1.5px solid var(--gray-200);
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.2rem;
-  transition: all 0.2s;
-  cursor: pointer;
-}
-
-.slot-btn:hover {
-  border-color: var(--brand);
-  background: var(--gray-50);
-}
-
-.slot-btn.is-selected {
-  border-color: var(--brand);
-  background: var(--brand-3);
-  color: var(--brand-2);
-  box-shadow: 0 6px 14px -6px rgba(14, 111, 190, 0.35);
-}
-
-.slot-btn__time {
-  font-size: 0.95rem;
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-}
-
-.slot-btn__status {
-  font-size: 0.6875rem;
-  color: var(--accent-dark);
-  font-weight: 600;
-}
-
-/* Interpreter Box */
-.interpreter-box {
-  margin-top: 1.5rem;
-  padding: 1.15rem 1.25rem;
-  border-radius: var(--radius);
-  background: var(--ivory);
-  border: 1px solid var(--sand-2);
-}
-
-.interpreter-box__top {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.75rem;
-}
-
-.interpreter-box__title {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--ink);
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-}
-
-.free-chip {
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 0.2rem 0.6rem;
-  border-radius: 999px;
-  background: var(--accent-soft);
-  color: var(--accent-dark);
-}
-
-.lang-select-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-
-.lang-choice {
-  padding: 0.4rem 0.75rem;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  border: 1px solid var(--gray-300);
-  background: #fff;
-  color: var(--gray-700);
-  transition: all 0.2s;
-}
-
-.lang-choice:hover {
-  border-color: var(--brand);
-}
-
-.lang-choice.is-selected {
-  background: var(--brand);
-  border-color: var(--brand);
-  color: #fff;
-}
-
-/* Step 3: Patient Details & Non-Re-Rendering Inputs */
-.form-grid-2 {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.125rem;
-}
-
-@media (min-width: 600px) {
-  .form-grid-2 { grid-template-columns: 1fr 1fr; }
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  margin-bottom: 1.25rem;
-}
-
-.form-group label {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--gray-700);
-  display: flex;
-  justify-content: space-between;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 0.78rem 1rem;
-  font-size: 0.9375rem;
-  border: 1.5px solid var(--gray-300);
-  border-radius: 0.85rem;
-  background: #fff;
-  color: var(--ink);
-  font-family: inherit;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--brand);
-  box-shadow: 0 0 0 3.5px rgba(14, 111, 190, 0.14);
-}
-
-.phone-input-wrap {
-  display: flex;
-  align-items: center;
-  border: 1.5px solid var(--gray-300);
-  border-radius: 0.85rem;
-  background: #fff;
-  overflow: hidden;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.phone-input-wrap:focus-within {
-  border-color: var(--brand);
-  box-shadow: 0 0 0 3.5px rgba(14, 111, 190, 0.14);
-}
-
-.phone-prefix {
-  padding: 0.78rem 0.85rem;
-  background: var(--gray-50);
-  border-right: 1px solid var(--gray-200);
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--gray-700);
-  user-select: none;
-}
-
-.phone-input-wrap input {
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  padding-left: 0.75rem;
-}
-
-.symptom-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-bottom: 0.55rem;
-}
-
-.symptom-chip {
-  padding: 0.35rem 0.75rem;
-  border-radius: 999px;
-  font-size: 0.775rem;
-  font-weight: 500;
-  background: var(--gray-100);
-  color: var(--gray-700);
-  border: 1px solid transparent;
-  transition: all 0.2s;
-}
-
-.symptom-chip:hover {
-  background: var(--brand-3);
-  color: var(--brand-2);
-}
-
-.symptom-chip.is-selected {
-  background: var(--brand-3);
-  border-color: var(--brand);
-  color: var(--brand-2);
-  font-weight: 600;
-}
-
-.pay-toggle {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.65rem;
-  margin-bottom: 1.25rem;
-}
-
-.pay-btn {
-  padding: 0.7rem 0.9rem;
-  border-radius: 0.85rem;
-  border: 1.5px solid var(--gray-200);
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--gray-700);
-  background: #fff;
-  transition: all 0.2s;
-}
-
-.pay-btn.is-selected {
-  border-color: var(--brand);
-  background: var(--brand-3);
-  color: var(--brand-2);
-}
-
-.consent-card {
-  display: flex;
-  gap: 0.75rem;
-  align-items: flex-start;
-  padding: 1rem 1.1rem;
-  border-radius: var(--radius-sm);
-  background: var(--gray-50);
-  border: 1px solid var(--gray-200);
-  font-size: 0.875rem;
-  color: var(--gray-700);
-  cursor: pointer;
-}
-
-.consent-card input[type="checkbox"] {
-  width: 1.125rem;
-  height: 1.125rem;
-  margin-top: 0.15rem;
-  accent-color: var(--brand);
-  flex-shrink: 0;
-  cursor: pointer;
-}
-
-.studio-actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--gray-100);
-  gap: 0.75rem;
-}
-
-/* Sticky Right Sidebar: Live Visit Summary & Transparent Estimate */
-.summary-panel {
-  position: sticky;
-  top: 5.5rem;
-  background: #fff;
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius-lg);
-  padding: 1.75rem;
-  box-shadow: var(--shadow-md);
-  overflow: hidden;
-}
-
-.summary-panel::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--brand), var(--accent));
-}
-
-.summary-panel__kicker {
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--brand);
-  margin-bottom: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.summary-doc {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--gray-100);
-}
-
-.summary-doc__avatar {
-  width: 3.75rem;
-  height: 3.75rem;
-  border-radius: 1.1rem;
-  overflow: hidden;
-  flex-shrink: 0;
-  border: 1px solid var(--gray-200);
-}
-
-.summary-doc__name {
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--ink);
-  line-height: 1.2;
-}
-
-.summary-doc__spec {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--brand);
-  margin-top: 0.15rem;
-}
-
-.summary-doc__room {
-  font-size: 0.75rem;
-  color: var(--gray-500);
-  margin-top: 0.25rem;
-}
-
-.summary-list {
-  list-style: none;
-  margin-top: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  font-size: 0.875rem;
-}
-
-.summary-list li {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 1rem;
-}
-
-.summary-list li span {
-  color: var(--gray-500);
-}
-
-.summary-list li strong {
-  color: var(--ink);
-  font-weight: 600;
-  text-align: right;
-}
-
-.estimate-box {
-  margin-top: 1.35rem;
-  padding: 1.15rem;
-  border-radius: var(--radius);
-  background: var(--ivory);
-  border: 1px solid var(--sand-2);
-}
-
-.estimate-box__row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  font-size: 0.85rem;
-  color: var(--gray-600);
-  margin-bottom: 0.45rem;
-}
-
-.estimate-box__total {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding-top: 0.65rem;
-  margin-top: 0.55rem;
-  border-top: 1px dashed rgba(11, 27, 43, 0.15);
-}
-
-.estimate-box__total span {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--ink);
-}
-
-.estimate-box__total strong {
-  font-family: var(--font-serif);
-  font-size: 1.45rem;
-  font-weight: 600;
-  color: var(--ink);
-}
-
-.guarantee-note {
-  margin-top: 0.85rem;
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-  font-size: 0.76rem;
-  color: var(--gray-600);
-  line-height: 1.45;
-}
-
-.guarantee-note svg {
-  width: 1rem;
-  height: 1rem;
-  color: var(--accent-dark);
-  flex-shrink: 0;
-  margin-top: 0.1rem;
-}
-
-/* Official Appointment Boarding Pass (Confirmation State) */
-.pass-wrap {
-  max-width: 46rem;
-  margin-inline: auto;
-}
-
-.pass-card {
-  background: #fff;
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  overflow: hidden;
-}
-
-.pass-top {
-  background: linear-gradient(135deg, var(--ink) 0%, var(--ink-2) 100%);
-  color: #fff;
-  padding: 2.25rem 2rem;
-  position: relative;
-}
-
-.pass-top::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(28rem 18rem at 100% 0%, rgba(20, 184, 166, 0.28), transparent 65%);
-  pointer-events: none;
-}
-
-.pass-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.35rem 0.8rem;
-  border-radius: 999px;
-  background: rgba(20, 184, 166, 0.2);
-  border: 1px solid rgba(20, 184, 166, 0.45);
-  color: #5eead4;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-
-.pass-top h2 {
-  font-family: var(--font-serif);
-  font-size: clamp(1.75rem, 3.5vw, 2.35rem);
-  font-weight: 500;
-  line-height: 1.1;
-}
-
-.pass-top p {
-  margin-top: 0.65rem;
-  color: #cbd5e1;
-  font-size: 0.95rem;
-  max-width: 34rem;
-}
-
-.pass-ref-bar {
-  margin-top: 1.5rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.6rem 1rem;
-  border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-}
-
-.pass-ref-code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 1.15rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: #fff;
-}
-
-.copy-ref-btn {
-  padding: 0.35rem 0.7rem;
-  border-radius: 0.5rem;
-  background: rgba(255, 255, 255, 0.14);
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 600;
-  transition: background 0.2s;
-}
-.copy-ref-btn:hover { background: rgba(255, 255, 255, 0.25); }
-
-.pass-divider {
-  position: relative;
-  height: 24px;
-  background: #fff;
-  display: flex;
-  align-items: center;
-}
-
-.pass-divider::before {
-  content: '';
-  width: 100%;
-  border-top: 2px dashed var(--gray-200);
-}
-
-.pass-notch {
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: var(--ivory);
-  border: 1px solid var(--gray-200);
-}
-.pass-notch--left { left: -13px; }
-.pass-notch--right { right: -13px; }
-
-.pass-body {
-  padding: 1.75rem 2rem 2.25rem;
-}
-
-.pass-grid {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 680px) {
-  .pass-grid {
-    grid-template-columns: 1.4fr 0.6fr;
-    align-items: center;
-  }
-}
-
-.pass-dl {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.1rem 1.5rem;
-}
-
-.pass-dl dt {
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  color: var(--gray-500);
-  font-weight: 600;
-}
-
-.pass-dl dd {
-  margin-top: 0.2rem;
-  font-size: 0.975rem;
-  font-weight: 600;
-  color: var(--ink);
-}
-
-.pass-qr-box {
-  padding: 1rem;
-  border-radius: var(--radius);
-  background: var(--gray-50);
-  border: 1px solid var(--gray-200);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.pass-qr-box span {
-  margin-top: 0.5rem;
-  font-size: 0.7rem;
-  font-weight: 600;
-  color: var(--gray-500);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.pass-prep {
-  margin-top: 1.75rem;
-  padding: 1.15rem 1.25rem;
-  border-radius: var(--radius);
-  background: var(--em-50);
-  border: 1px solid var(--em-200);
-  color: var(--em-900);
-}
-
-.pass-prep h3 {
-  font-size: 0.875rem;
-  font-weight: 700;
-  margin-bottom: 0.45rem;
-}
-
-.pass-prep ul {
-  padding-left: 1.15rem;
-  font-size: 0.85rem;
-  color: var(--em-800);
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.pass-actions {
-  margin-top: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Footer */
-.footer {
-  background: var(--ink);
-  color: #a9b8c7;
-  position: relative;
-  overflow: hidden;
-}
-
-.footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(20, 184, 166, 0.55), transparent);
-}
-
-.footer__inner { padding-block: 4.25rem 2.25rem; }
-
-.footer__grid {
-  display: grid;
-  gap: 2.5rem;
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 640px) {
-  .footer__grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (min-width: 1024px) {
-  .footer__grid { grid-template-columns: 1.5fr 1fr 1fr 1fr; }
-}
-
-.footer__brand .logo__name { color: #fff; }
-.footer__brand .logo__sub { color: #7e90a4; }
-
-.footer__about {
-  margin-top: 1.25rem;
-  font-size: 0.875rem;
-  line-height: 1.65;
-  max-width: 22rem;
-}
-
-.footer__contact {
-  margin-top: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.625rem;
-  font-size: 0.875rem;
-}
-
-.footer__contact a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  transition: color 0.2s;
-}
-.footer__contact a:hover { color: #fff; }
-.footer__contact svg { width: 0.95rem; height: 0.95rem; color: var(--accent); flex-shrink: 0; }
-
-.footer h4 {
-  color: #fff;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin-bottom: 1.125rem;
-}
-
-.footer ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
-}
-
-.footer ul a {
-  font-size: 0.875rem;
-  transition: color 0.2s, transform 0.2s;
-  display: inline-block;
-}
-.footer ul a:hover { color: #fff; transform: translateX(2px); }
-
-.footer__bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.09);
-  padding-top: 1.5rem;
-  margin-top: 3rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  font-size: 0.78rem;
-}
-
-.footer__emergency {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #fff;
-  font-weight: 600;
-}
-
-.footer__emergency::before {
-  content: '';
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background: #ff4d6a;
-  animation: pulse 2s infinite;
-}
-
-/* Reveal Animation */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out);
-}
-.reveal.is-in {
-  opacity: 1;
-  transform: none;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
-  * { animation-duration: 0s !important; transition-duration: 0s !important; }
-}
+.page-hero { position: relative; background: linear-gradient(180deg, var(--ivory) 0%, #f2f8fe 100%); padding-block: 3.5rem 3rem; border-bottom: 1px solid var(--gray-200); overflow: hidden; }
+.page-hero__grid { position: absolute; inset: 0; background-image: linear-gradient(to right, rgba(14,111,190,.045) 1px, transparent 1px), linear-gradient(to bottom, rgba(14,111,190,.045) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse 85% 80% at 50% 45%, #000 35%, transparent 100%); -webkit-mask-image: radial-gradient(ellipse 85% 80% at 50% 45%, #000 35%, transparent 100%); pointer-events: none; }
+.page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(48rem 28rem at 92% 0%, rgba(20,184,166,.12), transparent 60%), radial-gradient(42rem 28rem at 0% 100%, rgba(14,111,190,.08), transparent 60%); pointer-events: none; }
+.page-hero__inner { position: relative; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 2rem; }
+.hero-eyebrow { display: inline-flex; align-items: center; gap: .55rem; padding: .35rem .85rem; border-radius: 999px; background: rgba(255,255,255,.9); border: 1px solid var(--gray-200); box-shadow: var(--shadow-xs); font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--brand-2); margin-bottom: 1.125rem; }
+.hero-eyebrow__dot { width: .45rem; height: .45rem; border-radius: 50%; background: var(--accent); }
+.page-hero h1 { font-family: var(--font-serif); font-weight: 500; font-size: clamp(2.35rem, 4.8vw, 3.65rem); line-height: 1.04; letter-spacing: -.025em; color: var(--ink); max-width: 38rem; }
+.page-hero h1 em { font-style: italic; font-weight: 400; color: var(--brand); }
+.page-hero p.hero-lead { margin-top: 1rem; font-size: 1.0625rem; color: var(--gray-600); line-height: 1.6; max-width: 36rem; }
+.hero-trust-pills { display: flex; flex-wrap: wrap; gap: .625rem; }
+.trust-pill { display: inline-flex; align-items: center; gap: .45rem; padding: .5rem .875rem; border-radius: 999px; background: #fff; border: 1px solid var(--gray-200); font-size: .8125rem; font-weight: 500; color: var(--gray-700); box-shadow: var(--shadow-xs); }
+.trust-pill svg { width: .95rem; height: .95rem; color: var(--accent-dark); }
+
+.studio-section { padding-block: 3rem 5.5rem; background: linear-gradient(180deg, #ffffff 0%, var(--ivory) 100%); }
+.studio-grid { display: grid; gap: 2.25rem; align-items: start; }
+@media (min-width: 1024px) { .studio-grid { grid-template-columns: 1.38fr .82fr; gap: 2.75rem; } }
+
+.stepper { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; margin-bottom: 1.75rem; }
+.step-node { display: flex; align-items: center; gap: .75rem; padding: .875rem 1rem; border-radius: var(--radius); background: #fff; border: 1px solid var(--gray-200); text-align: left; transition: all .25s var(--ease-out); cursor: pointer; }
+.step-node:disabled { cursor: default; opacity: .65; }
+.step-node--active { border-color: var(--brand); background: var(--brand-3); box-shadow: 0 8px 20px -8px rgba(14,111,190,.28); }
+.step-node--done { border-color: rgba(20,184,166,.45); background: #fff; }
+.step-node__badge { width: 2rem; height: 2rem; border-radius: 50%; display: grid; place-items: center; font-size: .8125rem; font-weight: 700; background: var(--gray-100); color: var(--gray-600); flex-shrink: 0; transition: all .25s; }
+.step-node--active .step-node__badge { background: var(--brand); color: #fff; }
+.step-node--done .step-node__badge { background: var(--accent); color: #fff; }
+.step-node__text { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
+.step-node__kicker { font-size: .6875rem; text-transform: uppercase; letter-spacing: .08em; color: var(--gray-500); font-weight: 600; }
+.step-node__title { font-size: .875rem; font-weight: 600; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.studio-card { background: #fff; border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 1.75rem; box-shadow: var(--shadow-md); }
+@media (min-width: 640px) { .studio-card { padding: 2.25rem; } }
+.studio-card__head { margin-bottom: 1.75rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--gray-100); }
+.studio-card__head h2 { font-family: var(--font-serif); font-size: 1.65rem; font-weight: 500; color: var(--ink); letter-spacing: -.015em; line-height: 1.15; }
+.studio-card__head p { margin-top: .35rem; font-size: .925rem; color: var(--gray-600); }
+
+.filter-bar { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 1.35rem; }
+.filter-pill { padding: .45rem .9rem; border-radius: 999px; font-size: .8rem; font-weight: 600; border: 1px solid var(--gray-200); background: var(--gray-50); color: var(--gray-700); transition: all .2s; }
+.filter-pill:hover { border-color: var(--brand); color: var(--brand); }
+.filter-pill.is-active { background: var(--ink); border-color: var(--ink); color: #fff; }
+
+.doc-grid { display: grid; grid-template-columns: 1fr; gap: .875rem; margin-bottom: 1.75rem; }
+@media (min-width: 640px) { .doc-grid { grid-template-columns: repeat(2, 1fr); } }
+.doc-card { position: relative; display: flex; align-items: flex-start; gap: .95rem; padding: 1.1rem; border-radius: var(--radius); border: 1.5px solid var(--gray-200); background: #fff; text-align: left; transition: all .24s var(--ease-out); cursor: pointer; }
+.doc-card:hover { border-color: rgba(14,111,190,.45); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.doc-card.is-selected { border-color: var(--brand); background: linear-gradient(145deg, #f4f9ff 0%, #ffffff 100%); box-shadow: 0 12px 26px -12px rgba(14,111,190,.35); }
+.doc-avatar { width: 3.25rem; height: 3.25rem; border-radius: 1rem; flex-shrink: 0; overflow: hidden; border: 1px solid rgba(11,27,43,.08); }
+.doc-card__info { flex: 1; min-width: 0; }
+.doc-card__name { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); line-height: 1.25; }
+.doc-card__spec { font-size: .8125rem; font-weight: 600; color: var(--brand); margin-top: .15rem; }
+.doc-card__focus { font-size: .775rem; color: var(--gray-500); margin-top: .35rem; line-height: 1.4; }
+.doc-card__tags { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; margin-top: .6rem; }
+.doc-badge { font-size: .7rem; font-weight: 600; padding: .2rem .55rem; border-radius: 999px; background: var(--accent-soft); color: var(--accent-dark); }
+.doc-lang-tag { font-size: .7rem; color: var(--gray-500); font-weight: 500; }
+.doc-check { width: 1.35rem; height: 1.35rem; border-radius: 50%; border: 1.5px solid var(--gray-300); display: grid; place-items: center; flex-shrink: 0; color: transparent; transition: all .2s; }
+.doc-card.is-selected .doc-check { background: var(--brand); border-color: var(--brand); color: #fff; }
+
+.field-label { display: block; font-size: .875rem; font-weight: 600; color: var(--ink); margin-bottom: .65rem; }
+.mode-grid { display: grid; grid-template-columns: 1fr; gap: .875rem; }
+@media (min-width: 640px) { .mode-grid { grid-template-columns: repeat(2, 1fr); } }
+.mode-card { padding: 1.2rem; border-radius: var(--radius); border: 1.5px solid var(--gray-200); background: #fff; text-align: left; display: flex; flex-direction: column; gap: .45rem; transition: all .22s var(--ease-out); cursor: pointer; }
+.mode-card:hover { border-color: rgba(14,111,190,.45); }
+.mode-card.is-selected { border-color: var(--brand); background: var(--brand-3); }
+.mode-card__top { display: flex; justify-content: space-between; align-items: center; gap: .5rem; }
+.mode-card__icon { width: 2.25rem; height: 2.25rem; border-radius: .65rem; background: #fff; color: var(--brand); display: grid; place-items: center; box-shadow: var(--shadow-xs); }
+.mode-card__fee { font-size: .8rem; font-weight: 700; color: var(--ink); background: #fff; padding: .25rem .65rem; border-radius: 999px; }
+.mode-card__title { font-weight: 600; font-size: .95rem; color: var(--ink); margin-top: .25rem; }
+.mode-card__desc { font-size: .8125rem; color: var(--gray-600); line-height: 1.45; }
+
+.date-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: .5rem; margin-bottom: 1rem; }
+@media (min-width: 640px) { .date-strip { grid-template-columns: repeat(7, 1fr); } }
+.date-chip { padding: .65rem .35rem; border-radius: var(--radius-sm); border: 1.5px solid var(--gray-200); background: #fff; display: flex; flex-direction: column; align-items: center; gap: .15rem; transition: all .2s; cursor: pointer; }
+.date-chip:hover { border-color: var(--brand); transform: translateY(-1px); }
+.date-chip.is-selected { background: var(--brand); border-color: var(--brand); color: #fff; box-shadow: 0 8px 18px -6px rgba(14,111,190,.45); }
+.date-chip__day { font-size: .6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; opacity: .78; }
+.date-chip__num { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; line-height: 1.15; }
+.date-chip__dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); margin-top: .15rem; }
+.date-chip.is-selected .date-chip__dot { background: #fff; }
+.date-fallback-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; padding: .875rem 1rem; border-radius: var(--radius-sm); background: var(--gray-50); border: 1px solid var(--gray-200); margin-bottom: 1.75rem; }
+.date-fallback-row label { font-size: .8125rem; font-weight: 600; color: var(--gray-700); }
+.date-fallback-row input[type="date"] { padding: .5rem .75rem; border-radius: .6rem; border: 1px solid var(--gray-300); font: inherit; font-size: .875rem; color: var(--ink); background: #fff; }
+.slot-group { margin-bottom: 1.35rem; }
+.slot-group__header { display: flex; align-items: center; gap: .45rem; font-size: .78rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--gray-500); margin-bottom: .65rem; }
+.slots-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .6rem; }
+@media (min-width: 520px) { .slots-grid { grid-template-columns: repeat(4, 1fr); } }
+.slot-btn { padding: .75rem .5rem; border-radius: var(--radius-sm); border: 1.5px solid var(--gray-200); background: #fff; display: flex; flex-direction: column; align-items: center; gap: .2rem; transition: all .2s; cursor: pointer; }
+.slot-btn:hover { border-color: var(--brand); background: var(--gray-50); }
+.slot-btn.is-selected { border-color: var(--brand); background: var(--brand-3); color: var(--brand-2); box-shadow: 0 6px 14px -6px rgba(14,111,190,.35); }
+.slot-btn__time { font-size: .95rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.slot-btn__status { font-size: .6875rem; color: var(--accent-dark); font-weight: 600; }
+
+.interpreter-box { margin-top: 1.5rem; padding: 1.15rem 1.25rem; border-radius: var(--radius); background: var(--ivory); border: 1px solid var(--sand-2); }
+.interpreter-box__top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .5rem; margin-bottom: .75rem; }
+.interpreter-box__title { font-size: .875rem; font-weight: 600; color: var(--ink); display: flex; align-items: center; gap: .45rem; }
+.free-chip { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; padding: .2rem .6rem; border-radius: 999px; background: var(--accent-soft); color: var(--accent-dark); }
+.lang-select-row { display: flex; flex-wrap: wrap; gap: .4rem; }
+.lang-choice { padding: .4rem .75rem; border-radius: 999px; font-size: .78rem; font-weight: 600; border: 1px solid var(--gray-300); background: #fff; color: var(--gray-700); transition: all .2s; }
+.lang-choice:hover { border-color: var(--brand); }
+.lang-choice.is-selected { background: var(--brand); border-color: var(--brand); color: #fff; }
+
+.form-grid-2 { display: grid; grid-template-columns: 1fr; gap: 1.125rem; }
+@media (min-width: 600px) { .form-grid-2 { grid-template-columns: 1fr 1fr; } }
+.form-group { display: flex; flex-direction: column; gap: .4rem; margin-bottom: 1.25rem; }
+.form-group label { font-size: .85rem; font-weight: 600; color: var(--gray-700); display: flex; justify-content: space-between; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: .78rem 1rem; font-size: .9375rem; border: 1.5px solid var(--gray-300); border-radius: .85rem; background: #fff; color: var(--ink); font-family: inherit; transition: border-color .2s, box-shadow .2s; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3.5px rgba(14,111,190,.14); }
+.phone-input-wrap { display: flex; align-items: center; border: 1.5px solid var(--gray-300); border-radius: .85rem; background: #fff; overflow: hidden; transition: border-color .2s, box-shadow .2s; }
+.phone-input-wrap:focus-within { border-color: var(--brand); box-shadow: 0 0 0 3.5px rgba(14,111,190,.14); }
+.phone-prefix { padding: .78rem .85rem; background: var(--gray-50); border-right: 1px solid var(--gray-200); font-size: .875rem; font-weight: 600; color: var(--gray-700); user-select: none; }
+.phone-input-wrap input { border: none !important; box-shadow: none !important; border-radius: 0 !important; padding-left: .75rem; }
+.symptom-chips { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: .55rem; }
+.symptom-chip { padding: .35rem .75rem; border-radius: 999px; font-size: .775rem; font-weight: 500; background: var(--gray-100); color: var(--gray-700); border: 1px solid transparent; transition: all .2s; }
+.symptom-chip:hover { background: var(--brand-3); color: var(--brand-2); }
+.symptom-chip.is-selected { background: var(--brand-3); border-color: var(--brand); color: var(--brand-2); font-weight: 600; }
+.pay-toggle { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem; margin-bottom: 1.25rem; }
+.pay-btn { padding: .7rem .9rem; border-radius: .85rem; border: 1.5px solid var(--gray-200); font-size: .85rem; font-weight: 600; color: var(--gray-700); background: #fff; transition: all .2s; }
+.pay-btn.is-selected { border-color: var(--brand); background: var(--brand-3); color: var(--brand-2); }
+.consent-card { display: flex; gap: .75rem; align-items: flex-start; padding: 1rem 1.1rem; border-radius: var(--radius-sm); background: var(--gray-50); border: 1px solid var(--gray-200); font-size: .875rem; color: var(--gray-700); cursor: pointer; }
+.consent-card input[type="checkbox"] { width: 1.125rem; height: 1.125rem; margin-top: .15rem; accent-color: var(--brand); flex-shrink: 0; cursor: pointer; }
+.studio-actions { display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--gray-100); gap: .75rem; }
+
+.summary-panel { position: sticky; top: 5.5rem; background: #fff; border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 1.75rem; box-shadow: var(--shadow-md); overflow: hidden; }
+.summary-panel::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--brand), var(--accent)); }
+.summary-panel__kicker { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--brand); margin-bottom: .5rem; }
+.summary-panel h3 { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 500; color: var(--ink); margin-bottom: 1.25rem; }
+.summary-row { display: flex; justify-content: space-between; gap: 1rem; padding-block: .55rem; border-bottom: 1px dashed var(--gray-200); font-size: .875rem; }
+.summary-row:last-of-type { border-bottom: none; }
+.summary-row span:first-child { color: var(--gray-500); }
+.summary-row strong { color: var(--ink); font-weight: 600; text-align: right; }
+.summary-total { margin-top: 1rem; padding-top: 1rem; border-top: 2px solid var(--ink); display: flex; justify-content: space-between; align-items: baseline; }
+.summary-total span { font-size: .85rem; font-weight: 600; color: var(--gray-600); }
+.summary-total strong { font-family: var(--font-serif); font-size: 1.6rem; color: var(--ink); }
+.summary-note { margin-top: 1rem; font-size: .78rem; color: var(--gray-500); line-height: 1.5; }
+.summary-badge { margin-top: 1.25rem; display: flex; align-items: center; gap: .5rem; padding: .75rem .9rem; background: var(--accent-soft); border: 1px solid rgba(20,184,166,.3); border-radius: var(--radius-sm); font-size: .78rem; color: var(--accent-dark); font-weight: 600; }
+
+.confirm-panel { text-align: center; padding: 2rem 1rem; }
+.confirm-panel__icon { width: 4rem; height: 4rem; margin-inline: auto; margin-bottom: 1rem; border-radius: 50%; background: var(--accent-soft); color: var(--accent-dark); display: grid; place-items: center; }
+.confirm-panel h3 { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 500; margin-bottom: .5rem; }
+.confirm-panel p { color: var(--gray-600); font-size: .9rem; margin-bottom: 1.5rem; }
+
+@media (prefers-reduced-motion: reduce) { * { animation-duration: 0s !important; transition-duration: 0s !important; } }
 </style>
 </head>
 <body>
 
-<!-- Emergency Top Bar -->
 <div class="emergency">
   <div class="container emergency__inner">
     <div class="emergency__left">
@@ -1812,25 +252,18 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
       <span><b>Emergency?</b> Call <a href="tel:907">907</a> — open 24/7</span>
     </div>
     <div>
-      <a href="emergency.html" class="emergency__link">
-        Live ER wait times
+      <a href="emergency.html" class="emergency__link">Live ER wait times
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </a>
     </div>
   </div>
 </div>
 
-<!-- Sticky Glassmorphism Header -->
 <header class="hdr" id="hdr">
   <div class="container hdr__inner">
     <a href="index.html" class="logo">
-      <span class="logo__mark">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>
-      </span>
-      <span class="logo__text">
-        <span class="logo__name">Horizon</span>
-        <span class="logo__sub">General Hospital</span>
-      </span>
+      <span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span>
+      <span class="logo__text"><span class="logo__name">Addis Medical Center</span><span class="logo__sub">General Hospital</span></span>
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="find-a-doctor.html">Find a doctor</a>
@@ -1841,8 +274,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
       <a href="news.html">News</a>
     </nav>
     <div class="hdr__actions">
-      <a href="book.html" class="btn btn--primary" aria-current="page">
-        Book a visit
+      <a href="book.html" class="btn btn--primary" aria-current="page">Book a visit
         <svg class="arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </a>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
@@ -1852,13 +284,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   </div>
 </header>
 
-<!-- Mobile Slide-Out Drawer -->
 <div class="drawer" id="drawer" aria-hidden="true">
   <div class="drawer__panel">
     <div class="drawer__head">
       <a href="index.html" class="logo">
         <span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span>
-        <span class="logo__text"><span class="logo__name">Horizon</span><span class="logo__sub">General Hospital</span></span>
+        <span class="logo__text"><span class="logo__name">Addis Medical Center</span><span class="logo__sub">General Hospital</span></span>
       </a>
       <button class="drawer__close" id="drawerClose" aria-label="Close">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
@@ -1882,1036 +313,440 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
       <a href="book.html" class="btn btn--primary">Book a visit</a>
       <a href="portal.html" class="btn btn--ghost">Patient portal</a>
     </div>
-    <div class="drawer__foot">
-      <p>Emergency? Call <a href="tel:907">907</a></p>
-      <p style="margin-top:.25rem">Mon–Sun · 24/7</p>
-    </div>
+    <div class="drawer__foot"><p>Emergency? Call <a href="tel:907">907</a></p><p style="margin-top:.25rem">Mon–Sun · 24/7</p></div>
   </div>
 </div>
 
 <main class="app">
-  <!-- Editorial Hero -->
   <section class="page-hero">
     <div class="page-hero__grid" aria-hidden="true"></div>
-    <div class="container page-hero__inner reveal">
+    <div class="container page-hero__inner">
       <div>
-        <div class="hero-eyebrow">
-          <span class="hero-eyebrow__dot"></span>
-          <span>Direct Scheduling · Bole Road &amp; Video</span>
-        </div>
-        <h1>Book a visit in <em>under a minute</em>.</h1>
-        <p class="hero-lead">Three simple steps. Confirmation by SMS within 30 minutes — with transparent consultation estimates upfront.</p>
+        <div class="hero-eyebrow"><span class="hero-eyebrow__dot"></span>Three steps · under a minute</div>
+        <h1>Book a visit that <em>respects your time</em>.</h1>
+        <p class="hero-lead">Choose your consultant, pick a slot that works, and get an itemized estimate before you confirm. No surprises.</p>
       </div>
       <div class="hero-trust-pills">
-        <div class="trust-pill">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          <span>24-Min Avg. Consultation</span>
-        </div>
-        <div class="trust-pill">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
-          <span>Upfront ETB Estimate</span>
-        </div>
+        <span class="trust-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>Upfront estimate</span>
+        <span class="trust-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>Free interpreter</span>
+        <span class="trust-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>24-min consultation</span>
       </div>
     </div>
   </section>
 
-  <!-- Split-Screen Booking Studio -->
   <section class="studio-section">
-    <div class="container" id="booking-root"></div>
-  </section>
-</main>
+    <div class="container">
+      <div class="studio-grid">
+        <div>
+          <!-- Stepper -->
+          <div class="stepper" role="tablist" aria-label="Booking steps">
+            <button type="button" class="step-node step-node--active" id="stepBtn1" role="tab" aria-selected="true" aria-controls="panel1">
+              <span class="step-node__badge">1</span>
+              <span class="step-node__text"><span class="step-node__kicker">Step one</span><span class="step-node__title">Doctor &amp; visit</span></span>
+            </button>
+            <button type="button" class="step-node" id="stepBtn2" role="tab" aria-selected="false" aria-controls="panel2" disabled>
+              <span class="step-node__badge">2</span>
+              <span class="step-node__text"><span class="step-node__kicker">Step two</span><span class="step-node__title">Date &amp; time</span></span>
+            </button>
+            <button type="button" class="step-node" id="stepBtn3" role="tab" aria-selected="false" aria-controls="panel3" disabled>
+              <span class="step-node__badge">3</span>
+              <span class="step-node__text"><span class="step-node__kicker">Step three</span><span class="step-node__title">Your details</span></span>
+            </button>
+          </div>
 
-<!-- Footer -->
-<footer class="footer">
-  <div class="container footer__inner">
-    <div class="footer__grid">
-      <div class="footer__brand">
-        <a href="index.html" class="logo">
-          <span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span>
-          <span class="logo__text"><span class="logo__name">Horizon</span><span class="logo__sub">General Hospital</span></span>
-        </a>
-        <p class="footer__about">Calm, clear care for Addis Ababa since 2008. Accredited, multilingual, and open 24/7 for emergencies.</p>
-        <div class="footer__contact">
-          <a href="tel:+251115550100">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-            +251 11 555 0100
-          </a>
-          <a href="mailto:info@horizonhospital.example">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
-            info@horizonhospital.example
-          </a>
-        </div>
-      </div>
-      <div>
-        <h4>Care</h4>
-        <ul>
-          <li><a href="find-a-doctor.html">Find a doctor</a></li>
-          <li><a href="departments.html">Departments</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="book.html">Book a visit</a></li>
-          <li><a href="emergency.html">Emergency</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Patients</h4>
-        <ul>
-          <li><a href="patients-visitors.html">Visiting hours</a></li>
-          <li><a href="portal.html">Patient portal</a></li>
-          <li><a href="insurance.html">Insurance</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Hospital</h4>
-        <ul>
-          <li><a href="about.html">About us</a></li>
-          <li><a href="careers.html">Careers</a></li>
-          <li><a href="news.html">News</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <span>© 2025 Horizon General Hospital. Not a substitute for medical advice.</span>
-      <span class="footer__emergency">Emergency? Call 907</span>
-    </div>
-  </div>
-</footer>
-
-<script>
-// 1. Sticky Header Scroll Detection
-const hdr = document.getElementById('hdr');
-window.addEventListener('scroll', () => {
-  hdr.classList.toggle('is-scrolled', window.scrollY > 8);
-}, { passive: true });
-
-// 2. Responsive Mobile Drawer
-const drawer = document.getElementById('drawer');
-const burger = document.getElementById('burger');
-const drawerClose = document.getElementById('drawerClose');
-
-function openDrawer() {
-  drawer.classList.add('is-open');
-  drawer.setAttribute('aria-hidden', 'false');
-  burger.setAttribute('aria-expanded', 'true');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeDrawer() {
-  drawer.classList.remove('is-open');
-  drawer.setAttribute('aria-hidden', 'true');
-  burger.setAttribute('aria-expanded', 'false');
-  document.body.style.overflow = '';
-}
-
-burger.addEventListener('click', openDrawer);
-drawerClose.addEventListener('click', closeDrawer);
-drawer.addEventListener('click', (e) => { if (e.target === drawer) closeDrawer(); });
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
-
-// 3. IntersectionObserver Reveal Choreography
-const io = new IntersectionObserver((entries) => {
-  entries.forEach((e) => {
-    if (e.isIntersecting) {
-      e.target.classList.add('is-in');
-      io.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.08 });
-document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
-
-// 4. Clinical Specialists Dataset & Bespoke Geometric Portraits
-const DOCS = [
-  {
-    id: "selam-tesfaye",
-    name: "Dr. Selam Tesfaye",
-    specialty: "Cardiology",
-    filterKey: "Cardiology",
-    focus: "Preventive cardiology, ECG & hypertension",
-    languages: "Amharic, English, French",
-    room: "Wing A · Suite 204",
-    nextBadge: "Today",
-    feeInPerson: 1800,
-    feeVideo: 1400,
-    palette: ["#e8f3fc", "#0e6fbe", "#0b1b2b"]
-  },
-  {
-    id: "hanna-girma",
-    name: "Dr. Hanna Girma",
-    specialty: "Pediatrics",
-    filterKey: "Pediatrics",
-    focus: "Child wellness, immunizations & acute care",
-    languages: "Amharic, English, Oromo",
-    room: "Wing B · Pediatric Suite 102",
-    nextBadge: "Today",
-    feeInPerson: 1500,
-    feeVideo: 1200,
-    palette: ["#e6fffb", "#0d9488", "#0b1b2b"]
-  },
-  {
-    id: "abel-mekonnen",
-    name: "Dr. Abel Mekonnen",
-    specialty: "Internal Medicine",
-    filterKey: "Internal Medicine",
-    focus: "Comprehensive diagnostics & chronic care",
-    languages: "Amharic, English, Tigrinya",
-    room: "Wing A · Suite 108",
-    nextBadge: "Today",
-    feeInPerson: 1600,
-    feeVideo: 1250,
-    palette: ["#f6f1e8", "#084d87", "#0b1b2b"]
-  },
-  {
-    id: "yonas-bekele",
-    name: "Dr. Yonas Bekele",
-    specialty: "Orthopedics",
-    filterKey: "Orthopedics",
-    focus: "Joint recovery, sports medicine & spine",
-    languages: "Amharic, English",
-    room: "Wing C · Rehab Floor 2",
-    nextBadge: "Tomorrow",
-    feeInPerson: 1900,
-    feeVideo: 1450,
-    palette: ["#e8f3fc", "#14b8a6", "#0b1b2b"]
-  },
-  {
-    id: "meron-assefa",
-    name: "Dr. Meron Assefa",
-    specialty: "Obstetrics & Gynecology",
-    filterKey: "OB/GYN",
-    focus: "Prenatal care, maternal wellness & ultrasound",
-    languages: "Amharic, English, Arabic",
-    room: "Maternity Wing · Suite 301",
-    nextBadge: "Today",
-    feeInPerson: 1750,
-    feeVideo: 1350,
-    palette: ["#e6fffb", "#0e6fbe", "#0b1b2b"]
-  },
-  {
-    id: "dawit-haile",
-    name: "Dr. Dawit Haile",
-    specialty: "Radiology",
-    filterKey: "Radiology",
-    focus: "Same-day CT, MRI & diagnostic imaging review",
-    languages: "Amharic, English",
-    room: "Imaging Centre · Ground Floor",
-    nextBadge: "Today",
-    feeInPerson: 1650,
-    feeVideo: 1300,
-    palette: ["#f6f1e8", "#0e6fbe", "#0b1b2b"]
-  },
-  {
-    id: "rahel-tesfaye",
-    name: "Dr. Rahel Tesfaye",
-    specialty: "Laboratory",
-    filterKey: "Laboratory",
-    focus: "Clinical pathology & preventive blood panels",
-    languages: "Amharic, English, Oromo",
-    room: "Diagnostics Lab · Wing A",
-    nextBadge: "Today",
-    feeInPerson: 1400,
-    feeVideo: 1100,
-    palette: ["#e8f3fc", "#0d9488", "#0b1b2b"]
-  },
-  {
-    id: "nahom-wolde",
-    name: "Dr. Nahom Wolde",
-    specialty: "Emergency Medicine",
-    filterKey: "Emergency",
-    focus: "Rapid triage, urgent follow-up & trauma care",
-    languages: "Amharic, English, Tigrinya",
-    room: "Urgent Care · North Entrance",
-    nextBadge: "Today",
-    feeInPerson: 1700,
-    feeVideo: 1350,
-    palette: ["#e6fffb", "#084d87", "#0b1b2b"]
-  }
-];
-
-const SPECIALTIES = [
-  "All",
-  "Cardiology",
-  "Pediatrics",
-  "Internal Medicine",
-  "Orthopedics",
-  "OB/GYN",
-  "Radiology",
-  "Laboratory",
-  "Emergency"
-];
-
-const MORNING_SLOTS = ["08:30", "09:30", "10:30", "11:30"];
-const AFTERNOON_SLOTS = ["13:00", "14:00", "15:30", "16:30"];
-const INTERPRETER_LANGS = ["None needed", "Amharic", "English", "Oromo", "Tigrinya", "Arabic", "French"];
-const SYMPTOM_TAGS = ["Routine checkup", "Follow-up visit", "Lab / imaging review", "New symptoms", "Prescription renewal"];
-
-function buildDoctorAvatarSVG(doc) {
-  const [bg, accent, ink] = doc.palette;
-  const initials = doc.name.replace("Dr. ", "").split(" ").map((n) => n[0]).join("");
-  return `
-    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect width="64" height="64" fill="${bg}"/>
-      <circle cx="52" cy="14" r="16" fill="${accent}" fill-opacity="0.16"/>
-      <circle cx="32" cy="25" r="11" fill="${ink}"/>
-      <path d="M14 58C14 46.9543 22.0589 39 32 39C41.9411 39 50 46.9543 50 58" fill="${accent}"/>
-      <path d="M27 39L32 46L37 39" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      <text x="32" y="29" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.04em">${initials}</text>
-    </svg>`;
-}
-
-// Generate upcoming 14 days for quick-pick calendar strip
-function getUpcomingDays(count = 14) {
-  const list = [];
-  const base = new Date();
-  for (let i = 0; i < count; i++) {
-    const d = new Date(base);
-    d.setDate(base.getDate() + i);
-    const iso = d.toISOString().split("T")[0];
-    const dayLabel = i === 0 ? "Today" : i === 1 ? "Tmrw" : d.toLocaleDateString("en-US", { weekday: "short" });
-    const dayNum = d.getDate();
-    const fullLabel = d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric" });
-    list.push({ iso, dayLabel, dayNum, fullLabel });
-  }
-  return list;
-}
-
-const UPCOMING_DAYS = getUpcomingDays(14);
-
-// Application State
-const st = {
-  step: 1,
-  specialtyFilter: "All",
-  doctorId: "selam-tesfaye",
-  type: "in-person",
-  date: UPCOMING_DAYS[0].iso,
-  slot: "",
-  interpreter: "None needed",
-  paymentMode: "self-pay",
-  insuranceProvider: "",
-  name: "",
-  phone: "",
-  email: "",
-  reason: "",
-  consent: false,
-  ref: null
-};
-
-// Support optional URL query param ?doctor=...
-const urlParams = new URLSearchParams(window.location.search);
-const preselectedDoc = urlParams.get("doctor");
-if (preselectedDoc && DOCS.some((d) => d.id === preselectedDoc)) {
-  st.doctorId = preselectedDoc;
-}
-
-function getSelectedDoc() {
-  return DOCS.find((d) => d.id === st.doctorId) || DOCS[0];
-}
-
-function formatReadableDate(isoStr) {
-  if (!isoStr) return "Not selected yet";
-  const found = UPCOMING_DAYS.find((d) => d.iso === isoStr);
-  if (found) return found.fullLabel;
-  const parsed = new Date(isoStr + "T00:00:00");
-  return isNaN(parsed) ? isoStr : parsed.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric" });
-}
-
-function escapeHTML(str) {
-  return String(str || "")
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
-}
-
-function canProceed() {
-  if (st.step === 1) return Boolean(st.doctorId && st.type);
-  if (st.step === 2) return Boolean(st.date && st.slot);
-  return Boolean(st.name.trim().length >= 2 && st.phone.trim().length >= 7 && st.consent);
-}
-
-// Update only the Submit Button disabled state during typing (prevents input re-render & focus loss)
-function syncActionButtons() {
-  const nextBtn = document.getElementById("bNext");
-  if (nextBtn) nextBtn.disabled = !canProceed();
-  const submitBtn = document.getElementById("bSubmit");
-  if (submitBtn) submitBtn.disabled = !canProceed();
-}
-
-// Update Live Summary Sidebar cleanly without touching form inputs
-function updateSummaryPanel() {
-  const panel = document.getElementById("live-summary-panel");
-  if (!panel) return;
-  const doc = getSelectedDoc();
-  const fee = st.type === "video" ? doc.feeVideo : doc.feeInPerson;
-  const modeLabel = st.type === "video" ? "HD Video Consultation" : "In-Person · Bole Road";
-  const roomLabel = st.type === "video" ? "Patient Portal Video Room" : doc.room;
-
-  panel.innerHTML = `
-    <div class="summary-panel__kicker">
-      <span>Live Visit Summary</span>
-      <span style="color:var(--accent-dark);">● Available</span>
-    </div>
-    <div class="summary-doc">
-      <div class="summary-doc__avatar">${buildDoctorAvatarSVG(doc)}</div>
-      <div>
-        <div class="summary-doc__name">${doc.name}</div>
-        <div class="summary-doc__spec">${doc.specialty}</div>
-        <div class="summary-doc__room">${roomLabel}</div>
-      </div>
-    </div>
-    <ul class="summary-list">
-      <li><span>Visit Mode</span><strong>${modeLabel}</strong></li>
-      <li><span>Date</span><strong>${formatReadableDate(st.date)}</strong></li>
-      <li><span>Time Slot</span><strong>${st.slot ? st.slot + " EAT" : "Select in Step 2"}</strong></li>
-      <li><span>Consultation</span><strong>24 min average</strong></li>
-      <li><span>Interpreter</span><strong>${st.interpreter}</strong></li>
-    </ul>
-    <div class="estimate-box">
-      <div class="estimate-box__row">
-        <span>Specialist consultation</span>
-        <span>${fee.toLocaleString("en-US")} ETB</span>
-      </div>
-      <div class="estimate-box__row">
-        <span>Multilingual interpreter</span>
-        <span style="color:var(--accent-dark);font-weight:600;">Complimentary</span>
-      </div>
-      <div class="estimate-box__total">
-        <span>Estimated Total</span>
-        <strong>${st.paymentMode === "insurance" ? "Direct Billing" : fee.toLocaleString("en-US") + " ETB"}</strong>
-      </div>
-      <div class="guarantee-note">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
-        <span><strong>Price-Match Promise:</strong> Itemized estimate before every procedure. If the bill doesn't match, we eat the difference.</span>
-      </div>
-    </div>
-  `;
-}
-
-// Generate downloadable .ics Calendar Invite
-function downloadCalendarInvite() {
-  const doc = getSelectedDoc();
-  const [hh, mm] = (st.slot || "09:30").split(":");
-  const cleanDate = st.date.replace(/-/g, "");
-  const startStamp = `${cleanDate}T${hh}${mm}00`;
-  const endHour = String(Number(hh) + 1).padStart(2, "0");
-  const endStamp = `${cleanDate}T${endHour}${mm}00`;
-  const location = st.type === "video"
-    ? "Horizon Patient Portal (HD Video Link)"
-    : `Horizon General Hospital, Bole Road, Addis Ababa (${doc.room})`;
-
-  const icsLines = [
-    "BEGIN:VCALENDAR",
-    "VERSION:2.0",
-    "PRODID:-//Horizon General Hospital//Appointment Pass//EN",
-    "BEGIN:VEVENT",
-    `UID:${st.ref}@horizonhospital.example`,
-    `DTSTAMP:${cleanDate}T080000Z`,
-    `DTSTART:${startStamp}`,
-    `DTEND:${endStamp}`,
-    `SUMMARY:Horizon Hospital: ${doc.name} (${doc.specialty})`,
-    `LOCATION:${location}`,
-    `DESCRIPTION:Reference: ${st.ref}\\nVisit Type: ${st.type}\\nInterpreter: ${st.interpreter}\\nEmergency Line: 907`,
-    "END:VEVENT",
-    "END:VCALENDAR"
-  ].join("\r\n");
-
-  const blob = new Blob([icsLines], { type: "text/calendar;charset=utf-8" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = `Horizon-Appointment-${st.ref}.ics`;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-}
-
-// Main Render Function
-function renderBooking() {
-  const root = document.getElementById("booking-root");
-  const doc = getSelectedDoc();
-
-  // Official Appointment Pass View (Confirmation)
-  if (st.ref) {
-    const isVideo = st.type === "video";
-    root.innerHTML = `
-      <div class="pass-wrap">
-        <div class="pass-card">
-          <div class="pass-top">
-            <div class="pass-status">● Appointment Requested · SMS Within 30 Min</div>
-            <h2>You're booked with ${doc.name}.</h2>
-            <p>We've reserved your ${st.slot} slot on ${formatReadableDate(st.date)} and sent a confirmation SMS to +251 ${escapeHTML(st.phone)}.</p>
-            <div class="pass-ref-bar">
-              <div>
-                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;color:#94a3b8;">Booking Reference</div>
-                <div class="pass-ref-code" id="refCodeText">${st.ref}</div>
-              </div>
-              <button type="button" class="copy-ref-btn" id="copyRefBtn">Copy code</button>
+          <!-- Step 1 -->
+          <div class="studio-card" id="panel1" role="tabpanel" aria-labelledby="stepBtn1">
+            <div class="studio-card__head">
+              <h2>Choose your consultant</h2>
+              <p>All consultants are senior specialists. Filter by department or search by name.</p>
+            </div>
+            <div class="filter-bar" id="filterBar">
+              <button type="button" class="filter-pill is-active" data-filter="all">All</button>
+              <button type="button" class="filter-pill" data-filter="cardiology">Cardiology</button>
+              <button type="button" class="filter-pill" data-filter="pediatrics">Pediatrics</button>
+              <button type="button" class="filter-pill" data-filter="obgyn">OB-GYN</button>
+              <button type="button" class="filter-pill" data-filter="internal">Internal Med</button>
+            </div>
+            <div class="doc-grid" id="docGrid">
+              <!-- Doctor cards inserted by JS -->
+            </div>
+            <label class="field-label">How would you like to be seen?</label>
+            <div class="mode-grid" id="modeGrid">
+              <button type="button" class="mode-card is-selected" data-mode="in-person" data-fee="850">
+                <div class="mode-card__top"><span class="mode-card__icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></span><span class="mode-card__fee">ETB 850</span></div>
+                <div class="mode-card__title">In-person visit</div>
+                <div class="mode-card__desc">At the Bole Road campus. Includes full examination and vitals.</div>
+              </button>
+              <button type="button" class="mode-card" data-mode="video" data-fee="550">
+                <div class="mode-card__top"><span class="mode-card__icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="13" height="12" rx="2"/><path d="M15 10l7-4v12l-7-4"/></svg></span><span class="mode-card__fee">ETB 550</span></div>
+                <div class="mode-card__title">Video consultation</div>
+                <div class="mode-card__desc">Secure video link. Prescriptions sent to your portal.</div>
+              </button>
+            </div>
+            <div class="studio-actions">
+              <span></span>
+              <button type="button" class="btn btn--primary" id="toStep2" disabled>Continue to date &amp; time
+                <svg class="arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </button>
             </div>
           </div>
 
-          <div class="pass-divider" aria-hidden="true">
-            <span class="pass-notch pass-notch--left"></span>
-            <span class="pass-notch pass-notch--right"></span>
-          </div>
-
-          <div class="pass-body">
-            <div class="pass-grid">
-              <dl class="pass-dl">
-                <div>
-                  <dt>Specialist</dt>
-                  <dd>${doc.name}</dd>
-                </div>
-                <div>
-                  <dt>Department</dt>
-                  <dd>${doc.specialty}</dd>
-                </div>
-                <div>
-                  <dt>Date</dt>
-                  <dd>${formatReadableDate(st.date)}</dd>
-                </div>
-                <div>
-                  <dt>Time</dt>
-                  <dd>${st.slot} EAT</dd>
-                </div>
-                <div>
-                  <dt>Visit Mode</dt>
-                  <dd style="text-transform:capitalize">${st.type}</dd>
-                </div>
-                <div>
-                  <dt>Location / Access</dt>
-                  <dd>${isVideo ? "Patient Portal Video" : doc.room}</dd>
-                </div>
-                <div>
-                  <dt>Patient</dt>
-                  <dd>${escapeHTML(st.name)}</dd>
-                </div>
-                <div>
-                  <dt>Interpreter</dt>
-                  <dd>${st.interpreter}</dd>
-                </div>
-              </dl>
-
-              <div class="pass-qr-box">
-                <svg width="108" height="108" viewBox="0 0 108 108" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Check-in pass barcode">
-                  <rect width="108" height="108" rx="10" fill="#ffffff"/>
-                  <rect x="12" y="12" width="24" height="24" rx="4" stroke="#0b1b2b" stroke-width="4"/>
-                  <rect x="19" y="19" width="10" height="10" rx="1.5" fill="#0e6fbe"/>
-                  <rect x="72" y="12" width="24" height="24" rx="4" stroke="#0b1b2b" stroke-width="4"/>
-                  <rect x="79" y="19" width="10" height="10" rx="1.5" fill="#0e6fbe"/>
-                  <rect x="12" y="72" width="24" height="24" rx="4" stroke="#0b1b2b" stroke-width="4"/>
-                  <rect x="19" y="79" width="10" height="10" rx="1.5" fill="#14b8a6"/>
-                  <rect x="46" y="14" width="6" height="6" fill="#0b1b2b"/>
-                  <rect x="56" y="22" width="6" height="14" fill="#0b1b2b"/>
-                  <rect x="44" y="44" width="20" height="20" rx="5" fill="#0e6fbe"/>
-                  <path d="M54 49V59M49 54H59" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
-                  <rect x="14" y="48" width="18" height="6" fill="#0b1b2b"/>
-                  <rect x="76" y="48" width="18" height="6" fill="#0b1b2b"/>
-                  <rect x="48" y="74" width="6" height="20" fill="#0b1b2b"/>
-                  <rect x="60" y="80" width="16" height="6" fill="#14b8a6"/>
-                  <rect x="82" y="74" width="12" height="12" fill="#0b1b2b"/>
-                </svg>
-                <span>Fast-Track Check-In</span>
-              </div>
+          <!-- Step 2 -->
+          <div class="studio-card" id="panel2" role="tabpanel" aria-labelledby="stepBtn2" style="display:none;">
+            <div class="studio-card__head">
+              <h2>Pick a date and time</h2>
+              <p>Available slots update in real time. Green dot means open.</p>
             </div>
-
-            <div class="pass-prep">
-              <h3>${isVideo ? "Before your HD video visit" : "Before you arrive at Bole Road"}</h3>
-              <ul>
-                ${isVideo
-                  ? `<li>Open the <strong>Patient Portal</strong> 5 minutes before ${st.slot} from a quiet, well-lit room.</li>
-                     <li>Keep any recent lab results or current medications nearby to share on screen.</li>`
-                  : `<li>Arrive 15 minutes before ${st.slot} and scan this pass at the Ground Floor reception desk.</li>
-                     <li>Bring a valid ID, insurance card (if applicable), and any prior imaging or prescriptions.</li>`}
-              </ul>
+            <div class="date-strip" id="dateStrip"></div>
+            <div class="date-fallback-row">
+              <label for="customDate">Or choose another date</label>
+              <input type="date" id="customDate" />
             </div>
-
-            <div class="pass-actions">
-              <div style="display:flex;flex-wrap:wrap;gap:0.65rem;">
-                <button type="button" class="btn btn--soft" id="downloadIcsBtn">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                  Add to Calendar (.ics)
-                </button>
-                <button type="button" class="btn btn--ghost" id="reset">Book another visit</button>
-              </div>
-              <a href="index.html" class="btn btn--primary">Back to home</a>
-            </div>
-          </div>
-        </div>
-      </div>`;
-
-    document.getElementById("copyRefBtn").addEventListener("click", (e) => {
-      const btn = e.currentTarget;
-      const temp = document.createElement("textarea");
-      temp.value = st.ref;
-      document.body.appendChild(temp);
-      temp.select();
-      try { document.execCommand("copy"); } catch (_) {}
-      document.body.removeChild(temp);
-      btn.textContent = "Copied!";
-      setTimeout(() => { btn.textContent = "Copy code"; }, 1800);
-    });
-
-    document.getElementById("downloadIcsBtn").addEventListener("click", downloadCalendarInvite);
-
-    document.getElementById("reset").addEventListener("click", () => {
-      Object.assign(st, {
-        step: 1,
-        specialtyFilter: "All",
-        doctorId: "selam-tesfaye",
-        type: "in-person",
-        date: UPCOMING_DAYS[0].iso,
-        slot: "",
-        interpreter: "None needed",
-        paymentMode: "self-pay",
-        insuranceProvider: "",
-        name: "",
-        phone: "",
-        email: "",
-        reason: "",
-        consent: false,
-        ref: null
-      });
-      renderBooking();
-    });
-    return;
-  }
-
-  // Filtered Doctors List for Step 1
-  const filteredDocs = st.specialtyFilter === "All"
-    ? DOCS
-    : DOCS.filter((d) => d.filterKey === st.specialtyFilter);
-
-  const stepHeaders = [
-    {
-      title: "Choose your specialist & care mode",
-      desc: "Select a consultant by department and choose between an in-person campus visit or HD video."
-    },
-    {
-      title: "Select a date & available time",
-      desc: "Real-time availability for " + doc.name + ". Complimentary interpreter support available."
-    },
-    {
-      title: "Your contact & visit details",
-      desc: "We'll send your appointment pass and SMS confirmation within 30 minutes."
-    }
-  ];
-
-  root.innerHTML = `
-    <div class="studio-grid">
-      <div>
-        <!-- Interactive 3-Step Progress Bar -->
-        <div class="stepper" role="navigation" aria-label="Booking progress">
-          ${[
-            { num: 1, kicker: "Step 1", title: "Specialist" },
-            { num: 2, kicker: "Step 2", title: "Date & Time" },
-            { num: 3, kicker: "Step 3", title: "Your Details" }
-          ].map((item) => {
-            const isActive = st.step === item.num;
-            const isDone = st.step > item.num;
-            const clickable = item.num <= st.step;
-            return `
-              <button type="button"
-                class="step-node ${isActive ? "step-node--active" : ""} ${isDone ? "step-node--done" : ""}"
-                data-goto-step="${item.num}"
-                ${clickable ? "" : "disabled"}>
-                <span class="step-node__badge">${isDone ? "✓" : item.num}</span>
-                <span class="step-node__text">
-                  <span class="step-node__kicker">${item.kicker}</span>
-                  <span class="step-node__title">${item.title}</span>
-                </span>
-              </button>`;
-          }).join("")}
-        </div>
-
-        <form class="studio-card" id="bform" novalidate>
-          <div class="studio-card__head">
-            <h2>${stepHeaders[st.step - 1].title}</h2>
-            <p>${stepHeaders[st.step - 1].desc}</p>
-          </div>
-
-          ${st.step === 1 ? `
-            <!-- Specialty Filter Pills -->
-            <div class="filter-bar" role="group" aria-label="Filter doctors by specialty">
-              ${SPECIALTIES.map((spec) => `
-                <button type="button"
-                  class="filter-pill ${st.specialtyFilter === spec ? "is-active" : ""}"
-                  data-filter="${spec}">${spec}</button>
-              `).join("")}
-            </div>
-
-            <!-- Selectable Doctor Cards -->
-            <div class="doc-grid" role="radiogroup" aria-label="Select a doctor">
-              ${filteredDocs.map((d) => {
-                const selected = st.doctorId === d.id;
-                return `
-                  <button type="button"
-                    role="radio"
-                    aria-checked="${selected}"
-                    class="doc-card ${selected ? "is-selected" : ""}"
-                    data-doc="${d.id}">
-                    <div class="doc-avatar">${buildDoctorAvatarSVG(d)}</div>
-                    <div class="doc-card__info">
-                      <div class="doc-card__name">${d.name}</div>
-                      <div class="doc-card__spec">${d.specialty}</div>
-                      <div class="doc-card__focus">${d.focus}</div>
-                      <div class="doc-card__tags">
-                        <span class="doc-badge">Next: ${d.nextBadge}</span>
-                        <span class="doc-lang-tag">${d.languages}</span>
-                      </div>
-                    </div>
-                    <span class="doc-check" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                    </span>
-                  </button>`;
-              }).join("")}
-            </div>
-
-            <!-- Visit Mode Cards -->
-            <div>
-              <span class="field-label">How would you like to meet?</span>
-              <div class="mode-grid" role="radiogroup" aria-label="Visit type">
-                <button type="button" role="radio" aria-checked="${st.type === "in-person"}"
-                  class="mode-card ${st.type === "in-person" ? "is-selected" : ""}" data-type="in-person">
-                  <div class="mode-card__top">
-                    <span class="mode-card__icon">
-                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
-                    </span>
-                    <span class="mode-card__fee">${doc.feeInPerson.toLocaleString("en-US")} ETB</span>
-                  </div>
-                  <div class="mode-card__title">In-person at Bole Road</div>
-                  <div class="mode-card__desc">Full physical exam, on-site lab &amp; same-day imaging access at our Addis Ababa campus.</div>
-                </button>
-
-                <button type="button" role="radio" aria-checked="${st.type === "video"}"
-                  class="mode-card ${st.type === "video" ? "is-selected" : ""}" data-type="video">
-                  <div class="mode-card__top">
-                    <span class="mode-card__icon">
-                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="14" height="14" rx="2"/><path d="M16 10l6-3v10l-6-3v-4z"/></svg>
-                    </span>
-                    <span class="mode-card__fee">${doc.feeVideo.toLocaleString("en-US")} ETB</span>
-                  </div>
-                  <div class="mode-card__title">HD Video Consultation</div>
-                  <div class="mode-card__desc">Private encrypted call via Patient Portal with digital prescriptions &amp; lab orders.</div>
-                </button>
-              </div>
-            </div>
-          ` : ""}
-
-          ${st.step === 2 ? `
-            <!-- Quick-Pick 14-Day Strip -->
-            <div>
-              <span class="field-label">Quick-pick an upcoming day</span>
-              <div class="date-strip" role="radiogroup" aria-label="Upcoming dates">
-                ${UPCOMING_DAYS.map((day) => {
-                  const sel = st.date === day.iso;
-                  return `
-                    <button type="button" role="radio" aria-checked="${sel}"
-                      class="date-chip ${sel ? "is-selected" : ""}" data-quick-date="${day.iso}">
-                      <span class="date-chip__day">${day.dayLabel}</span>
-                      <span class="date-chip__num">${day.dayNum}</span>
-                      <span class="date-chip__dot" aria-hidden="true"></span>
-                    </button>`;
-                }).join("")}
-              </div>
-
-              <div class="date-fallback-row">
-                <label for="bDate">Or pick any calendar date:</label>
-                <input type="date" id="bDate" min="${UPCOMING_DAYS[0].iso}" value="${st.date}" />
-              </div>
-            </div>
-
-            <!-- Categorized Morning & Afternoon Slots -->
             <div class="slot-group">
-              <div class="slot-group__header">
-                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-                <span>Morning Clinic</span>
-              </div>
-              <div class="slots-grid" role="radiogroup" aria-label="Morning times">
-                ${MORNING_SLOTS.map((t) => `
-                  <button type="button" role="radio" aria-checked="${st.slot === t}"
-                    data-slot="${t}" class="slot-btn ${st.slot === t ? "is-selected" : ""}">
-                    <span class="slot-btn__time">${t}</span>
-                    <span class="slot-btn__status">Open</span>
-                  </button>`).join("")}
-              </div>
+              <div class="slot-group__header">Morning</div>
+              <div class="slots-grid" id="morningSlots"></div>
             </div>
-
             <div class="slot-group">
-              <div class="slot-group__header">
-                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-                <span>Afternoon Clinic</span>
-              </div>
-              <div class="slots-grid" role="radiogroup" aria-label="Afternoon times">
-                ${AFTERNOON_SLOTS.map((t) => `
-                  <button type="button" role="radio" aria-checked="${st.slot === t}"
-                    data-slot="${t}" class="slot-btn ${st.slot === t ? "is-selected" : ""}">
-                    <span class="slot-btn__time">${t}</span>
-                    <span class="slot-btn__status">Open</span>
-                  </button>`).join("")}
-              </div>
+              <div class="slot-group__header">Afternoon</div>
+              <div class="slots-grid" id="afternoonSlots"></div>
             </div>
-
-            <!-- Optional Multilingual Interpreter Selector -->
             <div class="interpreter-box">
               <div class="interpreter-box__top">
                 <span class="interpreter-box__title">
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-                  Need an on-call medical interpreter?
+                  Interpreter language
                 </span>
-                <span class="free-chip">Complimentary</span>
+                <span class="free-chip">Free</span>
               </div>
-              <div class="lang-select-row">
-                ${INTERPRETER_LANGS.map((lang) => `
-                  <button type="button"
-                    class="lang-choice ${st.interpreter === lang ? "is-selected" : ""}"
-                    data-interp="${lang}">${lang}</button>
-                `).join("")}
+              <div class="lang-select-row" id="interpRow">
+                <button type="button" class="lang-choice is-selected" data-lang="Amharic">Amharic</button>
+                <button type="button" class="lang-choice" data-lang="English">English</button>
+                <button type="button" class="lang-choice" data-lang="Oromo">Oromo</button>
+                <button type="button" class="lang-choice" data-lang="Tigrinya">Tigrinya</button>
+                <button type="button" class="lang-choice" data-lang="Arabic">Arabic</button>
+                <button type="button" class="lang-choice" data-lang="French">French</button>
               </div>
             </div>
-          ` : ""}
-
-          ${st.step === 3 ? `
-            <div class="form-group">
-              <label for="bName">Full name <span style="color:var(--red);font-weight:500;">Required</span></label>
-              <input id="bName" type="text" placeholder="e.g., Selamawit Tadesse" value="${escapeHTML(st.name)}" required />
+            <div class="studio-actions">
+              <button type="button" class="btn btn--ghost" id="backTo1">Back</button>
+              <button type="button" class="btn btn--primary" id="toStep3" disabled>Continue to details
+                <svg class="arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </button>
             </div>
+          </div>
 
-            <div class="form-grid-2">
-              <div class="form-group">
-                <label for="bPhone">Mobile phone (for SMS) <span style="color:var(--red);font-weight:500;">Required</span></label>
-                <div class="phone-input-wrap">
-                  <span class="phone-prefix">+251</span>
-                  <input id="bPhone" type="tel" placeholder="911 234 567" value="${escapeHTML(st.phone)}" required />
+          <!-- Step 3 -->
+          <div class="studio-card" id="panel3" role="tabpanel" aria-labelledby="stepBtn3" style="display:none;">
+            <div class="studio-card__head">
+              <h2>Your details</h2>
+              <p>We only collect what's needed for this visit. Secure and confidential.</p>
+            </div>
+            <form id="detailsForm" novalidate>
+              <div class="form-grid-2">
+                <div class="form-group"><label for="patientName">Full name</label><input type="text" id="patientName" placeholder="e.g., Selamawit Tadesse" required /></div>
+                <div class="form-group"><label for="patientPhone">Phone number</label>
+                  <div class="phone-input-wrap"><span class="phone-prefix">+251</span><input type="tel" id="patientPhone" placeholder="91 234 5678" required /></div>
                 </div>
               </div>
+              <div class="form-grid-2">
+                <div class="form-group"><label for="patientEmail">Email</label><input type="email" id="patientEmail" placeholder="you@example.com" required /></div>
+                <div class="form-group"><label for="patientDOB">Date of birth</label><input type="date" id="patientDOB" /></div>
+              </div>
               <div class="form-group">
-                <label for="bEmail">Email <span style="color:var(--gray-400);font-weight:400;">Optional</span></label>
-                <input type="email" id="bEmail" placeholder="you@example.com" value="${escapeHTML(st.email)}" />
+                <label>Is this related to any of these? <span style="font-weight:400;color:var(--gray-500);">(optional)</span></label>
+                <div class="symptom-chips" id="symptomChips">
+                  <button type="button" class="symptom-chip" data-symptom="Chest pain">Chest pain</button>
+                  <button type="button" class="symptom-chip" data-symptom="Fever">Fever</button>
+                  <button type="button" class="symptom-chip" data-symptom="Follow-up">Follow-up</button>
+                  <button type="button" class="symptom-chip" data-symptom="Maternity">Maternity</button>
+                  <button type="button" class="symptom-chip" data-symptom="Child health">Child health</button>
+                </div>
+                <textarea id="visitReason" rows="3" placeholder="Briefly describe the reason for your visit (optional)"></textarea>
               </div>
-            </div>
-
-            <div>
-              <span class="field-label">Coverage / payment preference</span>
-              <div class="pay-toggle">
-                <button type="button" class="pay-btn ${st.paymentMode === "self-pay" ? "is-selected" : ""}" data-pay="self-pay">Self-Pay (Upfront ETB)</button>
-                <button type="button" class="pay-btn ${st.paymentMode === "insurance" ? "is-selected" : ""}" data-pay="insurance">Health Insurance</button>
+              <label class="field-label">How will you pay?</label>
+              <div class="pay-toggle" id="payToggle">
+                <button type="button" class="pay-btn is-selected" data-pay="self">Self-pay</button>
+                <button type="button" class="pay-btn" data-pay="insurance">Insurance</button>
               </div>
-            </div>
-
-            ${st.paymentMode === "insurance" ? `
-              <div class="form-group">
-                <label for="bInsurance">Insurance provider</label>
-                <select id="bInsurance">
-                  <option value="" ${st.insuranceProvider === "" ? "selected" : ""}>Select partner insurer...</option>
-                  <option value="Ethiopian Insurance Corporation" ${st.insuranceProvider === "Ethiopian Insurance Corporation" ? "selected" : ""}>Ethiopian Insurance Corporation (EIC)</option>
-                  <option value="Nyala Insurance" ${st.insuranceProvider === "Nyala Insurance" ? "selected" : ""}>Nyala Insurance S.C.</option>
-                  <option value="Awash Insurance" ${st.insuranceProvider === "Awash Insurance" ? "selected" : ""}>Awash Insurance S.C.</option>
-                  <option value="United / Hibret Insurance" ${st.insuranceProvider === "United / Hibret Insurance" ? "selected" : ""}>United / Hibret Insurance</option>
-                  <option value="International / Diplomatic Plan" ${st.insuranceProvider === "International / Diplomatic Plan" ? "selected" : ""}>International / Diplomatic Plan (Cigna, Allianz, Bupa)</option>
-                </select>
-              </div>
-            ` : ""}
-
-            <div class="form-group">
-              <label for="bReason">Reason for visit <span style="color:var(--gray-400);font-weight:400;">Optional</span></label>
-              <div class="symptom-chips">
-                ${SYMPTOM_TAGS.map((tag) => `
-                  <button type="button" class="symptom-chip ${st.reason.includes(tag) ? "is-selected" : ""}" data-tag="${tag}">+ ${tag}</button>
-                `).join("")}
-              </div>
-              <textarea id="bReason" rows="3" placeholder="Briefly describe your symptoms or questions for ${doc.name}">${escapeHTML(st.reason)}</textarea>
-            </div>
-
-            <label class="consent-card">
-              <input type="checkbox" id="bConsent" ${st.consent ? "checked" : ""} />
-              <span>I consent to Horizon General Hospital contacting me via SMS or phone regarding this appointment.</span>
-            </label>
-          ` : ""}
-
-          <div class="studio-actions">
-            <button type="button" class="btn btn--ghost" id="bPrev" ${st.step === 1 ? "disabled" : ""}>Back</button>
-            ${st.step < 3
-              ? `<button type="button" class="btn btn--primary" id="bNext" ${canProceed() ? "" : "disabled"}>
-                  Continue
+              <label class="consent-card" for="consentCheck">
+                <input type="checkbox" id="consentCheck" required />
+                <span>I agree to be contacted about this appointment and understand that this booking is not a substitute for emergency care. For emergencies, call <strong>907</strong>.</span>
+              </label>
+              <div class="studio-actions">
+                <button type="button" class="btn btn--ghost" id="backTo2">Back</button>
+                <button type="submit" class="btn btn--primary" id="confirmBtn">Confirm booking
                   <svg class="arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-                </button>`
-              : `<button type="submit" class="btn btn--primary" id="bSubmit" ${canProceed() ? "" : "disabled"}>
-                  Request appointment
-                  <svg class="arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-                </button>`}
+                </button>
+              </div>
+            </form>
+            <div class="confirm-panel" id="confirmPanel" style="display:none;">
+              <div class="confirm-panel__icon">
+                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              </div>
+              <h3>You're booked.</h3>
+              <p id="confirmSummary"></p>
+              <a href="portal.html" class="btn btn--primary">Open patient portal</a>
+            </div>
           </div>
-        </form>
+        </div>
+
+        <!-- Live Summary -->
+        <aside class="summary-panel" aria-live="polite">
+          <div class="summary-panel__kicker">Live visit summary</div>
+          <h3>Your appointment</h3>
+          <div class="summary-row"><span>Consultant</span><strong id="sumDoctor">Not selected</strong></div>
+          <div class="summary-row"><span>Department</span><strong id="sumDept">—</strong></div>
+          <div class="summary-row"><span>Visit type</span><strong id="sumMode">In-person</strong></div>
+          <div class="summary-row"><span>Date</span><strong id="sumDate">Not selected</strong></div>
+          <div class="summary-row"><span>Time</span><strong id="sumTime">Not selected</strong></div>
+          <div class="summary-row"><span>Interpreter</span><strong id="sumInterp">Amharic · Free</strong></div>
+          <div class="summary-total"><span>Estimated total</span><strong id="sumTotal">ETB 0</strong></div>
+          <p class="summary-note">This is an itemized estimate. If the final bill doesn't match, we eat the difference.</p>
+          <div class="summary-badge">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            Estimate-to-bill guarantee
+          </div>
+        </aside>
       </div>
-
-      <!-- Right Column: Sticky Live Visit Summary & Estimate -->
-      <aside class="summary-panel" id="live-summary-panel" aria-label="Appointment summary"></aside>
     </div>
-  `;
+  </section>
+</main>
 
-  updateSummaryPanel();
+<footer class="footer" style="background:var(--ink);color:#a9b8c7;margin-top:2rem;padding-block:2.5rem;">
+  <div class="container" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;align-items:center;font-size:.8125rem;">
+    <span>© 2025 Addis Medical Center. Not a substitute for medical advice.</span>
+    <span class="footer__emergency" style="display:inline-flex;align-items:center;gap:.5rem;color:#fff;font-weight:600;"><span style="width:.5rem;height:.5rem;border-radius:50%;background:#ff4d6a;display:inline-block;animation:pulse 2s infinite;"></span>Emergency? Call 907</span>
+  </div>
+</footer>
 
-  // Bind Stepper Navigation
-  root.querySelectorAll("[data-goto-step]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const target = Number(btn.dataset.gotoStep);
-      if (target < st.step) {
-        st.step = target;
-        renderBooking();
-      }
-    });
-  });
+<script>
+/* Header + Drawer */
+const hdr = document.getElementById('hdr');
+window.addEventListener('scroll', () => { hdr.classList.toggle('is-scrolled', window.scrollY > 8); }, { passive: true });
+const drawer = document.getElementById('drawer');
+const burger = document.getElementById('burger');
+const drawerClose = document.getElementById('drawerClose');
+function openDrawer() { drawer.classList.add('is-open'); drawer.setAttribute('aria-hidden', 'false'); burger.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; }
+function closeDrawer() { drawer.classList.remove('is-open'); drawer.setAttribute('aria-hidden', 'true'); burger.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; }
+burger.addEventListener('click', openDrawer);
+drawerClose.addEventListener('click', closeDrawer);
+drawer.addEventListener('click', (e) => { if (e.target === drawer) closeDrawer(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && drawer.classList.contains('is-open')) closeDrawer(); });
 
-  // Bind Step 1 Events
-  root.querySelectorAll("[data-filter]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      st.specialtyFilter = btn.dataset.filter;
-      const matching = st.specialtyFilter === "All" ? DOCS : DOCS.filter((d) => d.filterKey === st.specialtyFilter);
-      if (matching.length && !matching.some((d) => d.id === st.doctorId)) {
-        st.doctorId = matching[0].id;
-      }
-      renderBooking();
-    });
-  });
+/* Doctors — African-representative SVG portraits */
+const doctors = [
+  { id: 'd1', name: 'Dr. Selam Tadesse', dept: 'Cardiology', deptKey: 'cardiology', focus: 'Preventive cardiology, hypertension, heart failure', langs: 'Amharic, English, French', skin: '#8d5524', hair: '#1a1a1a', coat: '#ffffff', bg: '#e8f3fc', badge: '15+ yrs' },
+  { id: 'd2', name: 'Dr. Dawit Bekele', dept: 'Pediatrics', deptKey: 'pediatrics', focus: 'Newborn care, childhood asthma, growth & development', langs: 'Amharic, English, Oromo', skin: '#6b4226', hair: '#0d0d0d', coat: '#ffffff', bg: '#e6fffb', badge: '12+ yrs' },
+  { id: 'd3', name: 'Dr. Hana Girma', dept: 'OB-GYN', deptKey: 'obgyn', focus: 'Maternal health, high-risk pregnancy, family planning', langs: 'Amharic, English, Tigrinya', skin: '#7a4a2a', hair: '#1c1c1c', coat: '#ffffff', bg: '#f6f1e8', badge: '18+ yrs' },
+  { id: 'd4', name: 'Dr. Yonas Mekonnen', dept: 'Internal Medicine', deptKey: 'internal', focus: 'Diabetes, thyroid disorders, chronic disease management', langs: 'Amharic, English, Arabic', skin: '#5c3a1e', hair: '#111111', coat: '#ffffff', bg: '#e8f3fc', badge: '10+ yrs' },
+  { id: 'd5', name: 'Dr. Meron Alemu', dept: 'Cardiology', deptKey: 'cardiology', focus: 'Echocardiography, arrhythmia, post-op cardiac care', langs: 'Amharic, English, Oromo', skin: '#9c6b3f', hair: '#141414', coat: '#ffffff', bg: '#e6fffb', badge: '9+ yrs' },
+  { id: 'd6', name: 'Dr. Abel Tesfaye', dept: 'Pediatrics', deptKey: 'pediatrics', focus: 'Pediatric infectious disease, vaccination, nutrition', langs: 'Amharic, English, Tigrinya', skin: '#6e4828', hair: '#0f0f0f', coat: '#ffffff', bg: '#f6f1e8', badge: '14+ yrs' }
+];
 
-  root.querySelectorAll("[data-doc]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      st.doctorId = btn.dataset.doc;
-      renderBooking();
-    });
-  });
-
-  root.querySelectorAll("[data-type]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      st.type = btn.dataset.type;
-      renderBooking();
-    });
-  });
-
-  // Bind Step 2 Events
-  root.querySelectorAll("[data-quick-date]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      st.date = btn.dataset.quickDate;
-      renderBooking();
-    });
-  });
-
-  const bDate = document.getElementById("bDate");
-  if (bDate) {
-    bDate.addEventListener("change", (e) => {
-      st.date = e.target.value;
-      renderBooking();
-    });
-  }
-
-  root.querySelectorAll("[data-slot]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      st.slot = btn.dataset.slot;
-      renderBooking();
-    });
-  });
-
-  root.querySelectorAll("[data-interp]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      st.interpreter = btn.dataset.interp;
-      renderBooking();
-    });
-  });
-
-  // Bind Step 3 Events (Without re-rendering on keystrokes so focus is preserved)
-  const bName = document.getElementById("bName");
-  if (bName) {
-    bName.addEventListener("input", (e) => {
-      st.name = e.target.value;
-      syncActionButtons();
-    });
-  }
-
-  const bPhone = document.getElementById("bPhone");
-  if (bPhone) {
-    bPhone.addEventListener("input", (e) => {
-      st.phone = e.target.value;
-      syncActionButtons();
-    });
-  }
-
-  const bEmail = document.getElementById("bEmail");
-  if (bEmail) {
-    bEmail.addEventListener("input", (e) => {
-      st.email = e.target.value;
-    });
-  }
-
-  root.querySelectorAll("[data-pay]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      st.paymentMode = btn.dataset.pay;
-      renderBooking();
-    });
-  });
-
-  const bInsurance = document.getElementById("bInsurance");
-  if (bInsurance) {
-    bInsurance.addEventListener("change", (e) => {
-      st.insuranceProvider = e.target.value;
-    });
-  }
-
-  const bReason = document.getElementById("bReason");
-  if (bReason) {
-    bReason.addEventListener("input", (e) => {
-      st.reason = e.target.value;
-    });
-  }
-
-  root.querySelectorAll("[data-tag]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const tag = btn.dataset.tag;
-      if (!st.reason.includes(tag)) {
-        st.reason = st.reason.trim() ? `${st.reason.trim()}, ${tag}` : tag;
-      }
-      renderBooking();
-    });
-  });
-
-  const bConsent = document.getElementById("bConsent");
-  if (bConsent) {
-    bConsent.addEventListener("change", (e) => {
-      st.consent = e.target.checked;
-      syncActionButtons();
-    });
-  }
-
-  // Navigation & Form Submission
-  const prev = document.getElementById("bPrev");
-  if (prev) {
-    prev.addEventListener("click", () => {
-      st.step = Math.max(1, st.step - 1);
-      renderBooking();
-    });
-  }
-
-  const next = document.getElementById("bNext");
-  if (next) {
-    next.addEventListener("click", () => {
-      if (canProceed()) {
-        st.step = Math.min(3, st.step + 1);
-        renderBooking();
-      }
-    });
-  }
-
-  const form = document.getElementById("bform");
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if (!canProceed()) return;
-      st.ref = "HZ-" + Math.random().toString(36).slice(2, 8).toUpperCase();
-      renderBooking();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
+function avatarSVG(d) {
+  return `<svg viewBox="0 0 64 64" role="img" aria-label="Portrait of ${d.name}" style="width:100%;height:100%;">
+    <rect width="64" height="64" rx="16" fill="${d.bg}"/>
+    <circle cx="32" cy="26" r="13" fill="${d.skin}"/>
+    <path d="M19 28c0-9 6-15 13-15s13 6 13 15c0 4-2 6-2 6h-22s-2-2-2-6z" fill="${d.hair}"/>
+    <circle cx="27" cy="27" r="1.8" fill="#1a1a1a"/>
+    <circle cx="37" cy="27" r="1.8" fill="#1a1a1a"/>
+    <path d="M28 33c1.5 1.5 6.5 1.5 8 0" stroke="#3a2a1a" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+    <path d="M16 64c0-10 7-16 16-16s16 6 16 16" fill="${d.coat}" stroke="#dfe6ee" stroke-width="1"/>
+    <path d="M26 48l6 6 6-6" fill="none" stroke="${d.skin}" stroke-width="1.2"/>
+    <rect x="29" y="50" width="6" height="14" fill="${d.bg}" opacity="0.3"/>
+  </svg>`;
 }
 
-renderBooking();
+let selectedDoctor = null;
+let selectedMode = 'in-person';
+let selectedFee = 850;
+let selectedDate = null;
+let selectedTime = null;
+let selectedInterp = 'Amharic';
+let selectedPay = 'self';
+
+const docGrid = document.getElementById('docGrid');
+function renderDoctors(filter = 'all') {
+  docGrid.innerHTML = '';
+  doctors.filter(d => filter === 'all' || d.deptKey === filter).forEach(d => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'doc-card' + (selectedDoctor && selectedDoctor.id === d.id ? ' is-selected' : '');
+    btn.dataset.id = d.id;
+    btn.innerHTML = `
+      <span class="doc-avatar">${avatarSVG(d)}</span>
+      <span class="doc-card__info">
+        <span class="doc-card__name">${d.name}</span>
+        <span class="doc-card__spec">${d.dept}</span>
+        <span class="doc-card__focus">${d.focus}</span>
+        <span class="doc-card__tags"><span class="doc-badge">${d.badge}</span><span class="doc-lang-tag">${d.langs}</span></span>
+      </span>
+      <span class="doc-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+    `;
+    btn.addEventListener('click', () => selectDoctor(d));
+    docGrid.appendChild(btn);
+  });
+}
+renderDoctors();
+
+function selectDoctor(d) {
+  selectedDoctor = d;
+  document.querySelectorAll('.doc-card').forEach(c => c.classList.toggle('is-selected', c.dataset.id === d.id));
+  updateSummary();
+  document.getElementById('toStep2').disabled = !selectedDoctor;
+}
+
+document.getElementById('filterBar').addEventListener('click', (e) => {
+  const pill = e.target.closest('.filter-pill');
+  if (!pill) return;
+  document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('is-active'));
+  pill.classList.add('is-active');
+  renderDoctors(pill.dataset.filter);
+});
+
+document.getElementById('modeGrid').addEventListener('click', (e) => {
+  const card = e.target.closest('.mode-card');
+  if (!card) return;
+  document.querySelectorAll('.mode-card').forEach(c => c.classList.remove('is-selected'));
+  card.classList.add('is-selected');
+  selectedMode = card.dataset.mode;
+  selectedFee = parseInt(card.dataset.fee, 10);
+  updateSummary();
+});
+
+/* Date strip */
+const dateStrip = document.getElementById('dateStrip');
+const today = new Date();
+for (let i = 0; i < 7; i++) {
+  const d = new Date(today);
+  d.setDate(today.getDate() + i);
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'date-chip';
+  btn.dataset.date = d.toISOString().slice(0, 10);
+  btn.innerHTML = `<span class="date-chip__day">${d.toLocaleDateString('en-US', { weekday: 'short' })}</span><span class="date-chip__num">${d.getDate()}</span><span class="date-chip__dot"></span>`;
+  btn.addEventListener('click', () => selectDate(btn));
+  dateStrip.appendChild(btn);
+}
+function selectDate(btn) {
+  document.querySelectorAll('.date-chip').forEach(b => b.classList.remove('is-selected'));
+  btn.classList.add('is-selected');
+  selectedDate = btn.dataset.date;
+  selectedTime = null;
+  renderSlots();
+  updateSummary();
+}
+
+/* Slots */
+const morningTimes = ['08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30'];
+const afternoonTimes = ['13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30'];
+function renderSlots() {
+  const morning = document.getElementById('morningSlots');
+  const afternoon = document.getElementById('afternoonSlots');
+  morning.innerHTML = '';
+  afternoon.innerHTML = '';
+  morningTimes.forEach((t, i) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'slot-btn';
+    btn.innerHTML = `<span class="slot-btn__time">${t}</span><span class="slot-btn__status">Available</span>`;
+    btn.addEventListener('click', () => selectSlot(btn, t));
+    if (i === 3) btn.disabled = true, btn.innerHTML = `<span class="slot-btn__time">${t}</span><span class="slot-btn__status" style="color:var(--gray-400)">Booked</span>`;
+    morning.appendChild(btn);
+  });
+  afternoonTimes.forEach((t) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'slot-btn';
+    btn.innerHTML = `<span class="slot-btn__time">${t}</span><span class="slot-btn__status">Available</span>`;
+    btn.addEventListener('click', () => selectSlot(btn, t));
+    afternoon.appendChild(btn);
+  });
+}
+function selectSlot(btn, time) {
+  document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('is-selected'));
+  btn.classList.add('is-selected');
+  selectedTime = time;
+  document.getElementById('toStep3').disabled = false;
+  updateSummary();
+}
+
+/* Interpreter */
+document.getElementById('interpRow').addEventListener('click', (e) => {
+  const choice = e.target.closest('.lang-choice');
+  if (!choice) return;
+  document.querySelectorAll('.lang-choice').forEach(c => c.classList.remove('is-selected'));
+  choice.classList.add('is-selected');
+  selectedInterp = choice.dataset.lang;
+  updateSummary();
+});
+
+/* Payment */
+document.getElementById('payToggle').addEventListener('click', (e) => {
+  const btn = e.target.closest('.pay-btn');
+  if (!btn) return;
+  document.querySelectorAll('.pay-btn').forEach(b => b.classList.remove('is-selected'));
+  btn.classList.add('is-selected');
+  selectedPay = btn.dataset.pay;
+});
+
+/* Symptom chips */
+document.getElementById('symptomChips').addEventListener('click', (e) => {
+  const chip = e.target.closest('.symptom-chip');
+  if (!chip) return;
+  chip.classList.toggle('is-selected');
+});
+
+/* Summary */
+function updateSummary() {
+  document.getElementById('sumDoctor').textContent = selectedDoctor ? selectedDoctor.name : 'Not selected';
+  document.getElementById('sumDept').textContent = selectedDoctor ? selectedDoctor.dept : '—';
+  document.getElementById('sumMode').textContent = selectedMode === 'in-person' ? 'In-person visit' : 'Video consultation';
+  document.getElementById('sumDate').textContent = selectedDate ? new Date(selectedDate + 'T00:00').toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }) : 'Not selected';
+  document.getElementById('sumTime').textContent = selectedTime || 'Not selected';
+  document.getElementById('sumInterp').textContent = selectedInterp + ' · Free';
+  document.getElementById('sumTotal').textContent = 'ETB ' + (selectedDoctor ? selectedFee.toLocaleString() : 0);
+}
+
+/* Step navigation */
+const stepBtns = [document.getElementById('stepBtn1'), document.getElementById('stepBtn2'), document.getElementById('stepBtn3')];
+const panels = [document.getElementById('panel1'), document.getElementById('panel2'), document.getElementById('panel3')];
+function goToStep(n) {
+  panels.forEach((p, i) => p.style.display = i === n ? 'block' : 'none');
+  stepBtns.forEach((b, i) => {
+    b.classList.toggle('step-node--active', i === n);
+    b.classList.toggle('step-node--done', i < n);
+    b.setAttribute('aria-selected', String(i === n));
+    if (i === 1) b.disabled = !selectedDoctor;
+    if (i === 2) b.disabled = !(selectedDoctor && selectedDate && selectedTime);
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.getElementById('toStep2').addEventListener('click', () => {
+  if (!selectedDoctor) return;
+  if (!selectedDate) { const first = dateStrip.querySelector('.date-chip'); if (first) selectDate(first); }
+  goToStep(1);
+});
+document.getElementById('backTo1').addEventListener('click', () => goToStep(0));
+document.getElementById('toStep3').addEventListener('click', () => { if (selectedTime) goToStep(2); });
+document.getElementById('backTo2').addEventListener('click', () => goToStep(1));
+
+document.getElementById('detailsForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = document.getElementById('patientName').value.trim();
+  const phone = document.getElementById('patientPhone').value.trim();
+  const email = document.getElementById('patientEmail').value.trim();
+  const consent = document.getElementById('consentCheck').checked;
+  if (!name || !phone || !email || !consent) {
+    alert('Please fill in your name, phone, email and consent to continue.');
+    return;
+  }
+  document.getElementById('detailsForm').style.display = 'none';
+  document.getElementById('confirmPanel').style.display = 'block';
+  document.getElementById('confirmSummary').textContent =
+    `${name}, you're booked with ${selectedDoctor.name} (${selectedDoctor.dept}) on ${new Date(selectedDate + 'T00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })} at ${selectedTime}. Visit type: ${selectedMode === 'in-person' ? 'In-person' : 'Video'}. Interpreter: ${selectedInterp}. Estimated total: ETB ${selectedFee.toLocaleString()}.`;
+  stepBtns.forEach((b, i) => { b.classList.toggle('step-node--done', i <= 2); b.classList.remove('step-node--active'); });
+});
 </script>
 </body>
 </html>
