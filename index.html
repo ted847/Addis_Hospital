@@ -1,15 +1,18 @@
+Here is the updated code. I have replaced all instances of "Horizon General Hospital" (and "Horizon") with "Addis Medical Center" (and "Addis") throughout the text, titles, logos, and footer, while keeping all the CSS classes, layout, and design completely untouched so it won't break your styling.
+
+```html
 <!doctype html>
 <html lang="en">
 <head>
 <!--
-  HORIZON GENERAL HOSPITAL — premium front-end concept.
+  ADDIS MEDICAL CENTER — premium front-end concept.
   Replace demo contact details, staff profiles, ratings, statistics, emergency
   numbers, and availability with verified hospital information before launch.
   Booking, patient portal, live ER status and other linked pages require a backend.
 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Horizon General Hospital — Care that starts with calm</title>
+<title>Addis Medical Center — Care that starts with calm</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -249,9 +252,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brand);outline-offs
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
 .reveal.is-in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{animation-duration:0s!important;transition-duration:0s!important}}
-
 /* ─────────────────────────────────────────────────────────────
-   HORIZON SIGNATURE LAYER — refined motion, depth & usability
+   ADDIS SIGNATURE LAYER — refined motion, depth & usability
    ───────────────────────────────────────────────────────────── */
 :root{
   --brand:#0877c9;--brand-2:#075b9e;--accent:#17b8a6;
@@ -353,8 +355,6 @@ a,button{-webkit-tap-highlight-color:transparent}
  .logo__mark::after{animation:none}
  .reveal{opacity:1;transform:none}
 }
-
-
 /* WHO WE ARE — hospital identity and care overview */
 .about-horizon{position:relative;overflow:hidden;background:#fff}
 .about-horizon__grid{display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:center}
@@ -374,24 +374,21 @@ a,button{-webkit-tap-highlight-color:transparent}
 .about-horizon__pillar strong{display:block;font-size:.9rem;color:var(--ink)}
 .about-horizon__pillar span{display:block;font-size:.78rem;color:var(--gray-500);line-height:1.5;margin-top:.2rem}
 .about-horizon__actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.7rem}
-
 </style>
 </head>
 <body>
 <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
-
 <div class="emergency">
   <div class="container emergency__inner">
     <div class="emergency__left"><span class="emergency__pulse"></span><span><b>Emergency?</b> Call <a href="tel:907">907</a> — open 24/7</span></div>
     <div><a href="emergency.html" class="emergency__link">Live ER wait times <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div>
   </div>
 </div>
-
 <header class="hdr" id="hdr">
   <div class="container hdr__inner">
     <a href="index.html" class="logo">
       <span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span>
-      <span class="logo__text"><span class="logo__name">Horizon</span><span class="logo__sub">General Hospital</span></span>
+      <span class="logo__text"><span class="logo__name">Addis</span><span class="logo__sub">Medical Center</span></span>
     </a>
     <nav class="nav">
       <a href="find-a-doctor.html">Find a doctor</a>
@@ -407,11 +404,10 @@ a,button{-webkit-tap-highlight-color:transparent}
     </div>
   </div>
 </header>
-
 <div class="drawer" id="drawer" aria-hidden="true">
   <div class="drawer__panel">
     <div class="drawer__head">
-      <a href="index.html" class="logo"><span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span><span class="logo__text"><span class="logo__name">Horizon</span><span class="logo__sub">General Hospital</span></span></a>
+      <a href="index.html" class="logo"><span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span><span class="logo__text"><span class="logo__name">Addis</span><span class="logo__sub">Medical Center</span></span></a>
       <button class="drawer__close" id="drawerClose" aria-label="Close"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
     </div>
     <nav class="drawer__nav">
@@ -432,7 +428,6 @@ a,button{-webkit-tap-highlight-color:transparent}
     <div class="drawer__foot"><p>Emergency? Call <a href="tel:907">907</a></p><p style="margin-top:.25rem">Mon–Sun · 24/7</p></div>
   </div>
 </div>
-
 <main class="app">
   <section class="hero">
     <div class="hero__bg"></div>
@@ -443,7 +438,7 @@ a,button{-webkit-tap-highlight-color:transparent}
           Accredited · Multilingual · 24/7 emergency
         </span>
         <h1>Healthcare that feels <em>human</em> again.</h1>
-        <p class="hero__lead">Horizon General Hospital brings medical consultations, specialist care, diagnostic support, treatment and emergency services together around one priority: your health. Explore our services, find a specialist and take the next step in your care.</p>
+        <p class="hero__lead">Addis Medical Center brings medical consultations, specialist care, diagnostic support, treatment and emergency services together around one priority: your health. Explore our services, find a specialist and take the next step in your care.</p>
         <div class="hero__cta">
           <a href="book.html" class="btn btn--primary">Book an appointment
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -457,7 +452,8 @@ a,button{-webkit-tap-highlight-color:transparent}
             <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=80&h=80&fit=crop&crop=faces&q=80" alt="" />
             <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=faces&q=80" alt="" />
           </div>
-          <div class="hero__trust-text"><span class="stars">★★★★★</span><br><strong>4.9 / 5</strong> from <strong>2,400+</strong> patient reviews</div>
+          <div class="hero__trust-text"><span class="stars">★★★★★</span>
+<strong>4.9 / 5</strong> from <strong>2,400+</strong> patient reviews</div>
         </div>
       </div>
       <div class="hero__visual reveal">
@@ -465,7 +461,7 @@ a,button{-webkit-tap-highlight-color:transparent}
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
           Live · updated now
         </span>
-        <img class="hero__main-img" src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&q=80&auto=format&fit=crop" alt="Caring nurse at Horizon General Hospital" />
+        <img class="hero__main-img" src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&q=80&auto=format&fit=crop" alt="Caring nurse at Addis Medical Center" />
         <div class="hero__card hero__card--wait">
           <div class="hero__card-icon hero__card-icon--teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
           <div><div class="hero__card-label">ER wait time</div><div class="hero__card-value live">~12 min</div></div>
@@ -477,7 +473,6 @@ a,button{-webkit-tap-highlight-color:transparent}
       </div>
     </div>
   </section>
-
   <section class="quick">
     <div class="container">
       <div class="quick__grid">
@@ -504,8 +499,6 @@ a,button{-webkit-tap-highlight-color:transparent}
       </div>
     </div>
   </section>
-
-
   <!-- WHO WE ARE -->
   <section class="section about-horizon" id="about-horizon">
     <div class="container about-horizon__grid">
@@ -523,7 +516,7 @@ a,button{-webkit-tap-highlight-color:transparent}
         <span class="kicker">Who we are</span>
         <h2>Healthcare built around people, not just appointments.</h2>
         <p>
-          Horizon General Hospital is presented as a patient-focused healthcare
+          Addis Medical Center is presented as a patient-focused healthcare
           provider serving the Addis Ababa community. Our purpose is to make
           quality healthcare easier to access through coordinated medical
           services, knowledgeable healthcare professionals and a respectful
@@ -536,7 +529,6 @@ a,button{-webkit-tap-highlight-color:transparent}
           understand their care, make informed decisions and feel supported
           throughout their healthcare journey.
         </p>
-
         <div class="about-horizon__pillars">
           <div class="about-horizon__pillar">
             <span class="about-horizon__pillar-icon">
@@ -572,7 +564,6 @@ a,button{-webkit-tap-highlight-color:transparent}
       </div>
     </div>
   </section>
-
   <section class="section">
     <div class="container">
       <div class="section-head reveal">
@@ -587,7 +578,6 @@ a,button{-webkit-tap-highlight-color:transparent}
       </div>
     </div>
   </section>
-
   <!-- VISITORS GUIDE (from Hallelujah) -->
   <section class="section section--tint">
     <div class="container">
@@ -619,11 +609,10 @@ a,button{-webkit-tap-highlight-color:transparent}
       </div>
     </div>
   </section>
-
   <!-- WHY US -->
   <section class="section">
     <div class="container">
-      <div class="section-head reveal"><div><span class="kicker">Why Horizon</span><h2>Design that respects your time and dignity.</h2><p>Every detail built around the patient — because good care starts with feeling calm.</p></div></div>
+      <div class="section-head reveal"><div><span class="kicker">Why Addis</span><h2>Design that respects your time and dignity.</h2><p>Every detail built around the patient — because good care starts with feeling calm.</p></div></div>
       <div class="features">
         <div class="feature reveal"><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><h3>Book in under a minute</h3><p>No forms, no phone queues. Three taps from first visit to confirmed appointment.</p></div>
         <div class="feature reveal"><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><h3>Care that listens</h3><p>Average consultation 24 minutes. Enough time to be heard, not just seen.</p></div>
@@ -634,7 +623,6 @@ a,button{-webkit-tap-highlight-color:transparent}
       </div>
     </div>
   </section>
-
   <!-- STATS -->
   <section class="stats">
     <div class="container">
@@ -647,7 +635,6 @@ a,button{-webkit-tap-highlight-color:transparent}
       </div>
     </div>
   </section>
-
   <!-- DOCTORS -->
   <section class="section">
     <div class="container">
@@ -659,7 +646,6 @@ a,button{-webkit-tap-highlight-color:transparent}
       </div>
     </div>
   </section>
-
   <!-- PARTNERS (from Hallelujah) -->
   <section class="section section--tint">
     <div class="container">
@@ -674,7 +660,6 @@ a,button{-webkit-tap-highlight-color:transparent}
       </div>
     </div>
   </section>
-
   <!-- TESTIMONIALS -->
   <section class="section">
     <div class="container">
@@ -686,7 +671,6 @@ a,button{-webkit-tap-highlight-color:transparent}
       </div>
     </div>
   </section>
-
   <div class="container">
     <div class="cta reveal">
       <div class="cta__inner">
@@ -696,33 +680,29 @@ a,button{-webkit-tap-highlight-color:transparent}
     </div>
   </div>
 </main>
-
 <footer class="footer">
   <div class="container footer__inner">
     <div class="footer__grid">
       <div class="footer__brand">
-        <a href="index.html" class="logo"><span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span><span class="logo__text"><span class="logo__name">Horizon</span><span class="logo__sub">General Hospital</span></span></a>
+        <a href="index.html" class="logo"><span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span><span class="logo__text"><span class="logo__name">Addis</span><span class="logo__sub">Medical Center</span></span></a>
         <p class="footer__about">Calm, clear care for Addis Ababa since 2008. Accredited, multilingual, and open 24/7 for emergencies.</p>
         <div class="footer__contact">
           <a href="tel:+251115550100"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>+251 11 555 0100</a>
-          <a href="mailto:info@horizonhospital.example"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>info@horizonhospital.example</a>
+          <a href="mailto:info@addismedicalcenter.example"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>info@addismedicalcenter.example</a>
         </div>
       </div>
       <div><h4>Care</h4><ul><li><a href="find-a-doctor.html">Find a doctor</a></li><li><a href="departments.html">Departments</a></li><li><a href="projects.html">Projects</a></li><li><a href="book.html">Book a visit</a></li><li><a href="emergency.html">Emergency</a></li></ul></div>
       <div><h4>Patients</h4><ul><li><a href="patients-visitors.html">Visiting hours</a></li><li><a href="portal.html">Patient portal</a></li><li><a href="insurance.html">Insurance</a></li><li><a href="contact.html">Feedback</a></li></ul></div>
       <div><h4>Hospital</h4><ul><li><a href="about.html">About us</a></li><li><a href="careers.html">Careers</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     </div>
-    <div class="footer__bottom"><span>© 2025 Horizon General Hospital. Not a substitute for medical advice.</span><span class="footer__emergency">Emergency? Call 907</span></div>
+    <div class="footer__bottom"><span>© 2025 Addis Medical Center. Not a substitute for medical advice.</span><span class="footer__emergency">Emergency? Call 907</span></div>
   </div>
 </footer>
-
 <script>
 (() => {
   'use strict';
-
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
-
   const header = $('#hdr');
   const drawer = $('#drawer');
   const burger = $('#burger');
@@ -730,7 +710,6 @@ a,button{-webkit-tap-highlight-color:transparent}
   const progress = $('#scrollProgress');
   const backTop = $('#backTop');
   let lastScrollY = window.scrollY;
-
   const closeDrawer = () => {
     if (!drawer || !burger) return;
     drawer.classList.remove('is-open');
@@ -739,7 +718,6 @@ a,button{-webkit-tap-highlight-color:transparent}
     document.body.style.overflow = '';
     burger.focus({ preventScroll: true });
   };
-
   const openDrawer = () => {
     if (!drawer || !burger) return;
     drawer.classList.add('is-open');
@@ -749,7 +727,6 @@ a,button{-webkit-tap-highlight-color:transparent}
     const firstLink = $('a', drawer);
     if (firstLink) firstLink.focus({ preventScroll: true });
   };
-
   burger?.addEventListener('click', () => {
     burger.getAttribute('aria-expanded') === 'true' ? closeDrawer() : openDrawer();
   });
@@ -765,7 +742,6 @@ a,button{-webkit-tap-highlight-color:transparent}
       document.body.style.overflow = '';
     });
   });
-
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && drawer?.classList.contains('is-open')) closeDrawer();
     if (event.key === 'Tab' && drawer?.classList.contains('is-open')) {
@@ -778,7 +754,6 @@ a,button{-webkit-tap-highlight-color:transparent}
       }
     }
   });
-
   const updateScrollUI = () => {
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
     const percent = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
@@ -789,11 +764,9 @@ a,button{-webkit-tap-highlight-color:transparent}
   };
   window.addEventListener('scroll', updateScrollUI, { passive: true });
   updateScrollUI();
-
   backTop?.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   });
-
   // Reveal content only when it enters the viewport; gracefully degrade without IO.
   const revealItems = $$('.reveal');
   if ('IntersectionObserver' in window) {
@@ -809,7 +782,6 @@ a,button{-webkit-tap-highlight-color:transparent}
   } else {
     revealItems.forEach(item => item.classList.add('is-in'));
   }
-
   // Count-up statistics. Preserve suffix markup and avoid replaying animations.
   const animateCounter = element => {
     if (element.dataset.animated === 'true') return;
@@ -827,7 +799,6 @@ a,button{-webkit-tap-highlight-color:transparent}
     };
     requestAnimationFrame(tick);
   };
-
   const counters = $$('.stat__num[data-target]');
   if ('IntersectionObserver' in window) {
     const counterObserver = new IntersectionObserver((entries, observer) => {
@@ -842,14 +813,12 @@ a,button{-webkit-tap-highlight-color:transparent}
   } else {
     counters.forEach(animateCounter);
   }
-
   // Mark the current page in the primary navigation.
   const currentFile = location.pathname.split('/').pop() || 'index.html';
   $$('.nav a').forEach(link => {
     const targetFile = link.getAttribute('href')?.split('?')[0];
     if (targetFile === currentFile) link.setAttribute('aria-current', 'page');
   });
-
   // Avoid broken-image icons if a remote demo image is unavailable.
   $$('img').forEach(image => {
     image.addEventListener('error', () => {
@@ -864,3 +833,4 @@ a,button{-webkit-tap-highlight-color:transparent}
 </button>
 </body>
 </html>
+```
