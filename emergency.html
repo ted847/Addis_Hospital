@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Emergency — Horizon General Hospital</title>
+<title>Emergency — Addis Medical Center</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -1076,6 +1076,45 @@ a:focus-visible, button:focus-visible {
   .reveal { opacity: 1; transform: none; transition: none; }
   * { animation-duration: 0s !important; transition-duration: 0s !important; }
 }
+
+/* MOBILE OPTIMIZATIONS */
+@media (max-width: 767px) {
+  .container { padding-inline: 1.15rem; }
+  .er-hero { padding-block: 2.75rem 3rem; }
+  .er-hero h1 { font-size: clamp(2rem, 7vw, 2.75rem); }
+  .er-hero__lead { font-size: 1rem; }
+  .dispatch-actions { flex-direction: column; }
+  .dispatch-actions .btn { width: 100%; }
+  .dispatch-card { padding: 1.35rem; }
+  .section { padding-block: 3.5rem; }
+  .section-head { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .section-head h2 { font-size: clamp(1.75rem, 5vw, 2.25rem); }
+  .telemetry-toolbar { flex-direction: column; align-items: stretch; }
+  .filter-pills { justify-content: center; }
+  .filter-pill { flex: 1; text-align: center; }
+  .telemetry-controls { flex-direction: column; align-items: stretch; }
+  .telemetry-controls .btn { width: 100%; }
+  .er-table th, .er-table td { padding: 0.85rem 1rem; }
+  .grid-2 { gap: 1.25rem; }
+  .box { padding: 1.35rem; }
+  .arrival-actions { flex-direction: column; }
+  .arrival-actions .btn { width: 100%; }
+  .footer__grid { grid-template-columns: 1fr; gap: 2rem; }
+  .footer__bottom { flex-direction: column; text-align: center; gap: 0.75rem; }
+  .emergency__inner { justify-content: center; text-align: center; }
+  .emergency__left { justify-content: center; }
+  .hdr__inner { gap: 0.5rem; }
+  .logo__name { font-size: 1rem; }
+  .logo__sub { font-size: 0.6rem; }
+  .hotline-grid { grid-template-columns: 1fr; }
+}
+
+/* TABLET OPTIMIZATIONS */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .er-hero__layout { grid-template-columns: 1fr; gap: 2rem; }
+  .dispatch-card { max-width: 100%; }
+  .grid-2 { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
@@ -1101,7 +1140,7 @@ a:focus-visible, button:focus-visible {
   <div class="container hdr__inner">
     <a href="index.html" class="logo">
       <span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span>
-      <span class="logo__text"><span class="logo__name">Horizon</span><span class="logo__sub">General Hospital</span></span>
+      <span class="logo__text"><span class="logo__name">Addis Medical</span><span class="logo__sub">Center</span></span>
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="find-a-doctor.html">Find a doctor</a>
@@ -1129,7 +1168,7 @@ a:focus-visible, button:focus-visible {
     <div class="drawer__head">
       <a href="index.html" class="logo">
         <span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span>
-        <span class="logo__text"><span class="logo__name">Horizon</span><span class="logo__sub">General Hospital</span></span>
+        <span class="logo__text"><span class="logo__name">Addis Medical</span><span class="logo__sub">Center</span></span>
       </a>
       <button class="drawer__close" id="drawerClose" aria-label="Close menu">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
@@ -1310,7 +1349,7 @@ a:focus-visible, button:focus-visible {
           <p class="box__lead">Bole Road, Addis Ababa, Ethiopia. Follow the red emergency signs to the dedicated ER entrance on the ground floor. Drop-off is directly outside the ER doors.</p>
 
           <div class="arrival-svg-wrap">
-            <svg viewBox="0 0 420 175" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schematic of Bole Road ambulance approach, drop-off lane, and Ground Floor Emergency Entrance at Horizon General Hospital">
+            <svg viewBox="0 0 420 175" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schematic of Bole Road ambulance approach, drop-off lane, and Ground Floor Emergency Entrance at Addis Medical Center">
               <rect x="6" y="6" width="408" height="163" rx="12" fill="#fbfdff" stroke="#dfe6ee" stroke-width="1.2"/>
 
               <!-- Bole Road Corridor -->
@@ -1368,12 +1407,12 @@ a:focus-visible, button:focus-visible {
       <div class="footer__brand">
         <a href="index.html" class="logo">
           <span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span>
-          <span class="logo__text"><span class="logo__name">Horizon</span><span class="logo__sub">General Hospital</span></span>
+          <span class="logo__text"><span class="logo__name">Addis Medical</span><span class="logo__sub">Center</span></span>
         </a>
         <p class="footer__about">Calm, clear care for Addis Ababa since 2008. Accredited, multilingual, and open 24/7 for emergencies.</p>
         <div class="footer__contact">
           <a href="tel:+251115550100"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>+251 11 555 0100</a>
-          <a href="mailto:info@horizonhospital.example"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>info@horizonhospital.example</a>
+          <a href="mailto:info@addismedical.example"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>info@addismedical.example</a>
         </div>
       </div>
       <div>
@@ -1405,7 +1444,7 @@ a:focus-visible, button:focus-visible {
       </div>
     </div>
     <div class="footer__bottom">
-      <span>© 2025 Horizon General Hospital. Not a substitute for medical advice.</span>
+      <span>© 2025 Addis Medical Center. Not a substitute for medical advice.</span>
       <span class="footer__emergency">Emergency? Call 907</span>
     </div>
   </div>
