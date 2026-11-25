@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0877c9" />
+<title>Press & Media — Addis Medical Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box}*{margin:0;padding:0}
+:root{--ink:#0b1b2b;--ink-2:#13293d;--brand:#0e6fbe;--brand-2:#0a5a9c;--brand-3:#e6f2fb;--accent:#14b8a6;--accent-soft:#e6fffb;--sand:#f6f1e8;--paper:#fff;--gray-50:#f7fafc;--gray-100:#eef2f7;--gray-200:#dfe6ee;--gray-300:#c4cfdb;--gray-400:#94a3b8;--gray-500:#6b7c8f;--gray-600:#4b5e72;--gray-700:#2f4156;--gray-800:#1f3145;--red:#e11d48;--radius:1.25rem;--radius-lg:2rem;--shadow-sm:0 1px 2px rgba(11,27,43,.06),0 1px 3px rgba(11,27,43,.04);--shadow-md:0 10px 30px -12px rgba(11,27,43,.18);--shadow-lg:0 30px 60px -20px rgba(11,27,43,.25);--font-serif:'Fraunces',Georgia,serif;--font-sans:'Inter',system-ui,sans-serif;--font-amharic:'Noto Sans Ethiopic',sans-serif;--ease:cubic-bezier(.2,.8,.2,1)}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}body{font-family:var(--font-sans);background:#fbfdff;color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.55;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;overflow-x:hidden;padding-bottom:env(safe-area-inset-bottom)}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer;background:none;border:none}img{display:block;max-width:100%}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:.5rem}
+a,button{-webkit-tap-highlight-color:transparent}
+.container{width:100%;max-width:1320px;margin-inline:auto;padding-inline:1.5rem}.app{flex:1}
+
+/* SCROLL PROGRESS & BACK TO TOP */
+.scroll-progress{position:fixed;z-index:100;top:0;left:0;width:100%;height:3px;pointer-events:none}
+.scroll-progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,#17b8a6,#0877c9);box-shadow:0 0 12px rgba(23,184,166,.45)}
+.back-top{position:fixed;right:1.25rem;bottom:calc(1.25rem + env(safe-area-inset-bottom));z-index:45;width:2.9rem;height:2.9rem;border-radius:50%;display:grid;place-items:center;background:#0b263d;color:#fff;box-shadow:0 12px 30px -12px rgba(7,23,39,.65);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .25s,transform .25s,background .25s}
+.back-top.is-visible{opacity:1;transform:none;pointer-events:auto}.back-top:hover{background:#0877c9}.back-top svg{width:1.1rem;height:1.1rem}
+
+/* EMERGENCY BAR */
+.emergency{background:linear-gradient(100deg,#071727,#102d43 65%,#0b3d56);color:#fff;font-size:.8125rem}
+.emergency__inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.75rem;padding-block:.625rem;min-height:2.65rem;padding-top:max(.625rem,env(safe-area-inset-top))}
+.emergency__left{display:flex;align-items:center;gap:.625rem;flex-wrap:wrap}
+.emergency__pulse{width:.5rem;height:.5rem;border-radius:50%;background:#ff4d6a;box-shadow:0 0 0 0 rgba(255,77,106,.7);animation:pulse 2s infinite;flex-shrink:0}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,77,106,.7)}70%{box-shadow:0 0 0 10px rgba(255,77,106,0)}100%{box-shadow:0 0 0 0 rgba(255,77,106,0)}}
+.emergency__left b{font-weight:600}.emergency__left a{color:#fff;text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.emergency__link{color:#c9d6e3;display:flex;align-items:center;gap:.375rem;transition:color .2s}.emergency__link:hover{color:#fff}.emergency__link svg{width:.875rem;height:.875rem}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid transparent;box-shadow:0 1px 0 rgba(9,27,45,.035);transition:border-color .3s,box-shadow .3s,background .3s}
+.hdr.is-scrolled{border-color:var(--gray-200);box-shadow:0 4px 20px -8px rgba(11,27,43,.08);background:rgba(255,255,255,.96)}
+.hdr__inner{display:flex;align-items:center;justify-content:space-between;padding-block:.875rem;gap:1rem}
+.logo{display:flex;align-items:center;gap:.625rem;flex-shrink:0}
+.logo__mark{width:2.5rem;height:2.5rem;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),var(--brand-2));border-radius:.875rem;color:#fff;box-shadow:0 8px 20px -8px rgba(14,111,190,.5);position:relative;isolation:isolate;overflow:hidden;flex-shrink:0}
+.logo__mark svg{width:1.25rem;height:1.25rem}
+.logo__text{display:flex;flex-direction:column;line-height:1.1}
+.logo__name{font-family:var(--font-serif);font-weight:600;font-size:1.125rem;letter-spacing:-.01em;color:var(--ink)}
+.logo__sub{font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500);font-weight:500}
+.nav{display:none;gap:1.4rem;align-items:center}
+.nav a{font-size:.875rem;font-weight:500;color:var(--gray-700);position:relative;padding:.25rem 0;transition:color .2s}
+.nav a::after{content:'';position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--brand);transition:width .25s ease}
+.nav a:hover{color:var(--brand)}.nav a:hover::after{width:100%}
+.hdr__actions{display:flex;align-items:center;gap:.5rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.75rem 1.25rem;border-radius:999px;font-size:.875rem;font-weight:600;transition:transform .25s var(--ease),background .25s,box-shadow .25s,border-color .25s;border:1px solid transparent;white-space:nowrap;cursor:pointer;box-shadow:0 0 0 0 rgba(8,119,201,0)}
+.btn:active{transform:translateY(1px) scale(.985)}
+.btn--primary{background:linear-gradient(135deg,#102d43,#071727);color:#fff;box-shadow:0 9px 22px -13px rgba(7,23,39,.75)}
+.btn--primary:hover{background:linear-gradient(135deg,#0877c9,#075b9e);transform:translateY(-1px);box-shadow:0 14px 30px -14px rgba(8,119,201,.75)}
+.btn--ghost{border-color:var(--gray-200);color:var(--ink);background:#fff}.btn--ghost:hover{border-color:var(--ink);transform:translateY(-1px)}
+.btn--light{background:#fff;color:var(--ink)}.btn--light:hover{background:var(--sand);transform:translateY(-1px)}
+.btn--accent{background:var(--accent);color:#fff}.btn--accent:hover{background:#0fa396;transform:translateY(-1px)}
+.btn svg{width:1rem;height:1rem}
+.hdr .btn--primary{padding:.625rem 1rem;font-size:.8125rem}
+.burger{display:grid;place-items:center;width:2.5rem;height:2.5rem;border-radius:.75rem;border:1px solid var(--gray-200);background:#fff;flex-shrink:0}
+.burger svg{width:1.125rem;height:1.125rem;stroke:var(--ink)}
+@media(min-width:960px){.nav{display:flex}.burger{display:none}}
+
+/* LANGUAGE SWITCHER */
+.lang-switch{display:flex;align-items:center;gap:.2rem;padding:.2rem;background:var(--gray-100);border-radius:999px;margin-right:.15rem}
+.lang-switch__btn{padding:.35rem .55rem;border-radius:999px;font-size:.7rem;font-weight:600;color:var(--gray-500);transition:all .2s;border:none;background:transparent;cursor:pointer;line-height:1}
+.lang-switch__btn:hover{color:var(--ink)}
+.lang-switch__btn.is-active{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(9,27,45,.1)}
+.lang-switch__btn[data-lang="am"]{font-family:var(--font-amharic);font-size:.75rem}
+
+/* DRAWER */
+.drawer{position:fixed;inset:0;background:rgba(11,27,43,.5);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);z-index:120;opacity:0;pointer-events:none;transition:opacity .3s}
+.drawer.is-open{opacity:1;pointer-events:auto}
+.drawer__panel{position:absolute;top:0;right:0;bottom:0;width:min(340px,88vw);background:#fff;transform:translateX(100%);transition:transform .35s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;padding:1.5rem;padding-top:calc(1.5rem + env(safe-area-inset-top));padding-bottom:calc(1.5rem + env(safe-area-inset-bottom));overflow-y:auto;-webkit-overflow-scrolling:touch;box-shadow:-25px 0 70px -35px rgba(0,0,0,.45)}
+.drawer.is-open .drawer__panel{transform:none}
+.drawer__head{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem}
+.drawer__close{width:2.25rem;height:2.25rem;display:grid;place-items:center;border-radius:.75rem;border:1px solid var(--gray-200);flex-shrink:0}
+.drawer__close:hover{background:var(--gray-50)}
+.drawer__lang{display:flex;gap:.35rem;margin-bottom:1rem;padding:.25rem;background:var(--gray-100);border-radius:.75rem}
+.drawer__lang .lang-switch__btn{flex:1;padding:.55rem .65rem;font-size:.8125rem}
+.drawer__nav{display:flex;flex-direction:column;gap:.15rem}
+.drawer__nav a{padding:.75rem .65rem;border-radius:.65rem;font-size:.9375rem;font-weight:500;color:var(--gray-800);display:flex;justify-content:space-between;align-items:center;transition:background .2s,color .2s}
+.drawer__nav a:hover{background:var(--gray-50);color:var(--brand)}
+.drawer__nav a svg{width:1rem;height:1rem;color:var(--gray-300);flex-shrink:0}
+.drawer__nav a.danger{color:var(--red);margin-top:.35rem;border-top:1px solid var(--gray-200);padding-top:.85rem}
+.drawer__nav a.danger:hover{background:#fff1f3}
+.drawer__cta{margin-top:1.25rem;display:flex;flex-direction:column;gap:.5rem}
+.drawer__cta .btn{width:100%;padding:.85rem 1rem}
+.drawer__foot{margin-top:auto;padding-top:1.25rem;border-top:1px solid var(--gray-200);font-size:.8125rem;color:var(--gray-500);line-height:1.6}
+.drawer__foot a{color:var(--brand);text-decoration:underline}
+
+/* PAGE HERO */
+.page-hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#fbfdff 0%,#f4f9ff 55%,#fbfdff 100%);isolation:isolate}
+.page-hero__bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(45rem 35rem at 85% 5%,rgba(23,184,166,.14),transparent 65%),radial-gradient(50rem 35rem at 0% 35%,rgba(8,119,201,.12),transparent 65%),linear-gradient(180deg,#f8fcff,#f0f7fc 55%,#fbfdff)}
+.page-hero__inner{position:relative;padding-block:2.5rem 2.5rem;max-width:46rem}
+@media(min-width:768px){.page-hero__inner{padding-block:4rem 3.5rem}}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;padding:.375rem .75rem .375rem .5rem;background:#fff;border:1px solid var(--gray-200);border-radius:999px;font-size:.7rem;font-weight:500;color:var(--gray-600);box-shadow:var(--shadow-sm);line-height:1.2;flex-wrap:wrap}
+.eyebrow__dot{width:1.15rem;height:1.15rem;border-radius:50%;background:var(--accent-soft);display:grid;place-items:center;flex-shrink:0}
+.eyebrow__dot svg{width:.7rem;height:.7rem;stroke:var(--accent)}
+.page-hero h1{font-family:var(--font-serif);font-weight:500;font-size:clamp(2rem,7vw,3.5rem);line-height:1.08;letter-spacing:-.025em;color:var(--ink);margin-top:1rem}
+.page-hero h1 em{font-style:italic;color:var(--brand)}
+.page-hero__lead{margin-top:1rem;font-size:1rem;color:var(--gray-600);max-width:38rem;line-height:1.65}
+
+/* TABS */
+.page-tabs{display:flex;gap:.35rem;margin-top:1.5rem;flex-wrap:wrap}
+.page-tab{display:inline-flex;align-items:center;gap:.45rem;padding:.55rem 1rem;border-radius:999px;font-size:.8125rem;font-weight:600;background:#fff;border:1px solid var(--gray-200);color:var(--gray-600);transition:all .2s}
+.page-tab:hover{border-color:var(--brand);color:var(--brand)}
+.page-tab.is-active{background:var(--brand);border-color:var(--brand);color:#fff;box-shadow:0 8px 20px -10px rgba(14,111,190,.6)}
+.page-tab svg{width:.9rem;height:.9rem}
+
+/* SECTION */
+.section{padding-block:2.5rem}
+@media(min-width:768px){.section{padding-block:4rem}}
+.section-head{display:flex;flex-direction:column;align-items:flex-start;gap:.75rem;margin-bottom:1.75rem}
+@media(min-width:768px){.section-head{flex-direction:row;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:1.5rem;margin-bottom:2.5rem}}
+.section-head h2{font-family:var(--font-serif);font-size:clamp(1.5rem,4.5vw,2.25rem);font-weight:500;letter-spacing:-.02em;line-height:1.15;color:var(--ink)}
+.kicker{display:inline-flex;align-items:center;gap:.5rem;font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);margin-bottom:.5rem}
+.kicker::before{content:'';width:1.25rem;height:1px;background:currentColor;flex-shrink:0}
+
+/* PRESS RELEASE LIST */
+.press-list{display:grid;gap:1rem;grid-template-columns:1fr}
+.press{background:#fff;border:1px solid rgba(9,27,45,.09);border-radius:1.1rem;padding:1.35rem;display:grid;gap:1rem;transition:transform .25s,box-shadow .25s,border-color .25s;box-shadow:0 12px 36px -32px rgba(9,27,45,.42)}
+@media(min-width:768px){.press{grid-template-columns:200px 1fr;gap:1.5rem;padding:1.5rem}}
+.press:hover{transform:translateY(-3px);box-shadow:0 24px 45px -28px rgba(9,27,45,.28);border-color:transparent}
+.press__date{display:flex;flex-direction:column;gap:.15rem;padding-bottom:.75rem;border-bottom:1px solid var(--gray-100)}
+@media(min-width:768px){.press__date{border-bottom:none;border-right:1px solid var(--gray-100);padding-bottom:0;padding-right:1.5rem}}
+.press__day{font-family:var(--font-serif);font-size:2rem;font-weight:500;color:var(--brand);line-height:1;letter-spacing:-.02em}
+.press__month{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--gray-500)}
+.press__year{font-size:.7rem;color:var(--gray-400);margin-top:.15rem}
+.press__body{display:flex;flex-direction:column;gap:.55rem}
+.press__cat{display:inline-flex;align-items:center;gap:.35rem;padding:.3rem .7rem;border-radius:999px;font-size:.6875rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;background:var(--brand-3);color:var(--brand);width:fit-content}
+.press__cat--accent{background:var(--accent-soft);color:#0fa396}
+.press__cat--amber{background:#fef3c7;color:#b45309}
+.press__title{font-family:var(--font-serif);font-size:1.15rem;font-weight:500;letter-spacing:-.01em;line-height:1.25;color:var(--ink)}
+@media(min-width:768px){.press__title{font-size:1.3rem}}
+.press__excerpt{font-size:.875rem;color:var(--gray-600);line-height:1.6}
+.press__footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.65rem;margin-top:.35rem;padding-top:.85rem;border-top:1px solid var(--gray-100)}
+.press__meta{display:flex;flex-wrap:wrap;gap:.85rem;font-size:.75rem;color:var(--gray-500)}
+.press__meta span{display:inline-flex;align-items:center;gap:.3rem}
+.press__meta svg{width:.8rem;height:.8rem;color:var(--gray-400);flex-shrink:0}
+.press__link{display:inline-flex;align-items:center;gap:.35rem;font-size:.8125rem;font-weight:600;color:var(--brand)}
+.press__link svg{width:.8rem;height:.8rem;transition:transform .2s}
+.press__link:hover svg{transform:translateX(3px)}
+
+/* MEDIA KIT */
+.mediakit{display:grid;gap:1rem;grid-template-columns:1fr}
+@media(min-width:640px){.mediakit{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.mediakit{grid-template-columns:repeat(3,1fr)}}
+.kit{background:#fff;border:1px solid rgba(9,27,45,.09);border-radius:1rem;padding:1.35rem;display:flex;flex-direction:column;gap:.6rem;transition:transform .25s,box-shadow .25s,border-color .25s;box-shadow:0 12px 36px -32px rgba(9,27,45,.42)}
+.kit:hover{transform:translateY(-3px);box-shadow:0 24px 45px -28px rgba(9,27,45,.28);border-color:transparent}
+.kit__icon{width:2.5rem;height:2.5rem;border-radius:.8rem;display:grid;place-items:center;background:var(--brand-3);color:var(--brand);margin-bottom:.35rem}
+.kit__icon svg{width:1.2rem;height:1.2rem}
+.kit h3{font-family:var(--font-serif);font-size:1.05rem;font-weight:500;color:var(--ink);line-height:1.3}
+.kit p{font-size:.85rem;color:var(--gray-600);line-height:1.55;flex:1}
+.kit a{font-size:.8125rem;font-weight:600;color:var(--brand);display:inline-flex;align-items:center;gap:.3rem;margin-top:.35rem}
+.kit a svg{width:.8rem;height:.8rem;transition:transform .2s}
+.kit a:hover svg{transform:translateX(2px)}
+
+/* MEDIA CONTACT */
+.contact-card{background:linear-gradient(125deg,#071727,#0c2b43 58%,#07516a);color:#fff;border-radius:1.25rem;padding:2rem 1.5rem;position:relative;overflow:hidden;box-shadow:0 30px 70px -38px rgba(7,23,39,.8)}
+@media(min-width:768px){.contact-card{padding:2.5rem;border-radius:2rem}}
+.contact-card::before{content:'';position:absolute;inset:0;background:radial-gradient(30rem 20rem at 100% 0%,rgba(20,184,166,.25),transparent 60%),radial-gradient(30rem 20rem at 0% 100%,rgba(14,111,190,.25),transparent 60%);pointer-events:none}
+.contact-card__inner{position:relative;display:grid;gap:1.5rem}
+@media(min-width:768px){.contact-card__inner{grid-template-columns:1.2fr .8fr;align-items:center;gap:2.5rem}}
+.contact-card h2{font-family:var(--font-serif);font-size:clamp(1.4rem,4.5vw,2rem);font-weight:500;letter-spacing:-.015em;line-height:1.15}
+.contact-card p{margin-top:.6rem;font-size:.9rem;color:#c9d6e3;line-height:1.6}
+.contact-card__details{display:flex;flex-direction:column;gap:.55rem;margin-top:1rem}
+.contact-card__detail{display:flex;align-items:center;gap:.6rem;font-size:.85rem}
+.contact-card__detail svg{width:1rem;height:1rem;color:var(--accent);flex-shrink:0}
+.contact-card__detail a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.contact-card__detail a:hover{color:var(--accent)}
+.contact-card__actions{display:flex;flex-direction:column;gap:.55rem}
+@media(min-width:520px){.contact-card__actions{flex-direction:row;flex-wrap:wrap}}
+.contact-card__actions .btn{padding:.8rem 1.25rem}
+
+/* CTA STRIP */
+.cta-strip{background:linear-gradient(120deg,#0877c9,#075b9e 62%,#064a6f);color:#fff;border-radius:1.25rem;padding:2rem 1.5rem;margin-block:2.5rem;text-align:center;box-shadow:0 30px 70px -38px rgba(8,119,201,.8);position:relative;overflow:hidden}
+@media(min-width:768px){.cta-strip{padding:3rem;border-radius:2rem}}
+.cta-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(30rem 20rem at 100% 0%,rgba(20,184,166,.35),transparent 60%),radial-gradient(30rem 20rem at 0% 100%,rgba(255,255,255,.12),transparent 60%);pointer-events:none}
+.cta-strip h2{font-family:var(--font-serif);font-size:clamp(1.4rem,4.5vw,2.2rem);font-weight:500;position:relative;letter-spacing:-.015em}
+.cta-strip p{margin-top:.6rem;color:rgba(255,255,255,.88);font-size:.9rem;max-width:34rem;margin-inline:auto;position:relative}
+.cta-strip__actions{display:flex;flex-direction:column;gap:.55rem;margin-top:1.35rem;position:relative;justify-content:center}
+@media(min-width:520px){.cta-strip__actions{flex-direction:row;flex-wrap:wrap}}
+.cta-strip__actions .btn{padding:.8rem 1.3rem}
+
+/* FOOTER */
+.footer{background:radial-gradient(35rem 25rem at 85% 0%,rgba(8,119,201,.17),transparent 65%),#071727;color:#a9b8c7;margin-top:2rem;position:relative;overflow:hidden}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(20,184,166,.5),transparent)}
+.footer__inner{padding-block:2.5rem 1.5rem}
+@media(min-width:768px){.footer__inner{padding-block:4rem 2rem}}
+.footer__grid{display:grid;gap:1.75rem;grid-template-columns:1fr}
+@media(min-width:560px){.footer__grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.footer__grid{grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.5rem}}
+.footer__brand .logo__name{color:#fff}.footer__brand .logo__sub{color:#6b7c8f}
+.footer__about{margin-top:1rem;font-size:.85rem;line-height:1.6;max-width:22rem}
+.footer__contact{margin-top:1.25rem;display:flex;flex-direction:column;gap:.45rem;font-size:.85rem}
+.footer__contact a{display:flex;align-items:center;gap:.5rem;transition:color .2s;word-break:break-word}
+.footer__contact a:hover{color:#fff}
+.footer__contact svg{width:.85rem;height:.85rem;color:var(--accent);flex-shrink:0}
+.footer h4{color:#fff;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.85rem}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+.footer ul a{font-size:.85rem;transition:color .2s}.footer ul a:hover{color:#fff}
+.footer__bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.25rem;margin-top:2rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:.65rem;font-size:.72rem}
+@media(min-width:640px){.footer__bottom{flex-direction:row;justify-content:space-between;text-align:left;align-items:center}}
+.footer__emergency{display:inline-flex;align-items:center;gap:.4rem;color:#fff;font-weight:600}
+.footer__emergency::before{content:'';width:.45rem;height:.45rem;border-radius:50%;background:#ff4d6a;animation:pulse 2s infinite}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.is-in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{animation-duration:0s!important;transition-duration:0s!important}html{scroll-behavior:auto}}
+
+/* AMHARIC TYPOGRAPHY */
+[data-lang="am"]{font-family:var(--font-amharic)}
+[data-lang="am"] .page-hero h1,
+[data-lang="am"] .section-head h2,
+[data-lang="am"] .press__title,
+[data-lang="am"] .kit h3,
+[data-lang="am"] .contact-card h2,
+[data-lang="am"] .cta-strip h2{font-family:var(--font-amharic);font-weight:600;letter-spacing:0}
+[data-lang="am"] .page-hero h1{line-height:1.25;font-size:clamp(1.75rem,6.5vw,3rem)}
+[data-lang="am"] .page-hero h1 em{font-style:normal;color:var(--brand)}
+[data-lang="am"] .kicker{letter-spacing:.04em}
+[data-lang="am"] .logo__name{font-family:var(--font-amharic)}
+
+/* MOBILE FIXES */
+@media(max-width:959px){.hdr .btn--primary{display:none}}
+@media(max-width:767px){
+  .container{padding-inline:1.15rem}
+  .emergency__inner{flex-direction:column;align-items:center;text-align:center;gap:.4rem;padding-block:.5rem}
+  .emergency__left{justify-content:center;font-size:.75rem}
+  .hdr__inner{padding-block:.7rem;gap:.5rem}
+  .logo__name{font-size:1rem}.logo__sub{font-size:.6rem}
+  .logo__mark{width:2.25rem;height:2.25rem;border-radius:.75rem}.logo__mark svg{width:1.1rem;height:1.1rem}
+  .back-top{right:.85rem;bottom:calc(.85rem + env(safe-area-inset-bottom));width:2.6rem;height:2.6rem}
+}
+</style>
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+
+<button class="back-top" id="backTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<div class="emergency">
+  <div class="container emergency__inner">
+    <div class="emergency__left"><span class="emergency__pulse"></span><span><b data-i18n="emergency_label">Emergency?</b> <span data-i18n="call">Call</span> <a href="tel:907">907</a> — <span data-i18n="open_24_7">open 24/7</span></span></div>
+    <div><a href="emergency.html" class="emergency__link"><span data-i18n="live_er_wait">Live ER wait times</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div>
+  </div>
+</div>
+
+<header class="hdr" id="hdr">
+  <div class="container hdr__inner">
+    <a href="index.html" class="logo">
+      <span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span>
+      <span class="logo__text"><span class="logo__name" data-i18n="brand_name">Addis Medical</span><span class="logo__sub" data-i18n="brand_sub">Center</span></span>
+    </a>
+    <nav class="nav">
+      <a href="find-a-doctor.html" data-i18n="nav_find_doctor">Find a doctor</a>
+      <a href="departments.html" data-i18n="nav_departments">Departments</a>
+      <a href="services.html" data-i18n="nav_services">Services</a>
+      <a href="patients-visitors.html" data-i18n="nav_patients">Patients</a>
+      <a href="about.html" data-i18n="nav_about">About</a>
+      <a href="announcement.html" data-i18n="nav_announcement">Announcements</a>
+      <a href="press.html" data-i18n="nav_press">Press</a>
+      <a href="news.html" data-i18n="nav_news">News</a>
+    </nav>
+    <div class="hdr__actions">
+      <div class="lang-switch" role="group" aria-label="Language selector">
+        <button type="button" class="lang-switch__btn is-active" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang-switch__btn" data-lang="am" aria-pressed="false">አማ</button>
+      </div>
+      <a href="book.html" class="btn btn--primary"><span data-i18n="book_visit">Book a visit</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer__panel">
+    <div class="drawer__head">
+      <a href="index.html" class="logo"><span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span><span class="logo__text"><span class="logo__name" data-i18n="brand_name">Addis Medical</span><span class="logo__sub" data-i18n="brand_sub">Center</span></span></a>
+      <button class="drawer__close" id="drawerClose" aria-label="Close"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    </div>
+    <div class="drawer__lang">
+      <button type="button" class="lang-switch__btn is-active" data-lang="en" aria-pressed="true">English</button>
+      <button type="button" class="lang-switch__btn" data-lang="am" aria-pressed="false">አማርኛ</button>
+    </div>
+    <nav class="drawer__nav">
+      <a href="find-a-doctor.html"><span data-i18n="nav_find_doctor">Find a doctor</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="departments.html"><span data-i18n="nav_departments">Departments</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="services.html"><span data-i18n="nav_services">Services</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="book.html"><span data-i18n="book_visit">Book a visit</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="patients-visitors.html"><span data-i18n="nav_patients">Patients &amp; visitors</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="announcement.html"><span data-i18n="nav_announcement">Announcements</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="press.html"><span data-i18n="nav_press">Press</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="portal.html"><span data-i18n="nav_portal">Patient portal</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="./contact.html"><span data-i18n="nav_contact">Contact</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="careers.html"><span data-i18n="nav_careers">Careers</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="insurance.html"><span data-i18n="nav_insurance">Insurance</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="news.html"><span data-i18n="nav_news">News</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="emergency.html" class="danger"><span data-i18n="nav_emergency">Emergency</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+    </nav>
+    <div class="drawer__cta"><a href="book.html" class="btn btn--primary" data-i18n="book_visit">Book a visit</a><a href="portal.html" class="btn btn--ghost" data-i18n="nav_portal">Patient portal</a></div>
+    <div class="drawer__foot"><p><span data-i18n="emergency_short">Emergency? Call</span> <a href="tel:907">907</a></p><p style="margin-top:.25rem" data-i18n="hours_247">Mon–Sun · 24/7</p></div>
+  </div>
+</div>
+
+<main class="app">
+  <section class="page-hero">
+    <div class="page-hero__bg"></div>
+    <div class="container page-hero__inner reveal">
+      <span class="eyebrow">
+        <span class="eyebrow__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <span data-i18n="press_hero_eyebrow">Media desk · verified statements</span>
+      </span>
+      <h1 data-i18n-html="press_hero_title">Press &amp; <em>media</em>.</h1>
+      <p class="page-hero__lead" data-i18n="press_hero_lead">Official releases, statements and brand assets for journalists, partners and the public. For interviews, contact our media desk.</p>
+      <div class="page-tabs">
+        <a href="announcement.html" class="page-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 11-5.8-1.6"/></svg><span data-i18n="tab_announcements">Announcements</span></a>
+        <a href="press.html" class="page-tab is-active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 002-2V4a2 2 0 00-2-2H8a2 2 0 00-2 2v16a2 2 0 01-2 2zm0 0a2 2 0 01-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M15 18h-5M10 6h8v4h-8z"/></svg><span data-i18n="tab_press">Press releases</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="kicker" data-i18n="press_kicker">Latest releases</span>
+          <h2 data-i18n="press_title">Official statements from Addis Medical</h2>
+        </div>
+      </div>
+
+      <div class="press-list">
+        <article class="press reveal">
+          <div class="press__date">
+            <span class="press__day">18</span>
+            <span class="press__month">Mar</span>
+            <span class="press__year">2026</span>
+          </div>
+          <div class="press__body">
+            <span class="press__cat press__cat--accent" data-i18n="cat_expansion">Expansion</span>
+            <h3 class="press__title" data-i18n="press1_title">Addis Medical Center opens expanded emergency wing</h3>
+            <p class="press__excerpt" data-i18n="press1_excerpt">The new facility adds 12 treatment bays, a dedicated pediatric ER and a second CT scanner — reducing average triage time to under 8 minutes. The expansion represents a 40% increase in emergency capacity.</p>
+            <div class="press__footer">
+              <div class="press__meta">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>3 min read</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Media Desk</span>
+              </div>
+              <a href="#release-1" class="press__link"><span data-i18n="read_release">Read release</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="press reveal">
+          <div class="press__date">
+            <span class="press__day">02</span>
+            <span class="press__month">Mar</span>
+            <span class="press__year">2026</span>
+          </div>
+          <div class="press__body">
+            <span class="press__cat" data-i18n="cat_partnership">Partnership</span>
+            <h3 class="press__title" data-i18n="press2_title">Partnership with Ethiopian Insurance Corporation expands direct billing</h3>
+            <p class="press__excerpt" data-i18n="press2_excerpt">Patients covered by EIC can now access all outpatient and inpatient services with direct billing, eliminating upfront payment. The agreement covers 42 specialist consultants and all diagnostic services.</p>
+            <div class="press__footer">
+              <div class="press__meta">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>4 min read</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Media Desk</span>
+              </div>
+              <a href="#release-2" class="press__link"><span data-i18n="read_release">Read release</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="press reveal">
+          <div class="press__date">
+            <span class="press__day">14</span>
+            <span class="press__month">Feb</span>
+            <span class="press__year">2026</span>
+          </div>
+          <div class="press__body">
+            <span class="press__cat press__cat--amber" data-i18n="cat_award">Award</span>
+            <h3 class="press__title" data-i18n="press3_title">Addis Medical Center receives national patient safety accreditation</h3>
+            <p class="press__excerpt" data-i18n="press3_excerpt">The hospital was recognized for its infection control protocols, medication safety systems and patient communication standards. The accreditation follows a 9-month independent audit.</p>
+            <div class="press__footer">
+              <div class="press__meta">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>3 min read</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Media Desk</span>
+              </div>
+              <a href="#release-3" class="press__link"><span data-i18n="read_release">Read release</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="press reveal">
+          <div class="press__date">
+            <span class="press__day">28</span>
+            <span class="press__month">Jan</span>
+            <span class="press__year">2026</span>
+          </div>
+          <div class="press__body">
+            <span class="press__cat press__cat--accent" data-i18n="cat_community">Community</span>
+            <h3 class="press__title" data-i18n="press4_title">Free health screening program reaches 5,000 residents</h3>
+            <p class="press__excerpt" data-i18n="press4_excerpt">Our mobile screening unit completed its first year of operations, providing blood pressure, glucose and cancer screenings across 12 kebeles in Addis Ababa. The program will expand to 20 kebeles in 2026.</p>
+            <div class="press__footer">
+              <div class="press__meta">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>5 min read</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Media Desk</span>
+              </div>
+              <a href="#release-4" class="press__link"><span data-i18n="read_release">Read release</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--sand)">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="kicker" data-i18n="kit_kicker">Media kit</span>
+          <h2 data-i18n="kit_title">Brand assets &amp; fact sheets</h2>
+        </div>
+      </div>
+      <div class="mediakit">
+        <div class="kit reveal">
+          <div class="kit__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><path d="M7 10l5 5 5-5M12 15V3"/></svg></div>
+          <h3 data-i18n="kit1_title">Logo pack</h3>
+          <p data-i18n="kit1_desc">Primary, horizontal and monochrome logos in SVG, PNG and PDF.</p>
+          <a href="#"><span data-i18n="download">Download</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><path d="M7 10l5 5 5-5M12 15V3"/></svg></a>
+        </div>
+        <div class="kit reveal">
+          <div class="kit__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div>
+          <h3 data-i18n="kit2_title">Fact sheet 2026</h3>
+          <p data-i18n="kit2_desc">Bed count, consultant roster, specialties, accreditations and outcomes.</p>
+          <a href="#"><span data-i18n="download">Download</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><path d="M7 10l5 5 5-5M12 15V3"/></svg></a>
+        </div>
+        <div class="kit reveal">
+          <div class="kit__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+          <h3 data-i18n="kit3_title">Photo library</h3>
+          <p data-i18n="kit3_desc">High-resolution campus, team and department photography for editorial use.</p>
+          <a href="#"><span data-i18n="download">Download</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><path d="M7 10l5 5 5-5M12 15V3"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-card reveal">
+        <div class="contact-card__inner">
+          <div>
+            <span class="kicker" style="color:var(--accent);margin-bottom:.5rem" data-i18n="contact_kicker">Media contact</span>
+            <h2 data-i18n="contact_title">For interviews, statements or filming requests</h2>
+            <p data-i18n="contact_desc">Our media desk responds within one business day. For urgent after-hours requests, call the main line and ask for the on-call communications officer.</p>
+            <div class="contact-card__details">
+              <div class="contact-card__detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg><a href="mailto:press@addismedicalcenter.example">press@addismedicalcenter.example</a></div>
+              <div class="contact-card__detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>+251 11 555 0188</div>
+              <div class="contact-card__detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="contact_addr">Bole Road, Addis Ababa — 4th floor, Admin Block</span></div>
+            </div>
+          </div>
+          <div class="contact-card__actions">
+            <a href="mailto:press@addismedicalcenter.example" class="btn btn--accent"><span data-i18n="email_press">Email press desk</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            <a href="./contact.html" class="btn btn--light" data-i18n="general_contact">General contact</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-strip reveal">
+        <h2 data-i18n="press_cta_title">Looking for hospital notices instead?</h2>
+        <p data-i18n="press_cta_desc">Service updates, visitor guidance and events are listed on our announcements page.</p>
+        <div class="cta-strip__actions">
+          <a href="announcement.html" class="btn btn--light"><span data-i18n="go_announcements">Go to announcements</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          <a href="news.html" class="btn btn--accent" data-i18n="go_news">Hospital news</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="logo"><span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span><span class="logo__text"><span class="logo__name" data-i18n="brand_name">Addis Medical</span><span class="logo__sub" data-i18n="brand_sub">Center</span></span></a>
+        <p class="footer__about" data-i18n="footer_about">Calm, clear care for Addis Ababa since 2008. Accredited, multilingual, and open 24/7 for emergencies.</p>
+        <div class="footer__contact">
+          <a href="tel:+251115550100"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>+251 11 555 0100</a>
+          <a href="mailto:info@addismedicalcenter.example"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>info@addismedicalcenter.example</a>
+        </div>
+      </div>
+      <div><h4 data-i18n="footer_care">Care</h4><ul><li><a href="find-a-doctor.html" data-i18n="nav_find_doctor">Find a doctor</a></li><li><a href="departments.html" data-i18n="nav_departments">Departments</a></li><li><a href="services.html" data-i18n="nav_services">Services</a></li><li><a href="book.html" data-i18n="book_visit">Book a visit</a></li><li><a href="emergency.html" data-i18n="nav_emergency">Emergency</a></li></ul></div>
+      <div><h4 data-i18n="footer_patients">Patients</h4><ul><li><a href="patients-visitors.html" data-i18n="nav_visiting_hours">Visiting hours</a></li><li><a href="portal.html" data-i18n="nav_portal">Patient portal</a></li><li><a href="insurance.html" data-i18n="nav_insurance">Insurance</a></li><li><a href="./contact.html" data-i18n="footer_feedback">Feedback</a></li></ul></div>
+      <div><h4 data-i18n="footer_hospital">Hospital</h4><ul><li><a href="about.html" data-i18n="nav_about">About us</a></li><li><a href="announcement.html" data-i18n="nav_announcement">Announcements</a></li><li><a href="press.html" data-i18n="nav_press">Press</a></li><li><a href="careers.html" data-i18n="nav_careers">Careers</a></li><li><a href="./contact.html" data-i18n="nav_contact">Contact</a></li></ul></div>
+    </div>
+    <div class="footer__bottom"><span data-i18n="footer_copyright">© 2025 Addis Medical Center. Not a substitute for medical advice.</span><span class="footer__emergency" data-i18n="footer_emergency">Emergency? Call 907</span></div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  'use strict';
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const header = $('#hdr');
+  const drawer = $('#drawer');
+  const burger = $('#burger');
+  const drawerClose = $('#drawerClose');
+  const progress = $('#scrollProgress');
+  const backTop = $('#backTop');
+
+  /* Drawer */
+  const closeDrawer = () => {
+    if (!drawer || !burger) return;
+    drawer.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden', 'true');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    burger.focus({ preventScroll: true });
+  };
+  const openDrawer = () => {
+    if (!drawer || !burger) return;
+    drawer.classList.add('is-open');
+    drawer.setAttribute('aria-hidden', 'false');
+    burger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    const firstLink = $('a', drawer);
+    if (firstLink) firstLink.focus({ preventScroll: true });
+  };
+  burger?.addEventListener('click', () => {
+    burger.getAttribute('aria-expanded') === 'true' ? closeDrawer() : openDrawer();
+  });
+  drawerClose?.addEventListener('click', closeDrawer);
+  drawer?.addEventListener('click', e => { if (e.target === drawer) closeDrawer(); });
+  $$('.drawer__nav a, .drawer__cta a', drawer || document).forEach(link => {
+    link.addEventListener('click', () => {
+      drawer?.classList.remove('is-open');
+      drawer?.setAttribute('aria-hidden', 'true');
+      burger?.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && drawer?.classList.contains('is-open')) closeDrawer();
+  });
+
+  /* Scroll UI */
+  const updateScrollUI = () => {
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const percent = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
+    if (progress) progress.style.width = `${Math.min(100, percent)}%`;
+    header?.classList.toggle('is-scrolled', window.scrollY > 8);
+    backTop?.classList.toggle('is-visible', window.scrollY > 600);
+  };
+  window.addEventListener('scroll', updateScrollUI, { passive: true });
+  updateScrollUI();
+  backTop?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  });
+
+  /* Reveal */
+  const revealItems = $$('.reveal');
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -36px 0px' });
+    revealItems.forEach(item => revealObserver.observe(item));
+  } else {
+    revealItems.forEach(item => item.classList.add('is-in'));
+  }
+
+  /* Current page highlight */
+  const currentFile = location.pathname.split('/').pop() || 'index.html';
+  $$('.nav a').forEach(link => {
+    const targetFile = link.getAttribute('href')?.split('?')[0];
+    if (targetFile === currentFile) link.setAttribute('aria-current', 'page');
+  });
+
+  /* ==========================================================
+     BILINGUAL SUPPORT — English / Amharic (አማርኛ)
+     ========================================================== */
+  const translations = {
+    en: {
+      emergency_label: "Emergency?", call: "Call", open_24_7: "open 24/7",
+      live_er_wait: "Live ER wait times",
+      brand_name: "Addis Medical", brand_sub: "Center",
+      nav_find_doctor: "Find a doctor", nav_departments: "Departments", nav_services: "Services",
+      nav_patients: "Patients", nav_about: "About", nav_portfolio: "Portfolio", nav_news: "News",
+      nav_portal: "Patient portal", nav_contact: "Contact", nav_careers: "Careers",
+      nav_insurance: "Insurance", nav_emergency: "Emergency", nav_visiting_hours: "Visiting hours",
+      nav_announcement: "Announcements", nav_press: "Press",
+      book_visit: "Book a visit", book_appointment: "Book an appointment",
+      footer_care: "Care", footer_patients: "Patients", footer_hospital: "Hospital", footer_feedback: "Feedback",
+      footer_about: "Calm, clear care for Addis Ababa since 2008. Accredited, multilingual, and open 24/7 for emergencies.",
+      footer_copyright: "© 2025 Addis Medical Center. Not a substitute for medical advice.",
+      footer_emergency: "Emergency? Call 907", emergency_short: "Emergency? Call", hours_247: "Mon–Sun · 24/7",
+      press_hero_eyebrow: "Media desk · verified statements",
+      press_hero_title: "Press & <em>media</em>.",
+      press_hero_lead: "Official releases, statements and brand assets for journalists, partners and the public. For interviews, contact our media desk.",
+      tab_announcements: "Announcements", tab_press: "Press releases",
+      press_kicker: "Latest releases", press_title: "Official statements from Addis Medical",
+      cat_expansion: "Expansion", cat_partnership: "Partnership", cat_award: "Award", cat_community: "Community",
+      press1_title: "Addis Medical Center opens expanded emergency wing",
+      press1_excerpt: "The new facility adds 12 treatment bays, a dedicated pediatric ER and a second CT scanner — reducing average triage time to under 8 minutes. The expansion represents a 40% increase in emergency capacity.",
+      press2_title: "Partnership with Ethiopian Insurance Corporation expands direct billing",
+      press2_excerpt: "Patients covered by EIC can now access all outpatient and inpatient services with direct billing, eliminating upfront payment. The agreement covers 42 specialist consultants and all diagnostic services.",
+      press3_title: "Addis Medical Center receives national patient safety accreditation",
+      press3_excerpt: "The hospital was recognized for its infection control protocols, medication safety systems and patient communication standards. The accreditation follows a 9-month independent audit.",
+      press4_title: "Free health screening program reaches 5,000 residents",
+      press4_excerpt: "Our mobile screening unit completed its first year of operations, providing blood pressure, glucose and cancer screenings across 12 kebeles in Addis Ababa. The program will expand to 20 kebeles in 2026.",
+      read_release: "Read release",
+      kit_kicker: "Media kit", kit_title: "Brand assets & fact sheets",
+      kit1_title: "Logo pack", kit1_desc: "Primary, horizontal and monochrome logos in SVG, PNG and PDF.",
+      kit2_title: "Fact sheet 2026", kit2_desc: "Bed count, consultant roster, specialties, accreditations and outcomes.",
+      kit3_title: "Photo library", kit3_desc: "High-resolution campus, team and department photography for editorial use.",
+      download: "Download",
+      contact_kicker: "Media contact",
+      contact_title: "For interviews, statements or filming requests",
+      contact_desc: "Our media desk responds within one business day. For urgent after-hours requests, call the main line and ask for the on-call communications officer.",
+      contact_addr: "Bole Road, Addis Ababa — 4th floor, Admin Block",
+      email_press: "Email press desk", general_contact: "General contact",
+      press_cta_title: "Looking for hospital notices instead?",
+      press_cta_desc: "Service updates, visitor guidance and events are listed on our announcements page.",
+      go_announcements: "Go to announcements", go_news: "Hospital news"
+    },
+    am: {
+      emergency_label: "ድንገተኛ ሁኔታ?", call: "ይደውሉ", open_24_7: "24/7 ክፍት",
+      live_er_wait: "የድንገተኛ ክፍል የጥበቃ ጊዜ",
+      brand_name: "አዲስ ሜዲካል", brand_sub: "ሴንተር",
+      nav_find_doctor: "ሐኪም ያግኙ", nav_departments: "ክፍሎች", nav_services: "አገልግሎቶች",
+      nav_patients: "ታካሚዎች", nav_about: "ስለ እኛ", nav_portfolio: "ፖርትፎሊዮ", nav_news: "ዜና",
+      nav_portal: "የታካሚ ፖርታል", nav_contact: "አግኙን", nav_careers: "ስራ እድሎች",
+      nav_insurance: "ኢንሹራንስ", nav_emergency: "ድንገተኛ", nav_visiting_hours: "የጉብኝት ሰዓት",
+      nav_announcement: "ማስታወቂያዎች", nav_press: "ፕሬስ",
+      book_visit: "ጉብኝት ይያዙ", book_appointment: "ቀጠሮ ይያዙ",
+      footer_care: "እንክብካቤ", footer_patients: "ታካሚዎች", footer_hospital: "ሆስፒታል", footer_feedback: "አስተያየት",
+      footer_about: "ከ2008 ጀምሮ ለአዲስ አበባ የተረጋጋ፣ ግልጽ እንክብካቤ። የተረጋገጠ፣ ብዙ ቋንቋ የሚናገር፣ እና ለድንገተኛ ሁኔታዎች 24/7 ክፍት።",
+      footer_copyright: "© 2025 አዲስ ሜዲካል ሴንተር። የህክምና ምክር ምትክ አይደለም።",
+      footer_emergency: "ድንገተኛ? ይደውሉ 907", emergency_short: "ድንገተኛ? ይደውሉ", hours_247: "ሰኞ–እሁድ · 24/7",
+      press_hero_eyebrow: "የሚዲያ ዴስክ · የተረጋገጡ መግለጫዎች",
+      press_hero_title: "ፕሬስ እና <em>ሚዲያ</em>።",
+      press_hero_lead: "ለጋዜጠኞች፣ ለአጋሮች እና ለህዝብ ኦፊሴላዊ መግለጫዎች፣ ማስታወቂያዎች እና የብራንድ ንብረቶች። ለቃለ መጠይቆች የሚዲያ ዴስክችን ያግኙ።",
+      tab_announcements: "ማስታወቂያዎች", tab_press: "የፕሬስ መግለጫዎች",
+      press_kicker: "የቅርብ ጊዜ መግለጫዎች", press_title: "ከአዲስ ሜዲካል ኦፊሴላዊ መግለጫዎች",
+      cat_expansion: "ማስፋፊያ", cat_partnership: "አጋርነት", cat_award: "ሽልማት", cat_community: "ማህበረሰብ",
+      press1_title: "አዲስ ሜዲካል ሴንተር የተስፋፋ የድንገተኛ ክፍል ከፈተ",
+      press1_excerpt: "አዲሱ ተቋም 12 የህክምና ክፍሎችን፣ ልዩ የህጻናት ER እና ሁለተኛ CT ስካነር ይጨምራል — አማካይ የምርመራ ጊዜን ከ8 ደቂቃ በታች ያደርገዋል። ማስፋፊያው የድንገተኛ አቅምን በ40% ይጨምራል።",
+      press2_title: "ከኢትዮጵያ ኢንሹራንስ ኮርፖሬሽን ጋር አጋርነት ቀጥታ ሂሳብ አወጣጥን አስፋፋ",
+      press2_excerpt: "በEIC የተሸፈኑ ታካሚዎች አሁን ሁሉንም የውጭ እና የውስጥ ታካሚ አገልግሎቶች በቀጥታ ሂሳብ ማግኘት ይችላሉ፣ ይህም ቅድሚያ ክፍያን ያስወግዳል። ስምምነቱ 42 ልዩ አማካሪዎችን እና ሁሉንም የምርመራ አገልግሎቶች ይሸፍናል።",
+      press3_title: "አዲስ ሜዲካል ሴንተር ብሔራዊ የታካሚ ደህንነት ማረጋገጫ አገኘ",
+      press3_excerpt: "ሆስፒታሉ በኢንፌክሽን ቁጥጥር ፕሮቶኮሎች፣ በመድሃኒት ደህንነት ስርዓቶች እና በታካሚ ግንኙነት ደረጃዎች እውቅና አግኝቷል። ማረጋገጫው ከ9 ወር ገለልተኛ ኦዲት በኋላ ነው።",
+      press4_title: "ነጻ የጤና ምርመራ ፕሮግራም 5,000 ነዋሪዎችን አደረሰ",
+      press4_excerpt: "የሞባይል ምርመራ ክፍላችን የመጀመሪያ ዓመቱን አጠናቋል፣ በአዲስ አበባ 12 ቀበሌዎች የደም ግፊት፣ የግሉኮስ እና የካንሰር ምርመራዎችን አቅርቧል። ፕሮግራሙ በ2026 ወደ 20 ቀበሌዎች ይስፋፋል።",
+      read_release: "መግለጫውን ያንብቡ",
+      kit_kicker: "የሚዲያ ኪት", kit_title: "የብራንድ ንብረቶች እና የመረጃ ሉሆች",
+      kit1_title: "የሎጎ ጥቅል", kit1_desc: "ዋና፣ አግድም እና ነጠላ ቀለም ሎጎዎች በSVG፣ PNG እና PDF።",
+      kit2_title: "የመረጃ ሉህ 2026", kit2_desc: "የአልጋ ቁጥር፣ የአማካሪ ዝርዝር፣ ስፔሻሊቲዎች፣ ማረጋገጫዎች እና ውጤቶች።",
+      kit3_title: "የፎቶ ቤተ-መጽሐፍት", kit3_desc: "ለኤዲቶሪያል አገልግሎት ከፍተኛ ጥራት ያላቸው የግቢ፣ የቡድን እና የክፍል ፎቶግራፎች።",
+      download: "አውርድ",
+      contact_kicker: "የሚዲያ ግንኙነት",
+      contact_title: "ለቃለ መጠይቆች፣ መግለጫዎች ወይም የቀረጻ ጥያቄዎች",
+      contact_desc: "የሚዲያ ዴስካችን በአንድ የስራ ቀን ውስጥ ይመልሳል። ለአስቸኳይ ከሰዓት በኋላ ጥያቄዎች ዋናውን መስመር ይደውሉ እና የግንኙነት ኃላፊውን ይጠይቁ።",
+      contact_addr: "ቦሌ መንገድ፣ አዲስ አበባ — 4ኛ ፎቅ፣ አስተዳደር ብሎክ",
+      email_press: "የፕሬስ ዴስክን ኢሜይል ያድርጉ", general_contact: "አጠቃላይ ግንኙነት",
+      press_cta_title: "በምትኩ የሆስፒታል ማስታወቂያዎችን ይፈልጋሉ?",
+      press_cta_desc: "የአገልግሎት ዝመናዎች፣ የጎብኚ መመሪያ እና ክስተቶች በማስታወቂያ ገጻችን ላይ ተዘርዝረዋል።",
+      go_announcements: "ወደ ማስታወቂያዎች ይሂዱ", go_news: "የሆስፒታል ዜና"
+    }
+  };
+
+  let currentLang = 'en';
+  const applyLanguage = (lang) => {
+    currentLang = lang;
+    const dict = translations[lang] || translations.en;
+    document.documentElement.lang = lang === 'am' ? 'am' : 'en';
+    document.body.dataset.lang = lang;
+    $$('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key]) el.textContent = dict[key];
+    });
+    $$('[data-i18n-html]').forEach(el => {
+      const key = el.getAttribute('data-i18n-html');
+      if (dict[key]) el.innerHTML = dict[key];
+    });
+    $$('.lang-switch__btn, .drawer__lang .lang-switch__btn').forEach(btn => {
+      const active = btn.dataset.lang === lang;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-pressed', String(active));
+    });
+    try { localStorage.setItem('amc-lang', lang); } catch (e) {}
+  };
+
+  const storedLang = (() => { try { return localStorage.getItem('amc-lang'); } catch (e) { return null; } })();
+  if (storedLang === 'am' || storedLang === 'en') applyLanguage(storedLang);
+
+  $$('.lang-switch__btn, .drawer__lang .lang-switch__btn').forEach(btn => {
+    btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+  });
+})();
+</script>
+</body>
+</html>
