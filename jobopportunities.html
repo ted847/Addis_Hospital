@@ -1,0 +1,1380 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!--
+  ADDIS MEDICAL CENTER — Job Opportunities page.
+  Matches the Addis Medical Signature design system (Fraunces + Inter, calm navy/teal palette).
+  Verify job listings, department details, and contact emails before launch.
+-->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0e6fbe" />
+<title>Job Opportunities — Addis Medical Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+
+:root {
+  --ink: #0b1b2b;
+  --ink-2: #13293d;
+  --brand: #0e6fbe;
+  --brand-2: #084d87;
+  --brand-3: #e8f3fc;
+  --accent: #14b8a6;
+  --accent-dark: #0d9488;
+  --accent-soft: #e6fffb;
+  --sand: #f6f1e8;
+  --sand-2: #ede5d8;
+  --ivory: #fcfaf6;
+  --paper: #ffffff;
+  --gray-50: #f8fafc;
+  --gray-100: #eef2f7;
+  --gray-200: #dfe6ee;
+  --gray-300: #c4cfdb;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #2f4156;
+  --gray-800: #1e293b;
+  --red: #e11d48;
+  --red-dark: #be123c;
+  --red-soft: #ffe4e6;
+  --amber-soft: #fef3c7;
+  --amber-dark: #92400e;
+  --em-50: #ecfdf5;
+  --em-200: #a7f3d0;
+  --em-800: #065f46;
+  --em-900: #064e3b;
+  --radius-sm: 0.75rem;
+  --radius: 1.25rem;
+  --radius-lg: 2rem;
+  --shadow-xs: 0 1px 2px rgba(11, 27, 43, 0.05);
+  --shadow-sm: 0 4px 14px -2px rgba(11, 27, 43, 0.06), 0 1px 3px rgba(11, 27, 43, 0.04);
+  --shadow-md: 0 16px 36px -12px rgba(11, 27, 43, 0.14), 0 4px 12px -4px rgba(11, 27, 43, 0.06);
+  --shadow-lg: 0 32px 64px -18px rgba(11, 27, 43, 0.22), 0 12px 24px -8px rgba(11, 27, 43, 0.1);
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-sans);
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; cursor: pointer; background: none; border: none; }
+img, svg { display: block; max-width: 100%; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; border-radius: 0.5rem; }
+a, button { -webkit-tap-highlight-color: transparent; }
+.container { width: 100%; max-width: 1240px; margin-inline: auto; padding-inline: 1.5rem; }
+.app { flex: 1; }
+
+/* Scroll progress */
+.scroll-progress { position: fixed; z-index: 100; top: 0; left: 0; width: 100%; height: 3px; pointer-events: none; }
+.scroll-progress span { display: block; width: 0; height: 100%; background: linear-gradient(90deg, #14b8a6, #0e6fbe); box-shadow: 0 0 12px rgba(20, 184, 166, 0.45); }
+
+/* Back to top */
+.back-top { position: fixed; right: 1.25rem; bottom: calc(1.25rem + env(safe-area-inset-bottom)); z-index: 45; width: 2.9rem; height: 2.9rem; border-radius: 50%; display: grid; place-items: center; background: #0b263d; color: #fff; box-shadow: 0 12px 30px -12px rgba(7, 23, 39, 0.65); opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity 0.25s, transform 0.25s, background 0.25s; }
+.back-top.is-visible { opacity: 1; transform: none; pointer-events: auto; }
+.back-top:hover { background: var(--brand); }
+.back-top svg { width: 1.1rem; height: 1.1rem; }
+
+/* Emergency Top Strip */
+.emergency { background: var(--ink); color: #fff; font-size: 0.8125rem; position: relative; z-index: 60; }
+.emergency__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; padding-block: 0.625rem; padding-top: max(0.625rem, env(safe-area-inset-top)); }
+.emergency__left { display: flex; align-items: center; gap: 0.625rem; flex-wrap: wrap; }
+.emergency__pulse { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: #ff4d6a; box-shadow: 0 0 0 0 rgba(255, 77, 106, 0.7); animation: pulse 2s infinite; flex-shrink: 0; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255, 77, 106, 0.75); } 70% { box-shadow: 0 0 0 10px rgba(255, 77, 106, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 77, 106, 0); } }
+.emergency__left b { font-weight: 600; }
+.emergency__left a { color: #fff; text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
+.emergency__link { color: #cbd5e1; display: inline-flex; align-items: center; gap: 0.375rem; font-weight: 500; transition: color 0.2s, transform 0.2s; }
+.emergency__link:hover { color: #fff; transform: translateX(2px); }
+.emergency__link svg { width: 0.875rem; height: 0.875rem; }
+
+/* Sticky Header */
+.hdr { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, 0.84); backdrop-filter: saturate(180%) blur(16px); -webkit-backdrop-filter: saturate(180%) blur(16px); border-bottom: 1px solid rgba(223, 230, 238, 0.45); transition: border-color 0.3s, box-shadow 0.3s, background 0.3s; }
+.hdr.is-scrolled { border-color: var(--gray-200); box-shadow: 0 8px 28px -10px rgba(11, 27, 43, 0.09); background: rgba(255, 255, 255, 0.96); }
+.hdr__inner { display: flex; align-items: center; justify-content: space-between; padding-block: 0.875rem; gap: 1rem; }
+.logo { display: flex; align-items: center; gap: 0.65rem; flex-shrink: 0; }
+.logo__mark { width: 2.5rem; height: 2.5rem; display: grid; place-items: center; background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%); border-radius: 0.875rem; color: #fff; box-shadow: 0 10px 20px -8px rgba(14, 111, 190, 0.55); transition: transform 0.3s var(--ease-out); }
+.logo:hover .logo__mark { transform: scale(1.04) rotate(-3deg); }
+.logo__mark svg { width: 1.25rem; height: 1.25rem; }
+.logo__text { display: flex; flex-direction: column; line-height: 1.1; }
+.logo__name { font-family: var(--font-serif); font-weight: 600; font-size: 1.15rem; letter-spacing: -0.015em; color: var(--ink); }
+.logo__sub { font-size: 0.6875rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-500); font-weight: 500; }
+
+.nav { display: none; gap: 1.4rem; align-items: center; }
+.nav a { font-size: 0.875rem; font-weight: 500; color: var(--gray-700); position: relative; padding: 0.35rem 0; transition: color 0.2s; }
+.nav a::after { content: ''; position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--brand); border-radius: 99px; transition: width 0.28s var(--ease-out); }
+.nav a:hover, .nav a[aria-current="page"] { color: var(--brand); }
+.nav a:hover::after, .nav a[aria-current="page"]::after { width: 100%; }
+.hdr__actions { display: flex; align-items: center; gap: 0.625rem; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem 1.35rem; border-radius: 999px; font-size: 0.875rem; font-weight: 600; transition: transform 0.22s var(--ease-out), background 0.22s, box-shadow 0.22s, border-color 0.22s; border: 1px solid transparent; white-space: nowrap; cursor: pointer; }
+.btn:active { transform: scale(0.98); }
+.btn--primary { background: var(--ink); color: #fff; }
+.btn--primary:hover { background: var(--brand); transform: translateY(-1.5px); box-shadow: 0 14px 26px -10px rgba(14, 111, 190, 0.55); }
+.btn--ghost { border-color: var(--gray-200); color: var(--ink); background: #fff; }
+.btn--ghost:hover { border-color: var(--ink); background: var(--gray-50); transform: translateY(-1.5px); }
+.btn--soft { background: var(--brand-3); color: var(--brand-2); border-color: rgba(14, 111, 190, 0.14); }
+.btn--soft:hover { background: var(--brand); color: #fff; transform: translateY(-1.5px); box-shadow: 0 12px 24px -10px rgba(14, 111, 190, 0.45); }
+.btn--light { background: #fff; color: var(--ink); box-shadow: 0 8px 20px -6px rgba(11, 27, 43, 0.2); }
+.btn--light:hover { background: var(--sand); transform: translateY(-1.5px); }
+.btn--accent { background: var(--accent); color: #fff; box-shadow: 0 8px 20px -6px rgba(20, 184, 166, 0.4); }
+.btn--accent:hover { background: var(--accent-dark); transform: translateY(-1.5px); }
+.btn--sm { padding: 0.5rem 0.95rem; font-size: 0.78rem; gap: 0.35rem; }
+.btn svg { width: 1rem; height: 1rem; transition: transform 0.22s var(--ease-out); }
+.btn--sm svg { width: 0.85rem; height: 0.85rem; }
+.btn:hover svg { transform: translateX(2px); }
+.hdr .btn--primary { padding: 0.625rem 1.1rem; font-size: 0.8125rem; }
+
+.burger { display: grid; place-items: center; width: 2.625rem; height: 2.625rem; border-radius: 0.75rem; border: 1px solid var(--gray-200); background: #fff; transition: background 0.2s; flex-shrink: 0; }
+.burger svg { width: 1.15rem; height: 1.15rem; stroke: var(--ink); }
+.burger:hover { background: var(--gray-50); }
+@media (min-width: 960px) { .nav { display: flex; } .burger { display: none; } }
+
+/* Mobile Drawer */
+.drawer { position: fixed; inset: 0; background: rgba(11, 27, 43, 0.52); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); z-index: 120; opacity: 0; pointer-events: none; transition: opacity 0.3s var(--ease-out); }
+.drawer.is-open { opacity: 1; pointer-events: auto; }
+.drawer__panel { position: absolute; top: 0; right: 0; bottom: 0; width: min(360px, 90vw); background: #fff; transform: translateX(100%); transition: transform 0.38s var(--ease-out); display: flex; flex-direction: column; padding: 1.5rem; padding-top: calc(1.5rem + env(safe-area-inset-top)); padding-bottom: calc(1.5rem + env(safe-area-inset-bottom)); overflow-y: auto; -webkit-overflow-scrolling: touch; box-shadow: -20px 0 50px rgba(11, 27, 43, 0.18); }
+.drawer.is-open .drawer__panel { transform: none; }
+.drawer__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.75rem; }
+.drawer__close { width: 2.5rem; height: 2.5rem; display: grid; place-items: center; border-radius: 0.75rem; border: 1px solid var(--gray-200); transition: background 0.2s; flex-shrink: 0; }
+.drawer__close:hover { background: var(--gray-50); }
+.drawer__nav { display: flex; flex-direction: column; gap: 0.2rem; }
+.drawer__nav a { padding: 0.85rem 0.75rem; border-radius: 0.75rem; font-size: 0.975rem; font-weight: 500; color: var(--gray-800); display: flex; justify-content: space-between; align-items: center; transition: background 0.2s, color 0.2s; }
+.drawer__nav a:hover, .drawer__nav a[aria-current="page"] { background: var(--brand-3); color: var(--brand); }
+.drawer__nav a svg { width: 1rem; height: 1rem; color: var(--gray-400); flex-shrink: 0; }
+.drawer__nav a.danger { color: var(--red); margin-top: 0.5rem; border-top: 1px solid var(--gray-200); padding-top: 1rem; border-radius: 0 0 0.75rem 0.75rem; }
+.drawer__nav a.danger:hover { background: #fff1f3; }
+.drawer__cta { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.625rem; }
+.drawer__cta .btn { width: 100%; }
+.drawer__foot { margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--gray-200); font-size: 0.8125rem; color: var(--gray-500); line-height: 1.6; }
+.drawer__foot a { color: var(--brand); text-decoration: underline; font-weight: 600; }
+
+/* Page Hero */
+.page-hero { position: relative; background: linear-gradient(180deg, var(--ivory) 0%, #f1f7fd 100%); padding-block: 2.75rem 3.5rem; border-bottom: 1px solid var(--gray-200); overflow: hidden; }
+@media (min-width: 768px) { .page-hero { padding-block: 4.5rem 5.5rem; } }
+.page-hero__grid-bg { position: absolute; inset: 0; background-image: linear-gradient(to right, rgba(14, 111, 190, 0.045) 1px, transparent 1px), linear-gradient(to bottom, rgba(14, 111, 190, 0.045) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse 80% 75% at 50% 45%, #000 35%, transparent 100%); -webkit-mask-image: radial-gradient(ellipse 80% 75% at 50% 45%, #000 35%, transparent 100%); pointer-events: none; }
+.page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(52rem 34rem at 92% -5%, rgba(20, 184, 166, 0.13), transparent 62%), radial-gradient(45rem 32rem at -5% 100%, rgba(14, 111, 190, 0.1), transparent 62%); pointer-events: none; }
+.page-hero__layout { position: relative; display: grid; gap: 2rem; align-items: center; }
+@media (min-width: 960px) { .page-hero__layout { grid-template-columns: 1.15fr 0.85fr; gap: 4rem; } }
+.page-hero h1 { font-family: var(--font-serif); font-weight: 500; font-size: clamp(2.35rem, 8vw, 4.35rem); line-height: 1.06; letter-spacing: -0.025em; color: var(--ink); margin-top: 0.9rem; }
+.page-hero h1 em { font-style: italic; font-weight: 400; color: var(--brand); }
+.hero-lead { margin-top: 1.15rem; font-size: 1rem; color: var(--gray-600); line-height: 1.65; max-width: 36rem; }
+@media (min-width: 768px) { .hero-lead { font-size: 1.125rem; margin-top: 1.5rem; } }
+.hero-actions { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+@media (min-width: 520px) { .hero-actions { flex-direction: row; flex-wrap: wrap; gap: 0.75rem; } }
+.hero-actions .btn { width: 100%; padding: 0.85rem 1.35rem; }
+@media (min-width: 520px) { .hero-actions .btn { width: auto; padding: 0.75rem 1.35rem; } }
+
+.kicker { display: inline-flex; align-items: center; gap: 0.55rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brand); }
+.kicker::before { content: ''; width: 1.25rem; height: 1.5px; background: currentColor; border-radius: 2px; flex-shrink: 0; }
+
+/* Hero culture card */
+.culture-card { position: relative; background: #fff; border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow-lg); overflow: hidden; }
+@media (min-width: 768px) { .culture-card { border-radius: var(--radius-lg); padding: 1.75rem; } }
+.culture-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--brand), var(--accent)); }
+.culture-card__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; gap: 0.5rem; flex-wrap: wrap; }
+.culture-badge { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.7rem; font-weight: 600; color: var(--accent-dark); background: var(--accent-soft); padding: 0.3rem 0.7rem; border-radius: 999px; }
+.culture-badge::before { content: ''; width: 0.4rem; height: 0.4rem; border-radius: 50%; background: var(--accent-dark); animation: pulse 2s infinite; }
+.culture-loc { font-size: 0.72rem; font-weight: 500; color: var(--gray-500); }
+.culture-svg-box { width: 100%; border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(14, 111, 190, 0.1); background: #fbfdff; }
+.culture-svg-box svg { width: 100%; height: auto; display: block; }
+.benchmark-row { margin-top: 1rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+.benchmark-pill { background: var(--gray-50); border: 1px solid var(--gray-100); border-radius: 0.6rem; padding: 0.6rem 0.4rem; text-align: center; }
+.benchmark-pill strong { display: block; font-family: var(--font-serif); font-size: 0.95rem; font-weight: 600; color: var(--ink); line-height: 1.15; }
+.benchmark-pill span { display: block; margin-top: 0.2rem; font-size: 0.65rem; font-weight: 500; color: var(--gray-500); line-height: 1.25; }
+@media (min-width: 768px) { .benchmark-pill strong { font-size: 1.15rem; } .benchmark-pill span { font-size: 0.7rem; } }
+
+/* Sections */
+.section { padding-block: 3.5rem; position: relative; }
+@media (min-width: 768px) { .section { padding-block: 5.5rem; } }
+.section--tint { background: var(--sand); border-block: 1px solid rgba(11, 27, 43, 0.06); }
+.section-head { display: flex; flex-direction: column; align-items: flex-start; gap: 0.75rem; margin-bottom: 1.75rem; }
+@media (min-width: 768px) { .section-head { flex-direction: row; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1.5rem; margin-bottom: 3rem; } }
+.section-head h2 { font-family: var(--font-serif); font-size: clamp(1.65rem, 5vw, 2.75rem); font-weight: 500; letter-spacing: -0.02em; line-height: 1.15; color: var(--ink); margin-top: 0.5rem; max-width: 34rem; }
+.section-head p { color: var(--gray-600); max-width: 32rem; margin-top: 0.5rem; font-size: 0.9375rem; }
+
+/* Culture pillars */
+.pillars { display: grid; gap: 0.85rem; grid-template-columns: 1fr; }
+@media (min-width: 820px) { .pillars { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; } }
+.pillar { background: #fff; border: 1px solid var(--gray-200); border-radius: 1rem; padding: 1.35rem; transition: transform 0.25s var(--ease-out), box-shadow 0.25s, border-color 0.25s; }
+@media (min-width: 1024px) { .pillar { border-radius: var(--radius); padding: 2rem; } }
+.pillar:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: rgba(14, 111, 190, 0.28); }
+.pillar__icon { width: 2.5rem; height: 2.5rem; border-radius: 0.8rem; display: grid; place-items: center; background: var(--brand-3); color: var(--brand); margin-bottom: 1rem; }
+@media (min-width: 1024px) { .pillar__icon { width: 3rem; height: 3rem; border-radius: 1rem; margin-bottom: 1.25rem; } }
+.pillar__icon svg { width: 1.2rem; height: 1.2rem; }
+@media (min-width: 1024px) { .pillar__icon svg { width: 1.5rem; height: 1.5rem; } }
+.pillar h3 { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 500; color: var(--ink); line-height: 1.3; }
+@media (min-width: 1024px) { .pillar h3 { font-size: 1.3rem; } }
+.pillar p { margin-top: 0.5rem; font-size: 0.875rem; color: var(--gray-600); line-height: 1.6; }
+
+/* Filter toolbar */
+.filter-toolbar { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 1rem; padding: 1rem; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.85rem; }
+@media (min-width: 768px) { .filter-toolbar { border-radius: var(--radius); padding: 1.25rem; gap: 1rem; } }
+.filter-top-row { display: flex; flex-direction: column; gap: 0.65rem; }
+@media (min-width: 768px) { .filter-top-row { flex-direction: row; flex-wrap: wrap; gap: 0.75rem; align-items: center; justify-content: space-between; } }
+.search-box { position: relative; flex: 1; min-width: 0; width: 100%; }
+@media (min-width: 768px) { .search-box { min-width: 240px; } }
+.search-box svg { position: absolute; left: 0.95rem; top: 50%; transform: translateY(-50%); width: 1rem; height: 1rem; color: var(--gray-400); pointer-events: none; }
+.search-box input { width: 100%; padding: 0.68rem 1rem 0.68rem 2.5rem; border-radius: 999px; border: 1px solid var(--gray-300); background: #fff; font-size: 0.875rem; color: var(--ink); transition: border-color 0.2s, box-shadow 0.2s; font-family: inherit; }
+.search-box input:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px rgba(14, 111, 190, 0.14); }
+
+.schedule-group { display: inline-flex; background: #fff; border: 1px solid var(--gray-200); border-radius: 999px; padding: 0.25rem; gap: 0.2rem; width: 100%; justify-content: space-between; }
+@media (min-width: 768px) { .schedule-group { width: auto; } }
+.sched-btn { padding: 0.45rem 0.75rem; border-radius: 999px; font-size: 0.78rem; font-weight: 600; color: var(--gray-600); transition: all 0.2s; flex: 1; white-space: nowrap; }
+@media (min-width: 768px) { .sched-btn { padding: 0.42rem 0.85rem; font-size: 0.8rem; flex: initial; } }
+.sched-btn:hover { color: var(--ink); }
+.sched-btn.is-active { background: var(--ink); color: #fff; }
+
+.role-count-badge { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.45rem 0.9rem; border-radius: 999px; background: var(--brand-3); color: var(--brand-2); font-size: 0.78rem; font-weight: 600; align-self: flex-start; }
+@media (min-width: 768px) { .role-count-badge { font-size: 0.8125rem; } }
+
+.dept-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; padding-top: 0.75rem; border-top: 1px solid var(--gray-200); }
+@media (min-width: 768px) { .dept-pills { padding-top: 0.875rem; gap: 0.45rem; } }
+.dept-pill { padding: 0.4rem 0.8rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; border: 1px solid var(--gray-200); background: #fff; color: var(--gray-700); transition: all 0.2s; }
+@media (min-width: 768px) { .dept-pill { padding: 0.4rem 0.875rem; font-size: 0.8rem; } }
+.dept-pill:hover { border-color: var(--brand); color: var(--brand); }
+.dept-pill.is-active { background: var(--brand); border-color: var(--brand); color: #fff; }
+
+/* Job cards */
+.job-list { display: flex; flex-direction: column; gap: 0.85rem; }
+@media (min-width: 768px) { .job-list { gap: 1rem; } }
+.job-card { background: #fff; border: 1px solid var(--gray-200); border-radius: 1rem; padding: 1.15rem; display: flex; flex-direction: column; gap: 1rem; transition: transform 0.25s var(--ease-out), border-color 0.25s, box-shadow 0.25s; }
+@media (min-width: 768px) { .job-card { border-radius: var(--radius); padding: 1.65rem 1.75rem; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; } }
+.job-card:hover { border-color: rgba(14, 111, 190, 0.45); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.job-card__main { flex: 1; min-width: 0; }
+.job-card__badges { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; margin-bottom: 0.5rem; }
+.badge-dept { font-size: 0.7rem; font-weight: 600; padding: 0.25rem 0.65rem; border-radius: 999px; background: var(--brand-3); color: var(--brand-2); }
+.badge-sched { font-size: 0.7rem; font-weight: 600; padding: 0.25rem 0.65rem; border-radius: 999px; background: var(--accent-soft); color: var(--accent-dark); }
+.badge-loc { font-size: 0.7rem; font-weight: 500; color: var(--gray-500); }
+@media (min-width: 768px) { .badge-dept, .badge-sched { font-size: 0.75rem; padding: 0.25rem 0.7rem; } .badge-loc { font-size: 0.75rem; } }
+.job-card h3 { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 500; color: var(--ink); line-height: 1.25; }
+@media (min-width: 768px) { .job-card h3 { font-size: 1.35rem; } }
+.job-card__summary { margin-top: 0.4rem; font-size: 0.85rem; color: var(--gray-600); max-width: 42rem; line-height: 1.55; }
+@media (min-width: 768px) { .job-card__summary { font-size: 0.9375rem; } }
+.job-card__meta { margin-top: 0.6rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; font-size: 0.75rem; color: var(--gray-500); font-weight: 500; }
+@media (min-width: 768px) { .job-card__meta { gap: 0.75rem 1.5rem; font-size: 0.8rem; } }
+.job-card__actions { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+.job-card__actions .btn { flex: 1; }
+@media (min-width: 768px) { .job-card__actions .btn { flex: initial; } }
+
+.empty-state { text-align: center; padding: 2.5rem 1.25rem; border: 1px dashed var(--gray-300); border-radius: 1rem; background: var(--gray-50); }
+.empty-state h3 { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 500; color: var(--ink); }
+.empty-state p { margin-top: 0.5rem; color: var(--gray-600); font-size: 0.9rem; }
+.empty-state__actions { margin-top: 1.25rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; }
+
+/* Hiring process */
+.hiring-grid { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
+@media (min-width: 960px) { .hiring-grid { grid-template-columns: 1.25fr 0.85fr; gap: 2.5rem; align-items: start; } }
+.steps-timeline { display: grid; gap: 0.75rem; grid-template-columns: 1fr; }
+@media (min-width: 600px) { .steps-timeline { grid-template-columns: repeat(2, 1fr); gap: 1rem; } }
+.hiring-step { background: #fff; border: 1px solid var(--gray-200); border-radius: 1rem; padding: 1.25rem; position: relative; }
+@media (min-width: 1024px) { .hiring-step { border-radius: var(--radius); padding: 1.65rem; } }
+.hiring-step__num { width: 2rem; height: 2rem; border-radius: 50%; background: var(--brand); color: #fff; font-family: var(--font-serif); font-weight: 600; font-size: 0.95rem; display: grid; place-items: center; margin-bottom: 0.85rem; }
+@media (min-width: 1024px) { .hiring-step__num { width: 2.25rem; height: 2.25rem; font-size: 1rem; margin-bottom: 1rem; } }
+.hiring-step h3 { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 500; color: var(--ink); line-height: 1.3; }
+@media (min-width: 1024px) { .hiring-step h3 { font-size: 1.15rem; } }
+.hiring-step p { margin-top: 0.4rem; font-size: 0.85rem; color: var(--gray-600); line-height: 1.55; }
+.hiring-step a { color: var(--brand); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; word-break: break-word; }
+
+.credential-card { background: #fff; border: 1px solid var(--gray-200); border-radius: 1rem; padding: 1.35rem; box-shadow: var(--shadow-sm); }
+@media (min-width: 1024px) { .credential-card { border-radius: var(--radius); padding: 2rem; } }
+.credential-card h3 { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 500; color: var(--ink); }
+@media (min-width: 1024px) { .credential-card h3 { font-size: 1.35rem; } }
+.credential-card p.sub { margin-top: 0.4rem; font-size: 0.85rem; color: var(--gray-600); }
+.checklist { list-style: none; margin-top: 1rem; display: flex; flex-direction: column; gap: 0.6rem; }
+.checklist li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.85rem; color: var(--gray-700); line-height: 1.5; }
+.checklist li svg { width: 1rem; height: 1rem; color: var(--accent-dark); flex-shrink: 0; margin-top: 0.2rem; }
+.credential-card__foot { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--gray-100); font-size: 0.8rem; color: var(--gray-600); line-height: 1.6; }
+.credential-card__foot a { color: var(--brand); font-weight: 600; text-decoration: underline; word-break: break-word; }
+
+/* CTA */
+.cta { position: relative; overflow: hidden; border-radius: 1.25rem; padding: 2rem 1.25rem; color: #fff; background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%); margin-block: 2rem 3rem; box-shadow: var(--shadow-lg); }
+@media (min-width: 768px) { .cta { border-radius: var(--radius-lg); padding: 4.25rem 3.5rem; margin-block: 2rem 5rem; } }
+.cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(34rem 24rem at 100% 0%, rgba(20, 184, 166, 0.38), transparent 62%); pointer-events: none; }
+.cta__inner { position: relative; display: grid; gap: 1.5rem; align-items: center; text-align: center; }
+@media (min-width: 768px) { .cta__inner { grid-template-columns: 1fr auto; text-align: left; gap: 3rem; } }
+.cta h2 { font-family: var(--font-serif); font-size: clamp(1.55rem, 5vw, 2.65rem); font-weight: 500; letter-spacing: -0.02em; line-height: 1.15; }
+.cta p { margin-top: 0.75rem; color: rgba(255, 255, 255, 0.88); max-width: 36rem; font-size: 0.9375rem; }
+.cta__actions { display: flex; flex-direction: column; gap: 0.6rem; justify-content: center; }
+@media (min-width: 520px) { .cta__actions { flex-direction: row; flex-wrap: wrap; gap: 0.875rem; } }
+@media (min-width: 768px) { .cta__actions { justify-content: flex-end; } }
+.cta__actions .btn { padding: 0.85rem 1.35rem; width: 100%; }
+@media (min-width: 520px) { .cta__actions .btn { padding: 0.9rem 1.65rem; width: auto; } }
+
+/* Footer */
+.footer { background: var(--ink); color: #a9b8c7; margin-top: 2rem; position: relative; overflow: hidden; }
+.footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(20, 184, 166, 0.55), transparent); }
+.footer__inner { padding-block: 2.5rem 1.5rem; }
+@media (min-width: 768px) { .footer__inner { padding-block: 4.5rem 2.25rem; } }
+.footer__grid { display: grid; gap: 1.75rem; grid-template-columns: 1fr; }
+@media (min-width: 560px) { .footer__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .footer__grid { grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 2.5rem; } }
+.footer__brand .logo__name { color: #fff; }
+.footer__brand .logo__sub { color: #7e90a4; }
+.footer__about { margin-top: 1rem; font-size: 0.85rem; line-height: 1.6; max-width: 22rem; }
+.footer__contact { margin-top: 1.25rem; display: flex; flex-direction: column; gap: 0.55rem; font-size: 0.85rem; }
+.footer__contact a { display: inline-flex; align-items: center; gap: 0.55rem; transition: color 0.2s; word-break: break-word; }
+.footer__contact a:hover { color: #fff; }
+.footer__contact svg { width: 0.9rem; height: 0.9rem; color: var(--accent); flex-shrink: 0; }
+.footer h4 { color: #fff; font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.9rem; }
+.footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.footer ul a { font-size: 0.85rem; transition: color 0.2s, transform 0.2s; display: inline-block; }
+.footer ul a:hover { color: #fff; transform: translateX(2px); }
+.footer__bottom { border-top: 1px solid rgba(255, 255, 255, 0.09); padding-top: 1.25rem; margin-top: 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.65rem; font-size: 0.72rem; }
+@media (min-width: 640px) { .footer__bottom { flex-direction: row; flex-wrap: wrap; justify-content: space-between; text-align: left; align-items: center; gap: 1rem; margin-top: 3.25rem; } }
+.footer__emergency { display: inline-flex; align-items: center; gap: 0.5rem; color: #fff; font-weight: 600; }
+.footer__emergency::before { content: ''; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: #ff4d6a; animation: pulse 2s infinite; }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out); }
+.reveal.is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } * { animation-duration: 0s !important; transition-duration: 0s !important; } html { scroll-behavior: auto; } }
+
+/* Modal — Role brief + apply */
+.modal-backdrop { position: fixed; inset: 0; background: rgba(11, 27, 43, 0.6); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); z-index: 200; display: flex; justify-content: flex-end; opacity: 0; pointer-events: none; transition: opacity 0.3s var(--ease-out); }
+.modal-backdrop.is-open { opacity: 1; pointer-events: auto; }
+.role-drawer { width: min(640px, 100vw); height: 100%; background: #fff; box-shadow: -24px 0 60px rgba(11, 27, 43, 0.25); display: flex; flex-direction: column; transform: translateX(100%); transition: transform 0.36s var(--ease-out); overflow: hidden; padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom); }
+.modal-backdrop.is-open .role-drawer { transform: none; }
+.role-drawer__head { padding: 1.25rem 1.25rem 1rem; border-bottom: 1px solid var(--gray-200); display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; background: var(--ivory); }
+@media (min-width: 768px) { .role-drawer__head { padding: 1.5rem 1.75rem; } }
+.role-drawer__head h2 { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 500; color: var(--ink); line-height: 1.25; margin-top: 0.4rem; }
+@media (min-width: 768px) { .role-drawer__head h2 { font-size: 1.55rem; } }
+.role-drawer__tabs { display: flex; gap: 0.4rem; padding: 0.75rem 1.25rem; background: #fff; border-bottom: 1px solid var(--gray-200); }
+@media (min-width: 768px) { .role-drawer__tabs { gap: 0.5rem; padding: 0.875rem 1.75rem; } }
+.drawer-tab { flex: 1; padding: 0.55rem 0.75rem; border-radius: 999px; font-size: 0.78rem; font-weight: 600; border: 1px solid var(--gray-200); color: var(--gray-600); background: var(--gray-50); transition: all 0.2s; }
+@media (min-width: 768px) { .drawer-tab { padding: 0.6rem 1rem; font-size: 0.85rem; } }
+.drawer-tab.is-active { background: var(--ink); border-color: var(--ink); color: #fff; }
+.role-drawer__body { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 1.25rem; }
+@media (min-width: 768px) { .role-drawer__body { padding: 1.75rem; } }
+
+.brief-section { margin-bottom: 1.35rem; }
+.brief-section h4 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--brand); margin-bottom: 0.5rem; }
+.brief-section p { font-size: 0.9rem; color: var(--gray-700); line-height: 1.65; }
+.brief-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.brief-list li { position: relative; padding-left: 1.1rem; font-size: 0.875rem; color: var(--gray-700); line-height: 1.55; }
+.brief-list li::before { content: ''; position: absolute; left: 0; top: 0.5rem; width: 6px; height: 6px; border-radius: 50%; background: var(--brand); }
+.brief-meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 1.25rem; }
+.brief-meta-box { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 0.6rem; padding: 0.7rem 0.85rem; }
+.brief-meta-box span { display: block; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray-500); font-weight: 600; }
+.brief-meta-box strong { display: block; margin-top: 0.15rem; font-size: 0.85rem; color: var(--ink); }
+.brief-actions { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+@media (min-width: 520px) { .brief-actions { flex-direction: row; flex-wrap: wrap; } .brief-actions .btn { flex: 1; } }
+
+/* Form */
+.form-group { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 1rem; }
+.form-group label { font-size: 0.82rem; font-weight: 600; color: var(--gray-700); }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.7rem 0.9rem; font-size: 0.9rem; border: 1px solid var(--gray-300); border-radius: 0.7rem; background: #fff; color: var(--ink); font-family: inherit; transition: border-color 0.2s, box-shadow 0.2s; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px rgba(14, 111, 190, 0.15); }
+.form-row-2 { display: grid; grid-template-columns: 1fr; gap: 0.85rem; }
+@media (min-width: 520px) { .form-row-2 { grid-template-columns: 1fr 1fr; } }
+.phone-wrap { display: flex; align-items: center; border: 1px solid var(--gray-300); border-radius: 0.7rem; overflow: hidden; background: #fff; }
+.phone-wrap:focus-within { border-color: var(--brand); box-shadow: 0 0 0 3px rgba(14, 111, 190, 0.15); }
+.phone-wrap span { padding: 0.7rem 0.75rem; background: var(--gray-50); border-right: 1px solid var(--gray-200); font-size: 0.82rem; font-weight: 600; color: var(--gray-700); flex-shrink: 0; }
+.phone-wrap input { border: none !important; box-shadow: none !important; border-radius: 0 !important; background: transparent; }
+
+.dropzone { border: 1.5px dashed var(--gray-300); border-radius: 0.7rem; padding: 1rem; text-align: center; background: var(--gray-50); cursor: pointer; transition: border-color 0.2s, background 0.2s; }
+.dropzone:hover, .dropzone.is-dragover { border-color: var(--brand); background: var(--brand-3); }
+.dropzone strong { display: block; font-size: 0.85rem; color: var(--ink); }
+.dropzone span { display: block; margin-top: 0.2rem; font-size: 0.72rem; color: var(--gray-500); }
+.file-chip { margin-top: 0.6rem; display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.3rem 0.7rem; border-radius: 999px; background: var(--accent-soft); color: var(--accent-dark); font-size: 0.72rem; font-weight: 600; max-width: 100%; word-break: break-all; }
+
+.app-receipt { padding: 1.35rem; border-radius: 1rem; background: var(--em-50); border: 1px solid var(--em-200); color: var(--em-900); }
+.app-receipt h3 { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 500; color: var(--em-900); }
+.app-receipt p { margin-top: 0.55rem; font-size: 0.875rem; color: var(--em-800); line-height: 1.6; }
+.ref-pill { display: inline-block; margin-top: 0.85rem; padding: 0.4rem 0.85rem; border-radius: 0.55rem; background: #fff; border: 1px solid var(--em-200); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9rem; font-weight: 700; color: var(--em-900); }
+.app-receipt__actions { margin-top: 1rem; display: flex; flex-direction: column; gap: 0.55rem; }
+@media (min-width: 520px) { .app-receipt__actions { flex-direction: row; flex-wrap: wrap; } }
+
+/* Mobile-specific fixes */
+@media (max-width: 959px) {
+  .hdr .btn--primary { display: none; }
+}
+@media (max-width: 767px) {
+  .container { padding-inline: 1.15rem; }
+  .emergency__inner { flex-direction: column; align-items: center; text-align: center; gap: 0.4rem; padding-block: 0.5rem; }
+  .emergency__left { justify-content: center; font-size: 0.75rem; }
+  .hdr__inner { padding-block: 0.7rem; gap: 0.5rem; }
+  .logo__name { font-size: 1rem; }
+  .logo__sub { font-size: 0.6rem; }
+  .logo__mark { width: 2.25rem; height: 2.25rem; border-radius: 0.75rem; }
+  .logo__mark svg { width: 1.1rem; height: 1.1rem; }
+  .back-top { right: 0.85rem; bottom: calc(0.85rem + env(safe-area-inset-bottom)); width: 2.6rem; height: 2.6rem; }
+  .role-drawer { width: 100vw; }
+}
+
+/* iOS double-tap zoom prevention */
+@media (pointer: coarse) {
+  a, button { touch-action: manipulation; }
+}
+</style>
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+
+<!-- Emergency Top Bar -->
+<div class="emergency">
+  <div class="container emergency__inner">
+    <div class="emergency__left">
+      <span class="emergency__pulse"></span>
+      <span><b>Emergency?</b> Call <a href="tel:907">907</a> — open 24/7</span>
+    </div>
+    <div>
+      <a href="emergency.html" class="emergency__link">
+        Live ER wait times
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="hdr" id="hdr">
+  <div class="container hdr__inner">
+    <a href="index.html" class="logo" aria-label="Addis Medical Center — home">
+      <span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span>
+      <span class="logo__text"><span class="logo__name">Addis Medical</span><span class="logo__sub">Center</span></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="find-a-doctor.html">Find a doctor</a>
+      <a href="departments.html">Departments</a>
+      <a href="services.html">Services</a>
+      <a href="patients-visitors.html">Patients</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="news.html">News</a>
+    </nav>
+    <div class="hdr__actions">
+      <a href="book.html" class="btn btn--primary">Book a visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<!-- Drawer -->
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer__panel">
+    <div class="drawer__head">
+      <a href="index.html" class="logo"><span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span><span class="logo__text"><span class="logo__name">Addis Medical</span><span class="logo__sub">Center</span></span></a>
+      <button class="drawer__close" id="drawerClose" aria-label="Close"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    </div>
+    <nav class="drawer__nav" aria-label="Mobile navigation">
+      <a href="index.html">Home <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="find-a-doctor.html">Find a doctor <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="departments.html">Departments <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="services.html">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="book.html">Book a visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="patients-visitors.html">Patients &amp; visitors <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="about.html">About <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="projects.html">Projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="portal.html">Patient portal <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="contact.html">Contact <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="job-opportunities.html" aria-current="page">Careers <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="insurance.html">Insurance <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="news.html">News <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+      <a href="emergency.html" class="danger">Emergency <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
+    </nav>
+    <div class="drawer__cta">
+      <a href="book.html" class="btn btn--primary">Book a visit</a>
+      <a href="portal.html" class="btn btn--ghost">Patient portal</a>
+    </div>
+    <div class="drawer__foot">
+      <p>Emergency? Call <a href="tel:907">907</a></p>
+      <p style="margin-top:.25rem">Mon–Sun · 24/7</p>
+    </div>
+  </div>
+</div>
+
+<main class="app">
+
+<!-- Hero -->
+<section class="page-hero">
+  <div class="page-hero__grid-bg" aria-hidden="true"></div>
+  <div class="container page-hero__layout">
+    <div class="reveal">
+      <span class="kicker">Careers at Addis Medical Center</span>
+      <h1>Practice medicine with <em>time</em> and <em>clarity</em>.</h1>
+      <p class="hero-lead">Join 340+ clinicians, nurses, and allied health professionals building Addis Ababa's calmest, most transparent hospital on Bole Road.</p>
+      <div class="hero-actions">
+        <a href="#open-roles" class="btn btn--primary">
+          Explore 5 open roles
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#how-to-apply" class="btn btn--ghost">How to apply</a>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="culture-card">
+        <div class="culture-card__head">
+          <span class="culture-badge">Hiring Year-Round</span>
+          <span class="culture-loc">Bole Road · Addis Ababa</span>
+        </div>
+        <div class="culture-svg-box">
+          <svg viewBox="0 0 420 195" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Addis Medical Center clinical fellowship and campus emblem">
+            <circle cx="345" cy="48" r="34" fill="#14b8a6" fill-opacity="0.14"/>
+            <circle cx="345" cy="48" r="18" fill="#14b8a6" fill-opacity="0.22"/>
+            <path d="M18 168C125 152 295 152 402 168" stroke="#0e6fbe" stroke-opacity="0.22" stroke-width="2" stroke-linecap="round"/>
+            <rect x="44" y="42" width="150" height="122" rx="14" fill="#ffffff" stroke="#0b1b2b" stroke-width="1.75"/>
+            <rect x="62" y="24" width="34" height="34" rx="9" fill="#0e6fbe"/>
+            <path d="M79 33V49M71 41H87" stroke="#ffffff" stroke-width="2.75" stroke-linecap="round"/>
+            <rect x="64" y="70" width="28" height="18" rx="4" fill="#e6f2fb" stroke="#0e6fbe" stroke-width="1.2"/>
+            <rect x="104" y="70" width="28" height="18" rx="4" fill="#e6fffb" stroke="#14b8a6" stroke-width="1.2"/>
+            <rect x="144" y="70" width="28" height="18" rx="4" fill="#e6f2fb" stroke="#0e6fbe" stroke-width="1.2"/>
+            <rect x="64" y="100" width="28" height="18" rx="4" fill="#e6f2fb" stroke="#0e6fbe" stroke-width="1.2"/>
+            <rect x="104" y="100" width="28" height="18" rx="4" fill="#e6f2fb" stroke="#0e6fbe" stroke-width="1.2"/>
+            <rect x="144" y="100" width="28" height="18" rx="4" fill="#e6fffb" stroke="#14b8a6" stroke-width="1.2"/>
+            <rect x="100" y="134" width="36" height="30" rx="5" fill="#0b1b2b"/>
+            <rect x="210" y="66" width="166" height="98" rx="14" fill="#ffffff" stroke="#0b1b2b" stroke-width="1.75"/>
+            <text x="228" y="90" fill="#0b1b2b" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="600">Clinical Standards</text>
+            <line x1="228" y1="99" x2="356" y2="99" stroke="#dfe6ee" stroke-width="1.2"/>
+            <path d="M228 124H254L263 108L274 138L284 117L292 124H356" stroke="#14b8a6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="234" cy="147" r="4" fill="#0e6fbe"/>
+            <text x="244" y="150" fill="#4b5e72" font-family="Inter, sans-serif" font-size="9.5" font-weight="600">Clinician-Led Governance</text>
+          </svg>
+        </div>
+        <div class="benchmark-row">
+          <div class="benchmark-pill"><strong>24 min</strong><span>Avg consult</span></div>
+          <div class="benchmark-pill"><strong>1:4</strong><span>ICU nurse ratio</span></div>
+          <div class="benchmark-pill"><strong>Annual</strong><span>CME &amp; fellowship</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Culture pillars -->
+<section class="section" id="culture">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="kicker">Life at Addis Medical</span>
+        <h2>Built so clinicians can focus on care.</h2>
+        <p>We designed our schedules, digital systems, and compensation so our teams do their best work without burnout.</p>
+      </div>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <div class="pillar__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>Protected clinical time</h3>
+        <p>24-minute average consultations and modern digital charting so clinicians focus on patients, not paperwork.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="pillar__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <h3>Continuous fellowship &amp; CME</h3>
+        <p>Annual continuing medical education stipend, Grand Rounds with senior consultants, and accredited specialty training.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="pillar__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        </div>
+        <h3>Transparent pay &amp; benefits</h3>
+        <p>Clear salary bands, comprehensive family health coverage at Addis Medical, relocation support, and structured shift rotations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Open roles -->
+<section class="section section--tint" id="open-roles">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="kicker">Open positions</span>
+        <h2>Current roles across our clinical teams.</h2>
+        <p>Filter by department, schedule, or keyword — and inspect full role briefs or apply directly online.</p>
+      </div>
+      <div class="role-count-badge" id="roleCountBadge" aria-live="polite">Showing 5 of 5 roles</div>
+    </div>
+
+    <div class="filter-toolbar reveal">
+      <div class="filter-top-row">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <input type="search" id="roleSearchInput" placeholder="Search by role title, specialty, or skill..." aria-label="Search open roles" />
+        </div>
+        <div class="schedule-group" role="group" aria-label="Filter by schedule">
+          <button type="button" class="sched-btn is-active" data-sched="All">All schedules</button>
+          <button type="button" class="sched-btn" data-sched="Full-time">Full-time</button>
+          <button type="button" class="sched-btn" data-sched="Part-time">Part-time</button>
+        </div>
+      </div>
+      <div class="dept-pills" role="group" aria-label="Filter by department" id="deptPills">
+        <button type="button" class="dept-pill is-active" data-dept="All">All Departments</button>
+        <button type="button" class="dept-pill" data-dept="Cardiology">Cardiology</button>
+        <button type="button" class="dept-pill" data-dept="Emergency">Emergency</button>
+        <button type="button" class="dept-pill" data-dept="Radiology &amp; Imaging">Radiology</button>
+        <button type="button" class="dept-pill" data-dept="Rehabilitation">Rehabilitation</button>
+        <button type="button" class="dept-pill" data-dept="Laboratory">Laboratory</button>
+      </div>
+    </div>
+
+    <div class="job-list" id="jobListContainer"></div>
+  </div>
+</section>
+
+<!-- How to apply -->
+<section class="section" id="how-to-apply">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="kicker">How to apply</span>
+        <h2>Clear steps. Respectful timelines.</h2>
+        <p>We review every application directly with department leads — no automated black holes.</p>
+      </div>
+      <button type="button" class="btn btn--primary" id="openGeneralApplyBtn">
+        Submit a general CV
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+
+    <div class="hiring-grid">
+      <div class="steps-timeline">
+        <div class="hiring-step reveal">
+          <span class="hiring-step__num">1</span>
+          <h3>Send your CV &amp; cover letter</h3>
+          <p>Submit online through our quick-application studio or email <a href="mailto:careers@addismedicalcenter.example">careers@addismedicalcenter.example</a>.</p>
+        </div>
+        <div class="hiring-step reveal">
+          <span class="hiring-step__num">2</span>
+          <h3>Include the role title</h3>
+          <p>Include the exact role title in the subject line so your credentials reach the right department chair immediately.</p>
+        </div>
+        <div class="hiring-step reveal">
+          <span class="hiring-step__num">3</span>
+          <h3>10-working-day response</h3>
+          <p>We respond to shortlisted candidates within 10 working days to schedule a clinical conversation and Bole Road campus tour.</p>
+        </div>
+        <div class="hiring-step reveal">
+          <span class="hiring-step__num">4</span>
+          <h3>Registration &amp; references</h3>
+          <p>All clinical roles require current professional registration and two verified clinical references prior to onboarding.</p>
+        </div>
+      </div>
+
+      <div class="credential-card reveal">
+        <h3>Credentialing checklist</h3>
+        <p class="sub">Have these items ready when applying for clinical or allied health roles:</p>
+        <ul class="checklist">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Updated Curriculum Vitae (CV) &amp; brief clinical cover letter</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Active Ethiopian Health Professionals / EFDA / MOH license</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Specialty board or degree certifications</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Contact details for two professional clinical referees</span></li>
+        </ul>
+        <div class="credential-card__foot">
+          Questions for HR? Write to <a href="mailto:careers@addismedicalcenter.example">careers@addismedicalcenter.example</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="container">
+  <div class="cta reveal">
+    <div class="cta__inner">
+      <div>
+        <h2>Don't see your exact specialty?</h2>
+        <p>We hire consultants, nurses, and allied health staff throughout the year. Share your CV with our clinical recruitment team for upcoming openings.</p>
+      </div>
+      <div class="cta__actions">
+        <button type="button" class="btn btn--light" id="ctaSpeculativeBtn">
+          Send a speculative CV
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+        <a href="mailto:careers@addismedicalcenter.example?subject=Speculative%20Application%20—%20Addis%20Medical%20Center" class="btn btn--accent">Email HR directly</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="logo"><span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span><span class="logo__text"><span class="logo__name">Addis Medical</span><span class="logo__sub">Center</span></span></a>
+        <p class="footer__about">Calm, clear care for Addis Ababa since 2008. Accredited, multilingual, and open 24/7 for emergencies.</p>
+        <div class="footer__contact">
+          <a href="tel:+251115550100"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>+251 11 555 0100</a>
+          <a href="mailto:info@addismedicalcenter.example"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>info@addismedicalcenter.example</a>
+        </div>
+      </div>
+      <div><h4>Care</h4><ul><li><a href="find-a-doctor.html">Find a doctor</a></li><li><a href="departments.html">Departments</a></li><li><a href="services.html">Services</a></li><li><a href="book.html">Book a visit</a></li><li><a href="emergency.html">Emergency</a></li></ul></div>
+      <div><h4>Patients</h4><ul><li><a href="patients-visitors.html">Visiting hours</a></li><li><a href="portal.html">Patient portal</a></li><li><a href="insurance.html">Insurance</a></li></ul></div>
+      <div><h4>Hospital</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About us</a></li><li><a href="projects.html">Projects</a></li><li><a href="job-opportunities.html" aria-current="page">Careers</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 Addis Medical Center. Not a substitute for medical advice.</span>
+      <span class="footer__emergency">Emergency? Call 907</span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" type="button" aria-label="Back to top" title="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
+</button>
+
+<!-- Modal: role brief + apply -->
+<div class="modal-backdrop" id="roleModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="roleModalTitle">
+  <div class="role-drawer">
+    <div class="role-drawer__head">
+      <div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.35rem;align-items:center;" id="modalBadges"></div>
+        <h2 id="roleModalTitle">Consultant Cardiologist</h2>
+      </div>
+      <button type="button" class="drawer__close" id="closeRoleModal" aria-label="Close role dialog">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <div class="role-drawer__tabs" role="tablist">
+      <button type="button" class="drawer-tab is-active" id="tabRoleBrief" role="tab" aria-selected="true">Role Brief</button>
+      <button type="button" class="drawer-tab" id="tabQuickApply" role="tab" aria-selected="false">Apply Now</button>
+    </div>
+
+    <div class="role-drawer__body">
+      <div id="panelRoleBrief">
+        <div class="brief-meta-grid" id="briefMetaGrid"></div>
+        <div class="brief-section"><h4>Role Overview</h4><p id="briefOverview"></p></div>
+        <div class="brief-section"><h4>Responsibilities</h4><ul class="brief-list" id="briefResponsibilities"></ul></div>
+        <div class="brief-section"><h4>Qualifications &amp; Registration</h4><ul class="brief-list" id="briefQualifications"></ul></div>
+        <div class="brief-section"><h4>Compensation &amp; Benefits</h4><ul class="brief-list" id="briefBenefits"></ul></div>
+        <div class="brief-actions">
+          <button type="button" class="btn btn--primary" id="switchToApplyBtn">Apply for this role now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+          <a href="#" id="briefMailtoFallback" class="btn btn--ghost">Apply by email</a>
+        </div>
+      </div>
+
+      <div id="panelQuickApply" style="display:none;">
+        <form id="careerApplyForm">
+          <div class="form-group">
+            <label for="appRoleSelect">Position applying for</label>
+            <select id="appRoleSelect"></select>
+          </div>
+          <div class="form-group">
+            <label for="appFullName">Full name *</label>
+            <input type="text" id="appFullName" placeholder="e.g., Dr. Meron Bekele" required />
+          </div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="appEmail">Email *</label>
+              <input type="email" id="appEmail" placeholder="you@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="appPhone">Mobile phone *</label>
+              <div class="phone-wrap">
+                <span>+251</span>
+                <input type="tel" id="appPhone" placeholder="911 234 567" required />
+              </div>
+            </div>
+          </div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="appLicense">License / Reg. No. *</label>
+              <input type="text" id="appLicense" placeholder="e.g., EFDA / MOH-2024-8841" required />
+            </div>
+            <div class="form-group">
+              <label for="appExperience">Clinical experience *</label>
+              <select id="appExperience" required>
+                <option value="1–2 years">1–2 years</option>
+                <option value="3–5 years" selected>3–5 years</option>
+                <option value="6–10 years">6–10 years</option>
+                <option value="10+ years">10+ years</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="appCvInput">Attach CV (PDF, DOC, DOCX)</label>
+            <div class="dropzone" id="cvDropzone" tabindex="0" role="button" aria-label="Upload CV file">
+              <strong>Click to select or drag &amp; drop your CV</strong>
+              <span>Max 10 MB · PDF or Word document</span>
+              <div class="file-chip" id="cvFileChip" style="display:none;"></div>
+            </div>
+            <input type="file" id="appCvInput" accept=".pdf,.doc,.docx" style="display:none;" />
+          </div>
+          <div class="form-group">
+            <label for="appCoverNote">Short cover note *</label>
+            <textarea id="appCoverNote" rows="3" placeholder="Tell us briefly about your clinical background and why Addis Medical Center's calm, patient-first approach resonates with you." required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary" style="width:100%;">Submit application <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+        </form>
+
+        <div class="app-receipt" id="appReceipt" style="display:none;">
+          <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--em-800);margin-bottom:0.35rem;">● Application Logged</div>
+          <h3>Thank you, <span id="receiptName">Applicant</span>.</h3>
+          <p>Your application for <strong id="receiptRole">Role</strong> has been recorded. Our clinical recruitment team responds to shortlisted candidates within <strong>10 working days</strong>.</p>
+          <div class="ref-pill" id="receiptRef">HR-000000</div>
+          <p style="margin-top:0.85rem;font-size:0.82rem;">Want to send your CV directly via your mail client as well?</p>
+          <div class="app-receipt__actions">
+            <a href="#" id="receiptMailtoLink" class="btn btn--primary">Open pre-filled email</a>
+            <button type="button" class="btn btn--ghost" id="resetApplyFormBtn">Submit another</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+  'use strict';
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+  /* Scroll progress + sticky header + back to top */
+  const hdr = $('#hdr');
+  const progress = $('#scrollProgress');
+  const backTop = $('#backTop');
+  const updateScroll = () => {
+    const y = window.scrollY;
+    hdr?.classList.toggle('is-scrolled', y > 8);
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = max > 0 ? Math.min(100, Math.max(0, (y / max) * 100)) : 0;
+    if (progress) progress.style.width = pct + '%';
+    backTop?.classList.toggle('is-visible', y > 480);
+  };
+  window.addEventListener('scroll', updateScroll, { passive: true });
+  updateScroll();
+  backTop?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  });
+
+  /* Mobile drawer */
+  const drawer = $('#drawer');
+  const burger = $('#burger');
+  const drawerClose = $('#drawerClose');
+  const openDrawer = () => {
+    if (!drawer || !burger) return;
+    drawer.classList.add('is-open');
+    drawer.setAttribute('aria-hidden', 'false');
+    burger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    $('a', drawer)?.focus({ preventScroll: true });
+  };
+  const closeDrawer = () => {
+    if (!drawer || !burger) return;
+    drawer.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden', 'true');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    burger.focus({ preventScroll: true });
+  };
+  burger?.addEventListener('click', () => {
+    burger.getAttribute('aria-expanded') === 'true' ? closeDrawer() : openDrawer();
+  });
+  drawerClose?.addEventListener('click', closeDrawer);
+  drawer?.addEventListener('click', e => { if (e.target === drawer) closeDrawer(); });
+  $$('.drawer__nav a, .drawer__cta a', drawer || document).forEach(link => {
+    link.addEventListener('click', () => {
+      drawer?.classList.remove('is-open');
+      drawer?.setAttribute('aria-hidden', 'true');
+      burger?.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && drawer?.classList.contains('is-open')) closeDrawer();
+  });
+
+  /* Reveal */
+  const revealItems = $$('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealItems.forEach(el => io.observe(el));
+  } else {
+    revealItems.forEach(el => el.classList.add('is-in'));
+  }
+
+  /* ==========================================================
+     Open roles dataset
+     ========================================================== */
+  const ROLES = [
+    {
+      id: "consultant-cardiologist",
+      title: "Consultant Cardiologist",
+      department: "Cardiology",
+      schedule: "Full-time",
+      location: "Bole Road Campus · Wing A",
+      reportsTo: "Chief of Internal Medicine & Cardiology",
+      mailtoSubject: "Application: Consultant Cardiologist",
+      summary: "Lead outpatient preventive cardiology clinics, echocardiography diagnostics, and inpatient cardiac consultations with unhurried 24-minute patient slots.",
+      overview: "We are seeking a board-certified Consultant Cardiologist to join our multidisciplinary cardiovascular team on Bole Road. You will deliver evidence-based outpatient and inpatient cardiac care, collaborate with our same-day CT/MRI imaging unit, and mentor junior physicians during weekly Grand Rounds.",
+      responsibilities: [
+        "Conduct scheduled outpatient cardiology consultations with dedicated 24-minute appointment blocks.",
+        "Perform and interpret resting ECGs, Holter monitoring, exercise stress tests, and transthoracic echocardiograms.",
+        "Provide timely inpatient cardiology consults and coordinate acute chest-pain pathways with the 24/7 Emergency Department.",
+        "Contribute to Addis Medical's annual published clinical quality and cardiovascular outcomes audit."
+      ],
+      qualifications: [
+        "Doctor of Medicine (MD) with recognized postgraduate specialization / fellowship in Cardiology.",
+        "Current, active specialist registration and license to practice in Ethiopia (EFDA / Ministry of Health).",
+        "Minimum 3 years of post-specialization clinical practice in acute and preventive cardiology.",
+        "Fluency in Amharic and English; additional Ethiopian or international languages valued."
+      ],
+      benefits: [
+        "Transparent senior consultant salary band plus annual clinical quality bonus.",
+        "Dedicated annual CME & international cardiology conference stipend.",
+        "Comprehensive inpatient and outpatient family medical coverage at Addis Medical Center.",
+        "Structured on-call rota with protected post-call recovery time."
+      ]
+    },
+    {
+      id: "registered-nurse-emergency",
+      title: "Registered Nurse — Emergency",
+      department: "Emergency",
+      schedule: "Full-time",
+      location: "Bole Road Campus · 24/7 Emergency Wing",
+      reportsTo: "Emergency Department Nurse Manager",
+      mailtoSubject: "Application: Registered Nurse",
+      summary: "Deliver rapid triage, resuscitation support, and calm bedside communication in our 24/7 Emergency Department with protected nurse-to-patient ratios.",
+      overview: "Our 24/7 Emergency Department is known across Addis Ababa for calm, rapid triage and transparent wait-time communication. As an Emergency Registered Nurse, you will assess incoming acute patients, administer emergency interventions, and support families with clarity and empathy.",
+      responsibilities: [
+        "Perform rapid structured triage and continuous vital-sign monitoring for adult and pediatric emergency arrivals.",
+        "Collaborate directly with Emergency Medicine consultants during trauma, cardiac, and acute medical stabilization.",
+        "Maintain accurate, real-time electronic charting and medication administration records.",
+        "Coordinate seamless patient handoffs to inpatient wards, ICU, or the same-day imaging suite."
+      ],
+      qualifications: [
+        "BSc in Nursing from an accredited institution with valid Ethiopian professional nursing license.",
+        "At least 2 years of clinical nursing experience in Emergency, ICU, or high-acuity acute care.",
+        "Current BLS and ACLS certification (or readiness to complete recertification during onboarding).",
+        "Calm communication under pressure in Amharic and English."
+      ],
+      benefits: [
+        "Protected shift rotations (12-hour shifts with guaranteed consecutive rest days).",
+        "Competitive base salary plus night-shift and emergency acuity allowances.",
+        "Paid ACLS/PALS certification renewal and emergency nursing workshops.",
+        "Full family medical coverage and meal allowance during duty shifts."
+      ]
+    },
+    {
+      id: "radiographer",
+      title: "Radiographer",
+      department: "Radiology & Imaging",
+      schedule: "Full-time",
+      location: "Bole Road Campus · Ground Floor Imaging Centre",
+      reportsTo: "Lead Consultant Radiologist",
+      mailtoSubject: "Application: Radiographer",
+      summary: "Operate multi-slice CT, high-field MRI, and digital X-ray systems in our same-day diagnostic imaging centre.",
+      overview: "Opened in 2019, Addis Medical's Imaging Centre delivers same-day diagnostic reporting for most CT, MRI, and ultrasound studies. You will ensure high-precision image acquisition, strict radiation safety, and a reassuring patient experience from arrival to scan completion.",
+      responsibilities: [
+        "Perform high-resolution CT, MRI, fluoroscopy, and digital radiography examinations according to clinical protocols.",
+        "Prepare and position patients safely, explaining procedures clearly to reduce scan anxiety.",
+        "Enforce ALARA radiation protection standards, contrast safety screening, and daily equipment QA checks.",
+        "Work closely with consultant radiologists to prioritize urgent emergency and inpatient scans."
+      ],
+      qualifications: [
+        "BSc in Medical Radiologic Technology / Radiography from an accredited university.",
+        "Valid active license from the Ethiopian Food and Drug Authority (EFDA) / Health Regulatory Body.",
+        "Hands-on experience operating CT and/or MRI scanners alongside PACS/RIS workflows.",
+        "Strong patient-care skills and attention to diagnostic image quality."
+      ],
+      benefits: [
+        "Competitive allied-health salary scale with annual step progression.",
+        "Dosimetry monitoring, protective equipment, and radiation safety leave provisions.",
+        "Annual technical training stipend and family healthcare coverage at Addis Medical.",
+        "Predictable day and evening shift scheduling."
+      ]
+    },
+    {
+      id: "physiotherapist",
+      title: "Physiotherapist",
+      department: "Rehabilitation",
+      schedule: "Part-time",
+      location: "Bole Road Campus · Wing C Rehab Suite",
+      reportsTo: "Head of Orthopedics & Rehabilitation",
+      mailtoSubject: "Application: Physiotherapist",
+      summary: "Guide post-operative orthopedic, neurological, and sports-injury patients through individualized functional recovery plans.",
+      overview: "Working alongside our orthopedic surgeons and internal medicine consultants, our Rehabilitation team helps patients regain strength, mobility, and confidence. This part-time role offers flexible morning or afternoon clinic sessions tailored to individualized one-on-one therapy.",
+      responsibilities: [
+        "Conduct comprehensive musculoskeletal and functional mobility assessments for outpatients and post-op inpatients.",
+        "Design and progress evidence-based manual therapy, exercise rehabilitation, and pain-management programs.",
+        "Educate patients and caregivers on home exercise plans and ergonomic injury prevention.",
+        "Document functional outcome milestones in the shared patient portal record."
+      ],
+      qualifications: [
+        "BSc or MSc in Physiotherapy from a recognized institution.",
+        "Current active clinical registration and license to practice in Ethiopia.",
+        "Minimum 2 years of experience in outpatient orthopedic, sports, or post-surgical rehabilitation.",
+        "Empathetic coaching style and clear communication in Amharic and English."
+      ],
+      benefits: [
+        "Flexible part-time schedule (20–24 hours/week across agreed clinic days).",
+        "Pro-rata competitive remuneration plus continuing education allowance.",
+        "Access to modern rehabilitation gym and hydro/electrotherapy modalities.",
+        "Outpatient healthcare benefits at Addis Medical Center."
+      ]
+    },
+    {
+      id: "laboratory-technician",
+      title: "Laboratory Technician",
+      department: "Laboratory",
+      schedule: "Full-time",
+      location: "Bole Road Campus · Diagnostics Lab",
+      reportsTo: "Laboratory Director & Clinical Pathologist",
+      mailtoSubject: "Application: Lab Technician",
+      summary: "Execute automated hematology, clinical chemistry, microbiology, and immunoassays with strict ISO-aligned quality control.",
+      overview: "Addis Medical's Clinical Laboratory underpins rapid outpatient diagnoses, preventive health panels, and 24/7 emergency care. We are looking for a detail-oriented Laboratory Technician committed to analytical accuracy, rapid turnaround times, and rigorous biosafety.",
+      responsibilities: [
+        "Perform specimen collection, accessioning, and analysis across hematology, clinical chemistry, serology, and urinalysis.",
+        "Run daily internal quality controls, analyzer calibrations, and preventative maintenance logs.",
+        "Flag critical panic values immediately to ordering physicians and emergency clinicians.",
+        "Maintain strict biosafety, infection-control, and cold-chain reagent inventory standards."
+      ],
+      qualifications: [
+        "BSc or Diploma in Medical Laboratory Technology from an accredited college or university.",
+        "Current active professional license to practice in Ethiopia.",
+        "Experience with automated chemistry/hematology analyzers and Laboratory Information Systems (LIS).",
+        "Demonstrated commitment to quality assurance and sample integrity."
+      ],
+      benefits: [
+        "Competitive full-time salary with shift differentials and annual performance review.",
+        "Comprehensive family health coverage at Addis Medical Center.",
+        "Annual laboratory quality & biosafety training sponsorship.",
+        "Structured rotational roster with clear weekend and holiday coverage."
+      ]
+    }
+  ];
+
+  /* ==========================================================
+     Render roles
+     ========================================================== */
+  const filterState = { search: "", department: "All", schedule: "All" };
+  const jobListContainer = $('#jobListContainer');
+  const roleCountBadge = $('#roleCountBadge');
+  const roleSearchInput = $('#roleSearchInput');
+  const deptPills = $('#deptPills');
+  const schedButtons = $$('.sched-btn');
+
+  function escapeHtml(str) {
+    return String(str).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+
+  function renderRoles() {
+    const query = filterState.search.trim().toLowerCase();
+    const filtered = ROLES.filter(role => {
+      const matchDept = filterState.department === 'All' || role.department === filterState.department;
+      const matchSched = filterState.schedule === 'All' || role.schedule === filterState.schedule;
+      const matchQuery = !query ||
+        role.title.toLowerCase().includes(query) ||
+        role.department.toLowerCase().includes(query) ||
+        role.summary.toLowerCase().includes(query) ||
+        role.qualifications.some(q => q.toLowerCase().includes(query));
+      return matchDept && matchSched && matchQuery;
+    });
+
+    roleCountBadge.textContent = `Showing ${filtered.length} of ${ROLES.length} roles`;
+
+    if (filtered.length === 0) {
+      jobListContainer.innerHTML = `
+        <div class="empty-state">
+          <h3>No matching roles found</h3>
+          <p>Try clearing your filters, or submit a speculative CV so we can reach out when a matching role opens.</p>
+          <div class="empty-state__actions">
+            <button type="button" class="btn btn--ghost" id="clearFiltersBtn">Reset filters</button>
+            <button type="button" class="btn btn--primary" id="emptyApplyBtn">Submit speculative CV</button>
+          </div>
+        </div>`;
+      $('#clearFiltersBtn')?.addEventListener('click', () => {
+        filterState.search = '';
+        filterState.department = 'All';
+        filterState.schedule = 'All';
+        roleSearchInput.value = '';
+        deptPills.querySelectorAll('.dept-pill').forEach(b => b.classList.toggle('is-active', b.dataset.dept === 'All'));
+        schedButtons.forEach(b => b.classList.toggle('is-active', b.dataset.sched === 'All'));
+        renderRoles();
+      });
+      $('#emptyApplyBtn')?.addEventListener('click', () => openRoleModal('speculative', 'apply'));
+      return;
+    }
+
+    jobListContainer.innerHTML = filtered.map(role => `
+      <article class="job-card">
+        <div class="job-card__main">
+          <div class="job-card__badges">
+            <span class="badge-dept">${escapeHtml(role.department)}</span>
+            <span class="badge-sched">${escapeHtml(role.schedule)}</span>
+            <span class="badge-loc">${escapeHtml(role.location)}</span>
+          </div>
+          <h3>${escapeHtml(role.title)}</h3>
+          <p class="job-card__summary">${escapeHtml(role.summary)}</p>
+          <div class="job-card__meta">
+            <span>Reports to: ${escapeHtml(role.reportsTo)}</span>
+            <span>• Active license required</span>
+          </div>
+        </div>
+        <div class="job-card__actions">
+          <button type="button" class="btn btn--ghost btn--sm" data-brief-id="${role.id}">View brief</button>
+          <button type="button" class="btn btn--primary btn--sm" data-apply-id="${role.id}">Apply now</button>
+        </div>
+      </article>
+    `).join('');
+
+    jobListContainer.querySelectorAll('[data-brief-id]').forEach(btn => {
+      btn.addEventListener('click', () => openRoleModal(btn.dataset.briefId, 'brief'));
+    });
+    jobListContainer.querySelectorAll('[data-apply-id]').forEach(btn => {
+      btn.addEventListener('click', () => openRoleModal(btn.dataset.applyId, 'apply'));
+    });
+  }
+
+  roleSearchInput?.addEventListener('input', e => {
+    filterState.search = e.target.value;
+    renderRoles();
+  });
+  deptPills?.querySelectorAll('.dept-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      filterState.department = pill.dataset.dept;
+      deptPills.querySelectorAll('.dept-pill').forEach(p => p.classList.remove('is-active'));
+      pill.classList.add('is-active');
+      renderRoles();
+    });
+  });
+  schedButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterState.schedule = btn.dataset.sched;
+      schedButtons.forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      renderRoles();
+    });
+  });
+
+  renderRoles();
+
+  /* ==========================================================
+     Modal: role brief + quick apply
+     ========================================================== */
+  const roleModal = $('#roleModal');
+  const closeRoleModalBtn = $('#closeRoleModal');
+  const roleModalTitle = $('#roleModalTitle');
+  const modalBadges = $('#modalBadges');
+  const tabRoleBrief = $('#tabRoleBrief');
+  const tabQuickApply = $('#tabQuickApply');
+  const panelRoleBrief = $('#panelRoleBrief');
+  const panelQuickApply = $('#panelQuickApply');
+  const switchToApplyBtn = $('#switchToApplyBtn');
+  const briefMailtoFallback = $('#briefMailtoFallback');
+
+  const appRoleSelect = $('#appRoleSelect');
+  const careerApplyForm = $('#careerApplyForm');
+  const appReceipt = $('#appReceipt');
+  const cvDropzone = $('#cvDropzone');
+  const appCvInput = $('#appCvInput');
+  const cvFileChip = $('#cvFileChip');
+
+  let currentModalRoleId = ROLES[0].id;
+  let attachedFileName = '';
+
+  function populateRoleSelect() {
+    if (!appRoleSelect) return;
+    appRoleSelect.innerHTML = [
+      ...ROLES.map(r => `<option value="${r.id}">${escapeHtml(r.title)} (${escapeHtml(r.department)} · ${escapeHtml(r.schedule)})</option>`),
+      `<option value="speculative">General / Speculative Clinical Application</option>`
+    ].join('');
+  }
+  populateRoleSelect();
+
+  function switchDrawerTab(tab) {
+    const isBrief = tab === 'brief';
+    tabRoleBrief?.classList.toggle('is-active', isBrief);
+    tabRoleBrief?.setAttribute('aria-selected', String(isBrief));
+    tabQuickApply?.classList.toggle('is-active', !isBrief);
+    tabQuickApply?.setAttribute('aria-selected', String(!isBrief));
+    if (panelRoleBrief) panelRoleBrief.style.display = isBrief ? 'block' : 'none';
+    if (panelQuickApply) panelQuickApply.style.display = isBrief ? 'none' : 'block';
+  }
+
+  function populateBriefContent(role) {
+    if (!role) return;
+    roleModalTitle.textContent = role.title;
+    modalBadges.innerHTML = `
+      <span class="badge-dept">${escapeHtml(role.department)}</span>
+      <span class="badge-sched">${escapeHtml(role.schedule)}</span>
+    `;
+    $('#briefMetaGrid').innerHTML = `
+      <div class="brief-meta-box"><span>Location</span><strong>${escapeHtml(role.location)}</strong></div>
+      <div class="brief-meta-box"><span>Reports to</span><strong>${escapeHtml(role.reportsTo)}</strong></div>
+    `;
+    $('#briefOverview').textContent = role.overview;
+    $('#briefResponsibilities').innerHTML = role.responsibilities.map(item => `<li>${escapeHtml(item)}</li>`).join('');
+    $('#briefQualifications').innerHTML = role.qualifications.map(item => `<li>${escapeHtml(item)}</li>`).join('');
+    $('#briefBenefits').innerHTML = role.benefits.map(item => `<li>${escapeHtml(item)}</li>`).join('');
+    if (briefMailtoFallback) {
+      briefMailtoFallback.href = `mailto:careers@addismedicalcenter.example?subject=${encodeURIComponent(role.mailtoSubject)}`;
+    }
+  }
+
+  function openRoleModal(roleId = ROLES[0].id, initialTab = 'brief') {
+    currentModalRoleId = roleId;
+    if (appReceipt) appReceipt.style.display = 'none';
+    if (careerApplyForm) careerApplyForm.style.display = 'block';
+
+    if (roleId === 'speculative') {
+      roleModalTitle.textContent = 'General / Speculative Application';
+      modalBadges.innerHTML = `
+        <span class="badge-dept">All Departments</span>
+        <span class="badge-sched">Year-Round Talent Pool</span>
+      `;
+      if (appRoleSelect) appRoleSelect.value = 'speculative';
+      if (tabRoleBrief) tabRoleBrief.style.display = 'none';
+      switchDrawerTab('apply');
+    } else {
+      const role = ROLES.find(r => r.id === roleId) || ROLES[0];
+      if (tabRoleBrief) tabRoleBrief.style.display = 'inline-block';
+      populateBriefContent(role);
+      if (appRoleSelect) appRoleSelect.value = role.id;
+      switchDrawerTab(initialTab);
+    }
+
+    roleModal.classList.add('is-open');
+    roleModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    $('.drawer__close', roleModal)?.focus({ preventScroll: true });
+  }
+
+  function closeRoleModal() {
+    if (!roleModal) return;
+    roleModal.classList.remove('is-open');
+    roleModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  closeRoleModalBtn?.addEventListener('click', closeRoleModal);
+  roleModal?.addEventListener('click', e => { if (e.target === roleModal) closeRoleModal(); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && roleModal?.classList.contains('is-open')) closeRoleModal();
+  });
+
+  tabRoleBrief?.addEventListener('click', () => switchDrawerTab('brief'));
+  tabQuickApply?.addEventListener('click', () => switchDrawerTab('apply'));
+  switchToApplyBtn?.addEventListener('click', () => switchDrawerTab('apply'));
+
+  appRoleSelect?.addEventListener('change', e => {
+    const val = e.target.value;
+    if (val === 'speculative') {
+      roleModalTitle.textContent = 'General / Speculative Application';
+      modalBadges.innerHTML = `<span class="badge-dept">All Departments</span><span class="badge-sched">Year-Round Talent Pool</span>`;
+      if (tabRoleBrief) tabRoleBrief.style.display = 'none';
+    } else {
+      const role = ROLES.find(r => r.id === val);
+      if (role) {
+        if (tabRoleBrief) tabRoleBrief.style.display = 'inline-block';
+        populateBriefContent(role);
+      }
+    }
+  });
+
+  /* File dropzone */
+  function handleFileSelection(file) {
+    if (!file) return;
+    const sizeKB = Math.max(1, Math.round(file.size / 1024));
+    const sizeLabel = sizeKB > 1024 ? `${(sizeKB / 1024).toFixed(1)} MB` : `${sizeKB} KB`;
+    attachedFileName = `${file.name} (${sizeLabel})`;
+    if (cvFileChip) {
+      cvFileChip.textContent = `✓ ${attachedFileName}`;
+      cvFileChip.style.display = 'inline-flex';
+    }
+  }
+  cvDropzone?.addEventListener('click', () => appCvInput?.click());
+  cvDropzone?.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); appCvInput?.click(); }
+  });
+  appCvInput?.addEventListener('change', e => {
+    if (e.target.files && e.target.files[0]) handleFileSelection(e.target.files[0]);
+  });
+  cvDropzone?.addEventListener('dragover', e => {
+    e.preventDefault();
+    cvDropzone.classList.add('is-dragover');
+  });
+  cvDropzone?.addEventListener('dragleave', () => cvDropzone.classList.remove('is-dragover'));
+  cvDropzone?.addEventListener('drop', e => {
+    e.preventDefault();
+    cvDropzone.classList.remove('is-dragover');
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) handleFileSelection(e.dataTransfer.files[0]);
+  });
+
+  /* Application submit */
+  careerApplyForm?.addEventListener('submit', e => {
+    e.preventDefault();
+    const selectedVal = appRoleSelect.value;
+    const roleObj = ROLES.find(r => r.id === selectedVal);
+    const roleTitle = roleObj ? roleObj.title : 'General Clinical Role';
+    const subjectTitle = roleObj ? roleObj.mailtoSubject : 'Application: General Clinical Role';
+
+    const fullName = $('#appFullName').value.trim();
+    const email = $('#appEmail').value.trim();
+    const phone = $('#appPhone').value.trim();
+    const license = $('#appLicense').value.trim();
+    const exp = $('#appExperience').value;
+    const note = $('#appCoverNote').value.trim();
+    const refCode = 'HR-' + Math.random().toString(36).slice(2, 8).toUpperCase();
+
+    $('#receiptName').textContent = fullName;
+    $('#receiptRole').textContent = roleTitle;
+    $('#receiptRef').textContent = refCode;
+
+    const emailBody = [
+      `Reference: ${refCode}`,
+      `Position: ${roleTitle}`,
+      `Full Name: ${fullName}`,
+      `Email: ${email}`,
+      `Phone: +251 ${phone}`,
+      `Registration / License No.: ${license}`,
+      `Clinical Experience: ${exp}`,
+      attachedFileName ? `CV File Selected: ${attachedFileName}` : '',
+      `\nCover Note:\n${note}`
+    ].filter(Boolean).join('\n');
+
+    $('#receiptMailtoLink').href =
+      `mailto:careers@addismedicalcenter.example?subject=${encodeURIComponent(subjectTitle)}&body=${encodeURIComponent(emailBody)}`;
+
+    careerApplyForm.style.display = 'none';
+    appReceipt.style.display = 'block';
+    appReceipt.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  $('#resetApplyFormBtn')?.addEventListener('click', () => {
+    careerApplyForm.reset();
+    attachedFileName = '';
+    if (cvFileChip) cvFileChip.style.display = 'none';
+    appReceipt.style.display = 'none';
+    careerApplyForm.style.display = 'block';
+  });
+
+  /* General triggers */
+  $('#openGeneralApplyBtn')?.addEventListener('click', () => openRoleModal('speculative', 'apply'));
+  $('#ctaSpeculativeBtn')?.addEventListener('click', () => openRoleModal('speculative', 'apply'));
+})();
+</script>
+</body>
+</html>
