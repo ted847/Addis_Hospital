@@ -46,8 +46,8 @@ a,button{-webkit-tap-highlight-color:transparent}
 .hdr.is-scrolled{border-color:var(--gray-200);box-shadow:0 4px 20px -8px rgba(11,27,43,.08);background:rgba(255,255,255,.96)}
 .hdr__inner{display:flex;align-items:center;justify-content:space-between;padding-block:.875rem;gap:1rem}
 .logo{display:flex;align-items:center;gap:.625rem;flex-shrink:0}
-.logo__mark{width:2.5rem;height:2.5rem;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),var(--brand-2));border-radius:.875rem;color:#fff;box-shadow:0 8px 20px -8px rgba(14,111,190,.5);position:relative;isolation:isolate;overflow:hidden;flex-shrink:0}
-.logo__mark svg{width:1.25rem;height:1.25rem}
+.logo__mark{width:2.8rem;height:2.8rem;display:grid;place-items:center;background:linear-gradient(145deg,#1188d5 0%,#07518f 100%);border-radius:1rem;color:#fff;box-shadow:0 9px 22px -8px rgba(14,111,190,.55);position:relative;isolation:isolate;overflow:hidden;flex-shrink:0;border:1px solid rgba(255,255,255,.55)}
+.logo__mark svg{width:2rem;height:2rem;display:block}
 .logo__text{display:flex;flex-direction:column;line-height:1.1}
 .logo__name{font-family:var(--font-serif);font-weight:600;font-size:1.125rem;letter-spacing:-.01em;color:var(--ink)}
 .logo__sub{font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500);font-weight:500}
@@ -71,6 +71,17 @@ a,button{-webkit-tap-highlight-color:transparent}
 .hdr .btn--primary{padding:.625rem 1rem;font-size:.8125rem}
 .burger{display:grid;place-items:center;width:2.5rem;height:2.5rem;border-radius:.75rem;border:1px solid var(--gray-200);background:#fff;flex-shrink:0}
 .burger svg{width:1.125rem;height:1.125rem;stroke:var(--ink)}
+@media(max-width:420px){
+  .hdr__inner{gap:.45rem;padding-block:.65rem}
+  .logo{gap:.45rem;min-width:0}
+  .logo__mark{width:2.35rem;height:2.35rem;border-radius:.72rem}
+  .logo__mark svg{width:1.7rem;height:1.7rem}
+  .logo__name{font-size:1rem;white-space:nowrap}
+  .logo__sub{font-size:.58rem;letter-spacing:.11em}
+  .hdr .btn--primary{padding:.55rem .7rem;font-size:.72rem}
+  .lang-switch{gap:.1rem}
+  .lang-switch__btn{padding:.3rem .42rem}
+}
 @media(min-width:960px){.nav{display:flex}.burger{display:none}}
 
 /* LANGUAGE SWITCHER */
@@ -392,8 +403,8 @@ a,button{-webkit-tap-highlight-color:transparent}
 .hdr__inner{padding-block:.7rem;gap:.5rem}
 .logo__name{font-size:1rem}
 .logo__sub{font-size:.6rem}
-.logo__mark{width:2.25rem;height:2.25rem;border-radius:.75rem}
-.logo__mark svg{width:1.1rem;height:1.1rem}
+.logo__mark{width:2.55rem;height:2.55rem;border-radius:.85rem}
+.logo__mark svg{width:1.85rem;height:1.85rem}
 .hero h1{max-width:100%}
 .hero__trust{gap:.65rem}
 .hero__trust-text{font-size:.78rem}
@@ -426,7 +437,7 @@ a,button{-webkit-tap-highlight-color:transparent}
 <header class="hdr" id="hdr">
 <div class="container hdr__inner">
 <a href="index.html" class="logo">
-<span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span>
+<span class="logo__mark"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M9 42V12.5C9 10.57 10.57 9 12.5 9H35.5C37.43 9 39 10.57 39 12.5V42" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/><path d="M5 42H43" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/><path d="M24 3V17M17 10H31" stroke="#BFF7EF" stroke-width="3.6" stroke-linecap="round"/><path d="M16 23H20M28 23H32M16 30H20M28 30H32" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/><path d="M21 42V35.5C21 33.57 22.57 32 24.5 32C26.43 32 28 33.57 28 35.5V42" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/></svg></span>
 <span class="logo__text"><span class="logo__name" data-i18n="brand_name">Addis Medical</span><span class="logo__sub" data-i18n="brand_sub">Center</span></span>
 </a>
 <nav class="nav">
@@ -452,7 +463,7 @@ a,button{-webkit-tap-highlight-color:transparent}
 <div class="drawer" id="drawer" aria-hidden="true">
 <div class="drawer__panel">
 <div class="drawer__head">
-<a href="index.html" class="logo"><span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span><span class="logo__text"><span class="logo__name" data-i18n="brand_name">Addis Medical</span><span class="logo__sub" data-i18n="brand_sub">Center</span></span></a>
+<a href="index.html" class="logo"><span class="logo__mark"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M9 42V12.5C9 10.57 10.57 9 12.5 9H35.5C37.43 9 39 10.57 39 12.5V42" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/><path d="M5 42H43" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/><path d="M24 3V17M17 10H31" stroke="#BFF7EF" stroke-width="3.6" stroke-linecap="round"/><path d="M16 23H20M28 23H32M16 30H20M28 30H32" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/><path d="M21 42V35.5C21 33.57 22.57 32 24.5 32C26.43 32 28 33.57 28 35.5V42" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/></svg></span><span class="logo__text"><span class="logo__name" data-i18n="brand_name">Addis Medical</span><span class="logo__sub" data-i18n="brand_sub">Center</span></span></a>
 <button class="drawer__close" id="drawerClose" aria-label="Close"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
 </div>
 <div class="drawer__lang">
@@ -690,7 +701,7 @@ a,button{-webkit-tap-highlight-color:transparent}
 <div class="container footer__inner">
 <div class="footer__grid">
 <div class="footer__brand">
-<a href="index.html" class="logo"><span class="logo__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span><span class="logo__text"><span class="logo__name" data-i18n="brand_name">Addis Medical</span><span class="logo__sub" data-i18n="brand_sub">Center</span></span></a>
+<a href="index.html" class="logo"><span class="logo__mark"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M9 42V12.5C9 10.57 10.57 9 12.5 9H35.5C37.43 9 39 10.57 39 12.5V42" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/><path d="M5 42H43" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/><path d="M24 3V17M17 10H31" stroke="#BFF7EF" stroke-width="3.6" stroke-linecap="round"/><path d="M16 23H20M28 23H32M16 30H20M28 30H32" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/><path d="M21 42V35.5C21 33.57 22.57 32 24.5 32C26.43 32 28 33.57 28 35.5V42" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/></svg></span><span class="logo__text"><span class="logo__name" data-i18n="brand_name">Addis Medical</span><span class="logo__sub" data-i18n="brand_sub">Center</span></span></a>
 <p class="footer__about" data-i18n="footer_about">Calm, clear care for Addis Ababa since 2008. Accredited, multilingual, and open 24/7 for emergencies.</p>
 <div class="footer__contact">
 <a href="tel:+251115550100"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>+251 11 555 0100</a>
