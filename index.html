@@ -224,6 +224,20 @@ a,button{-webkit-tap-highlight-color:transparent}
 .dept:hover .dept__arrow{background:var(--accent);transform:rotate(-45deg)}
 @media(min-width:1024px){.dept__arrow{top:1rem;right:1rem;width:2rem;height:2rem}.dept__arrow svg{width:.875rem;height:.875rem}}
 
+
+/* SPECIALTY VISUALS — image-free hospital-inspired illustrations */
+.dept{background:#0b3550}
+.dept__visual{position:absolute;inset:0;z-index:-2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;overflow:hidden;padding:1rem;text-align:center}
+.dept__visual::before,.dept__visual::after{content:"";position:absolute;border:1px solid rgba(255,255,255,.18);border-radius:50%;width:15rem;height:15rem}
+.dept__visual::after{width:21rem;height:21rem;border-color:rgba(255,255,255,.1)}
+.dept__symbol{display:grid;place-items:center;width:clamp(5rem,11vw,8rem);height:clamp(5rem,11vw,8rem);border-radius:2rem;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28);box-shadow:0 18px 45px rgba(0,0,0,.16);font-family:Georgia,serif;font-size:clamp(3.5rem,8vw,5.5rem);line-height:1;color:#fff;text-shadow:0 5px 20px rgba(0,0,0,.2);backdrop-filter:blur(8px)}
+.dept__visual-caption{font-size:.58rem;letter-spacing:.16em;font-weight:700;color:rgba(255,255,255,.84);position:relative;z-index:1}
+.dept--cardiology .dept__visual{background:radial-gradient(circle at 50% 38%,rgba(255,255,255,.2),transparent 35%),linear-gradient(145deg,#b64f62,#5d1f3a 75%)}
+.dept--pediatrics .dept__visual{background:radial-gradient(circle at 50% 35%,rgba(255,255,255,.23),transparent 36%),linear-gradient(145deg,#36a9a1,#17647e 78%)}
+.dept--orthopedics .dept__visual{background:radial-gradient(circle at 50% 35%,rgba(255,255,255,.2),transparent 36%),linear-gradient(145deg,#6486b8,#263e68 78%)}
+.dept--maternity .dept__visual{background:radial-gradient(circle at 50% 35%,rgba(255,255,255,.22),transparent 36%),linear-gradient(145deg,#bd829f,#70415f 78%)}
+.dept__body{z-index:1}
+
 /* VISIT GUIDE */
 .guide{display:grid;gap:.75rem;grid-template-columns:1fr;counter-reset:step}
 @media(min-width:560px){.guide{grid-template-columns:repeat(2,1fr);gap:1rem}}
@@ -580,10 +594,10 @@ a,button{-webkit-tap-highlight-color:transparent}
 <a href="departments.html" class="link"><span data-i18n="all_departments">All departments</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
 </div>
 <div class="depts">
-<a href="department.html?slug=cardiology" class="dept reveal"><span class="dept__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span><div class="dept__body"><div class="dept__name" data-i18n="dept_cardiology">Cardiology</div><div class="dept__meta" data-i18n="dept_cardiology_meta">Heart &amp; vascular</div></div></a>
-<a href="department.html?slug=pediatrics" class="dept reveal"><span class="dept__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span><div class="dept__body"><div class="dept__name" data-i18n="dept_pediatrics">Pediatrics</div><div class="dept__meta" data-i18n="dept_pediatrics_meta">Newborn to teen</div></div></a>
-<a href="department.html?slug=orthopedics" class="dept reveal"><span class="dept__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span><div class="dept__body"><div class="dept__name" data-i18n="dept_orthopedics">Orthopedics</div><div class="dept__meta" data-i18n="dept_orthopedics_meta">Bones &amp; joints</div></div></a>
-<a href="department.html?slug=obstetrics-gynecology" class="dept reveal"><span class="dept__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span><div class="dept__body"><div class="dept__name" data-i18n="dept_maternity">Maternity</div><div class="dept__meta" data-i18n="dept_maternity_meta">Women's health</div></div></a>
+<a href="department.html?slug=cardiology" class="dept dept--cardiology reveal" aria-label="Cardiology — heart and vascular care"><span class="dept__visual" aria-hidden="true"><span class="dept__symbol">♡</span><span class="dept__visual-caption">HEART &amp; VASCULAR CARE</span></span><span class="dept__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span><div class="dept__body"><div class="dept__name" data-i18n="dept_cardiology">Cardiology</div><div class="dept__meta" data-i18n="dept_cardiology_meta">Heart &amp; vascular</div></div></a>
+<a href="department.html?slug=pediatrics" class="dept dept--pediatrics reveal" aria-label="Pediatrics — gentle care for babies and children"><span class="dept__visual" aria-hidden="true"><span class="dept__symbol">✿</span><span class="dept__visual-caption">GENTLE CHILD &amp; NEWBORN CARE</span></span><span class="dept__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span><div class="dept__body"><div class="dept__name" data-i18n="dept_pediatrics">Pediatrics</div><div class="dept__meta" data-i18n="dept_pediatrics_meta">Newborn to teen</div></div></a>
+<a href="department.html?slug=orthopedics" class="dept dept--orthopedics reveal" aria-label="Orthopedics — bone, joint and mobility care"><span class="dept__visual" aria-hidden="true"><span class="dept__symbol">✣</span><span class="dept__visual-caption">BONE, JOINT &amp; MOBILITY CARE</span></span><span class="dept__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span><div class="dept__body"><div class="dept__name" data-i18n="dept_orthopedics">Orthopedics</div><div class="dept__meta" data-i18n="dept_orthopedics_meta">Bones &amp; joints</div></div></a>
+<a href="department.html?slug=obstetrics-gynecology" class="dept dept--maternity reveal" aria-label="Maternity — pregnancy, childbirth and women's health"><span class="dept__visual" aria-hidden="true"><span class="dept__symbol">♡</span><span class="dept__visual-caption">PREGNANCY &amp; WOMEN’S HEALTH</span></span><span class="dept__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span><div class="dept__body"><div class="dept__name" data-i18n="dept_maternity">Maternity</div><div class="dept__meta" data-i18n="dept_maternity_meta">Women's health</div></div></a>
 </div>
 </div>
 </section>
